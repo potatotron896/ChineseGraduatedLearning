@@ -107,3 +107,53 @@ O diferencial pedagógico do **WenDu** é que ao clicar em qualquer palavra da h
    - Calcula as porcentagens reais de HSK 3.0 (`hskDistribution`) por capítulo e por história;
    - Conecta ao `msedge-tts` (`zh-CN-XiaoxiaoNeural` ou `zh-CN-YunxiNeural`) para gerar os arquivos `.mp3` reais em `public/audio/stories/<slug>/chapter-<n>.mp3` e sincroniza os timestamps (`startMs` e `endMs`) de cada palavra e frase em `src/data/stories-built.json`.
 
+
+---
+
+## 5. Briefing Narrativo do Capítulo (Obrigatório antes de escrever)
+
+Antes de escrever, defina (e mostre ao usuário) este briefing. Ele complementa a Passagem 1 (gramática) e a Seção 2 (porcentagens).
+
+**Entradas:** número e título do capítulo; resumo da história; resumo dos capítulos anteriores; evento do capítulo; nível HSK; personagens; palavras-alvo novas; palavras de revisão.
+
+### 5.1 Tamanho do capítulo (capítulos curtos demais não ensinam)
+
+| Nível | Frases | Caracteres (total) |
+|-------|--------|--------------------|
+| HSK 1 | 30 a 40 | 300 a 450 |
+| HSK 2 | 40 a 55 | 500 a 750 |
+| HSK 3 | 55 a 75 | 800 a 1200 |
+
+O capítulo deve ter começo, desenvolvimento (pelo menos 2 cenas ou momentos) e um gancho ou fecho emocional. Não repita frases só para encher: ganhe tamanho com cenas, diálogos e ações concretas.
+
+### 5.2 Palavras-alvo e de revisão
+- **Palavras-alvo novas** (introduzidas no capítulo): cada uma aparece **no mínimo 5 vezes**, em frases e contextos diferentes (sujeito, objeto, diálogo, pensamento, negação ou pergunta quando natural).
+- **Palavras de revisão** (de capítulos anteriores): cada uma aparece **no mínimo 2 vezes**.
+- Nomes próprios dos personagens são sempre permitidos.
+- Vocabulário: use apenas palavras do nível-base e abaixo. A lista permitida é o teto; as porcentagens da Seção 2 continuam valendo.
+
+### 5.3 Estrutura das frases
+- **Máximo de 18 caracteres por frase**, uma ideia por frase.
+- Gramática: apenas estruturas do nível (inclui 了, 的, 得, 地, 很, 没有 conforme a Passagem 1). Não use estruturas acima do nível.
+- Frases naturais, como um nativo escreveria. Evite chinês de livro didático.
+
+### 5.4 Padrão repetido (obrigatório)
+Use **pelo menos 1** padrão que se repita no capítulo, para repetir vocabulário naturalmente:
+- refrão do personagem (uma fala ou gesto de assinatura);
+- cena paralela (a mesma ação em dois lugares ou momentos, com pequena variação);
+- diálogo em espelho (duas falas com a mesma estrutura).
+
+### 5.5 Mostrar, não dizer
+O texto deve **mostrar** o conflito e a emoção do personagem com ações e sinais físicos concretos (mãos, olhar, respiração, objetos, ambiente), e não só nomear sentimentos. Ex.: prefira `他看着茶，没有喝。` a `他很不高兴。`.
+
+### 5.6 Checklist de validação (antes de salvar)
+1. Contagem de frases e caracteres dentro da tabela 5.1.
+2. Nenhuma frase com mais de 18 caracteres.
+3. Cada palavra-alvo com 5 ou mais ocorrências; cada palavra de revisão com 2 ou mais.
+4. Pelo menos um padrão repetido (5.4) identificado.
+5. Pelo menos 3 momentos de "mostrar, não dizer" (5.5).
+6. Nenhuma palavra fora do vocabulário permitido.
+7. Auditoria gramatical da Passagem 1 concluída.
+8. Rodar `npm run story:build` e corrigir qualquer aviso de porcentagem.
+
+Na resposta final, informe a contagem de frases, caracteres e ocorrências de cada palavra-alvo.
