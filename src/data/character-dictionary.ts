@@ -1775,6 +1775,531 @@ export const CHARACTER_DICTIONARY: Record<string, CharacterEtymology> = {
       { symbol: "穴", pinyin: "xué", meaningPt: "caverna / espaço abobadado", role: "semântico" },
       { symbol: "工", pinyin: "gōng", meaningPt: "componente fonético (kōng)", role: "fonético" }
     ]
+  },
+  "床": {
+    char: "床", pinyin: "chuáng", hskLevel: 1,
+    isolatedMeaningPt: "cama / leito",
+    formationExplanationPt: "Ideograma composto: abrigo/teto (广) protegendo uma estrutura de madeira (木) → cama.",
+    components: [
+      { symbol: "广", pinyin: "guǎng", meaningPt: "abrigo / teto", role: "semântico" },
+      { symbol: "木", pinyin: "mù", meaningPt: "madeira", role: "semântico" }
+    ]
+  },
+  "昨": {
+    char: "昨", pinyin: "zuó", hskLevel: 1,
+    isolatedMeaningPt: "ontem / passado",
+    formationExplanationPt: "Fono-semântico: radical 日 (sol/dia) à esquerda + fonético 乍 à direita → o dia anterior.",
+    components: [
+      { symbol: "日", pinyin: "rì", meaningPt: "sol / dia", role: "semântico" },
+      { symbol: "乍", pinyin: "zhà", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "工": {
+    char: "工", pinyin: "gōng", hskLevel: 1,
+    isolatedMeaningPt: "trabalho / ofício / ferramenta",
+    formationExplanationPt: "Pictograma de um esquadro ou ferramenta de carpinteiro → símbolo do trabalho manual e profissional.",
+    components: [
+      { symbol: "工", pinyin: "gōng", meaningPt: "esquadro / ferramenta", role: "pictográfico" }
+    ]
+  },
+  "作": {
+    char: "作", pinyin: "zuò", hskLevel: 1,
+    isolatedMeaningPt: "fazer / produzir / obra",
+    formationExplanationPt: "Fono-semântico: radical de pessoa (亻) + fonético 乍 → pessoa executando uma tarefa.",
+    components: [
+      { symbol: "亻", pinyin: "rén", meaningPt: "pessoa", role: "semântico" },
+      { symbol: "乍", pinyin: "zhà", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "到": {
+    char: "到", pinyin: "dào", hskLevel: 1,
+    isolatedMeaningPt: "chegar / alcançar / até",
+    formationExplanationPt: "Fono-semântico: 至 (chegar ao solo) à esquerda + 刂 (faca, fonético dāo) à direita.",
+    components: [
+      { symbol: "至", pinyin: "zhì", meaningPt: "chegar / atingir", role: "semântico" },
+      { symbol: "刂", pinyin: "dāo", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "现": {
+    char: "现", pinyin: "xiàn", hskLevel: 1,
+    isolatedMeaningPt: "agora / presente / aparecer",
+    formationExplanationPt: "Radical de jade (王/玉) + 见 (ver) → o brilho do jade visível agora, o momento presente.",
+    components: [
+      { symbol: "王", pinyin: "yù", meaningPt: "jade / brilho", role: "semântico" },
+      { symbol: "见", pinyin: "jiàn", meaningPt: "ver / aparecer", role: "semântico" }
+    ]
+  },
+  "累": {
+    char: "累", pinyin: "lèi", hskLevel: 2,
+    isolatedMeaningPt: "cansado / exausto / acumular",
+    formationExplanationPt: "Campo agrícola (田) sobre fios/cordas (系) → trabalho pesado e acumulado que gera cansaço.",
+    components: [
+      { symbol: "田", pinyin: "tián", meaningPt: "campo de trabalho", role: "semântico" },
+      { symbol: "系", pinyin: "xì", meaningPt: "amarrar / acumular", role: "semântico" }
+    ]
+  },
+  "想": {
+    char: "想", pinyin: "xiǎng", hskLevel: 1,
+    isolatedMeaningPt: "pensar / querer / sentir saudade",
+    formationExplanationPt: "Fono-semântico: 相 (xiāng, imagem/aparência) sobre 心 (coração/mente) → formar imagens na mente.",
+    components: [
+      { symbol: "相", pinyin: "xiāng", meaningPt: "imagem / fonético", role: "fonético" },
+      { symbol: "心", pinyin: "xīn", meaningPt: "coração / mente", role: "semântico" }
+    ]
+  },
+  "也": {
+    char: "也", pinyin: "yě", hskLevel: 1,
+    isolatedMeaningPt: "também",
+    formationExplanationPt: "Partícula/advérbio gramatical de adição muito antigo, usado antes de verbos e adjetivos.",
+    components: [
+      { symbol: "也", pinyin: "yě", meaningPt: "advérbio de adição", role: "estrutural" }
+    ]
+  },
+  "喜": {
+    char: "喜", pinyin: "xǐ", hskLevel: 1,
+    isolatedMeaningPt: "alegria / gostar / felicidade",
+    formationExplanationPt: "Originalmente um tambor festivo (壴) sobre uma boca sorridente (口) → celebração e alegria.",
+    components: [
+      { symbol: "壴", pinyin: "zhù", meaningPt: "tambor de festa", role: "semântico" },
+      { symbol: "口", pinyin: "kǒu", meaningPt: "boca rindo/cantando", role: "semântico" }
+    ]
+  },
+  "欢": {
+    char: "欢", pinyin: "huān", hskLevel: 1,
+    isolatedMeaningPt: "contente / alegre / bem-vindo",
+    formationExplanationPt: "Mão (又) + pessoa bocejando/exclamando (欠) → entusiasmo e contentamento.",
+    components: [
+      { symbol: "又", pinyin: "yòu", meaningPt: "mão / gesto", role: "estrutural" },
+      { symbol: "欠", pinyin: "qiàn", meaningPt: "abrir a boca em exclamação", role: "semântico" }
+    ]
+  },
+  "地": {
+    char: "地", pinyin: "dì / de", hskLevel: 1,
+    isolatedMeaningPt: "terra / chão (dì); partícula adverbial (de)",
+    formationExplanationPt: "Radical de terra (土) + 也 → solo/lugar; como partícula gramatical (de) liga advérbios a verbos.",
+    components: [
+      { symbol: "土", pinyin: "tǔ", meaningPt: "terra / solo", role: "semântico" },
+      { symbol: "也", pinyin: "yě", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "方": {
+    char: "方", pinyin: "fāng", hskLevel: 1,
+    isolatedMeaningPt: "direção / região / quadrado / método",
+    formationExplanationPt: "Pictograma antigo de duas embarcações lado a lado ou de um arado indicando direção e área.",
+    components: [
+      { symbol: "方", pinyin: "fāng", meaningPt: "direção / área", role: "pictográfico" }
+    ]
+  },
+  "张": {
+    char: "张", pinyin: "zhāng", hskLevel: 1,
+    isolatedMeaningPt: "estender / abrir; classificador de mesas e papéis",
+    formationExplanationPt: "Arco (弓) + longo (长) → estender a corda do arco; por extensão, classificador de superfícies planas.",
+    components: [
+      { symbol: "弓", pinyin: "gōng", meaningPt: "arco", role: "semântico" },
+      { symbol: "长", pinyin: "cháng", meaningPt: "longo / estendido", role: "fonético" }
+    ]
+  },
+  "问": {
+    char: "问", pinyin: "wèn", hskLevel: 1,
+    isolatedMeaningPt: "perguntar / indagar",
+    formationExplanationPt: "Uma boca (口) dentro de uma porta (门) → bater à porta e fazer uma pergunta.",
+    components: [
+      { symbol: "门", pinyin: "mén", meaningPt: "porta (e pista fonética)", role: "fonético" },
+      { symbol: "口", pinyin: "kǒu", meaningPt: "boca / fala", role: "semântico" }
+    ]
+  },
+  "什": {
+    char: "什", pinyin: "shén", hskLevel: 1,
+    isolatedMeaningPt: "elemento de 什么 (o quê)",
+    formationExplanationPt: "Radical de pessoa (亻) + dez (十) → originalmente 'grupo de dez', hoje usado no pronome 什么.",
+    components: [
+      { symbol: "亻", pinyin: "rén", meaningPt: "pessoa", role: "estrutural" },
+      { symbol: "十", pinyin: "shí", meaningPt: "dez / fonético", role: "fonético" }
+    ]
+  },
+  "么": {
+    char: "么", pinyin: "me", hskLevel: 1,
+    isolatedMeaningPt: "sufixo interrogativo e demonstrativo",
+    formationExplanationPt: "Forma simplificada usada como sufixo átono em palavras como 什么 (o quê) e 这么 (tão).",
+    components: [
+      { symbol: "么", pinyin: "me", meaningPt: "sufixo gramatical", role: "estrutural" }
+    ]
+  },
+  "谢": {
+    char: "谢", pinyin: "xiè", hskLevel: 1,
+    isolatedMeaningPt: "agradecer",
+    formationExplanationPt: "Fono-semântico: radical de fala (讠) + fonético 射 (shè) → expressar gratidão em palavras.",
+    components: [
+      { symbol: "讠", pinyin: "yán", meaningPt: "fala / palavras", role: "semântico" },
+      { symbol: "射", pinyin: "shè", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "等": {
+    char: "等", pinyin: "děng", hskLevel: 1,
+    isolatedMeaningPt: "esperar / aguardar / classe",
+    formationExplanationPt: "Bambu (竹) sobre templo/repartição (寺) → originalmente organizar tábuas de bambu em fila, daí esperar.",
+    components: [
+      { symbol: "竹", pinyin: "zhú", meaningPt: "bambu", role: "semântico" },
+      { symbol: "寺", pinyin: "sì", meaningPt: "templo / ordem", role: "fonético" }
+    ]
+  },
+  "打": {
+    char: "打", pinyin: "dǎ", hskLevel: 1,
+    isolatedMeaningPt: "bater / acionar / fazer (com as mãos)",
+    formationExplanationPt: "Radical de mão (扌) + fonético 丁 (dīng) → verbo genérico de ação manual (打开, 打电话).",
+    components: [
+      { symbol: "扌", pinyin: "shǒu", meaningPt: "mão", role: "semântico" },
+      { symbol: "丁", pinyin: "dīng", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "开": {
+    char: "开", pinyin: "kāi", hskLevel: 1,
+    isolatedMeaningPt: "abrir / ligar / iniciar",
+    formationExplanationPt: "Derivado de duas mãos removendo a tranca de uma porta → abrir ou ligar.",
+    components: [
+      { symbol: "开", pinyin: "kāi", meaningPt: "abrir a tranca", role: "pictográfico" }
+    ]
+  },
+  "始": {
+    char: "始", pinyin: "shǐ", hskLevel: 2,
+    isolatedMeaningPt: "início / começar",
+    formationExplanationPt: "Radical 女 (mulher/origem da vida) + fonético 台 → ponto de partida, começo.",
+    components: [
+      { symbol: "女", pinyin: "nǚ", meaningPt: "mulher / origem", role: "semântico" },
+      { symbol: "台", pinyin: "tái", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "没": {
+    char: "没", pinyin: "méi", hskLevel: 1,
+    isolatedMeaningPt: "não (ter / ter feito)",
+    formationExplanationPt: "Radical de água (氵) + 殳 → originalmente 'afundar/desaparecer na água', daí 'não existir / não ter'.",
+    components: [
+      { symbol: "氵", pinyin: "shuǐ", meaningPt: "água", role: "semântico" },
+      { symbol: "殳", pinyin: "shū", meaningPt: "ação / movimento", role: "estrutural" }
+    ]
+  },
+  "太": {
+    char: "太", pinyin: "tài", hskLevel: 1,
+    isolatedMeaningPt: "demais / excessivamente / supremo",
+    formationExplanationPt: "大 (grande) com um ponto extra embaixo (丶) → além do grande, 'demais'.",
+    components: [
+      { symbol: "大", pinyin: "dà", meaningPt: "grande", role: "semântico" },
+      { symbol: "丶", pinyin: "diǎn", meaningPt: "marca de excesso", role: "estrutural" }
+    ]
+  },
+  "是": {
+    char: "是", pinyin: "shì", hskLevel: 1,
+    isolatedMeaningPt: "ser / sim / correto",
+    formationExplanationPt: "Sol (日) sobre reto/correto (正) → aquilo que é claro e verdadeiro, verbo 'ser'.",
+    components: [
+      { symbol: "日", pinyin: "rì", meaningPt: "sol / clareza", role: "semântico" },
+      { symbol: "疋", pinyin: "shū", meaningPt: "reto / correto", role: "semântico" }
+    ]
+  },
+  "面": {
+    char: "面", pinyin: "miàn", hskLevel: 1,
+    isolatedMeaningPt: "face / lado / superfície / macarrão",
+    formationExplanationPt: "Pictograma de um rosto contornado com os olhos no centro → face ou lado (里面, 外面).",
+    components: [
+      { symbol: "面", pinyin: "miàn", meaningPt: "rosto / superfície", role: "pictográfico" }
+    ]
+  },
+  "还": {
+    char: "还", pinyin: "hái / huán", hskLevel: 1,
+    isolatedMeaningPt: "ainda (hái) / devolver (huán)",
+    formationExplanationPt: "Radical de caminho (辶) + 不 → originalmente retornar pelo caminho (devolver), hoje muito usado como 'ainda'.",
+    components: [
+      { symbol: "辶", pinyin: "chuò", meaningPt: "caminhar / movimento", role: "semântico" },
+      { symbol: "不", pinyin: "bù", meaningPt: "componente estrutural", role: "estrutural" }
+    ]
+  },
+  "会": {
+    char: "会", pinyin: "huì", hskLevel: 1,
+    isolatedMeaningPt: "saber (habilidade) / momento / reunir",
+    formationExplanationPt: "Cobertura (人) reunindo nuvens/pessoas (云) → encontro, breve momento (一会儿) ou habilidade.",
+    components: [
+      { symbol: "人", pinyin: "rén", meaningPt: "reunir / cobertura", role: "semântico" },
+      { symbol: "云", pinyin: "yún", meaningPt: "nuvem / fala", role: "estrutural" }
+    ]
+  },
+  "儿": {
+    char: "儿", pinyin: "ér / r", hskLevel: 1,
+    isolatedMeaningPt: "criança / sufixo diminutivo ou de lugar (-r)",
+    formationExplanationPt: "Pictograma das pernas de uma criança; no falar de Pequim atua como sufixo 'r' (哪儿, 一会儿).",
+    components: [
+      { symbol: "儿", pinyin: "ér", meaningPt: "criança / sufixo", role: "pictográfico" }
+    ]
+  },
+  "眼": {
+    char: "眼", pinyin: "yǎn", hskLevel: 2,
+    isolatedMeaningPt: "olho",
+    formationExplanationPt: "Fono-semântico: radical 目 (olho) à esquerda + fonético 艮 (gèn) à direita.",
+    components: [
+      { symbol: "目", pinyin: "mù", meaningPt: "olho", role: "semântico" },
+      { symbol: "艮", pinyin: "gèn", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "睛": {
+    char: "睛", pinyin: "jīng", hskLevel: 2,
+    isolatedMeaningPt: "pupila / globo ocular",
+    formationExplanationPt: "Fono-semântico: radical 目 (olho) à esquerda + fonético 青 (qīng) à direita → pupila do olho.",
+    components: [
+      { symbol: "目", pinyin: "mù", meaningPt: "olho", role: "semântico" },
+      { symbol: "青", pinyin: "qīng", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "关": {
+    char: "关", pinyin: "guān", hskLevel: 1,
+    isolatedMeaningPt: "fechar / desligar / relação",
+    formationExplanationPt: "Forma simplificada de 關 (passar a tranca na porta) → fechar uma porta ou desligar o computador.",
+    components: [
+      { symbol: "丷", pinyin: "bā", meaningPt: "topo / tranca", role: "estrutural" },
+      { symbol: "天", pinyin: "tiān", meaningPt: "estrutura central", role: "estrutural" }
+    ]
+  },
+  "进": {
+    char: "进", pinyin: "jìn", hskLevel: 1,
+    isolatedMeaningPt: "entrar / avançar",
+    formationExplanationPt: "Radical de caminhar (辶) + 井 (poço/pátio) → dar passos para dentro de um lugar.",
+    components: [
+      { symbol: "辶", pinyin: "chuò", meaningPt: "caminhar", role: "semântico" },
+      { symbol: "井", pinyin: "jǐng", meaningPt: "recinto / fonético", role: "fonético" }
+    ]
+  },
+  "朋": {
+    char: "朋", pinyin: "péng", hskLevel: 1,
+    isolatedMeaningPt: "companheiro / amigo",
+    formationExplanationPt: "Dois elementos idênticos lado a lado (月 + 月, originalmente dois cordões de conchas) → pessoas que caminham juntas.",
+    components: [
+      { symbol: "月", pinyin: "yuè", meaningPt: "par unido (duplicado)", role: "pictográfico" }
+    ]
+  },
+  "友": {
+    char: "友", pinyin: "yǒu", hskLevel: 1,
+    isolatedMeaningPt: "amigo / amizade",
+    formationExplanationPt: "Originalmente duas mãos direitas (又 + 又) unidas em apoio mútuo → amizade.",
+    components: [
+      { symbol: "又", pinyin: "yòu", meaningPt: "mão estendida", role: "semântico" }
+    ]
+  },
+  "啊": {
+    char: "啊", pinyin: "a", hskLevel: 1,
+    isolatedMeaningPt: "partícula de exclamação / ênfase amigável",
+    formationExplanationPt: "Radical de boca (口) + fonético 阿 (ā) → som vocal expressivo no final da frase.",
+    components: [
+      { symbol: "口", pinyin: "kǒu", meaningPt: "boca / som", role: "semântico" },
+      { symbol: "阿", pinyin: "ā", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "吗": {
+    char: "吗", pinyin: "ma", hskLevel: 1,
+    isolatedMeaningPt: "partícula interrogativa (sim/não)",
+    formationExplanationPt: "Radical de boca (口) + fonético 马 (mǎ) → marca de pergunta no fim da frase.",
+    components: [
+      { symbol: "口", pinyin: "kǒu", meaningPt: "boca / pergunta", role: "semântico" },
+      { symbol: "马", pinyin: "mǎ", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "刚": {
+    char: "刚", pinyin: "gāng", hskLevel: 2,
+    isolatedMeaningPt: "recém / firme / exatamente agora",
+    formationExplanationPt: "Fono-semântico: 冈 (gāng) + radical de faca (刂) → originalmente 'aço duro', usado também para 'agora há pouco'.",
+    components: [
+      { symbol: "冈", pinyin: "gāng", meaningPt: "componente fonético", role: "fonético" },
+      { symbol: "刂", pinyin: "dāo", meaningPt: "lâmina / firmeza", role: "semântico" }
+    ]
+  },
+  "才": {
+    char: "才", pinyin: "cái", hskLevel: 2,
+    isolatedMeaningPt: "só agora / talento",
+    formationExplanationPt: "Pictograma de um broto rompendo o solo → início, talento ou 'somente agora'.",
+    components: [
+      { symbol: "才", pinyin: "cái", meaningPt: "broto / início", role: "pictográfico" }
+    ]
+  },
+  "点": {
+    char: "点", pinyin: "diǎn", hskLevel: 1,
+    isolatedMeaningPt: "ponto / hora / um pouco / pedir",
+    formationExplanationPt: "占 + quatro pontos de fogo (灬) → pequena marca ou ponto (一点, 有点, 三点).",
+    components: [
+      { symbol: "占", pinyin: "zhān", meaningPt: "componente fonético", role: "fonético" },
+      { symbol: "灬", pinyin: "huǒ", meaningPt: "marcas / pontos", role: "semântico" }
+    ]
+  },
+  "那": {
+    char: "那", pinyin: "nà", hskLevel: 1,
+    isolatedMeaningPt: "aquele / aquela / então",
+    formationExplanationPt: "Demonstrativo de distância ('aquele') e conector conversacional ('então').",
+    components: [
+      { symbol: "阝", pinyin: "yì", meaningPt: "localidade / região", role: "semântico" }
+    ]
+  },
+  "休": {
+    char: "休", pinyin: "xiū", hskLevel: 1,
+    isolatedMeaningPt: "repousar / descansar",
+    formationExplanationPt: "Ideograma clássico: uma pessoa (亻) descansando encostada à sombra de uma árvore (木).",
+    components: [
+      { symbol: "亻", pinyin: "rén", meaningPt: "pessoa", role: "semântico" },
+      { symbol: "木", pinyin: "mù", meaningPt: "árvore", role: "semântico" }
+    ]
+  },
+  "息": {
+    char: "息", pinyin: "xī", hskLevel: 1,
+    isolatedMeaningPt: "respirar / fôlego / cessar",
+    formationExplanationPt: "Nariz (自) sobre coração (心) → o ritmo da respiração e do descanso (休息).",
+    components: [
+      { symbol: "自", pinyin: "zì", meaningPt: "nariz (respiração)", role: "semântico" },
+      { symbol: "心", pinyin: "xīn", meaningPt: "coração", role: "semântico" }
+    ]
+  },
+  "吧": {
+    char: "吧", pinyin: "ba", hskLevel: 1,
+    isolatedMeaningPt: "partícula de sugestão suave",
+    formationExplanationPt: "Radical de boca (口) + fonético 巴 (bā) → suaviza convites e sugestões no final da frase.",
+    components: [
+      { symbol: "口", pinyin: "kǒu", meaningPt: "boca / tom de voz", role: "semântico" },
+      { symbol: "巴", pinyin: "bā", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "哪": {
+    char: "哪", pinyin: "nǎ", hskLevel: 1,
+    isolatedMeaningPt: "qual / onde (com 儿)",
+    formationExplanationPt: "Radical de boca (口) + 那 → transforma 'aquele' em pergunta ('qual?').",
+    components: [
+      { symbol: "口", pinyin: "kǒu", meaningPt: "boca / pergunta", role: "semântico" },
+      { symbol: "那", pinyin: "nà", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "写": {
+    char: "写", pinyin: "xiě", hskLevel: 1,
+    isolatedMeaningPt: "escrever / compor",
+    formationExplanationPt: "Cobertura (冖) + 与 → forma simplificada de 寫, ato de registrar palavras por escrito.",
+    components: [
+      { symbol: "冖", pinyin: "mì", meaningPt: "cobertura", role: "estrutural" },
+      { symbol: "与", pinyin: "yǔ", meaningPt: "componente simplificado", role: "estrutural" }
+    ]
+  },
+  "又": {
+    char: "又", pinyin: "yòu", hskLevel: 1,
+    isolatedMeaningPt: "novamente / de novo (passado)",
+    formationExplanationPt: "Pictograma da mão direita; usado como advérbio para indicar repetição já ocorrida.",
+    components: [
+      { symbol: "又", pinyin: "yòu", meaningPt: "mão direita", role: "pictográfico" }
+    ]
+  },
+  "呢": {
+    char: "呢", pinyin: "ne", hskLevel: 1,
+    isolatedMeaningPt: "e quanto a...? (partícula interrogativa)",
+    formationExplanationPt: "Radical de boca (口) + fonético 尼 (ní) → devolve a pergunta de forma natural.",
+    components: [
+      { symbol: "口", pinyin: "kǒu", meaningPt: "boca / fala", role: "semântico" },
+      { symbol: "尼", pinyin: "ní", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "个": {
+    char: "个", pinyin: "gè", hskLevel: 1,
+    isolatedMeaningPt: "classificador geral (unidade)",
+    formationExplanationPt: "Originalmente um talo de bambu individual → classificador genérico mais usado do Mandarim.",
+    components: [
+      { symbol: "人", pinyin: "rén", meaningPt: "topo em folha", role: "pictográfico" },
+      { symbol: "丨", pinyin: "gǔn", meaningPt: "haste vertical", role: "pictográfico" }
+    ]
+  },
+  "名": {
+    char: "名", pinyin: "míng", hskLevel: 1,
+    isolatedMeaningPt: "nome / fama",
+    formationExplanationPt: "Crepúsculo/noite (夕) + boca (口) → no escuro, quando não se vê o rosto, usa-se a boca para dizer o nome.",
+    components: [
+      { symbol: "夕", pinyin: "xī", meaningPt: "noite / escuro", role: "semântico" },
+      { symbol: "口", pinyin: "kǒu", meaningPt: "boca / chamar", role: "semântico" }
+    ]
+  },
+  "对": {
+    char: "对", pinyin: "duì", hskLevel: 1,
+    isolatedMeaningPt: "certo / correto / em relação a",
+    formationExplanationPt: "Mão (又) + medida/polegada (寸) → alinhado com precisão, correto.",
+    components: [
+      { symbol: "又", pinyin: "yòu", meaningPt: "mão", role: "semântico" },
+      { symbol: "寸", pinyin: "cùn", meaningPt: "medida / regra", role: "semântico" }
+    ]
+  },
+  "日": {
+    char: "日", pinyin: "rì", hskLevel: 1,
+    isolatedMeaningPt: "sol / dia",
+    formationExplanationPt: "Pictograma estilizado do disco solar com uma marca no centro.",
+    components: [
+      { symbol: "日", pinyin: "rì", meaningPt: "sol", role: "pictográfico" }
+    ]
+  },
+  "加": {
+    char: "加", pinyin: "jiā", hskLevel: 2,
+    isolatedMeaningPt: "somar / acrescentar / mais",
+    formationExplanationPt: "Força (力) + boca (口) → somar esforço e palavras para aumentar ou juntar.",
+    components: [
+      { symbol: "力", pinyin: "lì", meaningPt: "força", role: "semântico" },
+      { symbol: "口", pinyin: "kǒu", meaningPt: "boca", role: "semântico" }
+    ]
+  },
+  "月": {
+    char: "月", pinyin: "yuè", hskLevel: 1,
+    isolatedMeaningPt: "lua / mês",
+    formationExplanationPt: "Pictograma da lua crescente no céu noturno.",
+    components: [
+      { symbol: "月", pinyin: "yuè", meaningPt: "lua crescente", role: "pictográfico" }
+    ]
+  },
+  "就": {
+    char: "就", pinyin: "jiù", hskLevel: 1,
+    isolatedMeaningPt: "logo / exatamente / então",
+    formationExplanationPt: "京 (torre/capital) + 尤 → originalmente 'ir em direção a', hoje advérbio essencial de ênfase e rapidez.",
+    components: [
+      { symbol: "京", pinyin: "jīng", meaningPt: "torre / capital", role: "semântico" },
+      { symbol: "尤", pinyin: "yóu", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "原": {
+    char: "原", pinyin: "yuán", hskLevel: 2,
+    isolatedMeaningPt: "origem / fonte / planície",
+    formationExplanationPt: "Penhasco (厂) com água/nascente brotando (白+小) → nascente, origem de algo.",
+    components: [
+      { symbol: "厂", pinyin: "hǎn", meaningPt: "penhasco / rocha", role: "semântico" },
+      { symbol: "白", pinyin: "bái", meaningPt: "nascente clara", role: "semântico" }
+    ]
+  },
+  "忘": {
+    char: "忘", pinyin: "wàng", hskLevel: 2,
+    isolatedMeaningPt: "esquecer",
+    formationExplanationPt: "亡 (desaparecer/perder, também fonético wáng) sobre 心 (coração/mente) → apagar-se da mente.",
+    components: [
+      { symbol: "亡", pinyin: "wáng", meaningPt: "desaparecer / fonético", role: "fonético" },
+      { symbol: "心", pinyin: "xīn", meaningPt: "coração / mente", role: "semântico" }
+    ]
+  },
+  "聊": {
+    char: "聊", pinyin: "liáo", hskLevel: 2,
+    isolatedMeaningPt: "conversar / bater papo",
+    formationExplanationPt: "Radical de orelha (耳) à esquerda + fonético 卯 → ouvir e conversar à vontade.",
+    components: [
+      { symbol: "耳", pinyin: "ěr", meaningPt: "orelha / escutar", role: "semântico" },
+      { symbol: "卯", pinyin: "mǎo", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "间": {
+    char: "间", pinyin: "jiān", hskLevel: 1,
+    isolatedMeaningPt: "espaço / intervalo / entre",
+    formationExplanationPt: "O sol (日) visto pela fresta de uma porta (门) → o espaço ou intervalo entre dois pontos (时间).",
+    components: [
+      { symbol: "门", pinyin: "mén", meaningPt: "porta", role: "semântico" },
+      { symbol: "日", pinyin: "rì", meaningPt: "sol / luz pela fresta", role: "semântico" }
+    ]
+  },
+  "再": {
+    char: "再", pinyin: "zài", hskLevel: 1,
+    isolatedMeaningPt: "de novo / novamente (futuro)",
+    formationExplanationPt: "Indica repetir uma ação no futuro (再见 = até breve, 再来 = vir novamente).",
+    components: [
+      { symbol: "再", pinyin: "zài", meaningPt: "repetição futura", role: "estrutural" }
+    ]
   }
 };
 

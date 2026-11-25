@@ -96,6 +96,8 @@ export interface StoryChapter {
   audioDurationMs: number;
   voiceName: string;                // e.g., "zh-CN-XiaoxiaoNeural"
   hskDistribution: HskDistributionItem[];
+  targetWords?: string[];
+  reviewWords?: string[];
   keyVocabulary: {
     hanzi: string;
     pinyin: string;

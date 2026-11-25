@@ -12,9 +12,93 @@ import { MsEdgeTTS, OUTPUT_FORMAT } from "msedge-tts";
 
 const ROOT = process.cwd();
 
-async function generateChapterAudio(text, outFile, voiceName = "zh-CN-XiaoxiaoNeural") {
+const args = process.argv.slice(2);
+const FORCE_AUDIO = args.includes("--force-audio");
+const SLUG_ARG = args.find((a) => a.startsWith("--slug="));
+const ONLY_SLUG = SLUG_ARG ? SLUG_ARG.slice("--slug=".length) : null;
+
+const CHAPTER_LIMITS = {
+  1: { minSentences: 30, maxSentences: 40, minChars: 300, maxChars: 450 },
+  2: { minSentences: 40, maxSentences: 55, minChars: 500, maxChars: 750 },
+  3: { minSentences: 55, maxSentences: 75, minChars: 800, maxChars: 1200 },
+};
+
+const MAX_HANZI_PER_SENTENCE = 18;
+
+function countHanzi(text) {
+  return (text.match(/[\u4e00-\u9fff]/g) || []).length;
+}
+
+function validateChapterMetrics(chapter, targetHsk) {
+  const warnings = [];
+  const limits = CHAPTER_LIMITS[targetHsk] || CHAPTER_LIMITS[3];
+  const sentenceCount = chapter.sentences.length;
+  const totalHanzi = chapter.sentences.reduce((sum, s) => sum + countHanzi(s.zhText), 0);
+
+  if (sentenceCount < limits.minSentences || sentenceCount > limits.maxSentences) {
+    warnings.push(
+      `Frases: ${sentenceCount} (meta HSK ${targetHsk}: ${limits.minSentences}-${limits.maxSentences})`
+    );
+  }
+  if (totalHanzi < limits.minChars || totalHanzi > limits.maxChars) {
+    warnings.push(
+      `Caracteres: ${totalHanzi} (meta HSK ${targetHsk}: ${limits.minChars}-${limits.maxChars})`
+    );
+  }
+
+  const longSentences = chapter.sentences
+    .map((s) => ({ id: s.id, len: countHanzi(s.zhText) }))
+    .filter((s) => s.len > MAX_HANZI_PER_SENTENCE);
+  if (longSentences.length > 0) {
+    warnings.push(
+      `Frases > ${MAX_HANZI_PER_SENTENCE} hanzi: ${longSentences.map((s) => `${s.id}(${s.len})`).join(", ")}`
+    );
+  }
+
+  const fullText = chapter.sentences.map((s) => s.zhText).join("\n");
+  const tokenCounts = new Map();
+  for (const s of chapter.sentences) {
+    for (const t of s.tokens) {
+      if (!t.isPunctuation) {
+        tokenCounts.set(t.hanzi, (tokenCounts.get(t.hanzi) || 0) + 1);
+      }
+    }
+  }
+
+  const countOccurrences = (word) => {
+    const byToken = tokenCounts.get(word) || 0;
+    const byText = fullText.split(word).length - 1;
+    return Math.max(byToken, byText);
+  };
+
+  const targetReport = [];
+  if (Array.isArray(chapter.targetWords) && chapter.targetWords.length > 0) {
+    for (const word of chapter.targetWords) {
+      const c = countOccurrences(word);
+      targetReport.push(`${word}:${c}`);
+      if (c < 5) {
+        warnings.push(`Palavra-alvo "${word}" apareceu ${c}x (mínimo 5)`);
+      }
+    }
+  }
+
+  const reviewReport = [];
+  if (Array.isArray(chapter.reviewWords) && chapter.reviewWords.length > 0) {
+    for (const word of chapter.reviewWords) {
+      const c = countOccurrences(word);
+      reviewReport.push(`${word}:${c}`);
+      if (c < 2) {
+        warnings.push(`Palavra de revisão "${word}" apareceu ${c}x (mínimo 2)`);
+      }
+    }
+  }
+
+  return { sentenceCount, totalHanzi, warnings, targetReport, reviewReport };
+}
+
+async function generateChapterAudio(text, outFile, voiceName = "zh-CN-XiaoxiaoNeural", forceRegen = false) {
   fs.mkdirSync(path.dirname(outFile), { recursive: true });
-  if (fs.existsSync(outFile) && fs.statSync(outFile).size > 1024) {
+  if (!forceRegen && fs.existsSync(outFile) && fs.statSync(outFile).size > 1024) {
     const size = fs.statSync(outFile).size;
     return { ok: true, durationMs: Math.max(2500, Math.round(size / 6)), bytes: size };
   }
@@ -126,12 +210,26 @@ async function main() {
   // Dynamically import stories-raw using tsx or node register if needed, or compile via ts
   const ts = await import("typescript");
   const dictPath = path.join(ROOT, "src/data/character-dictionary.ts");
+  const lexiconPath = path.join(ROOT, "src/data/word-lexicon.ts");
   const rawPath = path.join(ROOT, "src/data/stories-raw.ts");
 
   const tempDir = path.join(ROOT, ".next/cache/story-build");
   fs.mkdirSync(tempDir, { recursive: true });
 
-  for (const file of [dictPath, rawPath]) {
+  const filesToTranspile = [dictPath, rawPath];
+  if (fs.existsSync(lexiconPath)) filesToTranspile.splice(1, 0, lexiconPath);
+
+  const storiesDir = path.join(ROOT, "src/data/stories");
+  if (fs.existsSync(storiesDir)) {
+    fs.mkdirSync(path.join(tempDir, "stories"), { recursive: true });
+    for (const entry of fs.readdirSync(storiesDir)) {
+      if (entry.endsWith(".ts")) {
+        filesToTranspile.splice(filesToTranspile.length - 1, 0, path.join(storiesDir, entry));
+      }
+    }
+  }
+
+  for (const file of filesToTranspile) {
     const source = fs.readFileSync(file, "utf8");
     const transpiled = ts.default.transpileModule(source, {
       compilerOptions: {
@@ -139,12 +237,14 @@ async function main() {
         target: ts.default.ScriptTarget.ES2022,
       },
     });
-    let code = transpiled.outputText.replace(
-      /from "\.\/character-dictionary"/g,
-      'from "./character-dictionary.mjs"'
-    );
-    const outName = path.basename(file, ".ts") + ".mjs";
-    fs.writeFileSync(path.join(tempDir, outName), code, "utf8");
+    let code = transpiled.outputText
+      .replace(/from "(\.\.?\/[^"]+)"/g, (m, p1) =>
+        p1.endsWith(".mjs") || p1.endsWith(".json") ? m : `from "${p1}.mjs"`
+      );
+    const rel = path.relative(path.join(ROOT, "src/data"), file);
+    const outPath = path.join(tempDir, rel.replace(/\.ts$/, ".mjs"));
+    fs.mkdirSync(path.dirname(outPath), { recursive: true });
+    fs.writeFileSync(outPath, code, "utf8");
   }
 
   const { RAW_STORIES } = await import(
@@ -154,6 +254,7 @@ async function main() {
   const builtStories = [];
 
   for (const story of RAW_STORIES) {
+    const shouldForceAudio = FORCE_AUDIO && (!ONLY_SLUG || ONLY_SLUG === story.slug);
     console.log(`\n📖 Story: ${story.titleZh} (${story.titlePt}) — Target HSK ${story.targetHsk}`);
     const allStoryTokens = [];
     const uniqueWords = new Set();
@@ -173,13 +274,16 @@ async function main() {
       const { distribution } = computeHskDistribution(chapterTokens);
       chapter.hskDistribution = distribution;
 
+      const metrics = validateChapterMetrics(chapter, story.targetHsk);
+
       const fullChapterText = chapter.sentences.map((s) => s.zhText).join(" ");
       const audioOutPath = path.join(ROOT, "public", chapter.audioUrl.replace(/^\//, ""));
 
       const audioRes = await generateChapterAudio(
         fullChapterText,
         audioOutPath,
-        chapter.voiceName || "zh-CN-XiaoxiaoNeural"
+        chapter.voiceName || "zh-CN-XiaoxiaoNeural",
+        shouldForceAudio
       );
 
       const finalDurationMs = assignTimestamps(chapter.sentences, audioRes.durationMs);
@@ -189,10 +293,19 @@ async function main() {
         .map((d) => `HSK ${d.level}: ${d.percentage}% (${d.count})`)
         .join(" | ");
       console.log(
-        `  ├─ ${chapter.titleZh}: ${distStr} | Audio: ${
+        `  ├─ ${chapter.titleZh}: ${metrics.sentenceCount} frases, ${metrics.totalHanzi} hanzi | ${distStr} | Audio: ${
           audioRes.ok ? `${(audioRes.bytes / 1024).toFixed(1)} KB (${(finalDurationMs / 1000).toFixed(1)}s)` : "Timestamped fallback"
         }`
       );
+      if (metrics.targetReport.length > 0) {
+        console.log(`  │   🎯 Alvo: ${metrics.targetReport.join(", ")}`);
+      }
+      if (metrics.reviewReport.length > 0) {
+        console.log(`  │   🔁 Revisão: ${metrics.reviewReport.join(", ")}`);
+      }
+      for (const w of metrics.warnings) {
+        console.warn(`  │   ⚠️  ${w}`);
+      }
     }
 
     const { distribution: storyDist, totalWords } = computeHskDistribution(allStoryTokens);
