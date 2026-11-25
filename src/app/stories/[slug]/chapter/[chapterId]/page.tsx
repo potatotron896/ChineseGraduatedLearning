@@ -44,7 +44,7 @@ const PINYIN_MODES: { id: PinyinDisplayMode; label: string }[] = [
   { id: "off", label: "Pinyin: Oculto" },
 ];
 
-const SPEED_OPTIONS = [0.6, 0.75, 0.9, 1.0, 1.25];
+const SPEED_OPTIONS = [0.8, 0.9, 1.0, 1.1, 1.25];
 
 // Tamanhos legados (antes dos botões + / −), usados como ponto de partida para quem já tinha preferência salva
 const LEGACY_FONT_SIZE_PX: Record<"sm" | "md" | "lg" | "xl", number> = {

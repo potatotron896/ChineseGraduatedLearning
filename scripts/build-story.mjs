@@ -8,7 +8,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { MsEdgeTTS, OUTPUT_FORMAT } from "msedge-tts";
+import { MsEdgeTTS, OUTPUT_FORMAT, MetadataOptions } from "msedge-tts";
 
 const ROOT = process.cwd();
 
@@ -96,47 +96,162 @@ function validateChapterMetrics(chapter, targetHsk) {
   return { sentenceCount, totalHanzi, warnings, targetReport, reviewReport };
 }
 
-async function generateChapterAudio(text, outFile, voiceName = "zh-CN-XiaoxiaoNeural", forceRegen = false) {
-  fs.mkdirSync(path.dirname(outFile), { recursive: true });
-  if (!forceRegen && fs.existsSync(outFile) && fs.statSync(outFile).size > 1024) {
-    const size = fs.statSync(outFile).size;
-    return { ok: true, durationMs: Math.max(2500, Math.round(size / 6)), bytes: size };
-  }
-  for (let attempt = 1; attempt <= 3; attempt++) {
-    const tts = new MsEdgeTTS();
+// MPEG-2 Layer 3, 48 kbps, 24 kHz, Mono -> 144 bytes = 24 ms per frame
+const MP3_FRAME_BYTES = 144;
+const MP3_FRAME_MS = 24;
+const SILENT_FRAME = Buffer.alloc(MP3_FRAME_BYTES);
+SILENT_FRAME[0] = 0xff;
+SILENT_FRAME[1] = 0xf3;
+SILENT_FRAME[2] = 0x64;
+SILENT_FRAME[3] = 0xc4;
+
+const HSK_AUDIO_PROFILES = {
+  1: { rate: "-20%", pauseFrames: 32 }, // 768 ms entre frases
+  2: { rate: "-15%", pauseFrames: 28 }, // 672 ms entre frases
+  3: { rate: "-10%", pauseFrames: 25 }, // 600 ms entre frases
+};
+
+function createSilenceBuffer(frames) {
+  return Buffer.concat(Array.from({ length: frames }, () => SILENT_FRAME));
+}
+
+function bufferDurationMs(buf) {
+  return Math.round((buf.length / MP3_FRAME_BYTES) * MP3_FRAME_MS);
+}
+
+async function createTtsClient(voiceName) {
+  const tts = new MsEdgeTTS();
+  const meta = new MetadataOptions();
+  meta.wordBoundaryEnabled = true;
+  await tts.setMetadata(voiceName, OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3, meta);
+  return tts;
+}
+
+async function synthesizeSentence(tts, text, rate) {
+  const { audioStream, metadataStream } = tts.toStream(text, { rate });
+  const chunks = [];
+  const wordBoundaries = [];
+
+  audioStream.on("data", (chunk) => chunks.push(chunk));
+  metadataStream.on("data", (raw) => {
     try {
-      await tts.setMetadata(voiceName, OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3);
-      const { audioStream } = tts.toStream(text);
-
-      const chunks = [];
-      await new Promise((resolve, reject) => {
-        audioStream.on("data", (chunk) => chunks.push(chunk));
-        audioStream.on("end", resolve);
-        audioStream.on("error", reject);
-      });
-
-      try {
-        tts.close();
-      } catch {}
-
-      const buffer = Buffer.concat(chunks);
-      if (buffer.length > 512) {
-        fs.writeFileSync(outFile, buffer);
-        const estimatedDurationMs = Math.max(2500, Math.round(buffer.length / 6));
-        return { ok: true, durationMs: estimatedDurationMs, bytes: buffer.length };
+      const parsed = JSON.parse(raw.toString());
+      for (const item of parsed?.Metadata || []) {
+        if (item?.Type === "WordBoundary" && item?.Data) {
+          const offsetMs = Math.round(item.Data.Offset / 10000);
+          const durMs = Math.round(item.Data.Duration / 10000);
+          wordBoundaries.push({
+            text: item.Data.text?.Text || "",
+            startMs: offsetMs,
+            endMs: offsetMs + durMs,
+          });
+        }
       }
-    } catch (err) {
-      try {
-        tts.close();
-      } catch {}
-      if (attempt === 3) {
-        console.warn(`  [WARN] Live Edge-TTS stream fallback for ${path.basename(outFile)}: ${err.message}`);
-      } else {
-        await new Promise((r) => setTimeout(r, 800 * attempt));
+    } catch {}
+  });
+
+  await new Promise((resolve, reject) => {
+    audioStream.on("end", resolve);
+    audioStream.on("error", reject);
+  });
+
+  const buffer = Buffer.concat(chunks);
+  return {
+    buffer,
+    durationMs: bufferDurationMs(buffer),
+    wordBoundaries,
+  };
+}
+
+async function generateChapterAudio(
+  sentences,
+  outFile,
+  voiceName = "zh-CN-XiaoxiaoNeural",
+  targetHsk = 1,
+  forceRegen = false
+) {
+  fs.mkdirSync(path.dirname(outFile), { recursive: true });
+  const timingsFile = `${outFile}.timings.json`;
+
+  if (!forceRegen && fs.existsSync(outFile) && fs.statSync(outFile).size > 1024 && fs.existsSync(timingsFile)) {
+    const size = fs.statSync(outFile).size;
+    try {
+      const cached = JSON.parse(fs.readFileSync(timingsFile, "utf8"));
+      if (Array.isArray(cached?.sentenceTimings) && cached.sentenceTimings.length === sentences.length) {
+        return {
+          ok: true,
+          durationMs: cached.totalDurationMs || Math.round(size / 6),
+          bytes: size,
+          sentenceTimings: cached.sentenceTimings,
+        };
+      }
+    } catch {}
+  }
+
+  const profile = HSK_AUDIO_PROFILES[targetHsk] || HSK_AUDIO_PROFILES[3];
+  const leadInBuf = createSilenceBuffer(6); // 144 ms
+  const pauseBuf = createSilenceBuffer(profile.pauseFrames);
+  const pauseMs = bufferDurationMs(pauseBuf);
+
+  const audioParts = [leadInBuf];
+  const sentenceTimings = [];
+  let cursorMs = bufferDurationMs(leadInBuf);
+
+  let tts = null;
+  try {
+    tts = await createTtsClient(voiceName);
+
+    for (let i = 0; i < sentences.length; i++) {
+      const sentenceText = sentences[i].zhText;
+      let res = null;
+
+      for (let attempt = 1; attempt <= 3; attempt++) {
+        try {
+          if (!tts) tts = await createTtsClient(voiceName);
+          res = await synthesizeSentence(tts, sentenceText, profile.rate);
+          if (res.buffer.length >= MP3_FRAME_BYTES) break;
+        } catch (err) {
+          try {
+            tts?.close();
+          } catch {}
+          tts = null;
+          if (attempt === 3) {
+            console.warn(`  [WARN] Sentence ${i + 1} TTS failed (${path.basename(outFile)}): ${err.message}`);
+            return { ok: false, durationMs: 0, bytes: 0, sentenceTimings: null };
+          }
+          await new Promise((r) => setTimeout(r, 600 * attempt));
+        }
+      }
+
+      audioParts.push(res.buffer);
+      sentenceTimings.push({
+        startOffsetMs: cursorMs,
+        durationMs: res.durationMs,
+        wordBoundaries: res.wordBoundaries,
+      });
+      cursorMs += res.durationMs;
+
+      if (i < sentences.length - 1) {
+        audioParts.push(pauseBuf);
+        cursorMs += pauseMs;
       }
     }
+  } finally {
+    try {
+      tts?.close();
+    } catch {}
   }
-  return { ok: false, durationMs: 0, bytes: 0 };
+
+  const finalBuffer = Buffer.concat(audioParts);
+  const totalDurationMs = bufferDurationMs(finalBuffer);
+  fs.writeFileSync(outFile, finalBuffer);
+  fs.writeFileSync(
+    timingsFile,
+    JSON.stringify({ rate: profile.rate, pauseMs, totalDurationMs, sentenceTimings }),
+    "utf8"
+  );
+
+  return { ok: true, durationMs: totalDurationMs, bytes: finalBuffer.length, sentenceTimings };
 }
 
 function computeHskDistribution(tokens) {
@@ -158,6 +273,99 @@ function computeHskDistribution(tokens) {
     }));
 
   return { distribution, totalWords: wordTokens.length };
+}
+
+function stripPunct(str) {
+  return (str || "").replace(/[\s\p{P}\p{S}]/gu, "");
+}
+
+function applyWordBoundaryTimestamps(sentences, sentenceTimings) {
+  let maxEndMs = 0;
+
+  sentences.forEach((sentence, idx) => {
+    const timing = sentenceTimings[idx];
+    if (!timing) return;
+
+    const { startOffsetMs, durationMs, wordBoundaries } = timing;
+    const sentenceEndMs = startOffsetMs + durationMs;
+    sentence.startMs = startOffsetMs;
+    sentence.endMs = sentenceEndMs;
+    if (sentenceEndMs > maxEndMs) maxEndMs = sentenceEndMs;
+
+    const charTimings = [];
+    for (const wb of wordBoundaries || []) {
+      const clean = stripPunct(wb.text);
+      if (!clean) continue;
+      const span = Math.max(20, wb.endMs - wb.startMs);
+      const step = span / clean.length;
+      for (let i = 0; i < clean.length; i++) {
+        charTimings.push({
+          ch: clean[i],
+          startMs: startOffsetMs + Math.round(wb.startMs + i * step),
+          endMs: startOffsetMs + Math.round(wb.startMs + (i + 1) * step),
+        });
+      }
+    }
+
+    if (charTimings.length === 0) {
+      assignTimestamps([sentence], durationMs);
+      sentence.startMs = startOffsetMs;
+      sentence.endMs = sentenceEndMs;
+      for (const t of sentence.tokens) {
+        t.startMs += startOffsetMs;
+        t.endMs += startOffsetMs;
+      }
+      return;
+    }
+
+    let wbIdx = 0;
+    let prevEndMs = charTimings[0].startMs;
+
+    for (const token of sentence.tokens) {
+      if (token.isPunctuation) {
+        token.startMs = prevEndMs;
+        token.endMs = prevEndMs;
+        continue;
+      }
+
+      const cleanTok = stripPunct(token.hanzi);
+      if (!cleanTok) {
+        token.startMs = prevEndMs;
+        token.endMs = prevEndMs;
+        continue;
+      }
+
+      let firstStart = null;
+      let lastEnd = null;
+
+      for (const ch of cleanTok) {
+        let matchedIdx = -1;
+        const searchLimit = Math.min(charTimings.length, wbIdx + 6);
+        for (let j = wbIdx; j < searchLimit; j++) {
+          if (charTimings[j].ch === ch) {
+            matchedIdx = j;
+            break;
+          }
+        }
+        if (matchedIdx !== -1) {
+          if (firstStart === null) firstStart = charTimings[matchedIdx].startMs;
+          lastEnd = charTimings[matchedIdx].endMs;
+          wbIdx = matchedIdx + 1;
+        }
+      }
+
+      if (firstStart !== null && lastEnd !== null) {
+        token.startMs = Math.max(prevEndMs, firstStart);
+        token.endMs = Math.max(token.startMs + 20, lastEnd);
+      } else {
+        token.startMs = prevEndMs;
+        token.endMs = Math.min(sentenceEndMs, prevEndMs + Math.max(80, cleanTok.length * 140));
+      }
+      prevEndMs = token.endMs;
+    }
+  });
+
+  return maxEndMs;
 }
 
 function assignTimestamps(sentences, totalDurationMs) {
@@ -276,17 +484,20 @@ async function main() {
 
       const metrics = validateChapterMetrics(chapter, story.targetHsk);
 
-      const fullChapterText = chapter.sentences.map((s) => s.zhText).join(" ");
       const audioOutPath = path.join(ROOT, "public", chapter.audioUrl.replace(/^\//, ""));
 
       const audioRes = await generateChapterAudio(
-        fullChapterText,
+        chapter.sentences,
         audioOutPath,
         chapter.voiceName || "zh-CN-XiaoxiaoNeural",
+        story.targetHsk,
         shouldForceAudio
       );
 
-      const finalDurationMs = assignTimestamps(chapter.sentences, audioRes.durationMs);
+      const finalDurationMs =
+        audioRes.ok && audioRes.sentenceTimings
+          ? applyWordBoundaryTimestamps(chapter.sentences, audioRes.sentenceTimings)
+          : assignTimestamps(chapter.sentences, audioRes.durationMs);
       chapter.audioDurationMs = finalDurationMs;
 
       const distStr = distribution
