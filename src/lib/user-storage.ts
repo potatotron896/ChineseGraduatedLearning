@@ -1,7 +1,7 @@
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-import { put, list } from "@vercel/blob";
+import { get, put } from "@vercel/blob";
 import type { UserProfileData } from "../types/story";
 
 export interface StoredUserAccount {
@@ -38,14 +38,13 @@ export async function loadUserAccount(username: string): Promise<StoredUserAccou
   if (!clean) return null;
 
   if (hasVercelBlobToken()) {
-    const prefix = `users/${clean}.json`;
-    const { blobs } = await list({ prefix, limit: 1 });
-    const match = blobs.find((b) => b.pathname === prefix);
-    if (!match) return null;
+    const result = await get(`users/${clean}.json`, {
+      access: "private",
+      useCache: false,
+    });
+    if (!result || result.statusCode !== 200) return null;
 
-    const res = await fetch(match.url, { cache: "no-store" });
-    if (!res.ok) return null;
-    return (await res.json()) as StoredUserAccount;
+    return (await new Response(result.stream).json()) as StoredUserAccount;
   }
 
   // Local development file fallback (.data/users/<username>.json)
@@ -65,8 +64,9 @@ export async function saveUserAccount(account: StoredUserAccount): Promise<void>
 
   if (hasVercelBlobToken()) {
     await put(`users/${clean}.json`, payload, {
-      access: "public",
+      access: "private",
       addRandomSuffix: false,
+      allowOverwrite: true,
       contentType: "application/json",
     });
     return;
