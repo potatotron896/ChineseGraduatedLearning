@@ -717,17 +717,6 @@ export const CHARACTER_DICTIONARY: Record<string, CharacterEtymology> = {
       { symbol: "青", pinyin: "qīng", meaningPt: "puro (fonético qǐng)", role: "fonético" }
     ]
   },
-  "慢": {
-    char: "慢",
-    pinyin: "màn",
-    hskLevel: 1,
-    isolatedMeaningPt: "devagar / lento",
-    formationExplanationPt: "Radical de coração/mente (忄) à esquerda + 曼 (màn, 'estender-se longamente') à direita → ritmo calmo e sem pressa.",
-    components: [
-      { symbol: "忄", pinyin: "xīn", meaningPt: "coração / estado mental", role: "semântico" },
-      { symbol: "曼", pinyin: "màn", meaningPt: "longo / prolongado (fonético)", role: "fonético" }
-    ]
-  },
   "用": {
     char: "用",
     pinyin: "yòng",
