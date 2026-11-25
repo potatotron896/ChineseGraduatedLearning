@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light Mode — The Pure Canvas & Jade Scholar's Desk (OKLCH) */
+  --color-canvas: oklch(1.000 0.000 0);
+  --color-surface: oklch(0.972 0.004 110.0);
+  --color-surface-elevated: oklch(0.950 0.006 110.0);
+  --color-ink: oklch(0.180 0.015 110.0);
+  --color-muted: oklch(0.450 0.015 110.0);
+  --color-subtle: oklch(0.550 0.012 110.0);
+  --color-border: oklch(0.895 0.007 110.0);
+
+  /* Brand Primary: Jade Antigo / Sun-Cured Olive (Seed 110°) */
+  --color-jade: oklch(0.350 0.075 110.0);
+  --color-jade-deep: oklch(0.280 0.068 110.0);
+  --color-jade-soft: oklch(0.945 0.022 110.0);
+  --color-jade-border: oklch(0.820 0.045 110.0);
+
+  /* Functional Accent: Vermelho Cinábrio / Cinnabar Seal (Karaoke & Inspector Focus) */
+  --color-cinnabar: oklch(0.540 0.190 28.0);
+  --color-cinnabar-soft: oklch(0.950 0.032 28.0);
+  --color-cinnabar-border: oklch(0.800 0.095 28.0);
+
+  /* Tertiary: Âmbar Dourado / Ginkgo Gold (Adjacent HSK levels) */
+  --color-ginkgo: oklch(0.620 0.135 75.0);
+  --color-ginkgo-soft: oklch(0.950 0.035 75.0);
+
+  /* Cores dos 4 Tons + Neutro — Alto Contraste no Modo Claro */
+  --tone-1: #DC2626;
+  --tone-2: #059669;
+  --tone-3: #2563EB;
+  --tone-4: #7C3AED;
+  --tone-5: #6B7280;
+
+  /* Font Stacks */
+  --font-ui: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* 3 Chinese Typography Modes */
+  --font-zh-app: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Heiti SC", sans-serif;
+  --font-zh-school: "LXGW WenKai", "KaiTi", "STKaiti", "Kaiti SC", "楷体", "DFKai-SB", serif;
+  --font-zh-book: "Noto Serif SC", "Songti SC", "SimSun", "STSong", "宋体", serif;
+
+  /* Active Chinese font defaults to App */
+  --font-zh-active: var(--font-zh-app);
+}
+
+.dark {
+  /* Dark Mode — Pure Charcoal Ink Studio (OKLCH) */
+  --color-canvas: oklch(0.110 0.000 0);
+  --color-surface: oklch(0.155 0.006 110.0);
+  --color-surface-elevated: oklch(0.200 0.009 110.0);
+  --color-ink: oklch(0.945 0.005 110.0);
+  --color-muted: oklch(0.710 0.012 110.0);
+  --color-subtle: oklch(0.580 0.010 110.0);
+  --color-border: oklch(0.250 0.008 110.0);
+
+  --color-jade: oklch(0.680 0.105 110.0);
+  --color-jade-deep: oklch(0.760 0.110 110.0);
+  --color-jade-soft: oklch(0.220 0.035 110.0);
+  --color-jade-border: oklch(0.360 0.060 110.0);
+
+  --color-cinnabar: oklch(0.660 0.185 28.0);
+  --color-cinnabar-soft: oklch(0.230 0.055 28.0);
+  --color-cinnabar-border: oklch(0.420 0.110 28.0);
+
+  --color-ginkgo: oklch(0.760 0.140 75.0);
+  --color-ginkgo-soft: oklch(0.240 0.045 75.0);
+
+  /* Cores dos 4 Tons + Neutro — Alto Contraste no Modo Escuro */
+  --tone-1: #FB7185;
+  --tone-2: #34D399;
+  --tone-3: #60A5FA;
+  --tone-4: #C084FC;
+  --tone-5: #94A3B8;
+}
+
+/* Cores dos Tons do Pinyin */
+.tone-1 { color: var(--tone-1); }
+.tone-2 { color: var(--tone-2); }
+.tone-3 { color: var(--tone-3); }
+.tone-4 { color: var(--tone-4); }
+.tone-5 { color: var(--tone-5); }
+
+/* Chinese Font Switcher Attributes */
+[data-zh-font="app"] {
+  --font-zh-active: var(--font-zh-app);
+}
+[data-zh-font="school"] {
+  --font-zh-active: var(--font-zh-school);
+}
+[data-zh-font="book"] {
+  --font-zh-active: var(--font-zh-book);
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Safe Area Utilities for Mobile Notches & Home Indicators */
+.pb-safe {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+.pt-safe {
+  padding-top: env(safe-area-inset-top);
+}
+
+/* Hide scrollbars on horizontal filter/toolbar strips while keeping scroll functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* The Zero-Jump Ruby Rule: stable line-height whether pinyin is shown, hover-only, or hidden */
+ruby.zh-token {
+  ruby-position: over;
+  ruby-align: center;
+  display: inline-flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  vertical-align: bottom;
+  line-height: 1.35;
+  margin: 0 1px;
+  padding: 2px 3px;
+  border-radius: 6px;
+  touch-action: manipulation;
+  transition: background-color 150ms cubic-bezier(0.22, 1, 0.36, 1),
+              color 150ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (pointer: coarse) {
+  ruby.zh-token {
+    padding: 3px 4px;
+    margin: 1px 1.5px;
+    min-height: 44px;
+    justify-content: flex-end;
+  }
+}
+
+ruby.zh-token rt {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  color: var(--color-muted);
+  height: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  white-space: nowrap;
+  transition: opacity 140ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Pinyin visibility states without layout jump */
+[data-pinyin-mode="off"] ruby.zh-token rt {
+  opacity: 0;
+  pointer-events: none;
+}
+
+[data-pinyin-mode="hover"] ruby.zh-token rt {
+  opacity: 0;
+}
+
+[data-pinyin-mode="hover"] ruby.zh-token:hover rt,
+[data-pinyin-mode="hover"] ruby.zh-token[data-active="true"] rt,
+[data-pinyin-mode="hover"] ruby.zh-token[data-speaking="true"] rt {
+  opacity: 1;
+}
+
+/* Subtle dotted underline for tokens above the story's target HSK level */
+[data-highlight-above="true"] ruby.zh-token[data-above-level="true"] .zh-hanzi {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--color-ginkgo);
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+}
+
+/* Active karaoke speaking token (Cinnabar Seal) */
+ruby.zh-token[data-speaking="true"] {
+  background-color: var(--color-cinnabar-soft);
+  color: var(--color-cinnabar);
+  box-shadow: 0 0 0 1px var(--color-cinnabar-border);
+}
+ruby.zh-token[data-speaking="true"] rt {
+  color: var(--color-cinnabar);
+  font-weight: 600;
+}
+
+/* Active inspected token */
+ruby.zh-token[data-inspected="true"] {
+  background-color: var(--color-jade-soft);
+  box-shadow: 0 0 0 1.5px var(--color-jade);
+}
+
+/* Mobile Word Details Modal Animations */
+@keyframes fadeInBackdrop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpModal {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-backdrop-anim {
+  animation: fadeInBackdrop 0.16s ease-out forwards;
+}
+
+.modal-sheet-anim {
+  animation: slideUpModal 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
