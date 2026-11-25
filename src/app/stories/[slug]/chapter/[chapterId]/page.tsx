@@ -66,34 +66,28 @@ export default function StoryReaderPage() {
   const [durationMs, setDurationMs] = useState(chapter?.audioDurationMs || 18000);
   const [selectedToken, setSelectedToken] = useState<StoryToken | null>(null);
   const [selectedSentence, setSelectedSentence] = useState<StorySentence | null>(null);
-  const [isMobileModalOpen, setIsMobileModalOpen] = useState(false);
+  const [isInspectorModalOpen, setIsInspectorModalOpen] = useState(false);
   const [openTranslations, setOpenTranslations] = useState<Record<string, boolean>>({});
   const [showAllTranslations, setShowAllTranslations] = useState(false);
   const [showHskModal, setShowHskModal] = useState(false);
 
-  // Set initial inspected word to the first key vocabulary token so the user immediately sees the inspector in action
+  // Reset reader state when switching chapters
   useEffect(() => {
-    if (chapter && chapter.sentences.length > 0) {
-      const firstSentence = chapter.sentences[0];
-      const firstInterestingToken =
-        firstSentence.tokens.find((t) => !t.isPunctuation && t.hanzi.length >= 2) ||
-        firstSentence.tokens.find((t) => !t.isPunctuation);
-      if (firstInterestingToken) {
-        setSelectedToken(firstInterestingToken);
-        setSelectedSentence(firstSentence);
-      }
-      setIsMobileModalOpen(false);
+    if (chapter) {
+      setSelectedToken(null);
+      setSelectedSentence(null);
+      setIsInspectorModalOpen(false);
       setDurationMs(chapter.audioDurationMs || 18000);
       setCurrentTimeMs(0);
       setIsPlaying(false);
     }
   }, [chapter]);
 
-  // Close mobile modal on Escape key and lock background scroll while open
+  // Close inspector modal on Escape key and lock background scroll while open
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        setIsMobileModalOpen(false);
+        setIsInspectorModalOpen(false);
       }
     };
     window.addEventListener("keydown", handleKeyDown);
@@ -102,7 +96,7 @@ export default function StoryReaderPage() {
 
   useEffect(() => {
     if (typeof document === "undefined") return;
-    if (isMobileModalOpen) {
+    if (isInspectorModalOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
@@ -110,7 +104,7 @@ export default function StoryReaderPage() {
     return () => {
       document.body.style.overflow = "";
     };
-  }, [isMobileModalOpen]);
+  }, [isInspectorModalOpen]);
 
   // Sync audio playbackRate whenever audioSpeed changes
   useEffect(() => {
@@ -439,10 +433,9 @@ export default function StoryReaderPage() {
         )}
       </div>
 
-      {/* Main Split Reader Layout: Reading Canvas (Left) + Etymology Inspector (Right) */}
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 pt-5 sm:pt-8 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
-        {/* Reading Canvas (7 cols on large desktop) */}
-        <div className="lg:col-span-7 xl:col-span-8">
+      {/* Main Centered Reading Canvas */}
+      <div className="max-w-4xl mx-auto px-3 sm:px-6 pt-5 sm:pt-8">
+        <div>
           {/* Chapter Title Block */}
           <header className="pb-5 sm:pb-6 mb-4 sm:mb-5 border-b border-border">
             <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
@@ -557,7 +550,8 @@ export default function StoryReaderPage() {
                         currentTimeMs >= token.startMs &&
                         currentTimeMs < token.endMs;
 
-                      const isTokenInspected = selectedToken?.id === token.id;
+                      const isTokenInspected =
+                        isInspectorModalOpen && selectedToken?.id === token.id;
                       const isAboveLevel = (token.hskLevel || 1) > story.targetHsk;
 
                       return (
@@ -570,9 +564,7 @@ export default function StoryReaderPage() {
                           onClick={() => {
                             setSelectedToken(token);
                             setSelectedSentence(sentence);
-                            if (typeof window !== "undefined" && window.innerWidth < 1024) {
-                              setIsMobileModalOpen(true);
-                            }
+                            setIsInspectorModalOpen(true);
                           }}
                           className="zh-token cursor-pointer hover:bg-surface-elevated active:scale-95 transition-transform"
                           title={`${token.pinyin} — ${token.meaningPt} (HSK ${token.hskLevel})`}
@@ -686,37 +678,24 @@ export default function StoryReaderPage() {
           </footer>
         </div>
 
-        {/* Etymology Inspector Sidebar (5 cols on large desktop >= 1024px) */}
-        <div className="hidden lg:block lg:col-span-5 xl:col-span-4">
-          <EtymologyInspector
-            token={selectedToken}
-            sentence={selectedSentence}
-            storySlug={story.slug}
-            storyTitlePt={story.titlePt}
-            onClose={() => setSelectedToken(null)}
-            onPlaySentenceFromHere={(ms) => seekToMs(ms, true)}
-            onStepToken={stepToken}
-            variant="sidebar"
-          />
-        </div>
       </div>
 
-      {/* Mobile / Tablet Instant Floating Bottom-Sheet Modal (< 1024px) */}
-      {isMobileModalOpen && selectedToken && !selectedToken.isPunctuation && (
+      {/* Etymology Inspector Modal (Mobile Bottom-Sheet & Desktop Centered Modal) */}
+      {isInspectorModalOpen && selectedToken && !selectedToken.isPunctuation && (
         <div
-          className="lg:hidden fixed inset-0 z-[70] flex items-end sm:items-center justify-center p-0 sm:p-4"
+          className="fixed inset-0 z-[70] flex items-end sm:items-center justify-center p-0 sm:p-4"
           role="dialog"
           aria-modal="true"
           aria-label={`Detalhes da palavra ${selectedToken.hanzi}`}
         >
           {/* Backdrop */}
           <div
-            onClick={() => setIsMobileModalOpen(false)}
+            onClick={() => setIsInspectorModalOpen(false)}
             className="fixed inset-0 bg-black/60 backdrop-blur-[2px] modal-backdrop-anim"
           />
 
-          {/* Bottom-sheet / Modal container (exact 3-part structure: header, scrollable body, footer) */}
-          <div className="relative z-10 w-full sm:max-w-lg bg-surface border-t sm:border border-border rounded-t-2xl sm:rounded-xl shadow-lg flex flex-col max-h-[85dvh] modal-sheet-anim overflow-hidden">
+          {/* Bottom-sheet / Centered Modal container (3-part structure: header, scrollable body, footer) */}
+          <div className="relative z-10 w-full sm:max-w-xl bg-surface border-t sm:border border-border rounded-t-2xl sm:rounded-xl shadow-xl flex flex-col max-h-[85dvh] modal-sheet-anim overflow-hidden">
             {/* Drag Handle Pill for Mobile Bottom Sheet */}
             <div className="sm:hidden pt-2 pb-0.5 bg-canvas flex justify-center shrink-0">
               <div className="w-10 h-1 rounded-full bg-border" />
@@ -732,8 +711,8 @@ export default function StoryReaderPage() {
               </div>
               <button
                 type="button"
-                onClick={() => setIsMobileModalOpen(false)}
-                className="w-9 h-9 rounded-full border border-border bg-surface text-ink font-bold text-base flex items-center justify-center hover:opacity-80 active:scale-95 transition-all"
+                onClick={() => setIsInspectorModalOpen(false)}
+                className="w-9 h-9 rounded-full border border-border bg-surface text-ink font-bold text-base flex items-center justify-center hover:bg-surface-elevated active:scale-95 transition-all"
                 aria-label="Fechar modal"
               >
                 <X className="w-4 h-4" />
@@ -747,7 +726,7 @@ export default function StoryReaderPage() {
                 sentence={selectedSentence}
                 storySlug={story.slug}
                 storyTitlePt={story.titlePt}
-                onClose={() => setIsMobileModalOpen(false)}
+                onClose={() => setIsInspectorModalOpen(false)}
                 onPlaySentenceFromHere={(ms) => {
                   seekToMs(ms, true);
                 }}
@@ -760,14 +739,14 @@ export default function StoryReaderPage() {
               <button
                 type="button"
                 onClick={() => stepToken(-1)}
-                className="py-2.5 px-3 min-h-[44px] rounded-lg text-xs font-bold border border-border bg-surface text-ink active:scale-95 transition-all"
+                className="py-2.5 px-3 min-h-[44px] rounded-lg text-xs font-bold border border-border bg-surface hover:bg-surface-elevated text-ink active:scale-95 transition-all"
               >
                 ‹ Palavra Anterior
               </button>
               <button
                 type="button"
                 onClick={() => stepToken(1)}
-                className="py-2.5 px-3 min-h-[44px] rounded-lg text-xs font-bold border border-border bg-surface text-ink active:scale-95 transition-all"
+                className="py-2.5 px-3 min-h-[44px] rounded-lg text-xs font-bold border border-border bg-surface hover:bg-surface-elevated text-ink active:scale-95 transition-all"
               >
                 Próxima Palavra ›
               </button>
