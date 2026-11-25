@@ -158,6 +158,8 @@ export interface ReaderPreferences {
   highlightAboveLevel: boolean;
   audioSpeed: number;               // 0.6 | 0.75 | 0.9 | 1.0 | 1.25
   darkMode: boolean;
+  bgmVolume?: number;               // 0.0 - 1.0 (default 0.22)
+  bgmAutoDuck?: boolean;            // Abaixar trilha automaticamente durante a narração
 }
 
 export interface UserProfileData {

@@ -27,6 +27,7 @@ import {
 } from "lucide-react";
 import { getStoryBySlug } from "@/data/stories";
 import { useUser } from "@/context/UserContext";
+import { useBackgroundMusic } from "@/context/BackgroundMusicContext";
 import { HskDistributionBar, getHskStyle } from "@/components/HskDistributionBar";
 import { EtymologyInspector } from "@/components/EtymologyInspector";
 import { ColoredPinyin } from "@/components/ColoredPinyin";
@@ -62,6 +63,7 @@ export default function StoryReaderPage() {
   const chapter = story?.chapters.find((c) => c.id === params.chapterId) || story?.chapters[0];
 
   const { profile, updatePreferences, updateChapterProgress } = useUser();
+  const { setNarrationPlaying } = useBackgroundMusic();
   const { zhFont, fontSizeStep, fontSizePx, pinyinMode, highlightAboveLevel, audioSpeed } =
     profile.preferences;
   const zhSizePx = fontSizePx ?? LEGACY_FONT_SIZE_PX[fontSizeStep] ?? 28;
@@ -120,6 +122,12 @@ export default function StoryReaderPage() {
       audio.preservesPitch = true;
     }
   }, [audioSpeed, isPlaying]);
+
+  // Sync narration state with BackgroundMusicContext for smooth auto-ducking
+  useEffect(() => {
+    setNarrationPlaying(isPlaying);
+    return () => setNarrationPlaying(false);
+  }, [isPlaying, setNarrationPlaying]);
 
   // Smooth requestAnimationFrame loop for exact millisecond karaoke highlighting
   useEffect(() => {

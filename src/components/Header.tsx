@@ -15,6 +15,7 @@ import {
   X,
 } from "lucide-react";
 import { useUser } from "@/context/UserContext";
+import { BackgroundMusicPlayer } from "@/components/BackgroundMusicPlayer";
 import type { ChineseFontMode } from "@/types/story";
 
 const FONT_OPTIONS: { id: ChineseFontMode; labelPt: string; sampleZh: string; descPt: string }[] = [
@@ -147,6 +148,9 @@ export function Header() {
                 );
               })}
             </div>
+
+            {/* Background Music Player */}
+            <BackgroundMusicPlayer />
 
             {/* Theme toggle */}
             <button

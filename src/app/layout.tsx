@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, JetBrains_Mono, Noto_Sans_SC, Noto_Serif_SC } from "next/font/google";
 import "./globals.css";
 import { UserProvider } from "@/context/UserContext";
+import { BackgroundMusicProvider } from "@/context/BackgroundMusicContext";
 import { Header } from "@/components/Header";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -62,8 +63,10 @@ export default function RootLayout({
       </head>
       <body className="min-h-[100dvh] flex flex-col bg-canvas text-ink selection:bg-jade-soft selection:text-jade overflow-x-hidden">
         <UserProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
+          <BackgroundMusicProvider>
+            <Header />
+            <main className="flex-1">{children}</main>
+          </BackgroundMusicProvider>
         </UserProvider>
       </body>
     </html>
