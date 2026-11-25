@@ -150,12 +150,13 @@ ruby.zh-token {
 
 ruby.zh-token rt {
   font-family: var(--font-ui);
-  font-size: 0.75rem;
+  /* Pinyin acompanha proporcionalmente o tamanho escolhido para os caracteres (--zh-size) */
+  font-size: max(0.75rem, calc(var(--zh-size, 28px) * 0.43));
   font-weight: 600;
   line-height: 1.15;
   letter-spacing: 0.01em;
   color: var(--color-muted);
-  height: 1.05rem;
+  height: max(1.05rem, calc(var(--zh-size, 28px) * 0.6));
   display: flex;
   align-items: center;
   justify-content: center;

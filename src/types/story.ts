@@ -152,7 +152,8 @@ export interface ChapterProgress {
 
 export interface ReaderPreferences {
   zhFont: ChineseFontMode;          // "app" | "school" | "book"
-  fontSizeStep: "sm" | "md" | "lg" | "xl";
+  fontSizeStep: "sm" | "md" | "lg" | "xl"; // legado: usado só como fallback quando fontSizePx não existe
+  fontSizePx?: number;              // tamanho livre dos caracteres da história (botões + / −, sem limite superior)
   pinyinMode: PinyinDisplayMode;    // "on" | "hover" | "off"
   highlightAboveLevel: boolean;
   audioSpeed: number;               // 0.6 | 0.75 | 0.9 | 1.0 | 1.25

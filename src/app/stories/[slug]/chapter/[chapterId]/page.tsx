@@ -13,8 +13,10 @@ import {
   Eye,
   GraduationCap,
   Languages,
+  Minus,
   Pause,
   Play,
+  Plus,
   RotateCcw,
   SkipBack,
   SkipForward,
@@ -44,12 +46,15 @@ const PINYIN_MODES: { id: PinyinDisplayMode; label: string }[] = [
 
 const SPEED_OPTIONS = [0.6, 0.75, 0.9, 1.0, 1.25];
 
-const FONT_SIZE_CLASSES: Record<"sm" | "md" | "lg" | "xl", string> = {
-  sm: "text-xl",
-  md: "text-2xl",
-  lg: "text-[28px]",
-  xl: "text-[34px]",
+// Tamanhos legados (antes dos botões + / −), usados como ponto de partida para quem já tinha preferência salva
+const LEGACY_FONT_SIZE_PX: Record<"sm" | "md" | "lg" | "xl", number> = {
+  sm: 20,
+  md: 24,
+  lg: 28,
+  xl: 34,
 };
+const FONT_SIZE_STEP_PX = 2;
+const FONT_SIZE_MIN_PX = 12; // apenas um piso de legibilidade; não há limite máximo
 
 export default function StoryReaderPage() {
   const params = useParams<{ slug: string; chapterId: string }>();
@@ -57,8 +62,9 @@ export default function StoryReaderPage() {
   const chapter = story?.chapters.find((c) => c.id === params.chapterId) || story?.chapters[0];
 
   const { profile, updatePreferences, updateChapterProgress } = useUser();
-  const { zhFont, fontSizeStep, pinyinMode, highlightAboveLevel, audioSpeed } =
+  const { zhFont, fontSizeStep, fontSizePx, pinyinMode, highlightAboveLevel, audioSpeed } =
     profile.preferences;
+  const zhSizePx = fontSizePx ?? LEGACY_FONT_SIZE_PX[fontSizeStep] ?? 28;
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -198,10 +204,9 @@ export default function StoryReaderPage() {
     }));
   }
 
-  function cycleFontSize() {
-    const order: ("sm" | "md" | "lg" | "xl")[] = ["sm", "md", "lg", "xl"];
-    const nextIdx = (order.indexOf(fontSizeStep) + 1) % order.length;
-    updatePreferences({ fontSizeStep: order[nextIdx] });
+  function changeFontSize(delta: number) {
+    const next = Math.max(FONT_SIZE_MIN_PX, zhSizePx + delta);
+    if (next !== zhSizePx) updatePreferences({ fontSizePx: next });
   }
 
   function stepToken(delta: -1 | 1) {
@@ -341,16 +346,40 @@ export default function StoryReaderPage() {
               })}
             </div>
 
-            {/* Font Size Button */}
-            <button
-              type="button"
-              onClick={cycleFontSize}
-              title="Alterar tamanho dos caracteres chineses"
-              className="px-2.5 py-1 min-h-[34px] rounded-md border border-border bg-canvas hover:bg-surface text-xs font-semibold text-ink inline-flex items-center gap-1 shrink-0"
+            {/* Font Size Stepper (− / +, sem limite máximo) */}
+            <div
+              className="inline-flex items-center bg-canvas border border-border rounded-md p-0.5 shrink-0"
+              role="group"
+              aria-label="Tamanho dos caracteres chineses"
             >
-              <Type className="w-3.5 h-3.5 text-jade" />
-              <span className="uppercase font-mono">{fontSizeStep}</span>
-            </button>
+              <button
+                type="button"
+                onClick={() => changeFontSize(-FONT_SIZE_STEP_PX)}
+                disabled={zhSizePx <= FONT_SIZE_MIN_PX}
+                title="Diminuir caracteres chineses"
+                aria-label="Diminuir tamanho da fonte"
+                className="w-[30px] min-h-[30px] rounded-[5px] text-muted hover:text-ink hover:bg-surface inline-flex items-center justify-center transition-colors disabled:opacity-40 disabled:pointer-events-none"
+              >
+                <Minus className="w-3.5 h-3.5" />
+              </button>
+              <span
+                className="px-1.5 inline-flex items-center gap-1 text-xs font-semibold text-ink"
+                aria-live="polite"
+                title="Tamanho atual dos caracteres chineses"
+              >
+                <Type className="w-3.5 h-3.5 text-jade" />
+                <span className="font-mono tabular-nums">{zhSizePx}</span>
+              </span>
+              <button
+                type="button"
+                onClick={() => changeFontSize(FONT_SIZE_STEP_PX)}
+                title="Aumentar caracteres chineses"
+                aria-label="Aumentar tamanho da fonte"
+                className="w-[30px] min-h-[30px] rounded-[5px] text-muted hover:text-ink hover:bg-surface inline-flex items-center justify-center transition-colors"
+              >
+                <Plus className="w-3.5 h-3.5" />
+              </button>
+            </div>
 
             {/* Pinyin Display Mode */}
             <div
@@ -530,13 +559,17 @@ export default function StoryReaderPage() {
                   </div>
 
                   {/* Chinese Ruby Tokens Stream */}
-                  <div className="leading-[2.5] flex flex-wrap items-end gap-y-2">
+                  <div
+                    className="leading-[2.5] flex flex-wrap items-end gap-y-2"
+                    style={{ "--zh-size": `${zhSizePx}px` } as React.CSSProperties}
+                  >
                     {sentence.tokens.map((token) => {
                       if (token.isPunctuation) {
                         return (
                           <span
                             key={token.id}
-                            className={`font-zh ${FONT_SIZE_CLASSES[fontSizeStep]} text-ink select-none mr-1 self-end pb-0.5`}
+                            className="font-zh text-ink select-none mr-1 self-end pb-0.5"
+                            style={{ fontSize: zhSizePx }}
                           >
                             {token.hanzi}
                           </span>
@@ -570,7 +603,8 @@ export default function StoryReaderPage() {
                           title={`${token.pinyin} — ${token.meaningPt} (HSK ${token.hskLevel})`}
                         >
                           <span
-                            className={`zh-hanzi font-zh ${FONT_SIZE_CLASSES[fontSizeStep]} font-normal tracking-wide`}
+                            className="zh-hanzi font-zh font-normal tracking-wide"
+                            style={{ fontSize: zhSizePx }}
                           >
                             {token.hanzi}
                           </span>

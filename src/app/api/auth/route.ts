@@ -51,6 +51,7 @@ export async function POST(request: Request) {
             preferences: {
               zhFont: "app",
               fontSizeStep: "lg",
+              fontSizePx: 28,
               pinyinMode: "on",
               highlightAboveLevel: true,
               audioSpeed: 1.0,
