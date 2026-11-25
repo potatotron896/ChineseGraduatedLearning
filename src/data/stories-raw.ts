@@ -2022,1895 +2022,8715 @@ export const RAW_STORIES: Omit<Story, "hskDistribution" | "totalWords" | "totalU
     ],
   },
   {
-    id: "story-4",
-    slug: "a-montanha-vazia-e-a-coragem",
-    titleZh: "空山里的勇气",
-    titlePinyin: "Kōng shān lǐ de yǒngqì",
-    titlePt: "O Guerreiro e a Coragem na Montanha Vazia",
-    subtitlePt: "Uma jornada filosófica do herói em busca da virtude que vence o medo.",
-    synopsisPt:
-      "Li Yun é um jovem espadachim que sente medo no coração antes de cada desafio. Acreditando que um verdadeiro guerreiro jamais deveria temer, ele sobe a Montanha de Neve em busca de um sábio mestre para encontrar a 'Coragem'. Ao final da jornada, uma simples pedra na neve revela que a virtude que ele procurava sempre esteve em cada passo seu.",
-    category: "Cultura & Folclore",
-    targetHsk: 2,
-    targetRule: {
-      descriptionPt: "Padrão Jornada Filosófica (HSK 2): 75%–82% HSK 1 · 15%–22% HSK 2 · ≤ 5% HSK 3",
-      minBasePercentage: 78,
-      maxAbovePercentage: 5,
+    "id": "story-4",
+    "slug": "a-montanha-vazia-e-a-coragem",
+    "titleZh": "空山里的勇气",
+    "titlePinyin": "Kōng shān lǐ de yǒngqì",
+    "titlePt": "O Guerreiro e a Coragem na Montanha Vazia",
+    "subtitlePt": "Uma jornada filosófica do herói em 10 capítulos sobre o medo, a montanha e a virtude.",
+    "synopsisPt": "Li Yun é um jovem espadachim que guarda um segredo: toda vez que empunha sua espada, sente o coração tremer de medo. Acreditando que um verdadeiro guerreiro jamais deveria temer, ele parte em uma jornada de 10 capítulos até o topo da Montanha Vazia em busca de um lendário mestre. Entre pontes sob vendavais, noites na floresta escura e um resgate na nevasca, ele descobre através de uma simples pedra na neve que a coragem sempre caminhou ao seu lado.",
+    "category": "Cultura & Folclore",
+    "targetHsk": 2,
+    "targetRule": {
+      "descriptionPt": "Padrão Jornada Filosófica Completa (HSK 2): 75%–82% HSK 1 · 15%–22% HSK 2 · ≤ 5% HSK 3",
+      "minBasePercentage": 75,
+      "maxAbovePercentage": 5
     },
-    estimatedMinutes: 5,
-    tags: ["Filosofia", "Jornada do Herói", "Coragem", "Guerreiro", "HSK 2"],
-    chapters: [
-      {
-        id: "ch-1",
-        chapterNumber: 1,
-        titleZh: "第一章：害怕的剑客",
-        titlePinyin: "Dì yī zhāng: Hàipà de jiànkè",
-        titlePt: "Capítulo 1: O Chamado e o Caminho da Montanha",
-        summaryPt:
-          "Sentindo medo no coração toda vez que empunha sua espada, o jovem guerreiro Li Yun parte para a Montanha Alta sob a neve e socorre uma pessoa no caminho antes de encontrar o velho mestre.",
-        estimatedMinutes: 3,
-        audioUrl: "/audio/stories/a-montanha-vazia-e-a-coragem/ch-1.mp3",
-        audioDurationMs: 0,
-        voiceName: "zh-CN-YunxiNeural",
-        hskDistribution: [],
-        keyVocabulary: [
-          { hanzi: "害怕", pinyin: "hàipà", meaningPt: "ter medo / temer", hskLevel: 2 },
-          { hanzi: "勇气", pinyin: "yǒngqì", meaningPt: "coragem / bravura", hskLevel: 3 },
-          { hanzi: "心里", pinyin: "xīnlǐ", meaningPt: "no coração / por dentro", hskLevel: 1 },
-          { hanzi: "下雪", pinyin: "xiàxuě", meaningPt: "nevar", hskLevel: 2 },
-          { hanzi: "但是", pinyin: "dànshì", meaningPt: "mas / porém", hskLevel: 2 },
-        ],
-        sentences: [
-          {
-            id: "s401",
-            zhText: "李云是一个年轻人，手里有一把剑。",
-            pinyinText: "Lǐ Yún shì yí gè niánqīngrén, shǒulǐ yǒu yì bǎ jiàn.",
-            translationPt: "Li Yun era um jovem que tinha uma espada na mão.",
-            literalPt: "Li Yun é um jovem-pessoa, mão-dentro tem uma [classificador de empunhadura] espada.",
-            grammarNotes: [
-              {
-                pattern: "Local + 有 (yǒu) + Objeto",
-                explanationPt: "Para dizer o que alguém traz nas mãos, o Mandarim inicia pelo local: 手里有一把剑 ('na mão há uma espada').",
-                hskLevel: 1,
-              },
-              {
-                pattern: "Classificador 把 (bǎ) para objetos com cabo",
-                explanationPt: "Espadas, facas, guarda-chuvas e cadeiras que pegamos com a mão usam o classificador 把 (bǎ): 一把剑 (uma espada).",
-                hskLevel: 2,
-              },
-            ],
-            startMs: 0,
-            endMs: 0,
-            tokens: [
-              {
-                id: "s401-t1",
-                hanzi: "李云",
-                pinyin: "Lǐ Yún",
-                hskLevel: 1,
-                meaningPt: "Li Yun (nome do jovem guerreiro)",
-                partOfSpeech: "nome próprio",
-                compoundLogicPt: "Sobrenome 李 (Lǐ, 'ameixeira') + 云 (Yún, 'nuvem') → nome clássico de espadachim errante.",
-                characters: chars("李云", ["Lǐ", "Yún"], [1, 1], ["ameixeira/Li", "nuvem"]),
-              },
-              {
-                id: "s401-t2",
-                hanzi: "是",
-                pinyin: "shì",
-                hskLevel: 1,
-                meaningPt: "é / era",
-                partOfSpeech: "verbo de ligação",
-                compoundLogicPt: "Verbo 'ser' que conecta o sujeito 李云 à sua identidade.",
-                characters: chars("是", ["shì"], [1], ["ser"]),
-              },
-              {
-                id: "s401-t3",
-                hanzi: "一个",
-                pinyin: "yí gè",
-                hskLevel: 1,
-                meaningPt: "um",
-                partOfSpeech: "numeral + classificador",
-                compoundLogicPt: "一 (um, muda para 2º tom yí antes de 4º tom) + 个 (classificador geral para pessoas).",
-                characters: chars("一个", ["yī", "gè"], [1, 1], ["um", "classificador"]),
-              },
-              {
-                id: "s401-t4",
-                hanzi: "年轻人",
-                pinyin: "niánqīngrén",
-                hskLevel: 2,
-                meaningPt: "jovem",
-                partOfSpeech: "substantivo",
-                compoundLogicPt: "Formada por 年 (idade/anos) + 轻 (leve/pouco) + 人 (pessoa) → pessoa de poucos anos = jovem.",
-                characters: chars("年轻人", ["nián", "qīng", "rén"], [1, 2, 1], ["ano/idade", "leve/jovem", "pessoa"]),
-              },
-              { id: "s401-t5", hanzi: "，", isPunctuation: true },
-              {
-                id: "s401-t6",
-                hanzi: "手里",
-                pinyin: "shǒulǐ",
-                hskLevel: 1,
-                meaningPt: "na mão",
-                partOfSpeech: "locução espacial",
-                compoundLogicPt: "手 (mão) + 里 (dentro/em) → na palma da mão.",
-                characters: chars("手里", ["shǒu", "lǐ"], [1, 1], ["mão", "dentro"]),
-              },
-              {
-                id: "s401-t7",
-                hanzi: "有",
-                pinyin: "yǒu",
-                hskLevel: 1,
-                meaningPt: "tinha / há",
-                partOfSpeech: "verbo",
-                compoundLogicPt: "Indica posse ou presença na mão.",
-                characters: chars("有", ["yǒu"], [1], ["ter/haver"]),
-              },
-              {
-                id: "s401-t8",
-                hanzi: "一把",
-                pinyin: "yì bǎ",
-                hskLevel: 2,
-                meaningPt: "uma (espada / objeto com empunhadura)",
-                partOfSpeech: "numeral + classificador",
-                compoundLogicPt: "一 (uma) + 把 (bǎ, classificador para objetos que se empunham com a mão, como espadas, facas e guarda-chuvas).",
-                characters: chars("一把", ["yī", "bǎ"], [1, 2], ["um", "empunhar/classificador"]),
-              },
-              {
-                id: "s401-t9",
-                hanzi: "剑",
-                pinyin: "jiàn",
-                hskLevel: 3,
-                meaningPt: "espada",
-                partOfSpeech: "substantivo",
-                compoundLogicPt: "Espada clássica de dois gumes (radical de lâmina 刂 à direita).",
-                characters: chars("剑", ["jiàn"], [3], ["espada"]),
-              },
-              { id: "s401-t10", hanzi: "。", isPunctuation: true },
-            ],
-          },
-          {
-            id: "s402",
-            zhText: "但是每次走上山路，他心里都很害怕。",
-            pinyinText: "Dànshì měi cì zǒushàng shānlù, tā xīnlǐ dōu hěn hàipà.",
-            translationPt: "Mas, toda vez que subia o caminho da montanha, ele sentia muito medo no coração.",
-            literalPt: "Mas cada vez caminhava-subindo montanha-caminho, ele coração-dentro sempre muito temia.",
-            grammarNotes: [
-              {
-                pattern: "每次 (měi cì) ... 都 (dōu) ... = 'Toda vez que..., sempre...'",
-                explanationPt: "Em Mandarim, 每次 ('cada vez') faz par natural com o advérbio 都 ('todos/sempre') antes do predicado.",
-                hskLevel: 2,
-              },
-            ],
-            startMs: 0,
-            endMs: 0,
-            tokens: [
-              {
-                id: "s402-t1",
-                hanzi: "但是",
-                pinyin: "dànshì",
-                hskLevel: 2,
-                meaningPt: "mas / porém",
-                partOfSpeech: "conjunção adversativa",
-                compoundLogicPt: "但 (apenas/contudo) + 是 (é) → introduz o conflito interior do guerreiro.",
-                characters: chars("但是", ["dàn", "shì"], [2, 1], ["porém", "ser"]),
-              },
-              {
-                id: "s402-t2",
-                hanzi: "每次",
-                pinyin: "měi cì",
-                hskLevel: 2,
-                meaningPt: "toda vez / cada vez",
-                partOfSpeech: "pronome + classificador",
-                compoundLogicPt: "每 (cada) + 次 (vez).",
-                characters: chars("每次", ["měi", "cì"], [2, 1], ["cada", "vez"]),
-              },
-              {
-                id: "s402-t3",
-                hanzi: "走上",
-                pinyin: "zǒushàng",
-                hskLevel: 1,
-                meaningPt: "subia caminhando / entrava em",
-                partOfSpeech: "verbo + complemento direcional",
-                compoundLogicPt: "走 (caminhar) + 上 (subir).",
-                characters: chars("走上", ["zǒu", "shàng"], [1, 1], ["caminhar", "subir"]),
-              },
-              {
-                id: "s402-t4",
-                hanzi: "山路",
-                pinyin: "shānlù",
-                hskLevel: 1,
-                meaningPt: "o caminho da montanha",
-                partOfSpeech: "substantivo",
-                compoundLogicPt: "山 (montanha) + 路 (caminho/estrada).",
-                characters: chars("山路", ["shān", "lù"], [1, 1], ["montanha", "caminho"]),
-              },
-              { id: "s402-t5", hanzi: "，", isPunctuation: true },
-              {
-                id: "s402-t6",
-                hanzi: "他",
-                pinyin: "tā",
-                hskLevel: 1,
-                meaningPt: "ele",
-                partOfSpeech: "pronome",
-                compoundLogicPt: "Pronome masculino de 3ª pessoa.",
-                characters: chars("他", ["tā"], [1], ["ele"]),
-              },
-              {
-                id: "s402-t7",
-                hanzi: "心里",
-                pinyin: "xīnlǐ",
-                hskLevel: 1,
-                meaningPt: "no coração / por dentro",
-                partOfSpeech: "locução espacial",
-                compoundLogicPt: "心 (coração/mente) + 里 (dentro) → no íntimo da alma.",
-                characters: chars("心里", ["xīn", "lǐ"], [1, 1], ["coração", "dentro"]),
-              },
-              {
-                id: "s402-t8",
-                hanzi: "都",
-                pinyin: "dōu",
-                hskLevel: 1,
-                meaningPt: "sempre / em todas as vezes",
-                partOfSpeech: "advérbio",
-                compoundLogicPt: "Fecha a estrutura 每次...都... ('toda vez... sem exceção').",
-                characters: chars("都", ["dōu"], [1], ["todos/sempre"]),
-              },
-              {
-                id: "s402-t9",
-                hanzi: "很",
-                pinyin: "hěn",
-                hskLevel: 1,
-                meaningPt: "muito",
-                partOfSpeech: "advérbio de grau",
-                compoundLogicPt: "Intensifica o verbo psicológico 害怕.",
-                characters: chars("很", ["hěn"], [1], ["muito"]),
-              },
-              {
-                id: "s402-t10",
-                hanzi: "害怕",
-                pinyin: "hàipà",
-                hskLevel: 2,
-                meaningPt: "sentia medo / temia",
-                partOfSpeech: "verbo psicológico / adjetivo",
-                compoundLogicPt: "Formada por 害 (recear dano) + 怕 (temer: coração 忄 + pálido 白) → sentir medo.",
-                characters: chars("害怕", ["hài", "pà"], [2, 2], ["recear", "temer"]),
-              },
-              { id: "s402-t11", hanzi: "。", isPunctuation: true },
-            ],
-          },
-          {
-            id: "s403",
-            zhText: "他觉得自己没有勇气，想去高山上找一位老老师。",
-            pinyinText: "Tā juéde zìjǐ méiyǒu yǒngqì, xiǎng qù gāoshān shàng zhǎo yí wèi lǎo lǎoshī.",
-            translationPt: "Ele achava que não tinha coragem e queria ir ao alto da montanha procurar um velho mestre.",
-            literalPt: "Ele achava si-mesmo não-tinha coragem, queria ir alta-montanha em-cima procurar um [classificador respeitoso] velho mestre.",
-            grammarNotes: [
-              {
-                pattern: "Negação de posse com 没有 (méiyǒu)",
-                explanationPt: "Para dizer 'não ter coragem', usa-se sempre 没有勇气 (méiyǒu yǒngqì), pois o verbo 有 (ter) nunca é negado com 不.",
-                hskLevel: 1,
-              },
-              {
-                pattern: "Classificador respeitoso 位 (wèi)",
-                explanationPt: "Para se referir a mestres, professores ou pessoas com respeito, usa-se 位 (wèi) em vez de 个: 一位老老师 (um velho mestre).",
-                hskLevel: 1,
-              },
-            ],
-            startMs: 0,
-            endMs: 0,
-            tokens: [
-              {
-                id: "s403-t1",
-                hanzi: "他",
-                pinyin: "tā",
-                hskLevel: 1,
-                meaningPt: "ele",
-                partOfSpeech: "pronome",
-                compoundLogicPt: "Ele (Li Yun).",
-                characters: chars("他", ["tā"], [1], ["ele"]),
-              },
-              {
-                id: "s403-t2",
-                hanzi: "觉得",
-                pinyin: "juéde",
-                hskLevel: 1,
-                meaningPt: "achava / sentia",
-                partOfSpeech: "verbo",
-                compoundLogicPt: "觉 (sentir/perceber) + 得 (partícula). Atenção ao polifônico 觉 (jué aqui, e não jiào).",
-                characters: chars("觉得", ["jué", "de"], [1, 1], ["sentir", "partícula"]),
-              },
-              {
-                id: "s403-t3",
-                hanzi: "自己",
-                pinyin: "zìjǐ",
-                hskLevel: 2,
-                meaningPt: "ele mesmo / si mesmo",
-                partOfSpeech: "pronome reflexivo",
-                compoundLogicPt: "自 (próprio/nariz apontando para si) + 己 (si mesmo) → a própria pessoa.",
-                characters: chars("自己", ["zì", "jǐ"], [1, 2], ["próprio", "si mesmo"]),
-              },
-              {
-                id: "s403-t4",
-                hanzi: "没有",
-                pinyin: "méiyǒu",
-                hskLevel: 1,
-                meaningPt: "não tinha",
-                partOfSpeech: "negação + verbo",
-                compoundLogicPt: "没 (não) + 有 (ter).",
-                characters: chars("没有", ["méi", "yǒu"], [1, 1], ["não", "ter"]),
-              },
-              {
-                id: "s403-t5",
-                hanzi: "勇气",
-                pinyin: "yǒngqì",
-                hskLevel: 3,
-                meaningPt: "coragem / bravura",
-                partOfSpeech: "substantivo abstrato",
-                compoundLogicPt: "Formada por 勇 (bravo/avançar com força 力) + 气 (sopro vital/energia Qi) → 'a energia vital da bravura' = coragem.",
-                characters: chars("勇气", ["yǒng", "qì"], [3, 1], ["bravo/valente", "sopro vital/energia"]),
-              },
-              { id: "s403-t6", hanzi: "，", isPunctuation: true },
-              {
-                id: "s403-t7",
-                hanzi: "想",
-                pinyin: "xiǎng",
-                hskLevel: 1,
-                meaningPt: "queria / desejava",
-                partOfSpeech: "verbo modal",
-                compoundLogicPt: "相 (imagem) + 心 (coração) → desejar ou pensar no coração.",
-                characters: chars("想", ["xiǎng"], [1], ["querer/pensar"]),
-              },
-              {
-                id: "s403-t8",
-                hanzi: "去",
-                pinyin: "qù",
-                hskLevel: 1,
-                meaningPt: "ir",
-                partOfSpeech: "verbo",
-                compoundLogicPt: "Deslocar-se até a montanha.",
-                characters: chars("去", ["qù"], [1], ["ir"]),
-              },
-              {
-                id: "s403-t9",
-                hanzi: "高山",
-                pinyin: "gāoshān",
-                hskLevel: 1,
-                meaningPt: "a montanha alta",
-                partOfSpeech: "substantivo",
-                compoundLogicPt: "高 (alta) + 山 (montanha).",
-                characters: chars("高山", ["gāo", "shān"], [1, 1], ["alta", "montanha"]),
-              },
-              {
-                id: "s403-t10",
-                hanzi: "上",
-                pinyin: "shàng",
-                hskLevel: 1,
-                meaningPt: "no alto de",
-                partOfSpeech: "posposição espacial",
-                compoundLogicPt: "Indica o cume da montanha (高山上).",
-                characters: chars("上", ["shàng"], [1], ["em cima"]),
-              },
-              {
-                id: "s403-t11",
-                hanzi: "找",
-                pinyin: "zhǎo",
-                hskLevel: 1,
-                meaningPt: "procurar / buscar",
-                partOfSpeech: "verbo",
-                compoundLogicPt: "Buscar o sábio da montanha.",
-                characters: chars("找", ["zhǎo"], [1], ["procurar"]),
-              },
-              {
-                id: "s403-t12",
-                hanzi: "一位",
-                pinyin: "yí wèi",
-                hskLevel: 1,
-                meaningPt: "um (mestre respeitado)",
-                partOfSpeech: "numeral + classificador",
-                compoundLogicPt: "一 (um) + 位 (classificador formal de respeito para pessoas).",
-                characters: chars("一位", ["yī", "wèi"], [1, 1], ["um", "classificador respeitoso"]),
-              },
-              {
-                id: "s403-t13",
-                hanzi: "老",
-                pinyin: "lǎo",
-                hskLevel: 1,
-                meaningPt: "velho / sábio",
-                partOfSpeech: "adjetivo",
-                compoundLogicPt: "Idoso e experiente.",
-                characters: chars("老", ["lǎo"], [1], ["velho/sábio"]),
-              },
-              {
-                id: "s403-t14",
-                hanzi: "老师",
-                pinyin: "lǎoshī",
-                hskLevel: 1,
-                meaningPt: "mestre / professor",
-                partOfSpeech: "substantivo",
-                compoundLogicPt: "老 (experiente) + 师 (mestre que guia).",
-                characters: chars("老师", ["lǎo", "shī"], [1, 1], ["experiente", "mestre"]),
-              },
-              { id: "s403-t15", hanzi: "。", isPunctuation: true },
-            ],
-          },
-          {
-            id: "s404",
-            zhText: "山上很冷，还下雪了，路很不好走。",
-            pinyinText: "Shān shàng hěn lěng, hái xiàxuě le, lù hěn bù hǎo zǒu.",
-            translationPt: "No alto da montanha estava muito frio, e além disso começou a nevar; o caminho era muito difícil de percorrer.",
-            literalPt: "Montanha em-cima muito frio, ainda caiu-neve [mudança], caminho muito não bom caminhar.",
-            grammarNotes: [
-              {
-                pattern: "不好 + Verbo = 'difícil de fazer'",
-                explanationPt: "Assim como 好喝 é 'bom de beber', 不好走 (bù hǎo zǒu) significa literalmente 'não é bom de andar' → difícil de caminhar.",
-                hskLevel: 1,
-              },
-            ],
-            startMs: 0,
-            endMs: 0,
-            tokens: [
-              {
-                id: "s404-t1",
-                hanzi: "山上",
-                pinyin: "shān shàng",
-                hskLevel: 1,
-                meaningPt: "na montanha / no alto da montanha",
-                partOfSpeech: "locução espacial",
-                compoundLogicPt: "山 (montanha) + 上 (em cima).",
-                characters: chars("山上", ["shān", "shàng"], [1, 1], ["montanha", "em cima"]),
-              },
-              {
-                id: "s404-t2",
-                hanzi: "很",
-                pinyin: "hěn",
-                hskLevel: 1,
-                meaningPt: "muito",
-                partOfSpeech: "advérbio",
-                compoundLogicPt: "Ligador gramatical do adjetivo 冷.",
-                characters: chars("很", ["hěn"], [1], ["muito"]),
-              },
-              {
-                id: "s404-t3",
-                hanzi: "冷",
-                pinyin: "lěng",
-                hskLevel: 1,
-                meaningPt: "frio",
-                partOfSpeech: "adjetivo",
-                compoundLogicPt: "Radical de gelo (冫) + 令 (fonético lěng).",
-                characters: chars("冷", ["lěng"], [1], ["frio"]),
-              },
-              { id: "s404-t4", hanzi: "，", isPunctuation: true },
-              {
-                id: "s404-t5",
-                hanzi: "还",
-                pinyin: "hái",
-                hskLevel: 1,
-                meaningPt: "e além disso / ainda",
-                partOfSpeech: "advérbio",
-                compoundLogicPt: "Polifônico 还 lido hái ('ainda por cima / além disso').",
-                characters: chars("还", ["hái"], [1], ["ainda/além disso"]),
-              },
-              {
-                id: "s404-t6",
-                hanzi: "下雪",
-                pinyin: "xiàxuě",
-                hskLevel: 2,
-                meaningPt: "nevar (cair neve)",
-                partOfSpeech: "verbo + objeto",
-                compoundLogicPt: "下 (cair/descer) + 雪 (neve: chuva 雨 que se acumula 彐).",
-                characters: chars("下雪", ["xià", "xuě"], [1, 2], ["cair", "neve"]),
-              },
-              {
-                id: "s404-t7",
-                hanzi: "了",
-                pinyin: "le",
-                hskLevel: 1,
-                meaningPt: "começou a (mudança de estado)",
-                partOfSpeech: "partícula modal",
-                compoundLogicPt: "Indica nova condição climática na subida da montanha.",
-                characters: chars("了", ["le"], [1], ["mudança de estado"]),
-              },
-              { id: "s404-t8", hanzi: "，", isPunctuation: true },
-              {
-                id: "s404-t9",
-                hanzi: "路",
-                pinyin: "lù",
-                hskLevel: 1,
-                meaningPt: "o caminho / a trilha",
-                partOfSpeech: "substantivo",
-                compoundLogicPt: "Caminho percorrido pelos pés (⻊).",
-                characters: chars("路", ["lù"], [1], ["caminho"]),
-              },
-              {
-                id: "s404-t10",
-                hanzi: "很",
-                pinyin: "hěn",
-                hskLevel: 1,
-                meaningPt: "muito",
-                partOfSpeech: "advérbio",
-                compoundLogicPt: "Advérbio de intensidade.",
-                characters: chars("很", ["hěn"], [1], ["muito"]),
-              },
-              {
-                id: "s404-t11",
-                hanzi: "不好",
-                pinyin: "bù hǎo",
-                hskLevel: 1,
-                meaningPt: "difícil de / não é fácil de",
-                partOfSpeech: "negação + auxiliar",
-                compoundLogicPt: "不 (não) + 好 (bom/fácil de fazer).",
-                characters: chars("不好", ["bù", "hǎo"], [1, 1], ["não", "fácil/bom"]),
-              },
-              {
-                id: "s404-t12",
-                hanzi: "走",
-                pinyin: "zǒu",
-                hskLevel: 1,
-                meaningPt: "andar / caminhar",
-                partOfSpeech: "verbo",
-                compoundLogicPt: "不好走 = difícil de caminhar.",
-                characters: chars("走", ["zǒu"], [1], ["caminhar"]),
-              },
-              { id: "s404-t13", hanzi: "。", isPunctuation: true },
-            ],
-          },
-          {
-            id: "s405",
-            zhText: "在路上，他看见一个人坐在雪里，还在哭。",
-            pinyinText: "Zài lù shàng, tā kànjiàn yí gè rén zuò zài xuě lǐ, hái zài kū.",
-            translationPt: "No caminho, ele viu uma pessoa sentada na neve, que ainda estava chorando.",
-            literalPt: "Em caminho sobre, ele viu uma pessoa sentada em neve dentro, ainda estava chorando.",
-            grammarNotes: [
-              {
-                pattern: "还在 + Verbo = 'ainda está [fazendo algo]'",
-                explanationPt: "Combina 还 (hái, 'ainda') + 在 (zài, marcador de ação contínua) antes do verbo 哭 (chorar).",
-                hskLevel: 2,
-              },
-            ],
-            startMs: 0,
-            endMs: 0,
-            tokens: [
-              {
-                id: "s405-t1",
-                hanzi: "在",
-                pinyin: "zài",
-                hskLevel: 1,
-                meaningPt: "em / no",
-                partOfSpeech: "preposição",
-                compoundLogicPt: "Introduz o local da cena.",
-                characters: chars("在", ["zài"], [1], ["em"]),
-              },
-              {
-                id: "s405-t2",
-                hanzi: "路上",
-                pinyin: "lù shàng",
-                hskLevel: 1,
-                meaningPt: "caminho / durante a jornada",
-                partOfSpeech: "locução espacial",
-                compoundLogicPt: "路 (caminho) + 上 (sobre/ao longo de).",
-                characters: chars("路上", ["lù", "shàng"], [1, 1], ["caminho", "sobre"]),
-              },
-              { id: "s405-t3", hanzi: "，", isPunctuation: true },
-              {
-                id: "s405-t4",
-                hanzi: "他",
-                pinyin: "tā",
-                hskLevel: 1,
-                meaningPt: "ele",
-                partOfSpeech: "pronome",
-                compoundLogicPt: "Li Yun.",
-                characters: chars("他", ["tā"], [1], ["ele"]),
-              },
-              {
-                id: "s405-t5",
-                hanzi: "看见",
-                pinyin: "kànjiàn",
-                hskLevel: 1,
-                meaningPt: "viu / avistou",
-                partOfSpeech: "verbo + complemento de resultado",
-                compoundLogicPt: "看 (olhar) + 见 (perceber com a visão) → ver efetivamente.",
-                characters: chars("看见", ["kàn", "jiàn"], [1, 1], ["olhar", "ver"]),
-              },
-              {
-                id: "s405-t6",
-                hanzi: "一个",
-                pinyin: "yí gè",
-                hskLevel: 1,
-                meaningPt: "uma",
-                partOfSpeech: "numeral + classificador",
-                compoundLogicPt: "一 (um) + 个 (classificador).",
-                characters: chars("一个", ["yī", "gè"], [1, 1], ["um", "classificador"]),
-              },
-              {
-                id: "s405-t7",
-                hanzi: "人",
-                pinyin: "rén",
-                hskLevel: 1,
-                meaningPt: "pessoa / viajante",
-                partOfSpeech: "substantivo",
-                compoundLogicPt: "Ser humano.",
-                characters: chars("人", ["rén"], [1], ["pessoa"]),
-              },
-              {
-                id: "s405-t8",
-                hanzi: "坐在",
-                pinyin: "zuò zài",
-                hskLevel: 1,
-                meaningPt: "sentada em",
-                partOfSpeech: "verbo + preposição",
-                compoundLogicPt: "坐 (sentar) + 在 (em).",
-                characters: chars("坐在", ["zuò", "zài"], [1, 1], ["sentar", "em"]),
-              },
-              {
-                id: "s405-t9",
-                hanzi: "雪里",
-                pinyin: "xuě lǐ",
-                hskLevel: 2,
-                meaningPt: "na neve (dentro da neve)",
-                partOfSpeech: "locução espacial",
-                compoundLogicPt: "雪 (neve) + 里 (dentro).",
-                characters: chars("雪里", ["xuě", "lǐ"], [2, 1], ["neve", "dentro"]),
-              },
-              { id: "s405-t10", hanzi: "，", isPunctuation: true },
-              {
-                id: "s405-t11",
-                hanzi: "还在",
-                pinyin: "hái zài",
-                hskLevel: 1,
-                meaningPt: "ainda estava",
-                partOfSpeech: "advérbio + aspecto contínuo",
-                compoundLogicPt: "还 (hái, 'ainda') + 在 (estar em progresso).",
-                characters: chars("还在", ["hái", "zài"], [1, 1], ["ainda", "estar"]),
-              },
-              {
-                id: "s405-t12",
-                hanzi: "哭",
-                pinyin: "kū",
-                hskLevel: 2,
-                meaningPt: "chorando",
-                partOfSpeech: "verbo",
-                compoundLogicPt: "Duas bocas/olhos chorando (口+口) no topo + cão/lamento (犬) na base → chorar.",
-                characters: chars("哭", ["kū"], [2], ["chorar"]),
-              },
-              { id: "s405-t13", hanzi: "。", isPunctuation: true },
-            ],
-          },
-          {
-            id: "s406",
-            zhText: "李云很怕冷，但是他没有走开，他救了那个人。",
-            pinyinText: "Lǐ Yún hěn pà lěng, dànshì tā méiyǒu zǒukāi, tā jiù le nà gè rén.",
-            translationPt: "Li Yun temia muito o frio, mas não foi embora; ele salvou aquela pessoa.",
-            literalPt: "Li Yun muito temia frio, mas ele não caminhou-afastando, ele salvou [concluído] aquela pessoa.",
-            grammarNotes: [
-              {
-                pattern: "Negação de ação passada: 没有 (méiyǒu) + Verbo",
-                explanationPt: "Para dizer que ele NÃO se afastou naquele momento, usa-se 没有走开 (méiyǒu zǒukāi), sem 了.",
-                hskLevel: 1,
-              },
-            ],
-            startMs: 0,
-            endMs: 0,
-            tokens: [
-              {
-                id: "s406-t1",
-                hanzi: "李云",
-                pinyin: "Lǐ Yún",
-                hskLevel: 1,
-                meaningPt: "Li Yun",
-                partOfSpeech: "nome próprio",
-                compoundLogicPt: "Nome do jovem guerreiro.",
-                characters: chars("李云", ["Lǐ", "Yún"], [1, 1], ["Li", "nuvem"]),
-              },
-              {
-                id: "s406-t2",
-                hanzi: "很",
-                pinyin: "hěn",
-                hskLevel: 1,
-                meaningPt: "muito",
-                partOfSpeech: "advérbio",
-                compoundLogicPt: "Intensificador.",
-                characters: chars("很", ["hěn"], [1], ["muito"]),
-              },
-              {
-                id: "s406-t3",
-                hanzi: "怕",
-                pinyin: "pà",
-                hskLevel: 2,
-                meaningPt: "temia / tinha medo de",
-                partOfSpeech: "verbo",
-                compoundLogicPt: "Radical de coração (忄) + 白 (pálido).",
-                characters: chars("怕", ["pà"], [2], ["temer"]),
-              },
-              {
-                id: "s406-t4",
-                hanzi: "冷",
-                pinyin: "lěng",
-                hskLevel: 1,
-                meaningPt: "o frio",
-                partOfSpeech: "adjetivo/substantivo",
-                compoundLogicPt: "怕冷 = temer o frio.",
-                characters: chars("冷", ["lěng"], [1], ["frio"]),
-              },
-              { id: "s406-t5", hanzi: "，", isPunctuation: true },
-              {
-                id: "s406-t6",
-                hanzi: "但是",
-                pinyin: "dànshì",
-                hskLevel: 2,
-                meaningPt: "mas / contudo",
-                partOfSpeech: "conjunção",
-                compoundLogicPt: "Contrasta o medo que ele sentia com a atitude nobre que tomou.",
-                characters: chars("但是", ["dàn", "shì"], [2, 1], ["mas", "ser"]),
-              },
-              {
-                id: "s406-t7",
-                hanzi: "他",
-                pinyin: "tā",
-                hskLevel: 1,
-                meaningPt: "ele",
-                partOfSpeech: "pronome",
-                compoundLogicPt: "Ele.",
-                characters: chars("他", ["tā"], [1], ["ele"]),
-              },
-              {
-                id: "s406-t8",
-                hanzi: "没有",
-                pinyin: "méiyǒu",
-                hskLevel: 1,
-                meaningPt: "não (fez a ação)",
-                partOfSpeech: "advérbio de negação passada",
-                compoundLogicPt: "Nega que a ação de ir embora tenha ocorrido.",
-                characters: chars("没有", ["méi", "yǒu"], [1, 1], ["não", "haver"]),
-              },
-              {
-                id: "s406-t9",
-                hanzi: "走开",
-                pinyin: "zǒukāi",
-                hskLevel: 1,
-                meaningPt: "foi embora / se afastou",
-                partOfSpeech: "verbo + complemento direcional",
-                compoundLogicPt: "走 (andar) + 开 (afastar-se/abrir).",
-                characters: chars("走开", ["zǒu", "kāi"], [1, 1], ["caminhar", "afastar-se"]),
-              },
-              { id: "s406-t10", hanzi: "，", isPunctuation: true },
-              {
-                id: "s406-t11",
-                hanzi: "他",
-                pinyin: "tā",
-                hskLevel: 1,
-                meaningPt: "ele",
-                partOfSpeech: "pronome",
-                compoundLogicPt: "Li Yun.",
-                characters: chars("他", ["tā"], [1], ["ele"]),
-              },
-              {
-                id: "s406-t12",
-                hanzi: "救了",
-                pinyin: "jiù le",
-                hskLevel: 3,
-                meaningPt: "salvou / socorreu",
-                partOfSpeech: "verbo + partícula",
-                compoundLogicPt: "救 (socorrer/salvar) + 了 (ação concluída).",
-                characters: chars("救了", ["jiù", "le"], [3, 1], ["salvar", "concluído"]),
-              },
-              {
-                id: "s406-t13",
-                hanzi: "那个",
-                pinyin: "nà gè",
-                hskLevel: 1,
-                meaningPt: "aquela",
-                partOfSpeech: "demonstrativo + classificador",
-                compoundLogicPt: "那 (aquele/aquela) + 个 (classificador).",
-                characters: chars("那个", ["nà", "gè"], [1, 1], ["aquele", "classificador"]),
-              },
-              {
-                id: "s406-t14",
-                hanzi: "人",
-                pinyin: "rén",
-                hskLevel: 1,
-                meaningPt: "pessoa",
-                partOfSpeech: "substantivo",
-                compoundLogicPt: "A pessoa que estava na neve.",
-                characters: chars("人", ["rén"], [1], ["pessoa"]),
-              },
-              { id: "s406-t15", hanzi: "。", isPunctuation: true },
-            ],
-          },
-          {
-            id: "s407",
-            zhText: "下午，他走到了山上，看见了那位老老师。",
-            pinyinText: "Xiàwǔ, tā zǒudào le shān shàng, kànjiàn le nà wèi lǎo lǎoshī.",
-            translationPt: "À tarde, ele chegou caminhando ao topo da montanha e avistou aquele velho mestre.",
-            literalPt: "Tarde, ele caminhou-chegando [concluído] montanha em-cima, viu [concluído] aquele [respeitoso] velho mestre.",
-            grammarNotes: [
-              {
-                pattern: "Verbo + 到 (dào) = complemento de chegada",
-                explanationPt: "走到 (zǒudào) une a ação 走 (caminhar) com o resultado 到 (alcançar o destino).",
-                hskLevel: 1,
-              },
-            ],
-            startMs: 0,
-            endMs: 0,
-            tokens: [
-              {
-                id: "s407-t1",
-                hanzi: "下午",
-                pinyin: "xiàwǔ",
-                hskLevel: 1,
-                meaningPt: "à tarde",
-                partOfSpeech: "substantivo de tempo",
-                compoundLogicPt: "下 (após) + 午 (meio-dia).",
-                characters: chars("下午", ["xià", "wǔ"], [1, 1], ["após", "meio-dia"]),
-              },
-              { id: "s407-t2", hanzi: "，", isPunctuation: true },
-              {
-                id: "s407-t3",
-                hanzi: "他",
-                pinyin: "tā",
-                hskLevel: 1,
-                meaningPt: "ele",
-                partOfSpeech: "pronome",
-                compoundLogicPt: "Li Yun.",
-                characters: chars("他", ["tā"], [1], ["ele"]),
-              },
-              {
-                id: "s407-t4",
-                hanzi: "走到了",
-                pinyin: "zǒudào le",
-                hskLevel: 1,
-                meaningPt: "chegou caminhando a",
-                partOfSpeech: "verbo + resultado + partícula",
-                compoundLogicPt: "走 (caminhar) + 到 (chegar) + 了 (concluído).",
-                characters: chars("走到了", ["zǒu", "dào", "le"], [1, 1, 1], ["caminhar", "chegar", "concluído"]),
-              },
-              {
-                id: "s407-t5",
-                hanzi: "山上",
-                pinyin: "shān shàng",
-                hskLevel: 1,
-                meaningPt: "o alto da montanha",
-                partOfSpeech: "locução espacial",
-                compoundLogicPt: "山 (montanha) + 上 (topo).",
-                characters: chars("山上", ["shān", "shàng"], [1, 1], ["montanha", "topo"]),
-              },
-              { id: "s407-t6", hanzi: "，", isPunctuation: true },
-              {
-                id: "s407-t7",
-                hanzi: "看见了",
-                pinyin: "kànjiàn le",
-                hskLevel: 1,
-                meaningPt: "avistou / viu",
-                partOfSpeech: "verbo + partícula",
-                compoundLogicPt: "看 (olhar) + 见 (ver) + 了 (concluído).",
-                characters: chars("看见了", ["kàn", "jiàn", "le"], [1, 1, 1], ["olhar", "ver", "concluído"]),
-              },
-              {
-                id: "s407-t8",
-                hanzi: "那位",
-                pinyin: "nà wèi",
-                hskLevel: 1,
-                meaningPt: "aquele (respeitoso)",
-                partOfSpeech: "demonstrativo + classificador",
-                compoundLogicPt: "那 (aquele) + 位 (classificador de respeito).",
-                characters: chars("那位", ["nà", "wèi"], [1, 1], ["aquele", "classificador respeitoso"]),
-              },
-              {
-                id: "s407-t9",
-                hanzi: "老",
-                pinyin: "lǎo",
-                hskLevel: 1,
-                meaningPt: "velho",
-                partOfSpeech: "adjetivo",
-                compoundLogicPt: "Ancião.",
-                characters: chars("老", ["lǎo"], [1], ["velho"]),
-              },
-              {
-                id: "s407-t10",
-                hanzi: "老师",
-                pinyin: "lǎoshī",
-                hskLevel: 1,
-                meaningPt: "mestre",
-                partOfSpeech: "substantivo",
-                compoundLogicPt: "Mestre sábio da montanha.",
-                characters: chars("老师", ["lǎo", "shī"], [1, 1], ["experiente", "mestre"]),
-              },
-              { id: "s407-t11", hanzi: "。", isPunctuation: true },
-            ],
-          },
-        ],
-      },
-      {
-        id: "ch-2",
-        chapterNumber: 2,
-        titleZh: "第二章：石头与心",
-        titlePinyin: "Dì èr zhāng: Shítou yǔ xīn",
-        titlePt: "Capítulo 2: A Pedra na Neve e o Coração do Guerreiro",
-        summaryPt:
-          "Diante de uma xícara de chá quente no topo da montanha, o velho mestre aponta para uma pedra na neve e faz Li Yun enxergar o verdadeiro significado da coragem.",
-        estimatedMinutes: 3,
-        audioUrl: "/audio/stories/a-montanha-vazia-e-a-coragem/ch-2.mp3",
-        audioDurationMs: 0,
-        voiceName: "zh-CN-YunxiNeural",
-        hskDistribution: [],
-        keyVocabulary: [
-          { hanzi: "石头", pinyin: "shítou", meaningPt: "pedra / rocha", hskLevel: 2 },
-          { hanzi: "勇敢", pinyin: "yǒnggǎn", meaningPt: "corajoso / valente", hskLevel: 3 },
-          { hanzi: "一直", pinyin: "yìzhí", meaningPt: "sempre / o tempo todo", hskLevel: 2 },
-          { hanzi: "往前走", pinyin: "wǎng qián zǒu", meaningPt: "seguir em frente / avançar", hskLevel: 2 },
-          { hanzi: "明白", pinyin: "míngbai", meaningPt: "compreender / entender claramente", hskLevel: 2 },
-        ],
-        sentences: [
-          {
-            id: "s408",
-            zhText: "老师给他一杯热茶，问他：“你来山上找什么？”",
-            pinyinText: "Lǎoshī gěi tā yì bēi rè chá, wèn tā: “Nǐ lái shān shàng zhǎo shénme?”",
-            translationPt: "O mestre deu a ele uma xícara de chá quente e perguntou-lhe: “O que você veio procurar na montanha?”",
-            literalPt: "Mestre deu ele uma xícara quente chá, perguntou ele: “Você veio montanha em-cima procurar o-quê?”",
-            grammarNotes: [
-              {
-                pattern: "Objeto duplo com 给 (gěi) e 问 (wèn)",
-                explanationPt: "Verbos como 给 ('dar') e 问 ('perguntar') aceitam a pessoa logo depois: 给他一杯热茶 ('deu a ele uma xícara de chá quente').",
-                hskLevel: 1,
-              },
-            ],
-            startMs: 0,
-            endMs: 0,
-            tokens: [
-              {
-                id: "s408-t1",
-                hanzi: "老师",
-                pinyin: "lǎoshī",
-                hskLevel: 1,
-                meaningPt: "o mestre",
-                partOfSpeech: "substantivo",
-                compoundLogicPt: "老 (sábio) + 师 (mestre).",
-                characters: chars("老师", ["lǎo", "shī"], [1, 1], ["sábio", "mestre"]),
-              },
-              {
-                id: "s408-t2",
-                hanzi: "给",
-                pinyin: "gěi",
-                hskLevel: 1,
-                meaningPt: "deu / entregou a",
-                partOfSpeech: "verbo",
-                compoundLogicPt: "Entregar algo a alguém.",
-                characters: chars("给", ["gěi"], [1], ["dar"]),
-              },
-              {
-                id: "s408-t3",
-                hanzi: "他",
-                pinyin: "tā",
-                hskLevel: 1,
-                meaningPt: "ele (a ele)",
-                partOfSpeech: "pronome",
-                compoundLogicPt: "Objeto indireto (Li Yun).",
-                characters: chars("他", ["tā"], [1], ["ele"]),
-              },
-              {
-                id: "s408-t4",
-                hanzi: "一杯",
-                pinyin: "yì bēi",
-                hskLevel: 1,
-                meaningPt: "uma xícara de",
-                partOfSpeech: "numeral + classificador",
-                compoundLogicPt: "一 (uma) + 杯 (xícara/copo).",
-                characters: chars("一杯", ["yī", "bēi"], [1, 1], ["uma", "xícara"]),
-              },
-              {
-                id: "s408-t5",
-                hanzi: "热茶",
-                pinyin: "rè chá",
-                hskLevel: 1,
-                meaningPt: "chá quente",
-                partOfSpeech: "adjetivo + substantivo",
-                compoundLogicPt: "热 (quente, com radical de fogo 灬 na base) + 茶 (chá).",
-                characters: chars("热茶", ["rè", "chá"], [1, 1], ["quente", "chá"]),
-              },
-              { id: "s408-t6", hanzi: "，", isPunctuation: true },
-              {
-                id: "s408-t7",
-                hanzi: "问",
-                pinyin: "wèn",
-                hskLevel: 1,
-                meaningPt: "perguntou a",
-                partOfSpeech: "verbo",
-                compoundLogicPt: "Uma boca (口) dentro de uma porta (门) pedindo informação → perguntar.",
-                characters: chars("问", ["wèn"], [1], ["perguntar"]),
-              },
-              {
-                id: "s408-t8",
-                hanzi: "他",
-                pinyin: "tā",
-                hskLevel: 1,
-                meaningPt: "ele",
-                partOfSpeech: "pronome",
-                compoundLogicPt: "Li Yun.",
-                characters: chars("他", ["tā"], [1], ["ele"]),
-              },
-              { id: "s408-t9", hanzi: "：", isPunctuation: true },
-              { id: "s408-t10", hanzi: "“", isPunctuation: true },
-              {
-                id: "s408-t11",
-                hanzi: "你",
-                pinyin: "nǐ",
-                hskLevel: 1,
-                meaningPt: "você",
-                partOfSpeech: "pronome",
-                compoundLogicPt: "Pronome de 2ª pessoa.",
-                characters: chars("你", ["nǐ"], [1], ["você"]),
-              },
-              {
-                id: "s408-t12",
-                hanzi: "来",
-                pinyin: "lái",
-                hskLevel: 1,
-                meaningPt: "veio a",
-                partOfSpeech: "verbo",
-                compoundLogicPt: "Vir até onde o mestre está.",
-                characters: chars("来", ["lái"], [1], ["vir"]),
-              },
-              {
-                id: "s408-t13",
-                hanzi: "山上",
-                pinyin: "shān shàng",
-                hskLevel: 1,
-                meaningPt: "a montanha",
-                partOfSpeech: "locução espacial",
-                compoundLogicPt: "山 (montanha) + 上 (alto).",
-                characters: chars("山上", ["shān", "shàng"], [1, 1], ["montanha", "em cima"]),
-              },
-              {
-                id: "s408-t14",
-                hanzi: "找",
-                pinyin: "zhǎo",
-                hskLevel: 1,
-                meaningPt: "procurar / buscar",
-                partOfSpeech: "verbo",
-                compoundLogicPt: "Buscar.",
-                characters: chars("找", ["zhǎo"], [1], ["procurar"]),
-              },
-              {
-                id: "s408-t15",
-                hanzi: "什么",
-                pinyin: "shénme",
-                hskLevel: 1,
-                meaningPt: "o quê",
-                partOfSpeech: "pronome interrogativo",
-                compoundLogicPt: "Permanece na posição do objeto após o verbo 找 (procurar o quê?).",
-                characters: chars("什么", ["shén", "me"], [1, 1], ["quê", "partícula"]),
-              },
-              { id: "s408-t16", hanzi: "？", isPunctuation: true },
-              { id: "s408-t17", hanzi: "”", isPunctuation: true },
-            ],
-          },
-          {
-            id: "s409",
-            zhText: "李云说：“我心里总是很害怕，我想找勇气。”",
-            pinyinText: "Lǐ Yún shuō: “Wǒ xīnlǐ zǒngshì hěn hàipà, wǒ xiǎng zhǎo yǒngqì.”",
-            translationPt: "Li Yun disse: “Meu coração está sempre com muito medo; eu quero encontrar a coragem.”",
-            literalPt: "Li Yun disse: “Eu coração-dentro sempre muito temo, eu quero procurar coragem.”",
-            grammarNotes: [
-              {
-                pattern: "Advérbio 总是 (zǒngshì) = 'sempre'",
-                explanationPt: "Posiciona-se sempre antes do verbo ou adjetivo predicativo: 心里总是很害怕 ('no coração sempre sinto muito medo').",
-                hskLevel: 2,
-              },
-            ],
-            startMs: 0,
-            endMs: 0,
-            tokens: [
-              {
-                id: "s409-t1",
-                hanzi: "李云",
-                pinyin: "Lǐ Yún",
-                hskLevel: 1,
-                meaningPt: "Li Yun",
-                partOfSpeech: "nome próprio",
-                compoundLogicPt: "O jovem espadachim.",
-                characters: chars("李云", ["Lǐ", "Yún"], [1, 1], ["Li", "nuvem"]),
-              },
-              {
-                id: "s409-t2",
-                hanzi: "说",
-                pinyin: "shuō",
-                hskLevel: 1,
-                meaningPt: "disse",
-                partOfSpeech: "verbo",
-                compoundLogicPt: "Radical de fala (讠) + 兑.",
-                characters: chars("说", ["shuō"], [1], ["dizer"]),
-              },
-              { id: "s409-t3", hanzi: "：", isPunctuation: true },
-              { id: "s409-t4", hanzi: "“", isPunctuation: true },
-              {
-                id: "s409-t5",
-                hanzi: "我",
-                pinyin: "wǒ",
-                hskLevel: 1,
-                meaningPt: "eu / meu",
-                partOfSpeech: "pronome",
-                compoundLogicPt: "1ª pessoa.",
-                characters: chars("我", ["wǒ"], [1], ["eu"]),
-              },
-              {
-                id: "s409-t6",
-                hanzi: "心里",
-                pinyin: "xīnlǐ",
-                hskLevel: 1,
-                meaningPt: "no coração",
-                partOfSpeech: "locução espacial",
-                compoundLogicPt: "心 (coração) + 里 (dentro).",
-                characters: chars("心里", ["xīn", "lǐ"], [1, 1], ["coração", "dentro"]),
-              },
-              {
-                id: "s409-t7",
-                hanzi: "总是",
-                pinyin: "zǒngshì",
-                hskLevel: 2,
-                meaningPt: "sempre",
-                partOfSpeech: "advérbio de frequência",
-                compoundLogicPt: "总 (em todas as ocasiões/sempre) + 是 (é).",
-                characters: chars("总是", ["zǒng", "shì"], [2, 1], ["sempre/total", "ser"]),
-              },
-              {
-                id: "s409-t8",
-                hanzi: "很",
-                pinyin: "hěn",
-                hskLevel: 1,
-                meaningPt: "muito",
-                partOfSpeech: "advérbio",
-                compoundLogicPt: "Intensificador.",
-                characters: chars("很", ["hěn"], [1], ["muito"]),
-              },
-              {
-                id: "s409-t9",
-                hanzi: "害怕",
-                pinyin: "hàipà",
-                hskLevel: 2,
-                meaningPt: "com medo / temeroso",
-                partOfSpeech: "verbo/adjetivo",
-                compoundLogicPt: "害 (recear) + 怕 (temer).",
-                characters: chars("害怕", ["hài", "pà"], [2, 2], ["recear", "temer"]),
-              },
-              { id: "s409-t10", hanzi: "，", isPunctuation: true },
-              {
-                id: "s409-t11",
-                hanzi: "我",
-                pinyin: "wǒ",
-                hskLevel: 1,
-                meaningPt: "eu",
-                partOfSpeech: "pronome",
-                compoundLogicPt: "1ª pessoa.",
-                characters: chars("我", ["wǒ"], [1], ["eu"]),
-              },
-              {
-                id: "s409-t12",
-                hanzi: "想",
-                pinyin: "xiǎng",
-                hskLevel: 1,
-                meaningPt: "quero",
-                partOfSpeech: "verbo modal",
-                compoundLogicPt: "Desejo.",
-                characters: chars("想", ["xiǎng"], [1], ["querer"]),
-              },
-              {
-                id: "s409-t13",
-                hanzi: "找",
-                pinyin: "zhǎo",
-                hskLevel: 1,
-                meaningPt: "encontrar / buscar",
-                partOfSpeech: "verbo",
-                compoundLogicPt: "Procurar.",
-                characters: chars("找", ["zhǎo"], [1], ["procurar"]),
-              },
-              {
-                id: "s409-t14",
-                hanzi: "勇气",
-                pinyin: "yǒngqì",
-                hskLevel: 3,
-                meaningPt: "a coragem",
-                partOfSpeech: "substantivo",
-                compoundLogicPt: "勇 (bravura) + 气 (espírito/sopro vital).",
-                characters: chars("勇气", ["yǒng", "qì"], [3, 1], ["bravura", "energia vital"]),
-              },
-              { id: "s409-t15", hanzi: "。", isPunctuation: true },
-              { id: "s409-t16", hanzi: "”", isPunctuation: true },
-            ],
-          },
-          {
-            id: "s410",
-            zhText: "老师看着雪里的一块石头，问：“那块石头怕冷吗？”",
-            pinyinText: "Lǎoshī kànzhe xuě lǐ de yí kuài shítou, wèn: “Nà kuài shítou pà lěng ma?”",
-            translationPt: "O mestre, olhando para uma pedra na neve, perguntou: “Aquela pedra tem medo do frio?”",
-            literalPt: "Mestre olhando neve dentro de um [pedaço] pedra, perguntou: “Aquele [pedaço] pedra teme frio [pergunta]?”",
-            grammarNotes: [
-              {
-                pattern: "Classificador 块 (kuài) para pedras e blocos",
-                explanationPt: "Para pedras, pedaços sólidos ou fatias, usa-se o classificador 块 (kuài): 一块石头 (uma pedra).",
-                hskLevel: 1,
-              },
-              {
-                pattern: "Aspecto durativo 着 (zhe)",
-                explanationPt: "Em 看着 (kànzhe, 'olhando para'), a partícula 着 indica que o olhar do mestre permaneceu fixo na pedra enquanto ele perguntava.",
-                hskLevel: 2,
-              },
-            ],
-            startMs: 0,
-            endMs: 0,
-            tokens: [
-              {
-                id: "s410-t1",
-                hanzi: "老师",
-                pinyin: "lǎoshī",
-                hskLevel: 1,
-                meaningPt: "o mestre",
-                partOfSpeech: "substantivo",
-                compoundLogicPt: "老 + 师.",
-                characters: chars("老师", ["lǎo", "shī"], [1, 1], ["velho", "mestre"]),
-              },
-              {
-                id: "s410-t2",
-                hanzi: "看着",
-                pinyin: "kànzhe",
-                hskLevel: 2,
-                meaningPt: "olhando para",
-                partOfSpeech: "verbo + partícula durativa",
-                compoundLogicPt: "看 (olhar) + 着 (zhe, partícula de estado contínuo). Atenção ao polifônico 着 (zhe aqui, e não zháo).",
-                characters: chars("看着", ["kàn", "zhe"], [1, 2], ["olhar", "estado contínuo"]),
-              },
-              {
-                id: "s410-t3",
-                hanzi: "雪里",
-                pinyin: "xuě lǐ",
-                hskLevel: 2,
-                meaningPt: "na neve",
-                partOfSpeech: "locução espacial",
-                compoundLogicPt: "雪 (neve) + 里 (dentro).",
-                characters: chars("雪里", ["xuě", "lǐ"], [2, 1], ["neve", "dentro"]),
-              },
-              {
-                id: "s410-t4",
-                hanzi: "的",
-                pinyin: "de",
-                hskLevel: 1,
-                meaningPt: "de (que estava em)",
-                partOfSpeech: "partícula",
-                compoundLogicPt: "Conecta a localização 雪里 ao substantivo 石头.",
-                characters: chars("的", ["de"], [1], ["de"]),
-              },
-              {
-                id: "s410-t5",
-                hanzi: "一块",
-                pinyin: "yí kuài",
-                hskLevel: 1,
-                meaningPt: "uma (pedra/bloco)",
-                partOfSpeech: "numeral + classificador",
-                compoundLogicPt: "一 (uma) + 块 (classificador para pedras e blocos sólidos, com radical de terra 土).",
-                characters: chars("一块", ["yī", "kuài"], [1, 1], ["um", "bloco/pedaço"]),
-              },
-              {
-                id: "s410-t6",
-                hanzi: "石头",
-                pinyin: "shítou",
-                hskLevel: 2,
-                meaningPt: "pedra",
-                partOfSpeech: "substantivo",
-                compoundLogicPt: "Formada por 石 (rocha sob o penhasco) + 头 (sufixo nominal neutro para objetos sólidos).",
-                characters: chars("石头", ["shí", "tou"], [2, 1], ["pedra", "sufixo nominal"]),
-              },
-              { id: "s410-t7", hanzi: "，", isPunctuation: true },
-              {
-                id: "s410-t8",
-                hanzi: "问",
-                pinyin: "wèn",
-                hskLevel: 1,
-                meaningPt: "perguntou",
-                partOfSpeech: "verbo",
-                compoundLogicPt: "Perguntar.",
-                characters: chars("问", ["wèn"], [1], ["perguntar"]),
-              },
-              { id: "s410-t9", hanzi: "：", isPunctuation: true },
-              { id: "s410-t10", hanzi: "“", isPunctuation: true },
-              {
-                id: "s410-t11",
-                hanzi: "那块",
-                pinyin: "nà kuài",
-                hskLevel: 1,
-                meaningPt: "aquela (pedra)",
-                partOfSpeech: "demonstrativo + classificador",
-                compoundLogicPt: "那 (aquela) + 块 (classificador de pedra).",
-                characters: chars("那块", ["nà", "kuài"], [1, 1], ["aquela", "pedaço/pedra"]),
-              },
-              {
-                id: "s410-t12",
-                hanzi: "石头",
-                pinyin: "shítou",
-                hskLevel: 2,
-                meaningPt: "pedra",
-                partOfSpeech: "substantivo",
-                compoundLogicPt: "石 (rocha) + 头.",
-                characters: chars("石头", ["shí", "tou"], [2, 1], ["rocha", "sufixo"]),
-              },
-              {
-                id: "s410-t13",
-                hanzi: "怕",
-                pinyin: "pà",
-                hskLevel: 2,
-                meaningPt: "tem medo de / teme",
-                partOfSpeech: "verbo",
-                compoundLogicPt: "Sentir medo.",
-                characters: chars("怕", ["pà"], [2], ["temer"]),
-              },
-              {
-                id: "s410-t14",
-                hanzi: "冷",
-                pinyin: "lěng",
-                hskLevel: 1,
-                meaningPt: "frio",
-                partOfSpeech: "substantivo/adjetivo",
-                compoundLogicPt: "Frio.",
-                characters: chars("冷", ["lěng"], [1], ["frio"]),
-              },
-              {
-                id: "s410-t15",
-                hanzi: "吗",
-                pinyin: "ma",
-                hskLevel: 1,
-                meaningPt: "? (partícula interrogativa)",
-                partOfSpeech: "partícula modal",
-                compoundLogicPt: "Transforma a afirmação em pergunta de sim/não.",
-                characters: chars("吗", ["ma"], [1], ["pergunta"]),
-              },
-              { id: "s410-t16", hanzi: "？", isPunctuation: true },
-              { id: "s410-t17", hanzi: "”", isPunctuation: true },
-            ],
-          },
-          {
-            id: "s411",
-            zhText: "李云说：“石头没有心，它不怕冷，但它也不是真有勇气。”",
-            pinyinText: "Lǐ Yún shuō: “Shítou méiyǒu xīn, tā bú pà lěng, dàn tā yě bú shì zhēn yǒu yǒngqì.”",
-            translationPt: "Li Yun respondeu: “A pedra não tem coração; ela não tem medo do frio, mas ela também não tem coragem de verdade.”",
-            literalPt: "Li Yun disse: “Pedra não-tem coração, ela não teme frio, mas ela também não é realmente ter coragem.”",
-            grammarNotes: [
-              {
-                pattern: "Tone Sandhi de 不 (bù → bú antes de 4º tom)",
-                explanationPt: "Tanto em 不怕 (bú pà) quanto em 不是 (bú shì), o caractere 不 é seguido por uma sílaba de 4º tom, por isso sua pronúncia sobe para o 2º tom (bú).",
-                hskLevel: 1,
-              },
-            ],
-            startMs: 0,
-            endMs: 0,
-            tokens: [
-              {
-                id: "s411-t1",
-                hanzi: "李云",
-                pinyin: "Lǐ Yún",
-                hskLevel: 1,
-                meaningPt: "Li Yun",
-                partOfSpeech: "nome próprio",
-                compoundLogicPt: "O jovem guerreiro.",
-                characters: chars("李云", ["Lǐ", "Yún"], [1, 1], ["Li", "nuvem"]),
-              },
-              {
-                id: "s411-t2",
-                hanzi: "说",
-                pinyin: "shuō",
-                hskLevel: 1,
-                meaningPt: "disse",
-                partOfSpeech: "verbo",
-                compoundLogicPt: "Falar.",
-                characters: chars("说", ["shuō"], [1], ["dizer"]),
-              },
-              { id: "s411-t3", hanzi: "：", isPunctuation: true },
-              { id: "s411-t4", hanzi: "“", isPunctuation: true },
-              {
-                id: "s411-t5",
-                hanzi: "石头",
-                pinyin: "shítou",
-                hskLevel: 2,
-                meaningPt: "a pedra",
-                partOfSpeech: "substantivo",
-                compoundLogicPt: "石 (rocha) + 头.",
-                characters: chars("石头", ["shí", "tou"], [2, 1], ["pedra", "sufixo"]),
-              },
-              {
-                id: "s411-t6",
-                hanzi: "没有",
-                pinyin: "méiyǒu",
-                hskLevel: 1,
-                meaningPt: "não tem",
-                partOfSpeech: "negação + verbo",
-                compoundLogicPt: "Ausência de posse.",
-                characters: chars("没有", ["méi", "yǒu"], [1, 1], ["não", "ter"]),
-              },
-              {
-                id: "s411-t7",
-                hanzi: "心",
-                pinyin: "xīn",
-                hskLevel: 1,
-                meaningPt: "coração / alma",
-                partOfSpeech: "substantivo",
-                compoundLogicPt: "Órgão dos sentimentos e da consciência moral.",
-                characters: chars("心", ["xīn"], [1], ["coração"]),
-              },
-              { id: "s411-t8", hanzi: "，", isPunctuation: true },
-              {
-                id: "s411-t9",
-                hanzi: "它",
-                pinyin: "tā",
-                hskLevel: 1,
-                meaningPt: "ela (a pedra)",
-                partOfSpeech: "pronome neutro",
-                compoundLogicPt: "Pronome de 3ª pessoa para objetos e seres inanimados.",
-                characters: chars("它", ["tā"], [1], ["ele/ela (coisa)"]),
-              },
-              {
-                id: "s411-t10",
-                hanzi: "不怕",
-                pinyin: "bú pà",
-                hskLevel: 2,
-                meaningPt: "não teme / não sente medo",
-                partOfSpeech: "negação + verbo",
-                compoundLogicPt: "不 (lido bú antes de 4º tom) + 怕 (temer).",
-                characters: chars("不怕", ["bù", "pà"], [1, 2], ["não", "temer"]),
-              },
-              {
-                id: "s411-t11",
-                hanzi: "冷",
-                pinyin: "lěng",
-                hskLevel: 1,
-                meaningPt: "o frio",
-                partOfSpeech: "adjetivo/substantivo",
-                compoundLogicPt: "Temperatura gelada.",
-                characters: chars("冷", ["lěng"], [1], ["frio"]),
-              },
-              { id: "s411-t12", hanzi: "，", isPunctuation: true },
-              {
-                id: "s411-t13",
-                hanzi: "但",
-                pinyin: "dàn",
-                hskLevel: 1,
-                meaningPt: "mas",
-                partOfSpeech: "conjunção",
-                compoundLogicPt: "Forma concisa de 但是.",
-                characters: chars("但", ["dàn"], [1], ["mas"]),
-              },
-              {
-                id: "s411-t14",
-                hanzi: "它",
-                pinyin: "tā",
-                hskLevel: 1,
-                meaningPt: "ela (a pedra)",
-                partOfSpeech: "pronome",
-                compoundLogicPt: "Refere-se à pedra.",
-                characters: chars("它", ["tā"], [1], ["ela (pedra)"]),
-              },
-              {
-                id: "s411-t15",
-                hanzi: "也",
-                pinyin: "yě",
-                hskLevel: 1,
-                meaningPt: "também",
-                partOfSpeech: "advérbio",
-                compoundLogicPt: "Advérbio de inclusão.",
-                characters: chars("也", ["yě"], [1], ["também"]),
-              },
-              {
-                id: "s411-t16",
-                hanzi: "不是",
-                pinyin: "bú shì",
-                hskLevel: 1,
-                meaningPt: "não é",
-                partOfSpeech: "negação + verbo",
-                compoundLogicPt: "不 (bú) + 是 (shì): não sentir nada não constitui virtude.",
-                characters: chars("不是", ["bù", "shì"], [1, 1], ["não", "ser"]),
-              },
-              {
-                id: "s411-t17",
-                hanzi: "真",
-                pinyin: "zhēn",
-                hskLevel: 1,
-                meaningPt: "de verdade / realmente",
-                partOfSpeech: "advérbio",
-                compoundLogicPt: "Autêntico / verdadeiro.",
-                characters: chars("真", ["zhēn"], [1], ["realmente"]),
-              },
-              {
-                id: "s411-t18",
-                hanzi: "有",
-                pinyin: "yǒu",
-                hskLevel: 1,
-                meaningPt: "ter",
-                partOfSpeech: "verbo",
-                compoundLogicPt: "Possuir.",
-                characters: chars("有", ["yǒu"], [1], ["ter"]),
-              },
-              {
-                id: "s411-t19",
-                hanzi: "勇气",
-                pinyin: "yǒngqì",
-                hskLevel: 3,
-                meaningPt: "coragem",
-                partOfSpeech: "substantivo",
-                compoundLogicPt: "勇 (bravura) + 气 (espírito vital).",
-                characters: chars("勇气", ["yǒng", "qì"], [3, 1], ["bravura", "espírito"]),
-              },
-              { id: "s411-t20", hanzi: "。", isPunctuation: true },
-              { id: "s411-t21", hanzi: "”", isPunctuation: true },
-            ],
-          },
-          {
-            id: "s412",
-            zhText: "老师笑着对他说：“对，不怕不是勇气；你心里怕，还往前走，这才是它。”",
-            pinyinText: "Lǎoshī xiàozhe duì tā shuō: “Duì, bú pà bú shì yǒngqì; nǐ xīnlǐ pà, hái wǎng qián zǒu, zhè cái shì tā.”",
-            translationPt:
-              "O mestre disse a ele sorrindo: “Exato! Não sentir medo não é coragem; você sentir medo no coração e, ainda assim, caminhar para a frente — isso, sim, é que é ela.”",
-            literalPt:
-              "Mestre sorrindo para ele disse: “Certo, não temer não é coragem; você coração-dentro temer, ainda rumo frente caminhar, isto apenas-então é ela.”",
-            grammarNotes: [
-              {
-                pattern: "这才是... (zhè cái shì...) = 'Isso, sim, é que é...'",
-                explanationPt: "O advérbio 才 (cái) antes de 是 enfatiza que somente sob aquela condição ('sentir medo e ainda avançar') é que a verdadeira coragem existe.",
-                hskLevel: 2,
-              },
-            ],
-            startMs: 0,
-            endMs: 0,
-            tokens: [
-              {
-                id: "s412-t1",
-                hanzi: "老师",
-                pinyin: "lǎoshī",
-                hskLevel: 1,
-                meaningPt: "o mestre",
-                partOfSpeech: "substantivo",
-                compoundLogicPt: "O sábio da montanha.",
-                characters: chars("老师", ["lǎo", "shī"], [1, 1], ["velho", "mestre"]),
-              },
-              {
-                id: "s412-t2",
-                hanzi: "笑着",
-                pinyin: "xiàozhe",
-                hskLevel: 2,
-                meaningPt: "sorrindo",
-                partOfSpeech: "verbo + partícula durativa",
-                compoundLogicPt: "笑 (sorrir) + 着 (zhe, enquanto sorria).",
-                characters: chars("笑着", ["xiào", "zhe"], [2, 2], ["sorrir", "contínuo"]),
-              },
-              {
-                id: "s412-t2b",
-                hanzi: "对",
-                pinyin: "duì",
-                hskLevel: 1,
-                meaningPt: "para",
-                partOfSpeech: "preposição",
-                compoundLogicPt: "对他说 = disse para ele.",
-                characters: chars("对", ["duì"], [1], ["para"]),
-              },
-              {
-                id: "s412-t2c",
-                hanzi: "他",
-                pinyin: "tā",
-                hskLevel: 1,
-                meaningPt: "ele",
-                partOfSpeech: "pronome",
-                compoundLogicPt: "Li Yun.",
-                characters: chars("他", ["tā"], [1], ["ele"]),
-              },
-              {
-                id: "s412-t3",
-                hanzi: "说",
-                pinyin: "shuō",
-                hskLevel: 1,
-                meaningPt: "disse",
-                partOfSpeech: "verbo",
-                compoundLogicPt: "笑着对他说 = disse a ele sorrindo.",
-                characters: chars("说", ["shuō"], [1], ["dizer"]),
-              },
-              { id: "s412-t4", hanzi: "：", isPunctuation: true },
-              { id: "s412-t5", hanzi: "“", isPunctuation: true },
-              {
-                id: "s412-t6",
-                hanzi: "对",
-                pinyin: "duì",
-                hskLevel: 1,
-                meaningPt: "exato / correto",
-                partOfSpeech: "adjetivo",
-                compoundLogicPt: "Confirmação do mestre.",
-                characters: chars("对", ["duì"], [1], ["correto"]),
-              },
-              { id: "s412-t7", hanzi: "，", isPunctuation: true },
-              {
-                id: "s412-t8",
-                hanzi: "不怕",
-                pinyin: "bú pà",
-                hskLevel: 2,
-                meaningPt: "não ter medo",
-                partOfSpeech: "locução verbal",
-                compoundLogicPt: "不 (bú) + 怕 (temer).",
-                characters: chars("不怕", ["bù", "pà"], [1, 2], ["não", "temer"]),
-              },
-              {
-                id: "s412-t9",
-                hanzi: "不是",
-                pinyin: "bú shì",
-                hskLevel: 1,
-                meaningPt: "não é",
-                partOfSpeech: "negação + verbo",
-                compoundLogicPt: "不 (bú) + 是 (ser).",
-                characters: chars("不是", ["bù", "shì"], [1, 1], ["não", "ser"]),
-              },
-              {
-                id: "s412-t10",
-                hanzi: "勇气",
-                pinyin: "yǒngqì",
-                hskLevel: 3,
-                meaningPt: "coragem",
-                partOfSpeech: "substantivo",
-                compoundLogicPt: "勇 (bravura) + 气 (sopro vital).",
-                characters: chars("勇气", ["yǒng", "qì"], [3, 1], ["bravura", "energia"]),
-              },
-              { id: "s412-t11", hanzi: "；", isPunctuation: true },
-              {
-                id: "s412-t11b",
-                hanzi: "你",
-                pinyin: "nǐ",
-                hskLevel: 1,
-                meaningPt: "você",
-                partOfSpeech: "pronome",
-                compoundLogicPt: "Você (Li Yun).",
-                characters: chars("你", ["nǐ"], [1], ["você"]),
-              },
-              {
-                id: "s412-t12",
-                hanzi: "心里",
-                pinyin: "xīnlǐ",
-                hskLevel: 1,
-                meaningPt: "no coração",
-                partOfSpeech: "locução espacial",
-                compoundLogicPt: "心 (coração) + 里 (dentro).",
-                characters: chars("心里", ["xīn", "lǐ"], [1, 1], ["coração", "dentro"]),
-              },
-              {
-                id: "s412-t13",
-                hanzi: "怕",
-                pinyin: "pà",
-                hskLevel: 2,
-                meaningPt: "sentir medo",
-                partOfSpeech: "verbo",
-                compoundLogicPt: "Temer.",
-                characters: chars("怕", ["pà"], [2], ["temer"]),
-              },
-              { id: "s412-t14", hanzi: "，", isPunctuation: true },
-              {
-                id: "s412-t16",
-                hanzi: "还",
-                pinyin: "hái",
-                hskLevel: 1,
-                meaningPt: "e ainda assim",
-                partOfSpeech: "advérbio",
-                compoundLogicPt: "Mesmo com medo, continuar.",
-                characters: chars("还", ["hái"], [1], ["ainda"]),
-              },
-              {
-                id: "s412-t17",
-                hanzi: "往前",
-                pinyin: "wǎng qián",
-                hskLevel: 2,
-                meaningPt: "para a frente / adiante",
-                partOfSpeech: "preposição + direção",
-                compoundLogicPt: "往 (em direção a) + 前 (frente).",
-                characters: chars("往前", ["wǎng", "qián"], [2, 1], ["em direção a", "frente"]),
-              },
-              {
-                id: "s412-t18",
-                hanzi: "走",
-                pinyin: "zǒu",
-                hskLevel: 1,
-                meaningPt: "caminhar / avançar",
-                partOfSpeech: "verbo",
-                compoundLogicPt: "往前走 = dar o passo para a frente.",
-                characters: chars("走", ["zǒu"], [1], ["caminhar"]),
-              },
-              { id: "s412-t19", hanzi: "，", isPunctuation: true },
-              {
-                id: "s412-t20",
-                hanzi: "这",
-                pinyin: "zhè",
-                hskLevel: 1,
-                meaningPt: "isso",
-                partOfSpeech: "pronome demonstrativo",
-                compoundLogicPt: "Retoma o ato de avançar mesmo sentindo medo.",
-                characters: chars("这", ["zhè"], [1], ["isto"]),
-              },
-              {
-                id: "s412-t21",
-                hanzi: "才是",
-                pinyin: "cái shì",
-                hskLevel: 2,
-                meaningPt: "é que é de verdade",
-                partOfSpeech: "advérbio + verbo",
-                compoundLogicPt: "才 (somente então / de fato) + 是 (é).",
-                characters: chars("才是", ["cái", "shì"], [2, 1], ["apenas então", "ser"]),
-              },
-              {
-                id: "s412-t22",
-                hanzi: "它",
-                pinyin: "tā",
-                hskLevel: 1,
-                meaningPt: "ela (a coragem)",
-                partOfSpeech: "pronome",
-                compoundLogicPt: "Retoma 勇气 (a coragem).",
-                characters: chars("它", ["tā"], [1], ["ela"]),
-              },
-              { id: "s412-t23", hanzi: "。", isPunctuation: true },
-              { id: "s412-t24", hanzi: "”", isPunctuation: true },
-            ],
-          },
-          {
-            id: "s413",
-            zhText: "李云明白了：走上雪山、救那个人，勇气一直都在他心里。",
-            pinyinText: "Lǐ Yún míngbai le: zǒushàng xuěshān, jiù nà gè rén, yǒngqì yìzhí dōu zài tā xīnlǐ.",
-            translationPt:
-              "Li Yun compreendeu tudo: ao subir a montanha de neve e ao salvar aquela pessoa, a coragem sempre esteve dentro do seu próprio coração.",
-            literalPt:
-              "Li Yun compreendeu [mudança]: caminhar-subindo neve-montanha, salvar aquela pessoa, coragem sempre toda estava ele coração-dentro.",
-            grammarNotes: [
-              {
-                pattern: "一直都在 (yìzhí dōu zài) + Local = 'sempre esteve em...'",
-                explanationPt: "Une 一直 ('o tempo todo / desde o início') + 都 ('sempre') + 在 ('estar em'), revelando que a virtude nunca esteve fora dele.",
-                hskLevel: 2,
-              },
-            ],
-            startMs: 0,
-            endMs: 0,
-            tokens: [
-              {
-                id: "s413-t1",
-                hanzi: "李云",
-                pinyin: "Lǐ Yún",
-                hskLevel: 1,
-                meaningPt: "Li Yun",
-                partOfSpeech: "nome próprio",
-                compoundLogicPt: "O guerreiro iluminado pela revelação.",
-                characters: chars("李云", ["Lǐ", "Yún"], [1, 1], ["Li", "nuvem"]),
-              },
-              {
-                id: "s413-t2",
-                hanzi: "明白",
-                pinyin: "míngbai",
-                hskLevel: 2,
-                meaningPt: "compreendeu / entendeu claramente",
-                partOfSpeech: "verbo",
-                compoundLogicPt: "Formada por 明 (claro: sol 日 + lua 月) + 白 (branco/nítido) → tornar-se totalmente claro na mente.",
-                characters: chars("明白", ["míng", "bai"], [1, 1], ["claro/luminoso", "branco/nítido"]),
-              },
-              {
-                id: "s413-t3",
-                hanzi: "了",
-                pinyin: "le",
-                hskLevel: 1,
-                meaningPt: "(despertar / mudança de consciência)",
-                partOfSpeech: "partícula aspectual",
-                compoundLogicPt: "Marca o instante da epifania: ele antes não via e agora compreendeu.",
-                characters: chars("了", ["le"], [1], ["concluído"]),
-              },
-              { id: "s413-t4", hanzi: "：", isPunctuation: true },
-              {
-                id: "s413-t5",
-                hanzi: "走上",
-                pinyin: "zǒushàng",
-                hskLevel: 1,
-                meaningPt: "ao subir caminhando",
-                partOfSpeech: "verbo + direção",
-                compoundLogicPt: "走 (andar) + 上 (subir).",
-                characters: chars("走上", ["zǒu", "shàng"], [1, 1], ["caminhar", "subir"]),
-              },
-              {
-                id: "s413-t6",
-                hanzi: "雪山",
-                pinyin: "xuěshān",
-                hskLevel: 2,
-                meaningPt: "a montanha de neve",
-                partOfSpeech: "substantivo",
-                compoundLogicPt: "雪 (neve) + 山 (montanha).",
-                characters: chars("雪山", ["xuě", "shān"], [2, 1], ["neve", "montanha"]),
-              },
-              { id: "s413-t7", hanzi: "、", isPunctuation: true },
-              {
-                id: "s413-t8",
-                hanzi: "救",
-                pinyin: "jiù",
-                hskLevel: 2,
-                meaningPt: "salvar / socorrer",
-                partOfSpeech: "verbo",
-                compoundLogicPt: "Ato de proteger o viajante na neve.",
-                characters: chars("救", ["jiù"], [2], ["salvar"]),
-              },
-              {
-                id: "s413-t9",
-                hanzi: "那个",
-                pinyin: "nà gè",
-                hskLevel: 1,
-                meaningPt: "aquela",
-                partOfSpeech: "demonstrativo + classificador",
-                compoundLogicPt: "那 + 个.",
-                characters: chars("那个", ["nà", "gè"], [1, 1], ["aquela", "classificador"]),
-              },
-              {
-                id: "s413-t10",
-                hanzi: "人",
-                pinyin: "rén",
-                hskLevel: 1,
-                meaningPt: "pessoa",
-                partOfSpeech: "substantivo",
-                compoundLogicPt: "Pessoa.",
-                characters: chars("人", ["rén"], [1], ["pessoa"]),
-              },
-              { id: "s413-t11", hanzi: "，", isPunctuation: true },
-              {
-                id: "s413-t12",
-                hanzi: "勇气",
-                pinyin: "yǒngqì",
-                hskLevel: 3,
-                meaningPt: "a coragem",
-                partOfSpeech: "substantivo",
-                compoundLogicPt: "勇 (bravura) + 气 (sopro vital).",
-                characters: chars("勇气", ["yǒng", "qì"], [3, 1], ["bravura", "espírito"]),
-              },
-              {
-                id: "s413-t13",
-                hanzi: "一直",
-                pinyin: "yìzhí",
-                hskLevel: 2,
-                meaningPt: "o tempo todo / sempre",
-                partOfSpeech: "advérbio",
-                compoundLogicPt: "一 (um traço contínuo) + 直 (reto/sem interrupção) → desde o começo, continuamente.",
-                characters: chars("一直", ["yī", "zhí"], [1, 2], ["um/contínuo", "reto/direto"]),
-              },
-              {
-                id: "s413-t14",
-                hanzi: "都",
-                pinyin: "dōu",
-                hskLevel: 1,
-                meaningPt: "sempre (ênfase)",
-                partOfSpeech: "advérbio",
-                compoundLogicPt: "Reforça 一直.",
-                characters: chars("都", ["dōu"], [1], ["sempre"]),
-              },
-              {
-                id: "s413-t15",
-                hanzi: "在",
-                pinyin: "zài",
-                hskLevel: 1,
-                meaningPt: "esteve em",
-                partOfSpeech: "verbo locativo",
-                compoundLogicPt: "Estar presente em um lugar.",
-                characters: chars("在", ["zài"], [1], ["estar em"]),
-              },
-              {
-                id: "s413-t16",
-                hanzi: "他",
-                pinyin: "tā",
-                hskLevel: 1,
-                meaningPt: "seu (dele)",
-                partOfSpeech: "pronome",
-                compoundLogicPt: "Antes de partes do corpo/alma (他心里), o 的 pode ser omitido por proximidade íntima.",
-                characters: chars("他", ["tā"], [1], ["ele/seu"]),
-              },
-              {
-                id: "s413-t17",
-                hanzi: "心里",
-                pinyin: "xīnlǐ",
-                hskLevel: 1,
-                meaningPt: "dentro do coração",
-                partOfSpeech: "locução espacial",
-                compoundLogicPt: "心 (coração) + 里 (dentro).",
-                characters: chars("心里", ["xīn", "lǐ"], [1, 1], ["coração", "dentro"]),
-              },
-              { id: "s413-t18", hanzi: "。", isPunctuation: true },
-            ],
-          },
-        ],
-      },
+    "estimatedMinutes": 18,
+    "tags": [
+      "Filosofia",
+      "Jornada do Herói",
+      "10 Capítulos",
+      "Coragem",
+      "Guerreiro",
+      "HSK 2"
     ],
+    "chapters": [
+      {
+        "id": "ch-1",
+        "chapterNumber": 1,
+        "titleZh": "第一章：害怕的剑客",
+        "titlePinyin": "Dì yī zhāng: Hàipà de jiànkè",
+        "titlePt": "Capítulo 1: O Espadachim que Sentia Medo",
+        "summaryPt": "No Mundo Comum, Li Yun é admirado na cidade por sua espada, mas guarda um segredo doloroso: toda vez que precisa enfrentar o perigo, suas mãos tremem e seu coração sente medo.",
+        "estimatedMinutes": 2,
+        "audioUrl": "/audio/stories/a-montanha-vazia-e-a-coragem/ch-1.mp3",
+        "audioDurationMs": 0,
+        "voiceName": "zh-CN-YunxiNeural",
+        "hskDistribution": [],
+        "keyVocabulary": [
+          {
+            "hanzi": "年轻人",
+            "pinyin": "niánqīngrén",
+            "meaningPt": "jovem",
+            "hskLevel": 2
+          },
+          {
+            "hanzi": "一把剑",
+            "pinyin": "yì bǎ jiàn",
+            "meaningPt": "uma espada",
+            "hskLevel": 3
+          },
+          {
+            "hanzi": "害怕",
+            "pinyin": "hàipà",
+            "meaningPt": "ter medo / temer",
+            "hskLevel": 2
+          },
+          {
+            "hanzi": "勇气",
+            "pinyin": "yǒngqì",
+            "meaningPt": "coragem / bravura",
+            "hskLevel": 3
+          },
+          {
+            "hanzi": "心里",
+            "pinyin": "xīnlǐ",
+            "meaningPt": "no coração / por dentro",
+            "hskLevel": 1
+          }
+        ],
+        "sentences": [
+          {
+            "id": "s401",
+            "zhText": "李云是一个年轻人，手里有一把剑。",
+            "pinyinText": "Lǐ Yún shì yí gè niánqīngrén, shǒulǐ yǒu yì bǎ jiàn.",
+            "translationPt": "Li Yun era um jovem que tinha uma espada na mão.",
+            "literalPt": "Li Yun é um jovem-pessoa, mão-dentro tem uma [classificador de empunhadura] espada.",
+            "grammarNotes": [
+              {
+                "pattern": "Local + 有 (yǒu) + Objeto",
+                "explanationPt": "Para dizer o que alguém traz nas mãos, o Mandarim inicia pelo local: 手里有一把剑 ('na mão há uma espada').",
+                "hskLevel": 1
+              },
+              {
+                "pattern": "Classificador 把 (bǎ) para objetos com cabo",
+                "explanationPt": "Espadas, facas, guarda-chuvas e cadeiras que seguramos com a mão usam o classificador 把 (bǎ): 一把剑 (uma espada).",
+                "hskLevel": 2
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s401-t1",
+                "hanzi": "李云",
+                "pinyin": "Lǐ Yún",
+                "hskLevel": 1,
+                "meaningPt": "Li Yun (protagonista)",
+                "partOfSpeech": "nome próprio",
+                "compoundLogicPt": "Sobrenome 李 (ameixeira) + 云 (nuvem).",
+                characters: chars("李云", [
+                    "Lǐ",
+                    "Yún"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "Li",
+                    "nuvem"
+                  ])
+              },
+              {
+                "id": "s401-t2",
+                "hanzi": "是",
+                "pinyin": "shì",
+                "hskLevel": 1,
+                "meaningPt": "era / é",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Verbo de ligação 'ser'.",
+                characters: chars("是", [
+                    "shì"
+                  ], [
+                    1
+                  ], [
+                    "ser"
+                  ])
+              },
+              {
+                "id": "s401-t3",
+                "hanzi": "一个",
+                "pinyin": "yí gè",
+                "hskLevel": 1,
+                "meaningPt": "um",
+                "partOfSpeech": "numeral + classificador",
+                "compoundLogicPt": "一 (yí antes de 4º tom) + 个.",
+                characters: chars("一个", [
+                    "yī",
+                    "gè"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "um",
+                    "classificador"
+                  ])
+              },
+              {
+                "id": "s401-t4",
+                "hanzi": "年轻人",
+                "pinyin": "niánqīngrén",
+                "hskLevel": 2,
+                "meaningPt": "jovem",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "年 (idade) + 轻 (leve/pouca) + 人 (pessoa) → pessoa de pouca idade.",
+                characters: chars("年轻人", [
+                    "nián",
+                    "qīng",
+                    "rén"
+                  ], [
+                    1,
+                    2,
+                    1
+                  ], [
+                    "idade",
+                    "jovem",
+                    "pessoa"
+                  ])
+              },
+              {
+                "id": "s401-t5",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s401-t6",
+                "hanzi": "手里",
+                "pinyin": "shǒulǐ",
+                "hskLevel": 1,
+                "meaningPt": "na mão",
+                "partOfSpeech": "locução espacial",
+                "compoundLogicPt": "手 (mão) + 里 (dentro/na palma).",
+                characters: chars("手里", [
+                    "shǒu",
+                    "lǐ"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "mão",
+                    "dentro"
+                  ])
+              },
+              {
+                "id": "s401-t7",
+                "hanzi": "有",
+                "pinyin": "yǒu",
+                "hskLevel": 1,
+                "meaningPt": "tinha / há",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Verbo ter/haver.",
+                characters: chars("有", [
+                    "yǒu"
+                  ], [
+                    1
+                  ], [
+                    "ter"
+                  ])
+              },
+              {
+                "id": "s401-t8",
+                "hanzi": "一把",
+                "pinyin": "yì bǎ",
+                "hskLevel": 2,
+                "meaningPt": "uma (espada)",
+                "partOfSpeech": "numeral + classificador",
+                "compoundLogicPt": "一 (uma) + 把 (classificador para objetos com cabo).",
+                characters: chars("一把", [
+                    "yī",
+                    "bǎ"
+                  ], [
+                    1,
+                    2
+                  ], [
+                    "um",
+                    "classificador"
+                  ])
+              },
+              {
+                "id": "s401-t9",
+                "hanzi": "剑",
+                "pinyin": "jiàn",
+                "hskLevel": 3,
+                "meaningPt": "espada",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Espada tradicional de dois gumes (radical de lâmina 刂).",
+                characters: chars("剑", [
+                    "jiàn"
+                  ], [
+                    3
+                  ], [
+                    "espada"
+                  ])
+              },
+              {
+                "id": "s401-t10",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s402",
+            "zhText": "大家都说他很强，但是他心里有一件事。",
+            "pinyinText": "Dàjiā dōu shuō tā hěn qiáng, dànshì tā xīnlǐ yǒu yí jiàn shì.",
+            "translationPt": "Todos diziam que ele era muito forte, mas ele guardava um assunto no coração.",
+            "literalPt": "Todos sempre diziam ele muito forte, mas ele coração-dentro tinha um [classificador] assunto.",
+            "grammarNotes": [
+              {
+                "pattern": "Classificador 件 (jiàn) para assuntos e acontecimentos",
+                "explanationPt": "Para assuntos, preocupações ou negócios (事 shì), usa-se obrigatoriamente o classificador 件 (jiàn): 一件事 ('um assunto / um segredo no coração').",
+                "hskLevel": 1
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s402-t1",
+                "hanzi": "大家",
+                "pinyin": "dàjiā",
+                "hskLevel": 1,
+                "meaningPt": "todos / todo mundo",
+                "partOfSpeech": "pronome coletivo",
+                "compoundLogicPt": "大 (grande) + 家 (família) → todas as pessoas.",
+                characters: chars("大家", [
+                    "dà",
+                    "jiā"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "grande",
+                    "família/todos"
+                  ])
+              },
+              {
+                "id": "s402-t2",
+                "hanzi": "都",
+                "pinyin": "dōu",
+                "hskLevel": 1,
+                "meaningPt": "todos",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Advérbio de totalidade.",
+                characters: chars("都", [
+                    "dōu"
+                  ], [
+                    1
+                  ], [
+                    "todos"
+                  ])
+              },
+              {
+                "id": "s402-t3",
+                "hanzi": "说",
+                "pinyin": "shuō",
+                "hskLevel": 1,
+                "meaningPt": "diziam",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Dizer / falar.",
+                characters: chars("说", [
+                    "shuō"
+                  ], [
+                    1
+                  ], [
+                    "dizer"
+                  ])
+              },
+              {
+                "id": "s402-t4",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ele",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Ele (Li Yun).",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s402-t5",
+                "hanzi": "很",
+                "pinyin": "hěn",
+                "hskLevel": 1,
+                "meaningPt": "muito",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Ligador de adjetivo.",
+                characters: chars("很", [
+                    "hěn"
+                  ], [
+                    1
+                  ], [
+                    "muito"
+                  ])
+              },
+              {
+                "id": "s402-t6",
+                "hanzi": "强",
+                "pinyin": "qiáng",
+                "hskLevel": 2,
+                "meaningPt": "forte / habilidoso",
+                "partOfSpeech": "adjetivo",
+                "compoundLogicPt": "Traz o radical de arco (弓) à esquerda → força de um arqueiro e guerreiro.",
+                characters: chars("强", [
+                    "qiáng"
+                  ], [
+                    2
+                  ], [
+                    "forte"
+                  ])
+              },
+              {
+                "id": "s402-t7",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s402-t8",
+                "hanzi": "但是",
+                "pinyin": "dànshì",
+                "hskLevel": 2,
+                "meaningPt": "mas / porém",
+                "partOfSpeech": "conjunção",
+                "compoundLogicPt": "但 + 是 → oposição.",
+                characters: chars("但是", [
+                    "dàn",
+                    "shì"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "porém",
+                    "ser"
+                  ])
+              },
+              {
+                "id": "s402-t9",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ele",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Ele.",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s402-t9b",
+                "hanzi": "心里",
+                "pinyin": "xīnlǐ",
+                "hskLevel": 1,
+                "meaningPt": "no coração",
+                "partOfSpeech": "locução espacial",
+                "compoundLogicPt": "心 (coração) + 里 (dentro).",
+                characters: chars("心里", [
+                    "xīn",
+                    "lǐ"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "coração",
+                    "dentro"
+                  ])
+              },
+              {
+                "id": "s402-t10",
+                "hanzi": "有",
+                "pinyin": "yǒu",
+                "hskLevel": 1,
+                "meaningPt": "tinha / guardava",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Possuir.",
+                characters: chars("有", [
+                    "yǒu"
+                  ], [
+                    1
+                  ], [
+                    "ter"
+                  ])
+              },
+              {
+                "id": "s402-t11",
+                "hanzi": "一件",
+                "pinyin": "yí jiàn",
+                "hskLevel": 1,
+                "meaningPt": "um (assunto)",
+                "partOfSpeech": "numeral + classificador",
+                "compoundLogicPt": "一 + 件 (classificador específico para assuntos e roupas).",
+                characters: chars("一件", [
+                    "yī",
+                    "jiàn"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "um",
+                    "classificador"
+                  ])
+              },
+              {
+                "id": "s402-t12",
+                "hanzi": "事",
+                "pinyin": "shì",
+                "hskLevel": 1,
+                "meaningPt": "assunto / segredo",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Assunto que o preocupava em segredo.",
+                characters: chars("事", [
+                    "shì"
+                  ], [
+                    1
+                  ], [
+                    "assunto"
+                  ])
+              },
+              {
+                "id": "s402-t13",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s403",
+            "zhText": "每次看到剑，他心里都很害怕。",
+            "pinyinText": "Měi cì kàndào jiàn, tā xīnlǐ dōu hěn hàipà.",
+            "translationPt": "Toda vez que olhava para a espada, ele sentia muito medo no coração.",
+            "literalPt": "Cada vez via-alcançando espada, ele coração-dentro sempre muito temia.",
+            "grammarNotes": [
+              {
+                "pattern": "每次 (měi cì) ... 都 (dōu) ... = 'Toda vez que...'",
+                "explanationPt": "Estrutura clássica para ações que se repetem sempre da mesma forma.",
+                "hskLevel": 2
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s403-t1",
+                "hanzi": "每次",
+                "pinyin": "měi cì",
+                "hskLevel": 2,
+                "meaningPt": "toda vez",
+                "partOfSpeech": "pronome + classificador",
+                "compoundLogicPt": "每 (cada) + 次 (vez).",
+                characters: chars("每次", [
+                    "měi",
+                    "cì"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "cada",
+                    "vez"
+                  ])
+              },
+              {
+                "id": "s403-t2",
+                "hanzi": "看到",
+                "pinyin": "kàndào",
+                "hskLevel": 1,
+                "meaningPt": "via / olhava para",
+                "partOfSpeech": "verbo + resultado",
+                "compoundLogicPt": "看 (olhar) + 到 (alcançar com a vista).",
+                characters: chars("看到", [
+                    "kàn",
+                    "dào"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "olhar",
+                    "alcançar"
+                  ])
+              },
+              {
+                "id": "s403-t3",
+                "hanzi": "剑",
+                "pinyin": "jiàn",
+                "hskLevel": 2,
+                "meaningPt": "a espada",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Espada.",
+                characters: chars("剑", [
+                    "jiàn"
+                  ], [
+                    2
+                  ], [
+                    "espada"
+                  ])
+              },
+              {
+                "id": "s403-t4",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s403-t5",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ele",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s403-t6",
+                "hanzi": "心里",
+                "pinyin": "xīnlǐ",
+                "hskLevel": 1,
+                "meaningPt": "no coração",
+                "partOfSpeech": "locução espacial",
+                "compoundLogicPt": "心 (coração) + 里 (dentro).",
+                characters: chars("心里", [
+                    "xīn",
+                    "lǐ"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "coração",
+                    "dentro"
+                  ])
+              },
+              {
+                "id": "s403-t7",
+                "hanzi": "都",
+                "pinyin": "dōu",
+                "hskLevel": 1,
+                "meaningPt": "sempre",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Fecha a estrutura 每次...都.",
+                characters: chars("都", [
+                    "dōu"
+                  ], [
+                    1
+                  ], [
+                    "sempre"
+                  ])
+              },
+              {
+                "id": "s403-t8",
+                "hanzi": "很",
+                "pinyin": "hěn",
+                "hskLevel": 1,
+                "meaningPt": "muito",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Intensificador.",
+                characters: chars("很", [
+                    "hěn"
+                  ], [
+                    1
+                  ], [
+                    "muito"
+                  ])
+              },
+              {
+                "id": "s403-t9",
+                "hanzi": "害怕",
+                "pinyin": "hàipà",
+                "hskLevel": 2,
+                "meaningPt": "sentia medo",
+                "partOfSpeech": "verbo/adjetivo",
+                "compoundLogicPt": "害 (recear) + 怕 (temer).",
+                characters: chars("害怕", [
+                    "hài",
+                    "pà"
+                  ], [
+                    2,
+                    2
+                  ], [
+                    "recear",
+                    "temer"
+                  ])
+              },
+              {
+                "id": "s403-t10",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s404",
+            "zhText": "他常常想：“我为什么没有勇气呢？”",
+            "pinyinText": "Tā chángcháng xiǎng: “Wǒ wèishénme méiyǒu yǒngqì ne?”",
+            "translationPt": "Ele frequentemente pensava: “Por que será que eu não tenho coragem?”",
+            "literalPt": "Ele frequentemente pensava: “Eu por-quê não-tenho coragem [partícula reflexiva]?”",
+            "grammarNotes": [
+              {
+                "pattern": "为什么 (wèishénme) ... 呢 (ne)?",
+                "explanationPt": "A partícula 呢 no final de uma pergunta com 为什么 suaviza o tom, expressando uma dúvida íntima que o personagem faz a si mesmo.",
+                "hskLevel": 1
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s404-t1",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ele",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Ele.",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s404-t2",
+                "hanzi": "常常",
+                "pinyin": "chángcháng",
+                "hskLevel": 1,
+                "meaningPt": "frequentemente / sempre",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Repetição de 常 (constante) indicando hábito frequente.",
+                characters: chars("常常", [
+                    "cháng",
+                    "cháng"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "constante",
+                    "constante"
+                  ])
+              },
+              {
+                "id": "s404-t3",
+                "hanzi": "想",
+                "pinyin": "xiǎng",
+                "hskLevel": 1,
+                "meaningPt": "pensava",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Pensar / refletir no coração (心).",
+                characters: chars("想", [
+                    "xiǎng"
+                  ], [
+                    1
+                  ], [
+                    "pensar"
+                  ])
+              },
+              {
+                "id": "s404-t4",
+                "hanzi": "：",
+                "isPunctuation": true
+              },
+              {
+                "id": "s404-t5",
+                "hanzi": "“",
+                "isPunctuation": true
+              },
+              {
+                "id": "s404-t6",
+                "hanzi": "我",
+                "pinyin": "wǒ",
+                "hskLevel": 1,
+                "meaningPt": "eu",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Eu.",
+                characters: chars("我", [
+                    "wǒ"
+                  ], [
+                    1
+                  ], [
+                    "eu"
+                  ])
+              },
+              {
+                "id": "s404-t7",
+                "hanzi": "为什么",
+                "pinyin": "wèishénme",
+                "hskLevel": 1,
+                "meaningPt": "por que",
+                "partOfSpeech": "advérbio interrogativo",
+                "compoundLogicPt": "为 (por) + 什么 (quê) → por qual razão.",
+                characters: chars("为什么", [
+                    "wèi",
+                    "shén",
+                    "me"
+                  ], [
+                    2,
+                    1,
+                    1
+                  ], [
+                    "por",
+                    "quê",
+                    "partícula"
+                  ])
+              },
+              {
+                "id": "s404-t8",
+                "hanzi": "没有",
+                "pinyin": "méiyǒu",
+                "hskLevel": 1,
+                "meaningPt": "não tenho",
+                "partOfSpeech": "negação + verbo",
+                "compoundLogicPt": "Negação obrigatória do verbo 有.",
+                characters: chars("没有", [
+                    "méi",
+                    "yǒu"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "não",
+                    "ter"
+                  ])
+              },
+              {
+                "id": "s404-t9",
+                "hanzi": "勇气",
+                "pinyin": "yǒngqì",
+                "hskLevel": 3,
+                "meaningPt": "coragem",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "勇 (bravura) + 气 (sopro vital).",
+                characters: chars("勇气", [
+                    "yǒng",
+                    "qì"
+                  ], [
+                    3,
+                    1
+                  ], [
+                    "bravura",
+                    "energia"
+                  ])
+              },
+              {
+                "id": "s404-t10",
+                "hanzi": "呢",
+                "pinyin": "ne",
+                "hskLevel": 1,
+                "meaningPt": "será? (partícula reflexiva)",
+                "partOfSpeech": "partícula modal",
+                "compoundLogicPt": "Dá tom de questionamento interior.",
+                characters: chars("呢", [
+                    "ne"
+                  ], [
+                    1
+                  ], [
+                    "partícula"
+                  ])
+              },
+              {
+                "id": "s404-t11",
+                "hanzi": "？",
+                "isPunctuation": true
+              },
+              {
+                "id": "s404-t12",
+                "hanzi": "”",
+                "isPunctuation": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ch-2",
+        "chapterNumber": 2,
+        "titleZh": "第二章：茶馆里的老人",
+        "titlePinyin": "Dì èr zhāng: Cháguǎn lǐ de lǎorén",
+        "titlePt": "Capítulo 2: O Ancião na Casa de Chá",
+        "summaryPt": "Em uma casa de chá da cidade, Li Yun ouve falar de um sábio mestre que vive no topo da distante Montanha Vazia e conhece o segredo da verdadeira coragem.",
+        "estimatedMinutes": 2,
+        "audioUrl": "/audio/stories/a-montanha-vazia-e-a-coragem/ch-2.mp3",
+        "audioDurationMs": 0,
+        "voiceName": "zh-CN-YunxiNeural",
+        "hskDistribution": [],
+        "keyVocabulary": [
+          {
+            "hanzi": "茶馆",
+            "pinyin": "cháguǎn",
+            "meaningPt": "casa de chá",
+            "hskLevel": 1
+          },
+          {
+            "hanzi": "老人",
+            "pinyin": "lǎorén",
+            "meaningPt": "ancião / idoso",
+            "hskLevel": 1
+          },
+          {
+            "hanzi": "空山",
+            "pinyin": "kōng shān",
+            "meaningPt": "Montanha Vazia",
+            "hskLevel": 2
+          },
+          {
+            "hanzi": "很远",
+            "pinyin": "hěn yuǎn",
+            "meaningPt": "muito longe",
+            "hskLevel": 2
+          },
+          {
+            "hanzi": "真正",
+            "pinyin": "zhēnzhèng",
+            "meaningPt": "verdadeiro / autêntico",
+            "hskLevel": 2
+          }
+        ],
+        "sentences": [
+          {
+            "id": "s405",
+            "zhText": "一天上午，李云去了一家安静的茶馆。",
+            "pinyinText": "Yì tiān shàngwǔ, Lǐ Yún qù le yì jiā ānjìng de cháguǎn.",
+            "translationPt": "Certa manhã, Li Yun foi a uma tranquila casa de chá.",
+            "literalPt": "Um dia manhã, Li Yun foi [concluído] uma [classificador] tranquila de casa-de-chá.",
+            "grammarNotes": [
+              {
+                "pattern": "Classificador 家 (jiā) + Adjetivo + 的 + Substantivo",
+                "explanationPt": "O classificador vem antes do adjetivo: 一家安静的茶馆 ('uma tranquila casa de chá').",
+                "hskLevel": 1
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s405-t1",
+                "hanzi": "一天",
+                "pinyin": "yì tiān",
+                "hskLevel": 1,
+                "meaningPt": "certo dia / um dia",
+                "partOfSpeech": "expressão de tempo",
+                "compoundLogicPt": "一 (um) + 天 (dia).",
+                characters: chars("一天", [
+                    "yī",
+                    "tiān"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "um",
+                    "dia"
+                  ])
+              },
+              {
+                "id": "s405-t2",
+                "hanzi": "上午",
+                "pinyin": "shàngwǔ",
+                "hskLevel": 1,
+                "meaningPt": "de manhã",
+                "partOfSpeech": "substantivo de tempo",
+                "compoundLogicPt": "上 (antes) + 午 (meio-dia).",
+                characters: chars("上午", [
+                    "shàng",
+                    "wǔ"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "antes",
+                    "meio-dia"
+                  ])
+              },
+              {
+                "id": "s405-t3",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s405-t4",
+                "hanzi": "李云",
+                "pinyin": "Lǐ Yún",
+                "hskLevel": 1,
+                "meaningPt": "Li Yun",
+                "partOfSpeech": "nome próprio",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("李云", [
+                    "Lǐ",
+                    "Yún"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "Li",
+                    "nuvem"
+                  ])
+              },
+              {
+                "id": "s405-t5",
+                "hanzi": "去了",
+                "pinyin": "qù le",
+                "hskLevel": 1,
+                "meaningPt": "foi a",
+                "partOfSpeech": "verbo + partícula",
+                "compoundLogicPt": "去 (ir) + 了 (ação concluída).",
+                characters: chars("去了", [
+                    "qù",
+                    "le"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "ir",
+                    "concluído"
+                  ])
+              },
+              {
+                "id": "s405-t6",
+                "hanzi": "一家",
+                "pinyin": "yì jiā",
+                "hskLevel": 1,
+                "meaningPt": "uma (casa comercial)",
+                "partOfSpeech": "numeral + classificador",
+                "compoundLogicPt": "Classificador 家 para estabelecimentos.",
+                characters: chars("一家", [
+                    "yī",
+                    "jiā"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "um",
+                    "estabelecimento"
+                  ])
+              },
+              {
+                "id": "s405-t7",
+                "hanzi": "安静",
+                "pinyin": "ānjìng",
+                "hskLevel": 2,
+                "meaningPt": "tranquila / silenciosa",
+                "partOfSpeech": "adjetivo",
+                "compoundLogicPt": "安 (paz) + 静 (silêncio).",
+                characters: chars("安静", [
+                    "ān",
+                    "jìng"
+                  ], [
+                    2,
+                    2
+                  ], [
+                    "paz",
+                    "silêncio"
+                  ])
+              },
+              {
+                "id": "s405-t8",
+                "hanzi": "的",
+                "pinyin": "de",
+                "hskLevel": 1,
+                "meaningPt": "de (qualificador)",
+                "partOfSpeech": "partícula",
+                "compoundLogicPt": "Conecta 安静 a 茶馆.",
+                characters: chars("的", [
+                    "de"
+                  ], [
+                    1
+                  ], [
+                    "de"
+                  ])
+              },
+              {
+                "id": "s405-t9",
+                "hanzi": "茶馆",
+                "pinyin": "cháguǎn",
+                "hskLevel": 1,
+                "meaningPt": "casa de chá",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "茶 (chá) + 馆 (pavilhão).",
+                characters: chars("茶馆", [
+                    "chá",
+                    "guǎn"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "chá",
+                    "estabelecimento"
+                  ])
+              },
+              {
+                "id": "s405-t10",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s406",
+            "zhText": "茶馆里坐着一位老人，正在喝热茶。",
+            "pinyinText": "Cháguǎn lǐ zuòzhe yí wèi lǎorén, zhèngzài hē rè chá.",
+            "translationPt": "Dentro da casa de chá estava sentado um ancião, que tomava chá quente naquele momento.",
+            "literalPt": "Casa-de-chá dentro sentava-permanecendo um [respeitoso] velho-pessoa, justamente-estava bebendo quente chá.",
+            "grammarNotes": [
+              {
+                "pattern": "Local + Verbo + 着 (zhe) + Pessoa",
+                "explanationPt": "Frase existencial clássica do Mandarim para descrever cenas: 茶馆里坐着一位老人 ('na casa de chá estava sentado um ancião').",
+                "hskLevel": 2
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s406-t1",
+                "hanzi": "茶馆",
+                "pinyin": "cháguǎn",
+                "hskLevel": 1,
+                "meaningPt": "casa de chá",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "茶 + 馆.",
+                characters: chars("茶馆", [
+                    "chá",
+                    "guǎn"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "chá",
+                    "pavilhão"
+                  ])
+              },
+              {
+                "id": "s406-t2",
+                "hanzi": "里",
+                "pinyin": "lǐ",
+                "hskLevel": 1,
+                "meaningPt": "dentro",
+                "partOfSpeech": "posposição",
+                "compoundLogicPt": "Interior do local.",
+                characters: chars("里", [
+                    "lǐ"
+                  ], [
+                    1
+                  ], [
+                    "dentro"
+                  ])
+              },
+              {
+                "id": "s406-t3",
+                "hanzi": "坐着",
+                "pinyin": "zuòzhe",
+                "hskLevel": 2,
+                "meaningPt": "estava sentado",
+                "partOfSpeech": "verbo + partícula durativa",
+                "compoundLogicPt": "坐 (sentar) + 着 (zhe, mantendo a postura sentada).",
+                characters: chars("坐着", [
+                    "zuò",
+                    "zhe"
+                  ], [
+                    1,
+                    2
+                  ], [
+                    "sentar",
+                    "estado contínuo"
+                  ])
+              },
+              {
+                "id": "s406-t4",
+                "hanzi": "一位",
+                "pinyin": "yí wèi",
+                "hskLevel": 1,
+                "meaningPt": "um (respeitoso)",
+                "partOfSpeech": "numeral + classificador",
+                "compoundLogicPt": "Classificador respeitoso 位.",
+                characters: chars("一位", [
+                    "yī",
+                    "wèi"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "um",
+                    "classificador"
+                  ])
+              },
+              {
+                "id": "s406-t5",
+                "hanzi": "老人",
+                "pinyin": "lǎorén",
+                "hskLevel": 1,
+                "meaningPt": "ancião / idoso",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "老 (velho) + 人 (pessoa).",
+                characters: chars("老人", [
+                    "lǎo",
+                    "rén"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "idoso",
+                    "pessoa"
+                  ])
+              },
+              {
+                "id": "s406-t6",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s406-t7",
+                "hanzi": "正在",
+                "pinyin": "zhèngzài",
+                "hskLevel": 2,
+                "meaningPt": "estava justamente",
+                "partOfSpeech": "advérbio de aspecto contínuo",
+                "compoundLogicPt": "正 (exatamente) + 在 (em curso).",
+                characters: chars("正在", [
+                    "zhèng",
+                    "zài"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "justamente",
+                    "em curso"
+                  ])
+              },
+              {
+                "id": "s406-t8",
+                "hanzi": "喝",
+                "pinyin": "hē",
+                "hskLevel": 1,
+                "meaningPt": "bebendo",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Beber.",
+                characters: chars("喝", [
+                    "hē"
+                  ], [
+                    1
+                  ], [
+                    "beber"
+                  ])
+              },
+              {
+                "id": "s406-t9",
+                "hanzi": "热茶",
+                "pinyin": "rè chá",
+                "hskLevel": 1,
+                "meaningPt": "chá quente",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "热 (quente) + 茶 (chá).",
+                characters: chars("热茶", [
+                    "rè",
+                    "chá"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "quente",
+                    "chá"
+                  ])
+              },
+              {
+                "id": "s406-t10",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s407",
+            "zhText": "老人对他说：“在很远的空山上，住着一位老老师。”",
+            "pinyinText": "Lǎorén duì tā shuō: “Zài hěn yuǎn de Kōng Shān shàng, zhùzhe yí wèi lǎo lǎoshī.”",
+            "translationPt": "O ancião disse para ele: “No alto da distante Montanha Vazia, mora um velho mestre.”",
+            "literalPt": "Ancião para ele disse: “Em muito distante de Vazia Montanha em-cima, mora-permanecendo um velho mestre.”",
+            "grammarNotes": [
+              {
+                "pattern": "A 对 (duì) B 说 (shuō) = 'A disse para B'",
+                "explanationPt": "Em Mandarim, quem recebe a fala é introduzido pela preposição 对 antes do verbo 说.",
+                "hskLevel": 1
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s407-t1",
+                "hanzi": "老人",
+                "pinyin": "lǎorén",
+                "hskLevel": 1,
+                "meaningPt": "o ancião",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "老 + 人.",
+                characters: chars("老人", [
+                    "lǎo",
+                    "rén"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "velho",
+                    "pessoa"
+                  ])
+              },
+              {
+                "id": "s407-t2",
+                "hanzi": "对",
+                "pinyin": "duì",
+                "hskLevel": 1,
+                "meaningPt": "para",
+                "partOfSpeech": "preposição",
+                "compoundLogicPt": "Indica o destinatário da fala.",
+                characters: chars("对", [
+                    "duì"
+                  ], [
+                    1
+                  ], [
+                    "para"
+                  ])
+              },
+              {
+                "id": "s407-t3",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ele",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s407-t4",
+                "hanzi": "说",
+                "pinyin": "shuō",
+                "hskLevel": 1,
+                "meaningPt": "disse",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Dizer.",
+                characters: chars("说", [
+                    "shuō"
+                  ], [
+                    1
+                  ], [
+                    "dizer"
+                  ])
+              },
+              {
+                "id": "s407-t5",
+                "hanzi": "：",
+                "isPunctuation": true
+              },
+              {
+                "id": "s407-t6",
+                "hanzi": "“",
+                "isPunctuation": true
+              },
+              {
+                "id": "s407-t7",
+                "hanzi": "在",
+                "pinyin": "zài",
+                "hskLevel": 1,
+                "meaningPt": "em / no",
+                "partOfSpeech": "preposição",
+                "compoundLogicPt": "Locativo.",
+                characters: chars("在", [
+                    "zài"
+                  ], [
+                    1
+                  ], [
+                    "em"
+                  ])
+              },
+              {
+                "id": "s407-t8",
+                "hanzi": "很远",
+                "pinyin": "hěn yuǎn",
+                "hskLevel": 2,
+                "meaningPt": "muito distante",
+                "partOfSpeech": "advérbio + adjetivo",
+                "compoundLogicPt": "很 (muito) + 远 (longe/distante).",
+                characters: chars("很远", [
+                    "hěn",
+                    "yuǎn"
+                  ], [
+                    1,
+                    2
+                  ], [
+                    "muito",
+                    "longe"
+                  ])
+              },
+              {
+                "id": "s407-t9",
+                "hanzi": "的",
+                "pinyin": "de",
+                "hskLevel": 1,
+                "meaningPt": "de",
+                "partOfSpeech": "partícula",
+                "compoundLogicPt": "Qualifica 空山.",
+                characters: chars("的", [
+                    "de"
+                  ], [
+                    1
+                  ], [
+                    "de"
+                  ])
+              },
+              {
+                "id": "s407-t10",
+                "hanzi": "空山",
+                "pinyin": "Kōng Shān",
+                "hskLevel": 2,
+                "meaningPt": "Montanha Vazia",
+                "partOfSpeech": "nome próprio / local",
+                "compoundLogicPt": "空 (vazia/silenciosa) + 山 (montanha).",
+                characters: chars("空山", [
+                    "kōng",
+                    "shān"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "vazio",
+                    "montanha"
+                  ])
+              },
+              {
+                "id": "s407-t11",
+                "hanzi": "上",
+                "pinyin": "shàng",
+                "hskLevel": 1,
+                "meaningPt": "no alto de",
+                "partOfSpeech": "posposição",
+                "compoundLogicPt": "Sobre a montanha.",
+                characters: chars("上", [
+                    "shàng"
+                  ], [
+                    1
+                  ], [
+                    "em cima"
+                  ])
+              },
+              {
+                "id": "s407-t12",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s407-t13",
+                "hanzi": "住着",
+                "pinyin": "zhùzhe",
+                "hskLevel": 2,
+                "meaningPt": "mora / vive",
+                "partOfSpeech": "verbo + partícula",
+                "compoundLogicPt": "住 (morar) + 着 (estado contínuo).",
+                characters: chars("住着", [
+                    "zhù",
+                    "zhe"
+                  ], [
+                    1,
+                    2
+                  ], [
+                    "morar",
+                    "contínuo"
+                  ])
+              },
+              {
+                "id": "s407-t14",
+                "hanzi": "一位",
+                "pinyin": "yí wèi",
+                "hskLevel": 1,
+                "meaningPt": "um",
+                "partOfSpeech": "numeral + classificador",
+                "compoundLogicPt": "Classificador respeitoso.",
+                characters: chars("一位", [
+                    "yī",
+                    "wèi"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "um",
+                    "classificador"
+                  ])
+              },
+              {
+                "id": "s407-t15",
+                "hanzi": "老",
+                "pinyin": "lǎo",
+                "hskLevel": 1,
+                "meaningPt": "velho / sábio",
+                "partOfSpeech": "adjetivo",
+                "compoundLogicPt": "Idoso.",
+                characters: chars("老", [
+                    "lǎo"
+                  ], [
+                    1
+                  ], [
+                    "velho"
+                  ])
+              },
+              {
+                "id": "s407-t16",
+                "hanzi": "老师",
+                "pinyin": "lǎoshī",
+                "hskLevel": 1,
+                "meaningPt": "mestre",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "老 + 师.",
+                characters: chars("老师", [
+                    "lǎo",
+                    "shī"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "experiente",
+                    "mestre"
+                  ])
+              },
+              {
+                "id": "s407-t17",
+                "hanzi": "。",
+                "isPunctuation": true
+              },
+              {
+                "id": "s407-t18",
+                "hanzi": "”",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s408",
+            "zhText": "“那位老师知道什么是真正的勇气。”",
+            "pinyinText": "“Nà wèi lǎoshī zhīdào shénme shì zhēnzhèng de yǒngqì.”",
+            "translationPt": "“Aquele mestre sabe o que é a verdadeira coragem.”",
+            "literalPt": "“Aquele [respeitoso] mestre sabe o-quê é verdadeira de coragem.”",
+            "grammarNotes": [
+              {
+                "pattern": "知道 (zhīdào) + Oração Interrogativa Indireta",
+                "explanationPt": "A ordem da pergunta indireta não muda: 知道什么是真正的勇气 ('sabe o que é a verdadeira coragem').",
+                "hskLevel": 2
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s408-t1",
+                "hanzi": "“",
+                "isPunctuation": true
+              },
+              {
+                "id": "s408-t2",
+                "hanzi": "那位",
+                "pinyin": "nà wèi",
+                "hskLevel": 1,
+                "meaningPt": "aquele",
+                "partOfSpeech": "demonstrativo + classificador",
+                "compoundLogicPt": "那 (aquele) + 位.",
+                characters: chars("那位", [
+                    "nà",
+                    "wèi"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "aquele",
+                    "classificador"
+                  ])
+              },
+              {
+                "id": "s408-t3",
+                "hanzi": "老师",
+                "pinyin": "lǎoshī",
+                "hskLevel": 1,
+                "meaningPt": "mestre",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Mestre.",
+                characters: chars("老师", [
+                    "lǎo",
+                    "shī"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "sábio",
+                    "mestre"
+                  ])
+              },
+              {
+                "id": "s408-t4",
+                "hanzi": "知道",
+                "pinyin": "zhīdào",
+                "hskLevel": 1,
+                "meaningPt": "sabe / conhece",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "知 (conhecer: flecha 矢 + boca 口) + 道 (o Caminho/Tao) → conhecer a verdade.",
+                characters: chars("知道", [
+                    "zhī",
+                    "dào"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "saber",
+                    "caminho/verdade"
+                  ])
+              },
+              {
+                "id": "s408-t5",
+                "hanzi": "什么",
+                "pinyin": "shénme",
+                "hskLevel": 1,
+                "meaningPt": "o que",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "O quê.",
+                characters: chars("什么", [
+                    "shén",
+                    "me"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "quê",
+                    "partícula"
+                  ])
+              },
+              {
+                "id": "s408-t6",
+                "hanzi": "是",
+                "pinyin": "shì",
+                "hskLevel": 1,
+                "meaningPt": "é",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Ser.",
+                characters: chars("是", [
+                    "shì"
+                  ], [
+                    1
+                  ], [
+                    "ser"
+                  ])
+              },
+              {
+                "id": "s408-t7",
+                "hanzi": "真正",
+                "pinyin": "zhēnzhèng",
+                "hskLevel": 2,
+                "meaningPt": "verdadeira / autêntica",
+                "partOfSpeech": "adjetivo",
+                "compoundLogicPt": "真 (real/verdadeiro) + 正 (reto/autêntico).",
+                characters: chars("真正", [
+                    "zhēn",
+                    "zhèng"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "verdadeiro",
+                    "correto"
+                  ])
+              },
+              {
+                "id": "s408-t8",
+                "hanzi": "的",
+                "pinyin": "de",
+                "hskLevel": 1,
+                "meaningPt": "de",
+                "partOfSpeech": "partícula",
+                "compoundLogicPt": "Liga 真正 a 勇气.",
+                characters: chars("的", [
+                    "de"
+                  ], [
+                    1
+                  ], [
+                    "de"
+                  ])
+              },
+              {
+                "id": "s408-t9",
+                "hanzi": "勇气",
+                "pinyin": "yǒngqì",
+                "hskLevel": 3,
+                "meaningPt": "coragem",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "勇 (bravura) + 气 (espírito).",
+                characters: chars("勇气", [
+                    "yǒng",
+                    "qì"
+                  ], [
+                    3,
+                    1
+                  ], [
+                    "bravura",
+                    "espírito"
+                  ])
+              },
+              {
+                "id": "s408-t10",
+                "hanzi": "。",
+                "isPunctuation": true
+              },
+              {
+                "id": "s408-t11",
+                "hanzi": "”",
+                "isPunctuation": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ch-3",
+        "chapterNumber": 3,
+        "titleZh": "第三章：走出城门",
+        "titlePinyin": "Dì sān zhāng: Zǒuchū chéngmén",
+        "titlePt": "Capítulo 3: Saindo pelos Portões da Cidade",
+        "summaryPt": "Decidido a encontrar a virtude que julga não possuir, Li Yun prepara água, duas obras antigas e sua espada, deixando os portões da cidade ao amanhecer rumo ao desconhecido.",
+        "estimatedMinutes": 2,
+        "audioUrl": "/audio/stories/a-montanha-vazia-e-a-coragem/ch-3.mp3",
+        "audioDurationMs": 0,
+        "voiceName": "zh-CN-YunxiNeural",
+        "hskDistribution": [],
+        "keyVocabulary": [
+          {
+            "hanzi": "城门",
+            "pinyin": "chéngmén",
+            "meaningPt": "portão da cidade",
+            "hskLevel": 2
+          },
+          {
+            "hanzi": "走出",
+            "pinyin": "zǒuchū",
+            "meaningPt": "sair caminhando",
+            "hskLevel": 1
+          },
+          {
+            "hanzi": "两本书",
+            "pinyin": "liǎng běn shū",
+            "meaningPt": "dois livros",
+            "hskLevel": 1
+          },
+          {
+            "hanzi": "高山",
+            "pinyin": "gāoshān",
+            "meaningPt": "montanha alta",
+            "hskLevel": 1
+          },
+          {
+            "hanzi": "找到",
+            "pinyin": "zhǎodào",
+            "meaningPt": "encontrar",
+            "hskLevel": 1
+          }
+        ],
+        "sentences": [
+          {
+            "id": "s409",
+            "zhText": "第二天早上，李云很早就起床了。",
+            "pinyinText": "Dì èr tiān zǎoshang, Lǐ Yún hěn zǎo jiù qǐchuáng le.",
+            "translationPt": "Na manhã do dia seguinte, Li Yun levantou-se da cama bem cedo.",
+            "literalPt": "Segundo dia manhã, Li Yun muito cedo já levantou-cama [concluído].",
+            "grammarNotes": [
+              {
+                "pattern": "很早就...了 (hěn zǎo jiù ... le) = 'bem cedo já...'",
+                "explanationPt": "O advérbio 就 (jiù) indica que a ação aconteceu mais cedo ou mais rápido do que o habitual.",
+                "hskLevel": 2
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s409-t1",
+                "hanzi": "第二天",
+                "pinyin": "dì èr tiān",
+                "hskLevel": 1,
+                "meaningPt": "no dia seguinte",
+                "partOfSpeech": "expressão de tempo",
+                "compoundLogicPt": "第 (ordinal) + 二 (dois) + 天 (dia) → o segundo dia / dia seguinte.",
+                characters: chars("第二天", [
+                    "dì",
+                    "èr",
+                    "tiān"
+                  ], [
+                    1,
+                    1,
+                    1
+                  ], [
+                    "ordinal",
+                    "dois",
+                    "dia"
+                  ])
+              },
+              {
+                "id": "s409-t2",
+                "hanzi": "早上",
+                "pinyin": "zǎoshang",
+                "hskLevel": 1,
+                "meaningPt": "de manhã",
+                "partOfSpeech": "substantivo de tempo",
+                "compoundLogicPt": "早 + 上.",
+                characters: chars("早上", [
+                    "zǎo",
+                    "shang"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "cedo",
+                    "manhã"
+                  ])
+              },
+              {
+                "id": "s409-t3",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s409-t4",
+                "hanzi": "李云",
+                "pinyin": "Lǐ Yún",
+                "hskLevel": 1,
+                "meaningPt": "Li Yun",
+                "partOfSpeech": "nome próprio",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("李云", [
+                    "Lǐ",
+                    "Yún"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "Li",
+                    "nuvem"
+                  ])
+              },
+              {
+                "id": "s409-t5",
+                "hanzi": "很早",
+                "pinyin": "hěn zǎo",
+                "hskLevel": 1,
+                "meaningPt": "muito cedo",
+                "partOfSpeech": "advérbio + adjetivo",
+                "compoundLogicPt": "很 (muito) + 早 (cedo).",
+                characters: chars("很早", [
+                    "hěn",
+                    "zǎo"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "muito",
+                    "cedo"
+                  ])
+              },
+              {
+                "id": "s409-t6",
+                "hanzi": "就",
+                "pinyin": "jiù",
+                "hskLevel": 2,
+                "meaningPt": "já / logo",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Indica prontidão cedo pela manhã.",
+                characters: chars("就", [
+                    "jiù"
+                  ], [
+                    2
+                  ], [
+                    "logo/já"
+                  ])
+              },
+              {
+                "id": "s409-t7",
+                "hanzi": "起床",
+                "pinyin": "qǐchuáng",
+                "hskLevel": 1,
+                "meaningPt": "levantou da cama",
+                "partOfSpeech": "verbo separável (VO)",
+                "compoundLogicPt": "起 (levantar) + 床 (cama).",
+                characters: chars("起床", [
+                    "qǐ",
+                    "chuáng"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "levantar",
+                    "cama"
+                  ])
+              },
+              {
+                "id": "s409-t8",
+                "hanzi": "了",
+                "pinyin": "le",
+                "hskLevel": 1,
+                "meaningPt": "ação concluída",
+                "partOfSpeech": "partícula",
+                "compoundLogicPt": "Conclui a ação.",
+                characters: chars("了", [
+                    "le"
+                  ], [
+                    1
+                  ], [
+                    "concluído"
+                  ])
+              },
+              {
+                "id": "s409-t9",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s410",
+            "zhText": "他带了水、两本书和那把剑。",
+            "pinyinText": "Tā dài le shuǐ, liǎng běn shū hé nà bǎ jiàn.",
+            "translationPt": "Ele levou água, dois livros e aquela espada.",
+            "literalPt": "Ele levou [concluído] água, dois [classificador] livros e aquela [classificador] espada.",
+            "grammarNotes": [
+              {
+                "pattern": "Regra de 两 (liǎng) + Classificador 本 (běn)",
+                "explanationPt": "Para contar dois livros, usa-se obrigatoriamente 两本书 (liǎng běn shū), nunca *二本书.",
+                "hskLevel": 1
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s410-t1",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ele",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s410-t2",
+                "hanzi": "带了",
+                "pinyin": "dài le",
+                "hskLevel": 1,
+                "meaningPt": "levou / trouxe consigo",
+                "partOfSpeech": "verbo + partícula",
+                "compoundLogicPt": "带 (levar junto) + 了.",
+                characters: chars("带了", [
+                    "dài",
+                    "le"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "levar",
+                    "concluído"
+                  ])
+              },
+              {
+                "id": "s410-t3",
+                "hanzi": "水",
+                "pinyin": "shuǐ",
+                "hskLevel": 1,
+                "meaningPt": "água",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Pictograma de água corrente.",
+                characters: chars("水", [
+                    "shuǐ"
+                  ], [
+                    1
+                  ], [
+                    "água"
+                  ])
+              },
+              {
+                "id": "s410-t4",
+                "hanzi": "、",
+                "isPunctuation": true
+              },
+              {
+                "id": "s410-t5",
+                "hanzi": "两本",
+                "pinyin": "liǎng běn",
+                "hskLevel": 1,
+                "meaningPt": "dois (livros)",
+                "partOfSpeech": "numeral + classificador",
+                "compoundLogicPt": "两 (dois) + 本 (classificador para livros).",
+                characters: chars("两本", [
+                    "liǎng",
+                    "běn"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "dois",
+                    "classificador de livros"
+                  ])
+              },
+              {
+                "id": "s410-t6",
+                "hanzi": "书",
+                "pinyin": "shū",
+                "hskLevel": 1,
+                "meaningPt": "livros",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Livros.",
+                characters: chars("书", [
+                    "shū"
+                  ], [
+                    1
+                  ], [
+                    "livro"
+                  ])
+              },
+              {
+                "id": "s410-t7",
+                "hanzi": "和",
+                "pinyin": "hé",
+                "hskLevel": 1,
+                "meaningPt": "e",
+                "partOfSpeech": "conjunção",
+                "compoundLogicPt": "Une os itens.",
+                characters: chars("和", [
+                    "hé"
+                  ], [
+                    1
+                  ], [
+                    "e"
+                  ])
+              },
+              {
+                "id": "s410-t8",
+                "hanzi": "那把",
+                "pinyin": "nà bǎ",
+                "hskLevel": 2,
+                "meaningPt": "aquela (espada)",
+                "partOfSpeech": "demonstrativo + classificador",
+                "compoundLogicPt": "那 (aquela) + 把 (classificador de empunhadura).",
+                characters: chars("那把", [
+                    "nà",
+                    "bǎ"
+                  ], [
+                    1,
+                    2
+                  ], [
+                    "aquela",
+                    "classificador"
+                  ])
+              },
+              {
+                "id": "s410-t9",
+                "hanzi": "剑",
+                "pinyin": "jiàn",
+                "hskLevel": 3,
+                "meaningPt": "espada",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "A espada do guerreiro.",
+                characters: chars("剑", [
+                    "jiàn"
+                  ], [
+                    3
+                  ], [
+                    "espada"
+                  ])
+              },
+              {
+                "id": "s410-t10",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s411",
+            "zhText": "走出城门的时候，他看了看后面的家。",
+            "pinyinText": "Zǒuchū chéngmén de shíhou, tā kàn le kàn hòumiàn de jiā.",
+            "translationPt": "Quando saiu caminhando pelo portão da cidade, ele deu uma olhada para sua casa lá atrás.",
+            "literalPt": "Caminhar-saindo cidade-portão de momento, ele olhou-olhou atrás de casa.",
+            "grammarNotes": [
+              {
+                "pattern": "...的时候 (... de shíhou) = 'Quando... / No momento em que...'",
+                "explanationPt": "Colocado ao final da oração temporal, transforma a ação 走出城门 em 'quando saiu pelo portão da cidade'.",
+                "hskLevel": 1
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s411-t1",
+                "hanzi": "走出",
+                "pinyin": "zǒuchū",
+                "hskLevel": 1,
+                "meaningPt": "saiu caminhando",
+                "partOfSpeech": "verbo + direção",
+                "compoundLogicPt": "走 (andar) + 出 (sair).",
+                characters: chars("走出", [
+                    "zǒu",
+                    "chū"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "andar",
+                    "sair"
+                  ])
+              },
+              {
+                "id": "s411-t2",
+                "hanzi": "城门",
+                "pinyin": "chéngmén",
+                "hskLevel": 2,
+                "meaningPt": "o portão da cidade",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "城 (muralha da cidade) + 门 (portão).",
+                characters: chars("城门", [
+                    "chéng",
+                    "mén"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "muralha/cidade",
+                    "portão"
+                  ])
+              },
+              {
+                "id": "s411-t3",
+                "hanzi": "的时候",
+                "pinyin": "de shíhou",
+                "hskLevel": 1,
+                "meaningPt": "quando / no momento em que",
+                "partOfSpeech": "locução temporal",
+                "compoundLogicPt": "的 + 时候 (momento/tempo).",
+                characters: chars("的时候", [
+                    "de",
+                    "shí",
+                    "hou"
+                  ], [
+                    1,
+                    1,
+                    1
+                  ], [
+                    "de",
+                    "tempo",
+                    "momento"
+                  ])
+              },
+              {
+                "id": "s411-t4",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s411-t5",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ele",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s411-t6",
+                "hanzi": "看了看",
+                "pinyin": "kàn le kàn",
+                "hskLevel": 1,
+                "meaningPt": "deu uma olhada",
+                "partOfSpeech": "verbo reduplicado",
+                "compoundLogicPt": "Reduplicação do verbo 看 com 了 no meio indicando uma olhada breve.",
+                characters: chars("看了看", [
+                    "kàn",
+                    "le",
+                    "kàn"
+                  ], [
+                    1,
+                    1,
+                    1
+                  ], [
+                    "olhar",
+                    "breve",
+                    "olhar"
+                  ])
+              },
+              {
+                "id": "s411-t7",
+                "hanzi": "后面",
+                "pinyin": "hòumiàn",
+                "hskLevel": 1,
+                "meaningPt": "atrás",
+                "partOfSpeech": "substantivo de localização",
+                "compoundLogicPt": "后 (atrás) + 面 (lado).",
+                characters: chars("后面", [
+                    "hòu",
+                    "miàn"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "atrás",
+                    "lado"
+                  ])
+              },
+              {
+                "id": "s411-t8",
+                "hanzi": "的",
+                "pinyin": "de",
+                "hskLevel": 1,
+                "meaningPt": "de",
+                "partOfSpeech": "partícula",
+                "compoundLogicPt": "Conecta 后面 a 家.",
+                characters: chars("的", [
+                    "de"
+                  ], [
+                    1
+                  ], [
+                    "de"
+                  ])
+              },
+              {
+                "id": "s411-t9",
+                "hanzi": "家",
+                "pinyin": "jiā",
+                "hskLevel": 1,
+                "meaningPt": "casa / lar",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Seu lar na cidade.",
+                characters: chars("家", [
+                    "jiā"
+                  ], [
+                    1
+                  ], [
+                    "casa"
+                  ])
+              },
+              {
+                "id": "s411-t10",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s412",
+            "zhText": "他心里有一点儿怕，但还是往高山走去。",
+            "pinyinText": "Tā xīnlǐ yǒu yìdiǎnr pà, dàn háishì wǎng gāoshān zǒu qù.",
+            "translationPt": "Ele estava com um pouco de medo no coração, mas ainda assim seguiu caminhando em direção à montanha alta.",
+            "literalPt": "Ele coração-dentro tinha um-pouco medo, mas ainda-assim rumo alta-montanha caminhou indo.",
+            "grammarNotes": [
+              {
+                "pattern": "有一点儿 (yǒu yìdiǎnr) + Adjetivo/Verbo Psicológico",
+                "explanationPt": "Usado antes de sentimentos ou qualidades para expressar 'um pouco de...': 有一点儿怕 ('um pouco de medo').",
+                "hskLevel": 1
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s412-t1",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ele",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Ele.",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s412-t2",
+                "hanzi": "心里",
+                "pinyin": "xīnlǐ",
+                "hskLevel": 1,
+                "meaningPt": "no coração",
+                "partOfSpeech": "locução espacial",
+                "compoundLogicPt": "心 + 里.",
+                characters: chars("心里", [
+                    "xīn",
+                    "lǐ"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "coração",
+                    "dentro"
+                  ])
+              },
+              {
+                "id": "s412-t3",
+                "hanzi": "有一点儿",
+                "pinyin": "yǒu yìdiǎnr",
+                "hskLevel": 1,
+                "meaningPt": "um pouco",
+                "partOfSpeech": "locução adverbial",
+                "compoundLogicPt": "有 (ter) + 一点儿 (um pouquinho).",
+                characters: chars("有一点儿", [
+                    "yǒu",
+                    "yī",
+                    "diǎn",
+                    "r"
+                  ], [
+                    1,
+                    1,
+                    1,
+                    1
+                  ], [
+                    "ter",
+                    "um",
+                    "ponto",
+                    "sufixo"
+                  ])
+              },
+              {
+                "id": "s412-t4",
+                "hanzi": "怕",
+                "pinyin": "pà",
+                "hskLevel": 2,
+                "meaningPt": "medo / receoso",
+                "partOfSpeech": "verbo/adjetivo",
+                "compoundLogicPt": "Temer.",
+                characters: chars("怕", [
+                    "pà"
+                  ], [
+                    2
+                  ], [
+                    "temer"
+                  ])
+              },
+              {
+                "id": "s412-t5",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s412-t6",
+                "hanzi": "但",
+                "pinyin": "dàn",
+                "hskLevel": 1,
+                "meaningPt": "mas",
+                "partOfSpeech": "conjunção",
+                "compoundLogicPt": "Mas.",
+                characters: chars("但", [
+                    "dàn"
+                  ], [
+                    1
+                  ], [
+                    "mas"
+                  ])
+              },
+              {
+                "id": "s412-t7",
+                "hanzi": "还是",
+                "pinyin": "háishì",
+                "hskLevel": 2,
+                "meaningPt": "ainda assim / mesmo assim",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "还 (ainda) + 是 (é) → apesar de tudo, manteve a decisão.",
+                characters: chars("还是", [
+                    "hái",
+                    "shì"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "ainda",
+                    "ser"
+                  ])
+              },
+              {
+                "id": "s412-t8",
+                "hanzi": "往",
+                "pinyin": "wǎng",
+                "hskLevel": 2,
+                "meaningPt": "em direção a",
+                "partOfSpeech": "preposição",
+                "compoundLogicPt": "Indica rumo do movimento.",
+                characters: chars("往", [
+                    "wǎng"
+                  ], [
+                    2
+                  ], [
+                    "rumo a"
+                  ])
+              },
+              {
+                "id": "s412-t9",
+                "hanzi": "高山",
+                "pinyin": "gāoshān",
+                "hskLevel": 1,
+                "meaningPt": "a montanha alta",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "高 (alta) + 山 (montanha).",
+                characters: chars("高山", [
+                    "gāo",
+                    "shān"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "alta",
+                    "montanha"
+                  ])
+              },
+              {
+                "id": "s412-t10",
+                "hanzi": "走去",
+                "pinyin": "zǒu qù",
+                "hskLevel": 1,
+                "meaningPt": "foi caminhando",
+                "partOfSpeech": "verbo + direção",
+                "compoundLogicPt": "走 (caminhar) + 去 (ir).",
+                characters: chars("走去", [
+                    "zǒu",
+                    "qù"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "caminhar",
+                    "ir"
+                  ])
+              },
+              {
+                "id": "s412-t11",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ch-4",
+        "chapterNumber": 4,
+        "titleZh": "第四章：大河上的木桥",
+        "titlePinyin": "Dì sì zhāng: Dàhé shàng de mùqiáo",
+        "titlePt": "Capítulo 4: A Ponte de Madeira sobre o Grande Rio",
+        "summaryPt": "A primeira prova do caminho surge diante de um rio turbulento: uma velha ponte de madeira sacudida pelo vento forte. Com as mãos tremendo, Li Yun dá um passo após o outro.",
+        "estimatedMinutes": 2,
+        "audioUrl": "/audio/stories/a-montanha-vazia-e-a-coragem/ch-4.mp3",
+        "audioDurationMs": 0,
+        "voiceName": "zh-CN-YunxiNeural",
+        "hskDistribution": [],
+        "keyVocabulary": [
+          {
+            "hanzi": "一条大河",
+            "pinyin": "yì tiáo dàhé",
+            "meaningPt": "um grande rio",
+            "hskLevel": 2
+          },
+          {
+            "hanzi": "木桥",
+            "pinyin": "mùqiáo",
+            "meaningPt": "ponte de madeira",
+            "hskLevel": 3
+          },
+          {
+            "hanzi": "大风",
+            "pinyin": "dàfēng",
+            "meaningPt": "vento forte",
+            "hskLevel": 1
+          },
+          {
+            "hanzi": "慢慢",
+            "pinyin": "mànmàn",
+            "meaningPt": "devagar / passo a passo",
+            "hskLevel": 2
+          },
+          {
+            "hanzi": "走过去",
+            "pinyin": "zǒu guòqù",
+            "meaningPt": "atravessar caminhando",
+            "hskLevel": 1
+          }
+        ],
+        "sentences": [
+          {
+            "id": "s413",
+            "zhText": "中午，李云来到了一条大河旁边。",
+            "pinyinText": "Zhōngwǔ, Lǐ Yún láidào le yì tiáo dàhé pángbiān.",
+            "translationPt": "Ao meio-dia, Li Yun chegou à margem de um grande rio.",
+            "literalPt": "Meio-dia, Li Yun veio-chegando [concluído] um [classificador longo] grande-rio ao-lado.",
+            "grammarNotes": [
+              {
+                "pattern": "Classificador 条 (tiáo) para rios e estradas",
+                "explanationPt": "Elementos longos e sinuosos como rios (河) e ruas (街) usam sempre o classificador 条 (tiáo): 一条大河 (um grande rio).",
+                "hskLevel": 2
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s413-t1",
+                "hanzi": "中午",
+                "pinyin": "zhōngwǔ",
+                "hskLevel": 1,
+                "meaningPt": "ao meio-dia",
+                "partOfSpeech": "substantivo de tempo",
+                "compoundLogicPt": "中 (meio) + 午 (meio-dia).",
+                characters: chars("中午", [
+                    "zhōng",
+                    "wǔ"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "meio",
+                    "meio-dia"
+                  ])
+              },
+              {
+                "id": "s413-t2",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s413-t3",
+                "hanzi": "李云",
+                "pinyin": "Lǐ Yún",
+                "hskLevel": 1,
+                "meaningPt": "Li Yun",
+                "partOfSpeech": "nome próprio",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("李云", [
+                    "Lǐ",
+                    "Yún"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "Li",
+                    "nuvem"
+                  ])
+              },
+              {
+                "id": "s413-t4",
+                "hanzi": "来到了",
+                "pinyin": "láidào le",
+                "hskLevel": 1,
+                "meaningPt": "chegou a",
+                "partOfSpeech": "verbo + resultado + partícula",
+                "compoundLogicPt": "来 (vir) + 到 (chegar) + 了.",
+                characters: chars("来到了", [
+                    "lái",
+                    "dào",
+                    "le"
+                  ], [
+                    1,
+                    1,
+                    1
+                  ], [
+                    "vir",
+                    "chegar",
+                    "concluído"
+                  ])
+              },
+              {
+                "id": "s413-t5",
+                "hanzi": "一条",
+                "pinyin": "yì tiáo",
+                "hskLevel": 2,
+                "meaningPt": "um (rio longo)",
+                "partOfSpeech": "numeral + classificador",
+                "compoundLogicPt": "一 + 条 (classificador para rios).",
+                characters: chars("一条", [
+                    "yī",
+                    "tiáo"
+                  ], [
+                    1,
+                    2
+                  ], [
+                    "um",
+                    "classificador longo"
+                  ])
+              },
+              {
+                "id": "s413-t6",
+                "hanzi": "大河",
+                "pinyin": "dàhé",
+                "hskLevel": 2,
+                "meaningPt": "grande rio",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "大 (grande) + 河 (rio).",
+                characters: chars("大河", [
+                    "dà",
+                    "hé"
+                  ], [
+                    1,
+                    2
+                  ], [
+                    "grande",
+                    "rio"
+                  ])
+              },
+              {
+                "id": "s413-t7",
+                "hanzi": "旁边",
+                "pinyin": "pángbiān",
+                "hskLevel": 2,
+                "meaningPt": "ao lado / à margem",
+                "partOfSpeech": "localizador",
+                "compoundLogicPt": "旁 (lado) + 边 (borda).",
+                characters: chars("旁边", [
+                    "páng",
+                    "biān"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "lado",
+                    "borda"
+                  ])
+              },
+              {
+                "id": "s413-t8",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s414",
+            "zhText": "河上有一座小小的木桥，河水很快，风也很大。",
+            "pinyinText": "Hé shàng yǒu yí zuò xiǎoxiǎo de mùqiáo, héshuǐ hěn kuài, fēng yě hěn dà.",
+            "translationPt": "Sobre o rio havia uma pequenina ponte de madeira; a correnteza do rio era muito rápida e o vento também estava muito forte.",
+            "literalPt": "Rio sobre havia uma [estrutura] pequena-pequena de madeira-ponte, rio-água muito rápida, vento também muito grande.",
+            "grammarNotes": [
+              {
+                "pattern": "Classificador 座 (zuò) para pontes e montanhas",
+                "explanationPt": "Pontes, montanhas e grandes edifícios usam o classificador 座 (zuò): 一座木桥 (uma ponte de madeira).",
+                "hskLevel": 2
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s414-t1",
+                "hanzi": "河上",
+                "pinyin": "hé shàng",
+                "hskLevel": 1,
+                "meaningPt": "sobre o rio",
+                "partOfSpeech": "locução espacial",
+                "compoundLogicPt": "河 (rio) + 上 (sobre).",
+                characters: chars("河上", [
+                    "hé",
+                    "shàng"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "rio",
+                    "sobre"
+                  ])
+              },
+              {
+                "id": "s414-t2",
+                "hanzi": "有",
+                "pinyin": "yǒu",
+                "hskLevel": 1,
+                "meaningPt": "havia",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Haver.",
+                characters: chars("有", [
+                    "yǒu"
+                  ], [
+                    1
+                  ], [
+                    "haver"
+                  ])
+              },
+              {
+                "id": "s414-t3",
+                "hanzi": "一座",
+                "pinyin": "yí zuò",
+                "hskLevel": 2,
+                "meaningPt": "uma (ponte)",
+                "partOfSpeech": "numeral + classificador",
+                "compoundLogicPt": "一 + 座 (classificador para pontes e montanhas).",
+                characters: chars("一座", [
+                    "yī",
+                    "zuò"
+                  ], [
+                    1,
+                    2
+                  ], [
+                    "uma",
+                    "classificador"
+                  ])
+              },
+              {
+                "id": "s414-t4",
+                "hanzi": "小小的",
+                "pinyin": "xiǎoxiǎo de",
+                "hskLevel": 1,
+                "meaningPt": "pequenina / estreita",
+                "partOfSpeech": "adjetivo reduplicado",
+                "compoundLogicPt": "Reduplicação de 小 (pequeno) + 的 para dar expressividade.",
+                characters: chars("小小的", [
+                    "xiǎo",
+                    "xiǎo",
+                    "de"
+                  ], [
+                    1,
+                    1,
+                    1
+                  ], [
+                    "pequena",
+                    "pequena",
+                    "de"
+                  ])
+              },
+              {
+                "id": "s414-t5",
+                "hanzi": "木桥",
+                "pinyin": "mùqiáo",
+                "hskLevel": 3,
+                "meaningPt": "ponte de madeira",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "木 (madeira) + 桥 (ponte).",
+                characters: chars("木桥", [
+                    "mù",
+                    "qiáo"
+                  ], [
+                    1,
+                    3
+                  ], [
+                    "madeira",
+                    "ponte"
+                  ])
+              },
+              {
+                "id": "s414-t6",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s414-t7",
+                "hanzi": "河水",
+                "pinyin": "héshuǐ",
+                "hskLevel": 1,
+                "meaningPt": "a água do rio / correnteza",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "河 (rio) + 水 (água).",
+                characters: chars("河水", [
+                    "hé",
+                    "shuǐ"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "rio",
+                    "água"
+                  ])
+              },
+              {
+                "id": "s414-t8",
+                "hanzi": "很",
+                "pinyin": "hěn",
+                "hskLevel": 1,
+                "meaningPt": "muito",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Ligador.",
+                characters: chars("很", [
+                    "hěn"
+                  ], [
+                    1
+                  ], [
+                    "muito"
+                  ])
+              },
+              {
+                "id": "s414-t9",
+                "hanzi": "快",
+                "pinyin": "kuài",
+                "hskLevel": 1,
+                "meaningPt": "rápida / veloz",
+                "partOfSpeech": "adjetivo",
+                "compoundLogicPt": "Rápido.",
+                characters: chars("快", [
+                    "kuài"
+                  ], [
+                    1
+                  ], [
+                    "rápida"
+                  ])
+              },
+              {
+                "id": "s414-t10",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s414-t11",
+                "hanzi": "风",
+                "pinyin": "fēng",
+                "hskLevel": 1,
+                "meaningPt": "o vento",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Vento.",
+                characters: chars("风", [
+                    "fēng"
+                  ], [
+                    1
+                  ], [
+                    "vento"
+                  ])
+              },
+              {
+                "id": "s414-t12",
+                "hanzi": "也",
+                "pinyin": "yě",
+                "hskLevel": 1,
+                "meaningPt": "também",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Também.",
+                characters: chars("也", [
+                    "yě"
+                  ], [
+                    1
+                  ], [
+                    "também"
+                  ])
+              },
+              {
+                "id": "s414-t13",
+                "hanzi": "很",
+                "pinyin": "hěn",
+                "hskLevel": 1,
+                "meaningPt": "muito",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Muito.",
+                characters: chars("很", [
+                    "hěn"
+                  ], [
+                    1
+                  ], [
+                    "muito"
+                  ])
+              },
+              {
+                "id": "s414-t14",
+                "hanzi": "大",
+                "pinyin": "dà",
+                "hskLevel": 1,
+                "meaningPt": "forte (grande)",
+                "partOfSpeech": "adjetivo",
+                "compoundLogicPt": "Em chinês, vento forte é 风很大 ('vento muito grande').",
+                characters: chars("大", [
+                    "dà"
+                  ], [
+                    1
+                  ], [
+                    "grande/forte"
+                  ])
+              },
+              {
+                "id": "s414-t15",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s415",
+            "zhText": "李云看着下面的水，心里很怕，但他还是慢慢地走了过去。",
+            "pinyinText": "Lǐ Yún kànzhe xiàmiàn de shuǐ, xīnlǐ hěn pà, dàn tā háishì mànmàn de zǒu le guòqù.",
+            "translationPt": "Li Yun, olhando para a água lá embaixo, sentiu muito medo no coração, mas ainda assim atravessou caminhando bem devagar.",
+            "literalPt": "Li Yun olhando embaixo de água, coração-dentro muito temeu, mas ele ainda-assim devagar-mente caminhou [concluído] atravessando-para-lá.",
+            "grammarNotes": [
+              {
+                "pattern": "Partícula adverbial 地 (de): 慢慢地走 (mànmàn de zǒu)",
+                "explanationPt": "Quando um adjetivo reduplicado como 慢慢 ('devagar') modifica um verbo, usamos a partícula 地 (de) entre o advérbio e o verbo.",
+                "hskLevel": 2
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s415-t1",
+                "hanzi": "李云",
+                "pinyin": "Lǐ Yún",
+                "hskLevel": 1,
+                "meaningPt": "Li Yun",
+                "partOfSpeech": "nome próprio",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("李云", [
+                    "Lǐ",
+                    "Yún"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "Li",
+                    "nuvem"
+                  ])
+              },
+              {
+                "id": "s415-t2",
+                "hanzi": "看着",
+                "pinyin": "kànzhe",
+                "hskLevel": 2,
+                "meaningPt": "olhando para",
+                "partOfSpeech": "verbo + partícula",
+                "compoundLogicPt": "看 (olhar) + 着 (zhe).",
+                characters: chars("看着", [
+                    "kàn",
+                    "zhe"
+                  ], [
+                    1,
+                    2
+                  ], [
+                    "olhar",
+                    "contínuo"
+                  ])
+              },
+              {
+                "id": "s415-t3",
+                "hanzi": "下面",
+                "pinyin": "xiàmiàn",
+                "hskLevel": 1,
+                "meaningPt": "lá embaixo",
+                "partOfSpeech": "localizador",
+                "compoundLogicPt": "下 (embaixo) + 面 (lado).",
+                characters: chars("下面", [
+                    "xià",
+                    "miàn"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "embaixo",
+                    "lado"
+                  ])
+              },
+              {
+                "id": "s415-t4",
+                "hanzi": "的",
+                "pinyin": "de",
+                "hskLevel": 1,
+                "meaningPt": "de",
+                "partOfSpeech": "partícula",
+                "compoundLogicPt": "Conecta 下面 a 水.",
+                characters: chars("的", [
+                    "de"
+                  ], [
+                    1
+                  ], [
+                    "de"
+                  ])
+              },
+              {
+                "id": "s415-t5",
+                "hanzi": "水",
+                "pinyin": "shuǐ",
+                "hskLevel": 1,
+                "meaningPt": "a água",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Água.",
+                characters: chars("水", [
+                    "shuǐ"
+                  ], [
+                    1
+                  ], [
+                    "água"
+                  ])
+              },
+              {
+                "id": "s415-t6",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s415-t7",
+                "hanzi": "心里",
+                "pinyin": "xīnlǐ",
+                "hskLevel": 1,
+                "meaningPt": "no coração",
+                "partOfSpeech": "locução espacial",
+                "compoundLogicPt": "心 + 里.",
+                characters: chars("心里", [
+                    "xīn",
+                    "lǐ"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "coração",
+                    "dentro"
+                  ])
+              },
+              {
+                "id": "s415-t8",
+                "hanzi": "很",
+                "pinyin": "hěn",
+                "hskLevel": 1,
+                "meaningPt": "muito",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Muito.",
+                characters: chars("很", [
+                    "hěn"
+                  ], [
+                    1
+                  ], [
+                    "muito"
+                  ])
+              },
+              {
+                "id": "s415-t9",
+                "hanzi": "怕",
+                "pinyin": "pà",
+                "hskLevel": 2,
+                "meaningPt": "sentiu medo",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Temer.",
+                characters: chars("怕", [
+                    "pà"
+                  ], [
+                    2
+                  ], [
+                    "temer"
+                  ])
+              },
+              {
+                "id": "s415-t10",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s415-t11",
+                "hanzi": "但",
+                "pinyin": "dàn",
+                "hskLevel": 1,
+                "meaningPt": "mas",
+                "partOfSpeech": "conjunção",
+                "compoundLogicPt": "Mas.",
+                characters: chars("但", [
+                    "dàn"
+                  ], [
+                    1
+                  ], [
+                    "mas"
+                  ])
+              },
+              {
+                "id": "s415-t12",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ele",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Ele.",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s415-t13",
+                "hanzi": "还是",
+                "pinyin": "háishì",
+                "hskLevel": 2,
+                "meaningPt": "ainda assim",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Apesar do medo.",
+                characters: chars("还是", [
+                    "hái",
+                    "shì"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "ainda",
+                    "ser"
+                  ])
+              },
+              {
+                "id": "s415-t14",
+                "hanzi": "慢慢",
+                "pinyin": "mànmàn",
+                "hskLevel": 2,
+                "meaningPt": "bem devagar",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Reduplicação de 慢 (lento/devagar).",
+                characters: chars("慢慢", [
+                    "màn",
+                    "màn"
+                  ], [
+                    2,
+                    2
+                  ], [
+                    "devagar",
+                    "devagar"
+                  ])
+              },
+              {
+                "id": "s415-t15",
+                "hanzi": "地",
+                "pinyin": "de",
+                "hskLevel": 2,
+                "meaningPt": "partícula adverbial (-mente)",
+                "partOfSpeech": "partícula estrutural",
+                "compoundLogicPt": "Transforma 慢慢 em advérbio antes do verbo 走.",
+                characters: chars("地", [
+                    "de"
+                  ], [
+                    2
+                  ], [
+                    "partícula adverbial"
+                  ])
+              },
+              {
+                "id": "s415-t16",
+                "hanzi": "走了",
+                "pinyin": "zǒu le",
+                "hskLevel": 1,
+                "meaningPt": "caminhou",
+                "partOfSpeech": "verbo + partícula",
+                "compoundLogicPt": "走 + 了.",
+                characters: chars("走了", [
+                    "zǒu",
+                    "le"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "caminhar",
+                    "concluído"
+                  ])
+              },
+              {
+                "id": "s415-t17",
+                "hanzi": "过去",
+                "pinyin": "guòqù",
+                "hskLevel": 1,
+                "meaningPt": "atravessando para o outro lado",
+                "partOfSpeech": "complemento direcional",
+                "compoundLogicPt": "过 (atravessar) + 去 (para lá).",
+                characters: chars("过去", [
+                    "guò",
+                    "qù"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "atravessar",
+                    "ir"
+                  ])
+              },
+              {
+                "id": "s415-t18",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s416",
+            "zhText": "过了桥，他想：“我这么害怕，真没有勇气。”",
+            "pinyinText": "Guò le qiáo, tā xiǎng: “Wǒ zhème hàipà, zhēn méiyǒu yǒngqì.”",
+            "translationPt": "Depois de atravessar a ponte, ele pensou: “Eu senti tanto medo... realmente não tenho coragem.”",
+            "literalPt": "Atravessou [concluído] ponte, ele pensou: “Eu tão temeroso, realmente não-tenho coragem.”",
+            "grammarNotes": [
+              {
+                "pattern": "这么 (zhème) + Adjetivo = 'tão...'",
+                "explanationPt": "O demonstrativo 这么 antes de um verbo psicológico ou adjetivo intensifica o grau: 这么害怕 ('com tanto medo / tão assustado').",
+                "hskLevel": 2
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s416-t1",
+                "hanzi": "过了",
+                "pinyin": "guò le",
+                "hskLevel": 1,
+                "meaningPt": "depois de atravessar",
+                "partOfSpeech": "verbo + partícula",
+                "compoundLogicPt": "过 (atravessar) + 了.",
+                characters: chars("过了", [
+                    "guò",
+                    "le"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "atravessar",
+                    "concluído"
+                  ])
+              },
+              {
+                "id": "s416-t2",
+                "hanzi": "桥",
+                "pinyin": "qiáo",
+                "hskLevel": 3,
+                "meaningPt": "a ponte",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Ponte.",
+                characters: chars("桥", [
+                    "qiáo"
+                  ], [
+                    3
+                  ], [
+                    "ponte"
+                  ])
+              },
+              {
+                "id": "s416-t3",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s416-t4",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ele",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s416-t5",
+                "hanzi": "想",
+                "pinyin": "xiǎng",
+                "hskLevel": 1,
+                "meaningPt": "pensou",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Pensar.",
+                characters: chars("想", [
+                    "xiǎng"
+                  ], [
+                    1
+                  ], [
+                    "pensar"
+                  ])
+              },
+              {
+                "id": "s416-t6",
+                "hanzi": "：",
+                "isPunctuation": true
+              },
+              {
+                "id": "s416-t7",
+                "hanzi": "“",
+                "isPunctuation": true
+              },
+              {
+                "id": "s416-t8",
+                "hanzi": "我",
+                "pinyin": "wǒ",
+                "hskLevel": 1,
+                "meaningPt": "eu",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Eu.",
+                characters: chars("我", [
+                    "wǒ"
+                  ], [
+                    1
+                  ], [
+                    "eu"
+                  ])
+              },
+              {
+                "id": "s416-t9",
+                "hanzi": "这么",
+                "pinyin": "zhème",
+                "hskLevel": 2,
+                "meaningPt": "tão / desse jeito",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "这 (este) + 么 (modo) → tão.",
+                characters: chars("这么", [
+                    "zhè",
+                    "me"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "este",
+                    "modo"
+                  ])
+              },
+              {
+                "id": "s416-t10",
+                "hanzi": "害怕",
+                "pinyin": "hàipà",
+                "hskLevel": 2,
+                "meaningPt": "com medo / assustado",
+                "partOfSpeech": "verbo/adjetivo",
+                "compoundLogicPt": "害 + 怕.",
+                characters: chars("害怕", [
+                    "hài",
+                    "pà"
+                  ], [
+                    2,
+                    2
+                  ], [
+                    "recear",
+                    "temer"
+                  ])
+              },
+              {
+                "id": "s416-t11",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s416-t12",
+                "hanzi": "真",
+                "pinyin": "zhēn",
+                "hskLevel": 1,
+                "meaningPt": "realmente",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "De fato.",
+                characters: chars("真", [
+                    "zhēn"
+                  ], [
+                    1
+                  ], [
+                    "realmente"
+                  ])
+              },
+              {
+                "id": "s416-t13",
+                "hanzi": "没有",
+                "pinyin": "méiyǒu",
+                "hskLevel": 1,
+                "meaningPt": "não tenho",
+                "partOfSpeech": "negação + verbo",
+                "compoundLogicPt": "Não ter.",
+                characters: chars("没有", [
+                    "méi",
+                    "yǒu"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "não",
+                    "ter"
+                  ])
+              },
+              {
+                "id": "s416-t14",
+                "hanzi": "勇气",
+                "pinyin": "yǒngqì",
+                "hskLevel": 3,
+                "meaningPt": "coragem",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "勇 + 气.",
+                characters: chars("勇气", [
+                    "yǒng",
+                    "qì"
+                  ], [
+                    3,
+                    1
+                  ], [
+                    "bravura",
+                    "energia"
+                  ])
+              },
+              {
+                "id": "s416-t15",
+                "hanzi": "。",
+                "isPunctuation": true
+              },
+              {
+                "id": "s416-t16",
+                "hanzi": "”",
+                "isPunctuation": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ch-5",
+        "chapterNumber": 5,
+        "titleZh": "第五章：山林里的黑夜",
+        "titlePinyin": "Dì wǔ zhāng: Shānlín lǐ de hēiyè",
+        "titlePt": "Capítulo 5: A Noite Escura na Floresta da Montanha",
+        "summaryPt": "Quando a noite cai na floresta da montanha, a escuridão e o frio cercam Li Yun. Mesmo assustado com a solidão, ele não volta para trás e permanece firme até o sol nascer.",
+        "estimatedMinutes": 2,
+        "audioUrl": "/audio/stories/a-montanha-vazia-e-a-coragem/ch-5.mp3",
+        "audioDurationMs": 0,
+        "voiceName": "zh-CN-YunxiNeural",
+        "hskDistribution": [],
+        "keyVocabulary": [
+          {
+            "hanzi": "天黑",
+            "pinyin": "tiānhēi",
+            "meaningPt": "anoitecer / escurecer",
+            "hskLevel": 2
+          },
+          {
+            "hanzi": "山林",
+            "pinyin": "shānlín",
+            "meaningPt": "floresta da montanha",
+            "hskLevel": 1
+          },
+          {
+            "hanzi": "一个人",
+            "pinyin": "yí gè rén",
+            "meaningPt": "sozinho / uma pessoa só",
+            "hskLevel": 1
+          },
+          {
+            "hanzi": "回去",
+            "pinyin": "huíqù",
+            "meaningPt": "voltar para trás",
+            "hskLevel": 1
+          },
+          {
+            "hanzi": "早上",
+            "pinyin": "zǎoshang",
+            "meaningPt": "manhã",
+            "hskLevel": 1
+          }
+        ],
+        "sentences": [
+          {
+            "id": "s417",
+            "zhText": "晚上天黑了，李云走到了山林里。",
+            "pinyinText": "Wǎnshang tiānhēi le, Lǐ Yún zǒudào le shānlín lǐ.",
+            "translationPt": "À noite o céu escureceu, e Li Yun chegou caminhando ao interior da floresta da montanha.",
+            "literalPt": "Noite céu-escureceu [mudança], Li Yun caminhou-chegando [concluído] montanha-bosque dentro.",
+            "grammarNotes": [
+              {
+                "pattern": "天黑了 (tiānhēi le) = 'escureceu / anoiteceu'",
+                "explanationPt": "Expressão natural formada por 天 ('céu') + 黑 ('preto/escuro') + 了 (mudança de estado).",
+                "hskLevel": 2
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s417-t1",
+                "hanzi": "晚上",
+                "pinyin": "wǎnshang",
+                "hskLevel": 1,
+                "meaningPt": "à noite",
+                "partOfSpeech": "substantivo de tempo",
+                "compoundLogicPt": "晚 + 上.",
+                characters: chars("晚上", [
+                    "wǎn",
+                    "shang"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "noite",
+                    "período"
+                  ])
+              },
+              {
+                "id": "s417-t2",
+                "hanzi": "天黑",
+                "pinyin": "tiānhēi",
+                "hskLevel": 2,
+                "meaningPt": "o céu escureceu",
+                "partOfSpeech": "sujeito + predicado",
+                "compoundLogicPt": "天 (céu) + 黑 (escuro).",
+                characters: chars("天黑", [
+                    "tiān",
+                    "hēi"
+                  ], [
+                    1,
+                    2
+                  ], [
+                    "céu",
+                    "escuro"
+                  ])
+              },
+              {
+                "id": "s417-t3",
+                "hanzi": "了",
+                "pinyin": "le",
+                "hskLevel": 1,
+                "meaningPt": "mudança de estado",
+                "partOfSpeech": "partícula",
+                "compoundLogicPt": "Indica que ficou escuro.",
+                characters: chars("了", [
+                    "le"
+                  ], [
+                    1
+                  ], [
+                    "mudança"
+                  ])
+              },
+              {
+                "id": "s417-t4",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s417-t5",
+                "hanzi": "李云",
+                "pinyin": "Lǐ Yún",
+                "hskLevel": 1,
+                "meaningPt": "Li Yun",
+                "partOfSpeech": "nome próprio",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("李云", [
+                    "Lǐ",
+                    "Yún"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "Li",
+                    "nuvem"
+                  ])
+              },
+              {
+                "id": "s417-t6",
+                "hanzi": "走到了",
+                "pinyin": "zǒudào le",
+                "hskLevel": 1,
+                "meaningPt": "chegou caminhando a",
+                "partOfSpeech": "verbo + resultado",
+                "compoundLogicPt": "走 + 到 + 了.",
+                characters: chars("走到了", [
+                    "zǒu",
+                    "dào",
+                    "le"
+                  ], [
+                    1,
+                    1,
+                    1
+                  ], [
+                    "andar",
+                    "chegar",
+                    "concluído"
+                  ])
+              },
+              {
+                "id": "s417-t7",
+                "hanzi": "山林",
+                "pinyin": "shānlín",
+                "hskLevel": 1,
+                "meaningPt": "floresta da montanha",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "山 (montanha) + 林 (bosque/floresta).",
+                characters: chars("山林", [
+                    "shān",
+                    "lín"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "montanha",
+                    "bosque"
+                  ])
+              },
+              {
+                "id": "s417-t8",
+                "hanzi": "里",
+                "pinyin": "lǐ",
+                "hskLevel": 1,
+                "meaningPt": "dentro",
+                "partOfSpeech": "posposição",
+                "compoundLogicPt": "No interior da mata.",
+                characters: chars("里", [
+                    "lǐ"
+                  ], [
+                    1
+                  ], [
+                    "dentro"
+                  ])
+              },
+              {
+                "id": "s417-t9",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s418",
+            "zhText": "山林里没有灯，也没有别人，只有他一个人。",
+            "pinyinText": "Shānlín lǐ méiyǒu dēng, yě méiyǒu biérén, zhǐyǒu tā yí gè rén.",
+            "translationPt": "Na floresta da montanha não havia luz, nem havia outras pessoas; havia apenas ele sozinho.",
+            "literalPt": "Montanha-bosque dentro não-havia lâmpada, também não-havia outras-pessoas, apenas-havia ele uma pessoa.",
+            "grammarNotes": [
+              {
+                "pattern": "没有 A，也没有 B (méiyǒu A, yě méiyǒu B) = 'Não há A, nem há B'",
+                "explanationPt": "Para encadear duas ausências em Mandarim, repete-se 没有 após o advérbio 也 ('também não').",
+                "hskLevel": 1
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s418-t1",
+                "hanzi": "山林",
+                "pinyin": "shānlín",
+                "hskLevel": 1,
+                "meaningPt": "floresta da montanha",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "山 + 林.",
+                characters: chars("山林", [
+                    "shān",
+                    "lín"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "montanha",
+                    "bosque"
+                  ])
+              },
+              {
+                "id": "s418-t2",
+                "hanzi": "里",
+                "pinyin": "lǐ",
+                "hskLevel": 1,
+                "meaningPt": "dentro",
+                "partOfSpeech": "posposição",
+                "compoundLogicPt": "No interior.",
+                characters: chars("里", [
+                    "lǐ"
+                  ], [
+                    1
+                  ], [
+                    "dentro"
+                  ])
+              },
+              {
+                "id": "s418-t3",
+                "hanzi": "没有",
+                "pinyin": "méiyǒu",
+                "hskLevel": 1,
+                "meaningPt": "não havia",
+                "partOfSpeech": "negação + verbo",
+                "compoundLogicPt": "Ausência.",
+                characters: chars("没有", [
+                    "méi",
+                    "yǒu"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "não",
+                    "haver"
+                  ])
+              },
+              {
+                "id": "s418-t4",
+                "hanzi": "灯",
+                "pinyin": "dēng",
+                "hskLevel": 2,
+                "meaningPt": "luz / lanterna",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Fogo (火) + suporte (丁).",
+                characters: chars("灯", [
+                    "dēng"
+                  ], [
+                    2
+                  ], [
+                    "luz/lanterna"
+                  ])
+              },
+              {
+                "id": "s418-t5",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s418-t6",
+                "hanzi": "也",
+                "pinyin": "yě",
+                "hskLevel": 1,
+                "meaningPt": "também / nem",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Também.",
+                characters: chars("也", [
+                    "yě"
+                  ], [
+                    1
+                  ], [
+                    "também"
+                  ])
+              },
+              {
+                "id": "s418-t7",
+                "hanzi": "没有",
+                "pinyin": "méiyǒu",
+                "hskLevel": 1,
+                "meaningPt": "não havia",
+                "partOfSpeech": "negação + verbo",
+                "compoundLogicPt": "Nem havia.",
+                characters: chars("没有", [
+                    "méi",
+                    "yǒu"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "não",
+                    "haver"
+                  ])
+              },
+              {
+                "id": "s418-t8",
+                "hanzi": "别人",
+                "pinyin": "biérén",
+                "hskLevel": 2,
+                "meaningPt": "outras pessoas",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "别 (outro) + 人 (pessoa).",
+                characters: chars("别人", [
+                    "bié",
+                    "rén"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "outro",
+                    "pessoa"
+                  ])
+              },
+              {
+                "id": "s418-t9",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s418-t10",
+                "hanzi": "只有",
+                "pinyin": "zhǐyǒu",
+                "hskLevel": 2,
+                "meaningPt": "havia apenas",
+                "partOfSpeech": "advérbio + verbo",
+                "compoundLogicPt": "只 (zhǐ, 'apenas') + 有 (haver).",
+                characters: chars("只有", [
+                    "zhǐ",
+                    "yǒu"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "apenas",
+                    "haver"
+                  ])
+              },
+              {
+                "id": "s418-t11",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ele",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s418-t12",
+                "hanzi": "一个人",
+                "pinyin": "yí gè rén",
+                "hskLevel": 1,
+                "meaningPt": "sozinho (uma pessoa só)",
+                "partOfSpeech": "locução",
+                "compoundLogicPt": "Em Mandarim, 'uma pessoa' após o sujeito significa 'sozinho'.",
+                characters: chars("一个人", [
+                    "yī",
+                    "gè",
+                    "rén"
+                  ], [
+                    1,
+                    1,
+                    1
+                  ], [
+                    "uma",
+                    "classificador",
+                    "pessoa"
+                  ])
+              },
+              {
+                "id": "s418-t13",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s419",
+            "zhText": "夜里很冷，他听见风声，心里非常害怕。",
+            "pinyinText": "Yèlǐ hěn lěng, tā tīngjiàn fēngshēng, xīnlǐ fēicháng hàipà.",
+            "translationPt": "Durante a noite estava muito frio; ele ouvia o som do vento e sentia muitíssimo medo no coração.",
+            "literalPt": "Noite-dentro muito frio, ele ouviu vento-som, coração-dentro extremamente temia.",
+            "grammarNotes": [
+              {
+                "pattern": "Verbo perceptual 听见 (tīngjiàn) = 'ouvir'",
+                "explanationPt": "Assim como 看见 une 'olhar + ver', 听见 une 听 ('escutar') + 见 ('perceber o som').",
+                "hskLevel": 1
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s419-t1",
+                "hanzi": "夜里",
+                "pinyin": "yèlǐ",
+                "hskLevel": 2,
+                "meaningPt": "durante a noite",
+                "partOfSpeech": "locução temporal",
+                "compoundLogicPt": "夜 (noite escura) + 里 (dentro).",
+                characters: chars("夜里", [
+                    "yè",
+                    "lǐ"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "noite",
+                    "dentro"
+                  ])
+              },
+              {
+                "id": "s419-t2",
+                "hanzi": "很",
+                "pinyin": "hěn",
+                "hskLevel": 1,
+                "meaningPt": "muito",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Muito.",
+                characters: chars("很", [
+                    "hěn"
+                  ], [
+                    1
+                  ], [
+                    "muito"
+                  ])
+              },
+              {
+                "id": "s419-t3",
+                "hanzi": "冷",
+                "pinyin": "lěng",
+                "hskLevel": 1,
+                "meaningPt": "frio",
+                "partOfSpeech": "adjetivo",
+                "compoundLogicPt": "Frio.",
+                characters: chars("冷", [
+                    "lěng"
+                  ], [
+                    1
+                  ], [
+                    "frio"
+                  ])
+              },
+              {
+                "id": "s419-t4",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s419-t5",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ele",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Ele.",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s419-t6",
+                "hanzi": "听见",
+                "pinyin": "tīngjiàn",
+                "hskLevel": 1,
+                "meaningPt": "ouviu",
+                "partOfSpeech": "verbo + resultado",
+                "compoundLogicPt": "听 (escutar) + 见 (perceber).",
+                characters: chars("听见", [
+                    "tīng",
+                    "jiàn"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "escutar",
+                    "perceber"
+                  ])
+              },
+              {
+                "id": "s419-t7",
+                "hanzi": "风声",
+                "pinyin": "fēngshēng",
+                "hskLevel": 1,
+                "meaningPt": "o som do vento",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "风 (vento) + 声 (som/voz).",
+                characters: chars("风声", [
+                    "fēng",
+                    "shēng"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "vento",
+                    "som"
+                  ])
+              },
+              {
+                "id": "s419-t8",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s419-t9",
+                "hanzi": "心里",
+                "pinyin": "xīnlǐ",
+                "hskLevel": 1,
+                "meaningPt": "no coração",
+                "partOfSpeech": "locução espacial",
+                "compoundLogicPt": "心 + 里.",
+                characters: chars("心里", [
+                    "xīn",
+                    "lǐ"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "coração",
+                    "dentro"
+                  ])
+              },
+              {
+                "id": "s419-t10",
+                "hanzi": "非常",
+                "pinyin": "fēicháng",
+                "hskLevel": 2,
+                "meaningPt": "extremamente / muitíssimo",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "非 (fora do) + 常 (comum).",
+                characters: chars("非常", [
+                    "fēi",
+                    "cháng"
+                  ], [
+                    2,
+                    2
+                  ], [
+                    "não",
+                    "comum"
+                  ])
+              },
+              {
+                "id": "s419-t11",
+                "hanzi": "害怕",
+                "pinyin": "hàipà",
+                "hskLevel": 2,
+                "meaningPt": "com medo",
+                "partOfSpeech": "verbo/adjetivo",
+                "compoundLogicPt": "Temer.",
+                characters: chars("害怕", [
+                    "hài",
+                    "pà"
+                  ], [
+                    2,
+                    2
+                  ], [
+                    "recear",
+                    "temer"
+                  ])
+              },
+              {
+                "id": "s419-t12",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s420",
+            "zhText": "但是他没有回去，他坐在树下，一直等到早上。",
+            "pinyinText": "Dànshì tā méiyǒu huíqù, tā zuò zài shù xià, yìzhí děngdào zǎoshang.",
+            "translationPt": "Mas ele não voltou para trás; sentou-se debaixo de uma árvore e esperou continuamente até de manhã.",
+            "literalPt": "Mas ele não voltou-indo, ele sentou em árvore embaixo, continuamente esperou-chegando manhã.",
+            "grammarNotes": [
+              {
+                "pattern": "一直 + Verbo + 到 + Tempo (yìzhí děngdào zǎoshang)",
+                "explanationPt": "Indica uma ação sustentada com perseverança até um marco temporal: 'esperou sem desistir até a manhã chegar'.",
+                "hskLevel": 2
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s420-t1",
+                "hanzi": "但是",
+                "pinyin": "dànshì",
+                "hskLevel": 2,
+                "meaningPt": "mas",
+                "partOfSpeech": "conjunção",
+                "compoundLogicPt": "Oposição.",
+                characters: chars("但是", [
+                    "dàn",
+                    "shì"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "mas",
+                    "ser"
+                  ])
+              },
+              {
+                "id": "s420-t2",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ele",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s420-t3",
+                "hanzi": "没有",
+                "pinyin": "méiyǒu",
+                "hskLevel": 1,
+                "meaningPt": "não",
+                "partOfSpeech": "negação passada",
+                "compoundLogicPt": "Negação de ação passada.",
+                characters: chars("没有", [
+                    "méi",
+                    "yǒu"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "não",
+                    "haver"
+                  ])
+              },
+              {
+                "id": "s420-t4",
+                "hanzi": "回去",
+                "pinyin": "huíqù",
+                "hskLevel": 1,
+                "meaningPt": "voltou para trás",
+                "partOfSpeech": "verbo + direção",
+                "compoundLogicPt": "回 (retornar) + 去 (para lá).",
+                characters: chars("回去", [
+                    "huí",
+                    "qù"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "voltar",
+                    "ir"
+                  ])
+              },
+              {
+                "id": "s420-t5",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s420-t6",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ele",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Ele.",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s420-t7",
+                "hanzi": "坐在",
+                "pinyin": "zuò zài",
+                "hskLevel": 1,
+                "meaningPt": "sentou-se em",
+                "partOfSpeech": "verbo + preposição",
+                "compoundLogicPt": "坐 + 在.",
+                characters: chars("坐在", [
+                    "zuò",
+                    "zài"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "sentar",
+                    "em"
+                  ])
+              },
+              {
+                "id": "s420-t8",
+                "hanzi": "树下",
+                "pinyin": "shù xià",
+                "hskLevel": 1,
+                "meaningPt": "debaixo da árvore",
+                "partOfSpeech": "locução espacial",
+                "compoundLogicPt": "树 (árvore) + 下 (embaixo).",
+                characters: chars("树下", [
+                    "shù",
+                    "xià"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "árvore",
+                    "embaixo"
+                  ])
+              },
+              {
+                "id": "s420-t9",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s420-t10",
+                "hanzi": "一直",
+                "pinyin": "yìzhí",
+                "hskLevel": 2,
+                "meaningPt": "continuamente / sem desistir",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "一 + 直 (direto).",
+                characters: chars("一直", [
+                    "yī",
+                    "zhí"
+                  ], [
+                    1,
+                    2
+                  ], [
+                    "um",
+                    "reto/contínuo"
+                  ])
+              },
+              {
+                "id": "s420-t11",
+                "hanzi": "等到",
+                "pinyin": "děngdào",
+                "hskLevel": 1,
+                "meaningPt": "esperou até",
+                "partOfSpeech": "verbo + resultado",
+                "compoundLogicPt": "等 (esperar) + 到 (chegar a).",
+                characters: chars("等到", [
+                    "děng",
+                    "dào"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "esperar",
+                    "até"
+                  ])
+              },
+              {
+                "id": "s420-t12",
+                "hanzi": "早上",
+                "pinyin": "zǎoshang",
+                "hskLevel": 1,
+                "meaningPt": "a manhã",
+                "partOfSpeech": "substantivo de tempo",
+                "compoundLogicPt": "Amadurecer da aurora.",
+                characters: chars("早上", [
+                    "zǎo",
+                    "shang"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "cedo",
+                    "manhã"
+                  ])
+              },
+              {
+                "id": "s420-t13",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ch-6",
+        "chapterNumber": 6,
+        "titleZh": "第六章：雪地里的哭声",
+        "titlePinyin": "Dì liù zhāng: Xuědì lǐ de kūshēng",
+        "titlePt": "Capítulo 6: O Choro na Neve da Montanha",
+        "summaryPt": "Subindo a encosta gelada sob uma forte nevasca, Li Yun encontra um viajante caído na neve. Apesar de temer o frio extremo, ele divide sua água quente e salva o desconhecido.",
+        "estimatedMinutes": 2,
+        "audioUrl": "/audio/stories/a-montanha-vazia-e-a-coragem/ch-6.mp3",
+        "audioDurationMs": 0,
+        "voiceName": "zh-CN-YunxiNeural",
+        "hskDistribution": [],
+        "keyVocabulary": [
+          {
+            "hanzi": "下雪",
+            "pinyin": "xiàxuě",
+            "meaningPt": "nevar",
+            "hskLevel": 2
+          },
+          {
+            "hanzi": "不好走",
+            "pinyin": "bù hǎo zǒu",
+            "meaningPt": "difícil de caminhar",
+            "hskLevel": 1
+          },
+          {
+            "hanzi": "哭",
+            "pinyin": "kū",
+            "meaningPt": "chorar",
+            "hskLevel": 2
+          },
+          {
+            "hanzi": "走开",
+            "pinyin": "zǒukāi",
+            "meaningPt": "ir embora / afastar-se",
+            "hskLevel": 1
+          },
+          {
+            "hanzi": "救",
+            "pinyin": "jiù",
+            "meaningPt": "salvar / socorrer",
+            "hskLevel": 3
+          }
+        ],
+        "sentences": [
+          {
+            "id": "s421",
+            "zhText": "山上很冷，还下雪了，山路很不好走。",
+            "pinyinText": "Shān shàng hěn lěng, hái xiàxuě le, shānlù hěn bù hǎo zǒu.",
+            "translationPt": "No alto da montanha estava muito frio, e além disso começou a nevar; o caminho da montanha era muito difícil de percorrer.",
+            "literalPt": "Montanha em-cima muito frio, ainda caiu-neve [mudança], montanha-caminho muito não bom caminhar.",
+            "grammarNotes": [
+              {
+                "pattern": "不好 + Verbo (bù hǎo zǒu) = 'difícil de caminhar'",
+                "explanationPt": "Estrutura natural do HSK 1–2 em que 好/不好 antes de um verbo indica facilidade ou dificuldade.",
+                "hskLevel": 1
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s421-t1",
+                "hanzi": "山上",
+                "pinyin": "shān shàng",
+                "hskLevel": 1,
+                "meaningPt": "na montanha",
+                "partOfSpeech": "locução espacial",
+                "compoundLogicPt": "山 + 上.",
+                characters: chars("山上", [
+                    "shān",
+                    "shàng"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "montanha",
+                    "em cima"
+                  ])
+              },
+              {
+                "id": "s421-t2",
+                "hanzi": "很",
+                "pinyin": "hěn",
+                "hskLevel": 1,
+                "meaningPt": "muito",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Muito.",
+                characters: chars("很", [
+                    "hěn"
+                  ], [
+                    1
+                  ], [
+                    "muito"
+                  ])
+              },
+              {
+                "id": "s421-t3",
+                "hanzi": "冷",
+                "pinyin": "lěng",
+                "hskLevel": 1,
+                "meaningPt": "frio",
+                "partOfSpeech": "adjetivo",
+                "compoundLogicPt": "Frio.",
+                characters: chars("冷", [
+                    "lěng"
+                  ], [
+                    1
+                  ], [
+                    "frio"
+                  ])
+              },
+              {
+                "id": "s421-t4",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s421-t5",
+                "hanzi": "还",
+                "pinyin": "hái",
+                "hskLevel": 1,
+                "meaningPt": "e ainda / além disso",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Polifônico 还 lido hái.",
+                characters: chars("还", [
+                    "hái"
+                  ], [
+                    1
+                  ], [
+                    "ainda"
+                  ])
+              },
+              {
+                "id": "s421-t6",
+                "hanzi": "下雪",
+                "pinyin": "xiàxuě",
+                "hskLevel": 2,
+                "meaningPt": "nevar",
+                "partOfSpeech": "verbo + objeto",
+                "compoundLogicPt": "下 (cair) + 雪 (neve).",
+                characters: chars("下雪", [
+                    "xià",
+                    "xuě"
+                  ], [
+                    1,
+                    2
+                  ], [
+                    "cair",
+                    "neve"
+                  ])
+              },
+              {
+                "id": "s421-t7",
+                "hanzi": "了",
+                "pinyin": "le",
+                "hskLevel": 1,
+                "meaningPt": "começou a (mudança)",
+                "partOfSpeech": "partícula",
+                "compoundLogicPt": "Mudança climática.",
+                characters: chars("了", [
+                    "le"
+                  ], [
+                    1
+                  ], [
+                    "mudança"
+                  ])
+              },
+              {
+                "id": "s421-t8",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s421-t9",
+                "hanzi": "山路",
+                "pinyin": "shānlù",
+                "hskLevel": 1,
+                "meaningPt": "o caminho da montanha",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "山 + 路.",
+                characters: chars("山路", [
+                    "shān",
+                    "lù"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "montanha",
+                    "caminho"
+                  ])
+              },
+              {
+                "id": "s421-t10",
+                "hanzi": "很",
+                "pinyin": "hěn",
+                "hskLevel": 1,
+                "meaningPt": "muito",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Muito.",
+                characters: chars("很", [
+                    "hěn"
+                  ], [
+                    1
+                  ], [
+                    "muito"
+                  ])
+              },
+              {
+                "id": "s421-t11",
+                "hanzi": "不好",
+                "pinyin": "bù hǎo",
+                "hskLevel": 1,
+                "meaningPt": "difícil de",
+                "partOfSpeech": "negação + auxiliar",
+                "compoundLogicPt": "Não é fácil de.",
+                characters: chars("不好", [
+                    "bù",
+                    "hǎo"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "não",
+                    "fácil/bom"
+                  ])
+              },
+              {
+                "id": "s421-t12",
+                "hanzi": "走",
+                "pinyin": "zǒu",
+                "hskLevel": 1,
+                "meaningPt": "andar / percorrer",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Caminhar.",
+                characters: chars("走", [
+                    "zǒu"
+                  ], [
+                    1
+                  ], [
+                    "andar"
+                  ])
+              },
+              {
+                "id": "s421-t13",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s422",
+            "zhText": "在路上，他看见一个人坐在雪里，还在哭。",
+            "pinyinText": "Zài lù shàng, tā kànjiàn yí gè rén zuò zài xuě lǐ, hái zài kū.",
+            "translationPt": "No caminho, ele viu uma pessoa sentada na neve, que ainda estava chorando.",
+            "literalPt": "Em caminho sobre, ele viu uma pessoa sentada em neve dentro, ainda estava chorando.",
+            "grammarNotes": [
+              {
+                "pattern": "还在 + Verbo (hái zài kū) = 'ainda estava chorando'",
+                "explanationPt": "Une 还 ('ainda') + 在 (aspecto contínuo) + 哭 ('chorar').",
+                "hskLevel": 2
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s422-t1",
+                "hanzi": "在",
+                "pinyin": "zài",
+                "hskLevel": 1,
+                "meaningPt": "no",
+                "partOfSpeech": "preposição",
+                "compoundLogicPt": "Em.",
+                characters: chars("在", [
+                    "zài"
+                  ], [
+                    1
+                  ], [
+                    "em"
+                  ])
+              },
+              {
+                "id": "s422-t2",
+                "hanzi": "路上",
+                "pinyin": "lù shàng",
+                "hskLevel": 1,
+                "meaningPt": "caminho",
+                "partOfSpeech": "locução espacial",
+                "compoundLogicPt": "路 + 上.",
+                characters: chars("路上", [
+                    "lù",
+                    "shàng"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "caminho",
+                    "sobre"
+                  ])
+              },
+              {
+                "id": "s422-t3",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s422-t4",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ele",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s422-t5",
+                "hanzi": "看见",
+                "pinyin": "kànjiàn",
+                "hskLevel": 1,
+                "meaningPt": "viu",
+                "partOfSpeech": "verbo + resultado",
+                "compoundLogicPt": "看 + 见.",
+                characters: chars("看见", [
+                    "kàn",
+                    "jiàn"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "olhar",
+                    "ver"
+                  ])
+              },
+              {
+                "id": "s422-t6",
+                "hanzi": "一个",
+                "pinyin": "yí gè",
+                "hskLevel": 1,
+                "meaningPt": "uma",
+                "partOfSpeech": "numeral + classificador",
+                "compoundLogicPt": "一 + 个.",
+                characters: chars("一个", [
+                    "yī",
+                    "gè"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "um",
+                    "classificador"
+                  ])
+              },
+              {
+                "id": "s422-t7",
+                "hanzi": "人",
+                "pinyin": "rén",
+                "hskLevel": 1,
+                "meaningPt": "pessoa",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Viajante.",
+                characters: chars("人", [
+                    "rén"
+                  ], [
+                    1
+                  ], [
+                    "pessoa"
+                  ])
+              },
+              {
+                "id": "s422-t8",
+                "hanzi": "坐在",
+                "pinyin": "zuò zài",
+                "hskLevel": 1,
+                "meaningPt": "sentada em",
+                "partOfSpeech": "verbo + preposição",
+                "compoundLogicPt": "坐 + 在.",
+                characters: chars("坐在", [
+                    "zuò",
+                    "zài"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "sentar",
+                    "em"
+                  ])
+              },
+              {
+                "id": "s422-t9",
+                "hanzi": "雪里",
+                "pinyin": "xuě lǐ",
+                "hskLevel": 2,
+                "meaningPt": "na neve",
+                "partOfSpeech": "locução espacial",
+                "compoundLogicPt": "雪 + 里.",
+                characters: chars("雪里", [
+                    "xuě",
+                    "lǐ"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "neve",
+                    "dentro"
+                  ])
+              },
+              {
+                "id": "s422-t10",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s422-t11",
+                "hanzi": "还在",
+                "pinyin": "hái zài",
+                "hskLevel": 1,
+                "meaningPt": "ainda estava",
+                "partOfSpeech": "advérbio + contínuo",
+                "compoundLogicPt": "还 + 在.",
+                characters: chars("还在", [
+                    "hái",
+                    "zài"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "ainda",
+                    "estar"
+                  ])
+              },
+              {
+                "id": "s422-t12",
+                "hanzi": "哭",
+                "pinyin": "kū",
+                "hskLevel": 2,
+                "meaningPt": "chorando",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Chorar.",
+                characters: chars("哭", [
+                    "kū"
+                  ], [
+                    2
+                  ], [
+                    "chorar"
+                  ])
+              },
+              {
+                "id": "s422-t13",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s423",
+            "zhText": "李云很怕冷，但是他没有走开。",
+            "pinyinText": "Lǐ Yún hěn pà lěng, dànshì tā méiyǒu zǒukāi.",
+            "translationPt": "Li Yun tinha muito medo do frio, mas não foi embora.",
+            "literalPt": "Li Yun muito temia frio, mas ele não caminhou-afastando.",
+            "grammarNotes": [
+              {
+                "pattern": "没有 (méiyǒu) + Verbo de ação passada",
+                "explanationPt": "Negação de ação pontual no passado: 'ele não se afastou'.",
+                "hskLevel": 1
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s423-t1",
+                "hanzi": "李云",
+                "pinyin": "Lǐ Yún",
+                "hskLevel": 1,
+                "meaningPt": "Li Yun",
+                "partOfSpeech": "nome próprio",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("李云", [
+                    "Lǐ",
+                    "Yún"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "Li",
+                    "nuvem"
+                  ])
+              },
+              {
+                "id": "s423-t2",
+                "hanzi": "很",
+                "pinyin": "hěn",
+                "hskLevel": 1,
+                "meaningPt": "muito",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Muito.",
+                characters: chars("很", [
+                    "hěn"
+                  ], [
+                    1
+                  ], [
+                    "muito"
+                  ])
+              },
+              {
+                "id": "s423-t3",
+                "hanzi": "怕",
+                "pinyin": "pà",
+                "hskLevel": 2,
+                "meaningPt": "temia",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Sentir medo.",
+                characters: chars("怕", [
+                    "pà"
+                  ], [
+                    2
+                  ], [
+                    "temer"
+                  ])
+              },
+              {
+                "id": "s423-t4",
+                "hanzi": "冷",
+                "pinyin": "lěng",
+                "hskLevel": 1,
+                "meaningPt": "o frio",
+                "partOfSpeech": "adjetivo/substantivo",
+                "compoundLogicPt": "Frio.",
+                characters: chars("冷", [
+                    "lěng"
+                  ], [
+                    1
+                  ], [
+                    "frio"
+                  ])
+              },
+              {
+                "id": "s423-t5",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s423-t6",
+                "hanzi": "但是",
+                "pinyin": "dànshì",
+                "hskLevel": 2,
+                "meaningPt": "mas",
+                "partOfSpeech": "conjunção",
+                "compoundLogicPt": "Mas.",
+                characters: chars("但是", [
+                    "dàn",
+                    "shì"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "mas",
+                    "ser"
+                  ])
+              },
+              {
+                "id": "s423-t7",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ele",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Ele.",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s423-t8",
+                "hanzi": "没有",
+                "pinyin": "méiyǒu",
+                "hskLevel": 1,
+                "meaningPt": "não",
+                "partOfSpeech": "negação",
+                "compoundLogicPt": "Não.",
+                characters: chars("没有", [
+                    "méi",
+                    "yǒu"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "não",
+                    "haver"
+                  ])
+              },
+              {
+                "id": "s423-t9",
+                "hanzi": "走开",
+                "pinyin": "zǒukāi",
+                "hskLevel": 1,
+                "meaningPt": "foi embora / se afastou",
+                "partOfSpeech": "verbo + direção",
+                "compoundLogicPt": "走 (andar) + 开 (afastar).",
+                characters: chars("走开", [
+                    "zǒu",
+                    "kāi"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "andar",
+                    "afastar"
+                  ])
+              },
+              {
+                "id": "s423-t10",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s424",
+            "zhText": "他把自己的水给那个人喝，救了那个人。",
+            "pinyinText": "Tā bǎ zìjǐ de shuǐ gěi nà gè rén hē, jiù le nà gè rén.",
+            "translationPt": "Ele deu sua própria água para aquela pessoa beber e salvou aquela pessoa.",
+            "literalPt": "Ele [pegou] si-mesmo de água deu aquela pessoa beber, salvou [concluído] aquela pessoa.",
+            "grammarNotes": [
+              {
+                "pattern": "Estrutura 把 (bǎ): Sujeito + 把 + Objeto + Verbo + Resultado",
+                "explanationPt": "A construção com 把 destaca o que foi feito com um objeto específico ('pegou a própria água e a deu para a pessoa beber').",
+                "hskLevel": 2
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s424-t1",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ele",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s424-t2",
+                "hanzi": "把",
+                "pinyin": "bǎ",
+                "hskLevel": 2,
+                "meaningPt": "partícula de manipulação de objeto",
+                "partOfSpeech": "preposição",
+                "compoundLogicPt": "Antecipa o objeto 自己的水 antes do verbo 给.",
+                characters: chars("把", [
+                    "bǎ"
+                  ], [
+                    2
+                  ], [
+                    "partícula bǎ"
+                  ])
+              },
+              {
+                "id": "s424-t3",
+                "hanzi": "自己",
+                "pinyin": "zìjǐ",
+                "hskLevel": 2,
+                "meaningPt": "sua própria",
+                "partOfSpeech": "pronome reflexivo",
+                "compoundLogicPt": "自 + 己.",
+                characters: chars("自己", [
+                    "zì",
+                    "jǐ"
+                  ], [
+                    1,
+                    2
+                  ], [
+                    "próprio",
+                    "si mesmo"
+                  ])
+              },
+              {
+                "id": "s424-t4",
+                "hanzi": "的",
+                "pinyin": "de",
+                "hskLevel": 1,
+                "meaningPt": "de",
+                "partOfSpeech": "partícula",
+                "compoundLogicPt": "Possessivo.",
+                characters: chars("的", [
+                    "de"
+                  ], [
+                    1
+                  ], [
+                    "de"
+                  ])
+              },
+              {
+                "id": "s424-t5",
+                "hanzi": "水",
+                "pinyin": "shuǐ",
+                "hskLevel": 1,
+                "meaningPt": "água",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Água.",
+                characters: chars("水", [
+                    "shuǐ"
+                  ], [
+                    1
+                  ], [
+                    "água"
+                  ])
+              },
+              {
+                "id": "s424-t6",
+                "hanzi": "给",
+                "pinyin": "gěi",
+                "hskLevel": 1,
+                "meaningPt": "deu para",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Dar.",
+                characters: chars("给", [
+                    "gěi"
+                  ], [
+                    1
+                  ], [
+                    "dar"
+                  ])
+              },
+              {
+                "id": "s424-t7",
+                "hanzi": "那个",
+                "pinyin": "nà gè",
+                "hskLevel": 1,
+                "meaningPt": "aquela",
+                "partOfSpeech": "demonstrativo + classificador",
+                "compoundLogicPt": "那 + 个.",
+                characters: chars("那个", [
+                    "nà",
+                    "gè"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "aquela",
+                    "classificador"
+                  ])
+              },
+              {
+                "id": "s424-t8",
+                "hanzi": "人",
+                "pinyin": "rén",
+                "hskLevel": 1,
+                "meaningPt": "pessoa",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Viajante.",
+                characters: chars("人", [
+                    "rén"
+                  ], [
+                    1
+                  ], [
+                    "pessoa"
+                  ])
+              },
+              {
+                "id": "s424-t9",
+                "hanzi": "喝",
+                "pinyin": "hē",
+                "hskLevel": 1,
+                "meaningPt": "beber",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Beber.",
+                characters: chars("喝", [
+                    "hē"
+                  ], [
+                    1
+                  ], [
+                    "beber"
+                  ])
+              },
+              {
+                "id": "s424-t10",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s424-t11",
+                "hanzi": "救了",
+                "pinyin": "jiù le",
+                "hskLevel": 3,
+                "meaningPt": "salvou",
+                "partOfSpeech": "verbo + partícula",
+                "compoundLogicPt": "救 (salvar/socorrer) + 了.",
+                characters: chars("救了", [
+                    "jiù",
+                    "le"
+                  ], [
+                    3,
+                    1
+                  ], [
+                    "salvar",
+                    "concluído"
+                  ])
+              },
+              {
+                "id": "s424-t12",
+                "hanzi": "那个",
+                "pinyin": "nà gè",
+                "hskLevel": 1,
+                "meaningPt": "aquela",
+                "partOfSpeech": "demonstrativo + classificador",
+                "compoundLogicPt": "那 + 个.",
+                characters: chars("那个", [
+                    "nà",
+                    "gè"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "aquela",
+                    "classificador"
+                  ])
+              },
+              {
+                "id": "s424-t13",
+                "hanzi": "人",
+                "pinyin": "rén",
+                "hskLevel": 1,
+                "meaningPt": "pessoa",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Pessoa.",
+                characters: chars("人", [
+                    "rén"
+                  ], [
+                    1
+                  ], [
+                    "pessoa"
+                  ])
+              },
+              {
+                "id": "s424-t14",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ch-7",
+        "chapterNumber": 7,
+        "titleZh": "第七章：山上的小茶桌",
+        "titlePinyin": "Dì qī zhāng: Shān shàng de xiǎo cházhuō",
+        "titlePt": "Capítulo 7: A Pequena Mesa de Chá no Topo da Montanha",
+        "summaryPt": "Na tarde do terceiro dia, Li Yun finalmente alcança o cume silencioso da Montanha Vazia. Lá ele encontra o velho mestre preparando chá quente ao lado de uma pequena casa.",
+        "estimatedMinutes": 2,
+        "audioUrl": "/audio/stories/a-montanha-vazia-e-a-coragem/ch-7.mp3",
+        "audioDurationMs": 0,
+        "voiceName": "zh-CN-YunxiNeural",
+        "hskDistribution": [],
+        "keyVocabulary": [
+          {
+            "hanzi": "走到了",
+            "pinyin": "zǒudào le",
+            "meaningPt": "chegou caminhando a",
+            "hskLevel": 1
+          },
+          {
+            "hanzi": "那位",
+            "pinyin": "nà wèi",
+            "meaningPt": "aquele (respeitoso)",
+            "hskLevel": 1
+          },
+          {
+            "hanzi": "一杯热茶",
+            "pinyin": "yì bēi rè chá",
+            "meaningPt": "uma xícara de chá quente",
+            "hskLevel": 1
+          },
+          {
+            "hanzi": "桌子",
+            "pinyin": "zhuōzi",
+            "meaningPt": "mesa",
+            "hskLevel": 1
+          },
+          {
+            "hanzi": "找",
+            "pinyin": "zhǎo",
+            "meaningPt": "procurar / buscar",
+            "hskLevel": 1
+          }
+        ],
+        "sentences": [
+          {
+            "id": "s425",
+            "zhText": "下午，李云走到了高山上，看见了那位老老师。",
+            "pinyinText": "Xiàwǔ, Lǐ Yún zǒudào le gāoshān shàng, kànjiàn le nà wèi lǎo lǎoshī.",
+            "translationPt": "À tarde, Li Yun chegou caminhando ao alto da montanha e avistou aquele velho mestre.",
+            "literalPt": "Tarde, Li Yun caminhou-chegando [concluído] alta-montanha em-cima, viu [concluído] aquele [respeitoso] velho mestre.",
+            "grammarNotes": [
+              {
+                "pattern": "Complemento de resultado 到 (dào) + 了",
+                "explanationPt": "走到 (zǒudào) confirma que a longa caminhada atingiu seu ponto final no topo da montanha.",
+                "hskLevel": 1
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s425-t1",
+                "hanzi": "下午",
+                "pinyin": "xiàwǔ",
+                "hskLevel": 1,
+                "meaningPt": "à tarde",
+                "partOfSpeech": "substantivo de tempo",
+                "compoundLogicPt": "下 + 午.",
+                characters: chars("下午", [
+                    "xià",
+                    "wǔ"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "após",
+                    "meio-dia"
+                  ])
+              },
+              {
+                "id": "s425-t2",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s425-t3",
+                "hanzi": "李云",
+                "pinyin": "Lǐ Yún",
+                "hskLevel": 1,
+                "meaningPt": "Li Yun",
+                "partOfSpeech": "nome próprio",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("李云", [
+                    "Lǐ",
+                    "Yún"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "Li",
+                    "nuvem"
+                  ])
+              },
+              {
+                "id": "s425-t4",
+                "hanzi": "走到了",
+                "pinyin": "zǒudào le",
+                "hskLevel": 1,
+                "meaningPt": "chegou caminhando a",
+                "partOfSpeech": "verbo + resultado",
+                "compoundLogicPt": "走 + 到 + 了.",
+                characters: chars("走到了", [
+                    "zǒu",
+                    "dào",
+                    "le"
+                  ], [
+                    1,
+                    1,
+                    1
+                  ], [
+                    "caminhar",
+                    "chegar",
+                    "concluído"
+                  ])
+              },
+              {
+                "id": "s425-t5",
+                "hanzi": "高山",
+                "pinyin": "gāoshān",
+                "hskLevel": 1,
+                "meaningPt": "a montanha alta",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "高 + 山.",
+                characters: chars("高山", [
+                    "gāo",
+                    "shān"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "alta",
+                    "montanha"
+                  ])
+              },
+              {
+                "id": "s425-t6",
+                "hanzi": "上",
+                "pinyin": "shàng",
+                "hskLevel": 1,
+                "meaningPt": "ao topo de",
+                "partOfSpeech": "posposição",
+                "compoundLogicPt": "Topo.",
+                characters: chars("上", [
+                    "shàng"
+                  ], [
+                    1
+                  ], [
+                    "em cima"
+                  ])
+              },
+              {
+                "id": "s425-t7",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s425-t8",
+                "hanzi": "看见了",
+                "pinyin": "kànjiàn le",
+                "hskLevel": 1,
+                "meaningPt": "avistou / viu",
+                "partOfSpeech": "verbo + partícula",
+                "compoundLogicPt": "看 + 见 + 了.",
+                characters: chars("看见了", [
+                    "kàn",
+                    "jiàn",
+                    "le"
+                  ], [
+                    1,
+                    1,
+                    1
+                  ], [
+                    "olhar",
+                    "ver",
+                    "concluído"
+                  ])
+              },
+              {
+                "id": "s425-t9",
+                "hanzi": "那位",
+                "pinyin": "nà wèi",
+                "hskLevel": 1,
+                "meaningPt": "aquele",
+                "partOfSpeech": "demonstrativo + classificador",
+                "compoundLogicPt": "那 + 位.",
+                characters: chars("那位", [
+                    "nà",
+                    "wèi"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "aquele",
+                    "classificador"
+                  ])
+              },
+              {
+                "id": "s425-t10",
+                "hanzi": "老",
+                "pinyin": "lǎo",
+                "hskLevel": 1,
+                "meaningPt": "velho",
+                "partOfSpeech": "adjetivo",
+                "compoundLogicPt": "Ancião.",
+                characters: chars("老", [
+                    "lǎo"
+                  ], [
+                    1
+                  ], [
+                    "velho"
+                  ])
+              },
+              {
+                "id": "s425-t11",
+                "hanzi": "老师",
+                "pinyin": "lǎoshī",
+                "hskLevel": 1,
+                "meaningPt": "mestre",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Mestre sábio.",
+                characters: chars("老师", [
+                    "lǎo",
+                    "shī"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "experiente",
+                    "mestre"
+                  ])
+              },
+              {
+                "id": "s425-t12",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s426",
+            "zhText": "老师坐在小桌子旁边，请李云坐下。",
+            "pinyinText": "Lǎoshī zuò zài xiǎo zhuōzi pángbiān, qǐng Lǐ Yún zuòxià.",
+            "translationPt": "O mestre estava sentado ao lado de uma pequena mesa e convidou Li Yun a se sentar.",
+            "literalPt": "Mestre sentado em pequena mesa ao-lado, convidou Li Yun sentar-descer.",
+            "grammarNotes": [
+              {
+                "pattern": "请 (qǐng) + Pessoa + Verbo = 'convidar/pedir a alguém para...'",
+                "explanationPt": "Estrutura pivotal cortês: 请李云坐下 ('convidou Li Yun a se sentar').",
+                "hskLevel": 1
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s426-t1",
+                "hanzi": "老师",
+                "pinyin": "lǎoshī",
+                "hskLevel": 1,
+                "meaningPt": "o mestre",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "老 + 师.",
+                characters: chars("老师", [
+                    "lǎo",
+                    "shī"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "sábio",
+                    "mestre"
+                  ])
+              },
+              {
+                "id": "s426-t2",
+                "hanzi": "坐在",
+                "pinyin": "zuò zài",
+                "hskLevel": 1,
+                "meaningPt": "estava sentado em",
+                "partOfSpeech": "verbo + preposição",
+                "compoundLogicPt": "坐 + 在.",
+                characters: chars("坐在", [
+                    "zuò",
+                    "zài"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "sentar",
+                    "em"
+                  ])
+              },
+              {
+                "id": "s426-t3",
+                "hanzi": "小",
+                "pinyin": "xiǎo",
+                "hskLevel": 1,
+                "meaningPt": "pequena",
+                "partOfSpeech": "adjetivo",
+                "compoundLogicPt": "Pequena.",
+                characters: chars("小", [
+                    "xiǎo"
+                  ], [
+                    1
+                  ], [
+                    "pequena"
+                  ])
+              },
+              {
+                "id": "s426-t4",
+                "hanzi": "桌子",
+                "pinyin": "zhuōzi",
+                "hskLevel": 1,
+                "meaningPt": "mesa",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "桌 + 子.",
+                characters: chars("桌子", [
+                    "zhuō",
+                    "zi"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "mesa",
+                    "sufixo"
+                  ])
+              },
+              {
+                "id": "s426-t5",
+                "hanzi": "旁边",
+                "pinyin": "pángbiān",
+                "hskLevel": 2,
+                "meaningPt": "ao lado",
+                "partOfSpeech": "localizador",
+                "compoundLogicPt": "旁 + 边.",
+                characters: chars("旁边", [
+                    "páng",
+                    "biān"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "lado",
+                    "borda"
+                  ])
+              },
+              {
+                "id": "s426-t6",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s426-t7",
+                "hanzi": "请",
+                "pinyin": "qǐng",
+                "hskLevel": 1,
+                "meaningPt": "convidou",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Convidar com cortesia.",
+                characters: chars("请", [
+                    "qǐng"
+                  ], [
+                    1
+                  ], [
+                    "convidar"
+                  ])
+              },
+              {
+                "id": "s426-t8",
+                "hanzi": "李云",
+                "pinyin": "Lǐ Yún",
+                "hskLevel": 1,
+                "meaningPt": "Li Yun",
+                "partOfSpeech": "nome próprio",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("李云", [
+                    "Lǐ",
+                    "Yún"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "Li",
+                    "nuvem"
+                  ])
+              },
+              {
+                "id": "s426-t9",
+                "hanzi": "坐下",
+                "pinyin": "zuòxià",
+                "hskLevel": 1,
+                "meaningPt": "a se sentar",
+                "partOfSpeech": "verbo + direção",
+                "compoundLogicPt": "坐 (sentar) + 下 (para baixo/acomodar-se).",
+                characters: chars("坐下", [
+                    "zuò",
+                    "xià"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "sentar",
+                    "abaixar"
+                  ])
+              },
+              {
+                "id": "s426-t10",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s427",
+            "zhText": "老师给他一杯热茶，问他：“你来山上找什么？”",
+            "pinyinText": "Lǎoshī gěi tā yì bēi rè chá, wèn tā: “Nǐ lái shān shàng zhǎo shénme?”",
+            "translationPt": "O mestre deu a ele uma xícara de chá quente e perguntou-lhe: “O que você veio procurar na montanha?”",
+            "literalPt": "Mestre deu ele uma xícara quente chá, perguntou ele: “Você veio montanha em-cima procurar o-quê?”",
+            "grammarNotes": [
+              {
+                "pattern": "Classificador 杯 (bēi) para bebidas",
+                "explanationPt": "Xícaras de chá, café ou copos de água usam sempre 杯 (bēi): 一杯热茶.",
+                "hskLevel": 1
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s427-t1",
+                "hanzi": "老师",
+                "pinyin": "lǎoshī",
+                "hskLevel": 1,
+                "meaningPt": "o mestre",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Mestre.",
+                characters: chars("老师", [
+                    "lǎo",
+                    "shī"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "velho",
+                    "mestre"
+                  ])
+              },
+              {
+                "id": "s427-t2",
+                "hanzi": "给",
+                "pinyin": "gěi",
+                "hskLevel": 1,
+                "meaningPt": "deu a",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Dar.",
+                characters: chars("给", [
+                    "gěi"
+                  ], [
+                    1
+                  ], [
+                    "dar"
+                  ])
+              },
+              {
+                "id": "s427-t3",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ele",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s427-t4",
+                "hanzi": "一杯",
+                "pinyin": "yì bēi",
+                "hskLevel": 1,
+                "meaningPt": "uma xícara de",
+                "partOfSpeech": "numeral + classificador",
+                "compoundLogicPt": "一 + 杯.",
+                characters: chars("一杯", [
+                    "yī",
+                    "bēi"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "uma",
+                    "xícara"
+                  ])
+              },
+              {
+                "id": "s427-t5",
+                "hanzi": "热茶",
+                "pinyin": "rè chá",
+                "hskLevel": 1,
+                "meaningPt": "chá quente",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "热 + 茶.",
+                characters: chars("热茶", [
+                    "rè",
+                    "chá"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "quente",
+                    "chá"
+                  ])
+              },
+              {
+                "id": "s427-t6",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s427-t7",
+                "hanzi": "问",
+                "pinyin": "wèn",
+                "hskLevel": 1,
+                "meaningPt": "perguntou a",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Perguntar.",
+                characters: chars("问", [
+                    "wèn"
+                  ], [
+                    1
+                  ], [
+                    "perguntar"
+                  ])
+              },
+              {
+                "id": "s427-t8",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ele",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Ele.",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s427-t9",
+                "hanzi": "：",
+                "isPunctuation": true
+              },
+              {
+                "id": "s427-t10",
+                "hanzi": "“",
+                "isPunctuation": true
+              },
+              {
+                "id": "s427-t11",
+                "hanzi": "你",
+                "pinyin": "nǐ",
+                "hskLevel": 1,
+                "meaningPt": "você",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Você.",
+                characters: chars("你", [
+                    "nǐ"
+                  ], [
+                    1
+                  ], [
+                    "você"
+                  ])
+              },
+              {
+                "id": "s427-t12",
+                "hanzi": "来",
+                "pinyin": "lái",
+                "hskLevel": 1,
+                "meaningPt": "veio a",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Vir.",
+                characters: chars("来", [
+                    "lái"
+                  ], [
+                    1
+                  ], [
+                    "vir"
+                  ])
+              },
+              {
+                "id": "s427-t13",
+                "hanzi": "山上",
+                "pinyin": "shān shàng",
+                "hskLevel": 1,
+                "meaningPt": "a montanha",
+                "partOfSpeech": "locução espacial",
+                "compoundLogicPt": "山 + 上.",
+                characters: chars("山上", [
+                    "shān",
+                    "shàng"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "montanha",
+                    "topo"
+                  ])
+              },
+              {
+                "id": "s427-t14",
+                "hanzi": "找",
+                "pinyin": "zhǎo",
+                "hskLevel": 1,
+                "meaningPt": "procurar",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Buscar.",
+                characters: chars("找", [
+                    "zhǎo"
+                  ], [
+                    1
+                  ], [
+                    "procurar"
+                  ])
+              },
+              {
+                "id": "s427-t15",
+                "hanzi": "什么",
+                "pinyin": "shénme",
+                "hskLevel": 1,
+                "meaningPt": "o quê",
+                "partOfSpeech": "pronome interrogativo",
+                "compoundLogicPt": "O quê.",
+                characters: chars("什么", [
+                    "shén",
+                    "me"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "quê",
+                    "partícula"
+                  ])
+              },
+              {
+                "id": "s427-t16",
+                "hanzi": "？",
+                "isPunctuation": true
+              },
+              {
+                "id": "s427-t17",
+                "hanzi": "”",
+                "isPunctuation": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ch-8",
+        "chapterNumber": 8,
+        "titleZh": "第八章：李云的心事",
+        "titlePinyin": "Dì bā zhāng: Lǐ Yún de xīnshì",
+        "titlePt": "Capítulo 8: A Confissão do Guerreiro",
+        "summaryPt": "Segurando a xícara de chá quente, Li Yun abre seu coração ao mestre e confessa que sentiu medo na ponte de madeira, na floresta escura e na nevasca — acreditando ter falhado como guerreiro.",
+        "estimatedMinutes": 2,
+        "audioUrl": "/audio/stories/a-montanha-vazia-e-a-coragem/ch-8.mp3",
+        "audioDurationMs": 0,
+        "voiceName": "zh-CN-YunxiNeural",
+        "hskDistribution": [],
+        "keyVocabulary": [
+          {
+            "hanzi": "总是",
+            "pinyin": "zǒngshì",
+            "meaningPt": "sempre",
+            "hskLevel": 2
+          },
+          {
+            "hanzi": "过桥",
+            "pinyin": "guò qiáo",
+            "meaningPt": "atravessar a ponte",
+            "hskLevel": 3
+          },
+          {
+            "hanzi": "觉得",
+            "pinyin": "juéde",
+            "meaningPt": "achar / sentir",
+            "hskLevel": 1
+          },
+          {
+            "hanzi": "怎么",
+            "pinyin": "zěnme",
+            "meaningPt": "como",
+            "hskLevel": 1
+          },
+          {
+            "hanzi": "走上来",
+            "pinyin": "zǒu shànglái",
+            "meaningPt": "subir caminhando até aqui",
+            "hskLevel": 1
+          }
+        ],
+        "sentences": [
+          {
+            "id": "s428",
+            "zhText": "李云看着手里的茶杯，说：“我心里总是很害怕，我想找勇气。”",
+            "pinyinText": "Lǐ Yún kànzhe shǒulǐ de chábēi, shuō: “Wǒ xīnlǐ zǒngshì hěn hàipà, wǒ xiǎng zhǎo yǒngqì.”",
+            "translationPt": "Li Yun, olhando para a xícara de chá em sua mão, disse: “Meu coração está sempre com muito medo; eu quero encontrar a coragem.”",
+            "literalPt": "Li Yun olhando mão-dentro de chá-xícara, disse: “Eu coração-dentro sempre muito temo, eu quero procurar coragem.”",
+            "grammarNotes": [
+              {
+                "pattern": "Modificador Espacial + 的 + Substantivo (手里的茶杯)",
+                "explanationPt": "Para especificar 'a xícara que estava na mão', coloca-se 手里 ('na mão') + 的 antes de 茶杯.",
+                "hskLevel": 1
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s428-t1",
+                "hanzi": "李云",
+                "pinyin": "Lǐ Yún",
+                "hskLevel": 1,
+                "meaningPt": "Li Yun",
+                "partOfSpeech": "nome próprio",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("李云", [
+                    "Lǐ",
+                    "Yún"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "Li",
+                    "nuvem"
+                  ])
+              },
+              {
+                "id": "s428-t2",
+                "hanzi": "看着",
+                "pinyin": "kànzhe",
+                "hskLevel": 2,
+                "meaningPt": "olhando para",
+                "partOfSpeech": "verbo + partícula",
+                "compoundLogicPt": "看 + 着.",
+                characters: chars("看着", [
+                    "kàn",
+                    "zhe"
+                  ], [
+                    1,
+                    2
+                  ], [
+                    "olhar",
+                    "contínuo"
+                  ])
+              },
+              {
+                "id": "s428-t3",
+                "hanzi": "手里",
+                "pinyin": "shǒulǐ",
+                "hskLevel": 1,
+                "meaningPt": "na mão",
+                "partOfSpeech": "locução espacial",
+                "compoundLogicPt": "手 + 里.",
+                characters: chars("手里", [
+                    "shǒu",
+                    "lǐ"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "mão",
+                    "dentro"
+                  ])
+              },
+              {
+                "id": "s428-t4",
+                "hanzi": "的",
+                "pinyin": "de",
+                "hskLevel": 1,
+                "meaningPt": "de",
+                "partOfSpeech": "partícula",
+                "compoundLogicPt": "Qualifica 茶杯.",
+                characters: chars("的", [
+                    "de"
+                  ], [
+                    1
+                  ], [
+                    "de"
+                  ])
+              },
+              {
+                "id": "s428-t5",
+                "hanzi": "茶杯",
+                "pinyin": "chábēi",
+                "hskLevel": 1,
+                "meaningPt": "xícara de chá",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "茶 (chá) + 杯 (xícara).",
+                characters: chars("茶杯", [
+                    "chá",
+                    "bēi"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "chá",
+                    "xícara"
+                  ])
+              },
+              {
+                "id": "s428-t6",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s428-t7",
+                "hanzi": "说",
+                "pinyin": "shuō",
+                "hskLevel": 1,
+                "meaningPt": "disse",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Dizer.",
+                characters: chars("说", [
+                    "shuō"
+                  ], [
+                    1
+                  ], [
+                    "dizer"
+                  ])
+              },
+              {
+                "id": "s428-t8",
+                "hanzi": "：",
+                "isPunctuation": true
+              },
+              {
+                "id": "s428-t9",
+                "hanzi": "“",
+                "isPunctuation": true
+              },
+              {
+                "id": "s428-t10",
+                "hanzi": "我",
+                "pinyin": "wǒ",
+                "hskLevel": 1,
+                "meaningPt": "eu / meu",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Eu.",
+                characters: chars("我", [
+                    "wǒ"
+                  ], [
+                    1
+                  ], [
+                    "eu"
+                  ])
+              },
+              {
+                "id": "s428-t11",
+                "hanzi": "心里",
+                "pinyin": "xīnlǐ",
+                "hskLevel": 1,
+                "meaningPt": "no coração",
+                "partOfSpeech": "locução espacial",
+                "compoundLogicPt": "心 + 里.",
+                characters: chars("心里", [
+                    "xīn",
+                    "lǐ"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "coração",
+                    "dentro"
+                  ])
+              },
+              {
+                "id": "s428-t12",
+                "hanzi": "总是",
+                "pinyin": "zǒngshì",
+                "hskLevel": 2,
+                "meaningPt": "sempre",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "总 + 是.",
+                characters: chars("总是", [
+                    "zǒng",
+                    "shì"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "sempre",
+                    "ser"
+                  ])
+              },
+              {
+                "id": "s428-t13",
+                "hanzi": "很",
+                "pinyin": "hěn",
+                "hskLevel": 1,
+                "meaningPt": "muito",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Muito.",
+                characters: chars("很", [
+                    "hěn"
+                  ], [
+                    1
+                  ], [
+                    "muito"
+                  ])
+              },
+              {
+                "id": "s428-t14",
+                "hanzi": "害怕",
+                "pinyin": "hàipà",
+                "hskLevel": 2,
+                "meaningPt": "com medo",
+                "partOfSpeech": "verbo/adjetivo",
+                "compoundLogicPt": "害 + 怕.",
+                characters: chars("害怕", [
+                    "hài",
+                    "pà"
+                  ], [
+                    2,
+                    2
+                  ], [
+                    "recear",
+                    "temer"
+                  ])
+              },
+              {
+                "id": "s428-t15",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s428-t16",
+                "hanzi": "我",
+                "pinyin": "wǒ",
+                "hskLevel": 1,
+                "meaningPt": "eu",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Eu.",
+                characters: chars("我", [
+                    "wǒ"
+                  ], [
+                    1
+                  ], [
+                    "eu"
+                  ])
+              },
+              {
+                "id": "s428-t17",
+                "hanzi": "想",
+                "pinyin": "xiǎng",
+                "hskLevel": 1,
+                "meaningPt": "quero",
+                "partOfSpeech": "verbo modal",
+                "compoundLogicPt": "Querer.",
+                characters: chars("想", [
+                    "xiǎng"
+                  ], [
+                    1
+                  ], [
+                    "querer"
+                  ])
+              },
+              {
+                "id": "s428-t18",
+                "hanzi": "找",
+                "pinyin": "zhǎo",
+                "hskLevel": 1,
+                "meaningPt": "encontrar / procurar",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Buscar.",
+                characters: chars("找", [
+                    "zhǎo"
+                  ], [
+                    1
+                  ], [
+                    "procurar"
+                  ])
+              },
+              {
+                "id": "s428-t19",
+                "hanzi": "勇气",
+                "pinyin": "yǒngqì",
+                "hskLevel": 3,
+                "meaningPt": "a coragem",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "勇 + 气.",
+                characters: chars("勇气", [
+                    "yǒng",
+                    "qì"
+                  ], [
+                    3,
+                    1
+                  ], [
+                    "bravura",
+                    "espírito"
+                  ])
+              },
+              {
+                "id": "s428-t20",
+                "hanzi": "。",
+                "isPunctuation": true
+              },
+              {
+                "id": "s428-t21",
+                "hanzi": "”",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s429",
+            "zhText": "“过桥的时候我很怕，夜里在山林里我也很怕。”",
+            "pinyinText": "“Guò qiáo de shíhou wǒ hěn pà, yèlǐ zài shānlín lǐ wǒ yě hěn pà.”",
+            "translationPt": "“Quando atravessei a ponte eu senti muito medo, e à noite na floresta da montanha eu também senti muito medo.”",
+            "literalPt": "“Atravessar ponte de momento eu muito temi, noite-dentro em montanha-bosque dentro eu também muito temi.”",
+            "grammarNotes": [
+              {
+                "pattern": "Ordem Tempo + Lugar + Sujeito + Predicado",
+                "explanationPt": "Em 夜里在山林里我也很怕, o tempo (夜里) e o lugar (在山林里) vêm no início para emoldurar a cena.",
+                "hskLevel": 1
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s429-t1",
+                "hanzi": "“",
+                "isPunctuation": true
+              },
+              {
+                "id": "s429-t2",
+                "hanzi": "过",
+                "pinyin": "guò",
+                "hskLevel": 1,
+                "meaningPt": "atravessar",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Cruzar.",
+                characters: chars("过", [
+                    "guò"
+                  ], [
+                    1
+                  ], [
+                    "atravessar"
+                  ])
+              },
+              {
+                "id": "s429-t3",
+                "hanzi": "桥",
+                "pinyin": "qiáo",
+                "hskLevel": 3,
+                "meaningPt": "a ponte",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Ponte.",
+                characters: chars("桥", [
+                    "qiáo"
+                  ], [
+                    3
+                  ], [
+                    "ponte"
+                  ])
+              },
+              {
+                "id": "s429-t4",
+                "hanzi": "的时候",
+                "pinyin": "de shíhou",
+                "hskLevel": 1,
+                "meaningPt": "quando",
+                "partOfSpeech": "locução temporal",
+                "compoundLogicPt": "No momento em que.",
+                characters: chars("的时候", [
+                    "de",
+                    "shí",
+                    "hou"
+                  ], [
+                    1,
+                    1,
+                    1
+                  ], [
+                    "de",
+                    "tempo",
+                    "momento"
+                  ])
+              },
+              {
+                "id": "s429-t5",
+                "hanzi": "我",
+                "pinyin": "wǒ",
+                "hskLevel": 1,
+                "meaningPt": "eu",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Eu.",
+                characters: chars("我", [
+                    "wǒ"
+                  ], [
+                    1
+                  ], [
+                    "eu"
+                  ])
+              },
+              {
+                "id": "s429-t6",
+                "hanzi": "很",
+                "pinyin": "hěn",
+                "hskLevel": 1,
+                "meaningPt": "muito",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Muito.",
+                characters: chars("很", [
+                    "hěn"
+                  ], [
+                    1
+                  ], [
+                    "muito"
+                  ])
+              },
+              {
+                "id": "s429-t7",
+                "hanzi": "怕",
+                "pinyin": "pà",
+                "hskLevel": 2,
+                "meaningPt": "senti medo",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Temer.",
+                characters: chars("怕", [
+                    "pà"
+                  ], [
+                    2
+                  ], [
+                    "temer"
+                  ])
+              },
+              {
+                "id": "s429-t8",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s429-t9",
+                "hanzi": "夜里",
+                "pinyin": "yèlǐ",
+                "hskLevel": 2,
+                "meaningPt": "à noite",
+                "partOfSpeech": "locução temporal",
+                "compoundLogicPt": "夜 + 里.",
+                characters: chars("夜里", [
+                    "yè",
+                    "lǐ"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "noite",
+                    "dentro"
+                  ])
+              },
+              {
+                "id": "s429-t10",
+                "hanzi": "在",
+                "pinyin": "zài",
+                "hskLevel": 1,
+                "meaningPt": "em",
+                "partOfSpeech": "preposição",
+                "compoundLogicPt": "Em.",
+                characters: chars("在", [
+                    "zài"
+                  ], [
+                    1
+                  ], [
+                    "em"
+                  ])
+              },
+              {
+                "id": "s429-t11",
+                "hanzi": "山林",
+                "pinyin": "shānlín",
+                "hskLevel": 1,
+                "meaningPt": "floresta da montanha",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "山 + 林.",
+                characters: chars("山林", [
+                    "shān",
+                    "lín"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "montanha",
+                    "floresta"
+                  ])
+              },
+              {
+                "id": "s429-t12",
+                "hanzi": "里",
+                "pinyin": "lǐ",
+                "hskLevel": 1,
+                "meaningPt": "dentro",
+                "partOfSpeech": "posposição",
+                "compoundLogicPt": "Interior.",
+                characters: chars("里", [
+                    "lǐ"
+                  ], [
+                    1
+                  ], [
+                    "dentro"
+                  ])
+              },
+              {
+                "id": "s429-t13",
+                "hanzi": "我",
+                "pinyin": "wǒ",
+                "hskLevel": 1,
+                "meaningPt": "eu",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Eu.",
+                characters: chars("我", [
+                    "wǒ"
+                  ], [
+                    1
+                  ], [
+                    "eu"
+                  ])
+              },
+              {
+                "id": "s429-t14",
+                "hanzi": "也",
+                "pinyin": "yě",
+                "hskLevel": 1,
+                "meaningPt": "também",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Também.",
+                characters: chars("也", [
+                    "yě"
+                  ], [
+                    1
+                  ], [
+                    "também"
+                  ])
+              },
+              {
+                "id": "s429-t15",
+                "hanzi": "很",
+                "pinyin": "hěn",
+                "hskLevel": 1,
+                "meaningPt": "muito",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Muito.",
+                characters: chars("很", [
+                    "hěn"
+                  ], [
+                    1
+                  ], [
+                    "muito"
+                  ])
+              },
+              {
+                "id": "s429-t16",
+                "hanzi": "怕",
+                "pinyin": "pà",
+                "hskLevel": 2,
+                "meaningPt": "senti medo",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Temer.",
+                characters: chars("怕", [
+                    "pà"
+                  ], [
+                    2
+                  ], [
+                    "temer"
+                  ])
+              },
+              {
+                "id": "s429-t17",
+                "hanzi": "。",
+                "isPunctuation": true
+              },
+              {
+                "id": "s429-t18",
+                "hanzi": "”",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s430",
+            "zhText": "老师听完，问他：“你这么害怕，那你是怎么走上来的？”",
+            "pinyinText": "Lǎoshī tīngwán, wèn tā: “Nǐ zhème hàipà, nà nǐ shì zěnme zǒu shànglái de?”",
+            "translationPt": "Após terminar de ouvir, o mestre perguntou-lhe: “Se você estava com tanto medo, então como foi que você subiu caminhando até aqui?”",
+            "literalPt": "Mestre ouviu-terminando, perguntou ele: “Você tão temeroso, então você é como caminhou subindo-vindo [de]?”",
+            "grammarNotes": [
+              {
+                "pattern": "Estrutura de ênfase 是...的 (shì zěnme zǒu shànglái de)",
+                "explanationPt": "Quando uma ação já aconteceu (ele já subiu a montanha) e queremos perguntar COMO ela foi realizada, usamos 是 + 怎么 + Verbo + 的.",
+                "hskLevel": 1
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s430-t1",
+                "hanzi": "老师",
+                "pinyin": "lǎoshī",
+                "hskLevel": 1,
+                "meaningPt": "o mestre",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Mestre.",
+                characters: chars("老师", [
+                    "lǎo",
+                    "shī"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "sábio",
+                    "mestre"
+                  ])
+              },
+              {
+                "id": "s430-t2",
+                "hanzi": "听完",
+                "pinyin": "tīngwán",
+                "hskLevel": 1,
+                "meaningPt": "terminou de ouvir",
+                "partOfSpeech": "verbo + resultado",
+                "compoundLogicPt": "听 (ouvir) + 完 (terminar/concluir).",
+                characters: chars("听完", [
+                    "tīng",
+                    "wán"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "ouvir",
+                    "terminar"
+                  ])
+              },
+              {
+                "id": "s430-t3",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s430-t4",
+                "hanzi": "问",
+                "pinyin": "wèn",
+                "hskLevel": 1,
+                "meaningPt": "perguntou a",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Perguntar.",
+                characters: chars("问", [
+                    "wèn"
+                  ], [
+                    1
+                  ], [
+                    "perguntar"
+                  ])
+              },
+              {
+                "id": "s430-t5",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ele",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s430-t6",
+                "hanzi": "：",
+                "isPunctuation": true
+              },
+              {
+                "id": "s430-t7",
+                "hanzi": "“",
+                "isPunctuation": true
+              },
+              {
+                "id": "s430-t8",
+                "hanzi": "你",
+                "pinyin": "nǐ",
+                "hskLevel": 1,
+                "meaningPt": "você",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Você.",
+                characters: chars("你", [
+                    "nǐ"
+                  ], [
+                    1
+                  ], [
+                    "você"
+                  ])
+              },
+              {
+                "id": "s430-t9",
+                "hanzi": "这么",
+                "pinyin": "zhème",
+                "hskLevel": 2,
+                "meaningPt": "tão",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Tanto assim.",
+                characters: chars("这么", [
+                    "zhè",
+                    "me"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "este",
+                    "modo"
+                  ])
+              },
+              {
+                "id": "s430-t10",
+                "hanzi": "害怕",
+                "pinyin": "hàipà",
+                "hskLevel": 2,
+                "meaningPt": "com medo",
+                "partOfSpeech": "verbo/adjetivo",
+                "compoundLogicPt": "Temer.",
+                characters: chars("害怕", [
+                    "hài",
+                    "pà"
+                  ], [
+                    2,
+                    2
+                  ], [
+                    "recear",
+                    "temer"
+                  ])
+              },
+              {
+                "id": "s430-t11",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s430-t12",
+                "hanzi": "那",
+                "pinyin": "nà",
+                "hskLevel": 1,
+                "meaningPt": "então",
+                "partOfSpeech": "conjunção",
+                "compoundLogicPt": "Nesse caso / então.",
+                characters: chars("那", [
+                    "nà"
+                  ], [
+                    1
+                  ], [
+                    "então"
+                  ])
+              },
+              {
+                "id": "s430-t13",
+                "hanzi": "你",
+                "pinyin": "nǐ",
+                "hskLevel": 1,
+                "meaningPt": "você",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Você.",
+                characters: chars("你", [
+                    "nǐ"
+                  ], [
+                    1
+                  ], [
+                    "você"
+                  ])
+              },
+              {
+                "id": "s430-t14",
+                "hanzi": "是",
+                "pinyin": "shì",
+                "hskLevel": 1,
+                "meaningPt": "foi (ênfase 是...的)",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Abre a estrutura 是...的.",
+                characters: chars("是", [
+                    "shì"
+                  ], [
+                    1
+                  ], [
+                    "ser"
+                  ])
+              },
+              {
+                "id": "s430-t15",
+                "hanzi": "怎么",
+                "pinyin": "zěnme",
+                "hskLevel": 1,
+                "meaningPt": "como",
+                "partOfSpeech": "pronome interrogativo",
+                "compoundLogicPt": "De que maneira.",
+                characters: chars("怎么", [
+                    "zěn",
+                    "me"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "como",
+                    "partícula"
+                  ])
+              },
+              {
+                "id": "s430-t16",
+                "hanzi": "走上来",
+                "pinyin": "zǒu shànglái",
+                "hskLevel": 1,
+                "meaningPt": "subiu caminhando até aqui",
+                "partOfSpeech": "verbo + direcional composto",
+                "compoundLogicPt": "走 (caminhar) + 上 (subir) + 来 (em direção a quem fala, no topo).",
+                characters: chars("走上来", [
+                    "zǒu",
+                    "shàng",
+                    "lái"
+                  ], [
+                    1,
+                    1,
+                    1
+                  ], [
+                    "andar",
+                    "subir",
+                    "vir"
+                  ])
+              },
+              {
+                "id": "s430-t17",
+                "hanzi": "的",
+                "pinyin": "de",
+                "hskLevel": 1,
+                "meaningPt": "partícula final (是...的)",
+                "partOfSpeech": "partícula",
+                "compoundLogicPt": "Fecha a estrutura de foco no modo.",
+                characters: chars("的", [
+                    "de"
+                  ], [
+                    1
+                  ], [
+                    "partícula"
+                  ])
+              },
+              {
+                "id": "s430-t18",
+                "hanzi": "？",
+                "isPunctuation": true
+              },
+              {
+                "id": "s430-t19",
+                "hanzi": "”",
+                "isPunctuation": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ch-9",
+        "chapterNumber": 9,
+        "titleZh": "第九章：雪里的石头",
+        "titlePinyin": "Dì jiǔ zhāng: Xuě lǐ de shítou",
+        "titlePt": "Capítulo 9: A Pedra na Neve e a Revelação",
+        "summaryPt": "O mestre aponta para uma pedra pousada na neve e faz a pergunta que transforma a visão de Li Yun: uma pedra não sente frio nem medo, mas ninguém chama uma pedra de corajosa.",
+        "estimatedMinutes": 2,
+        "audioUrl": "/audio/stories/a-montanha-vazia-e-a-coragem/ch-9.mp3",
+        "audioDurationMs": 0,
+        "voiceName": "zh-CN-YunxiNeural",
+        "hskDistribution": [],
+        "keyVocabulary": [
+          {
+            "hanzi": "一块石头",
+            "pinyin": "yí kuài shítou",
+            "meaningPt": "uma pedra",
+            "hskLevel": 2
+          },
+          {
+            "hanzi": "不怕",
+            "pinyin": "bú pà",
+            "meaningPt": "não temer",
+            "hskLevel": 2
+          },
+          {
+            "hanzi": "往前走",
+            "pinyin": "wǎng qián zǒu",
+            "meaningPt": "caminhar para a frente",
+            "hskLevel": 2
+          },
+          {
+            "hanzi": "才是",
+            "pinyin": "cái shì",
+            "meaningPt": "é que é de verdade",
+            "hskLevel": 2
+          },
+          {
+            "hanzi": "笑着",
+            "pinyin": "xiàozhe",
+            "meaningPt": "sorrindo",
+            "hskLevel": 2
+          }
+        ],
+        "sentences": [
+          {
+            "id": "s431",
+            "zhText": "老师看着雪里的一块石头，问：“那块石头怕冷吗？”",
+            "pinyinText": "Lǎoshī kànzhe xuě lǐ de yí kuài shítou, wèn: “Nà kuài shítou pà lěng ma?”",
+            "translationPt": "O mestre, olhando para uma pedra na neve, perguntou: “Aquela pedra tem medo do frio?”",
+            "literalPt": "Mestre olhando neve dentro de um [pedaço] pedra, perguntou: “Aquele [pedaço] pedra teme frio [pergunta]?”",
+            "grammarNotes": [
+              {
+                "pattern": "Classificador 块 (kuài) para pedras e blocos",
+                "explanationPt": "Para pedras e pedaços sólidos, usa-se o classificador 块 (kuài): 一块石头 (uma pedra).",
+                "hskLevel": 1
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s431-t1",
+                "hanzi": "老师",
+                "pinyin": "lǎoshī",
+                "hskLevel": 1,
+                "meaningPt": "o mestre",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "老 + 师.",
+                characters: chars("老师", [
+                    "lǎo",
+                    "shī"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "velho",
+                    "mestre"
+                  ])
+              },
+              {
+                "id": "s431-t2",
+                "hanzi": "看着",
+                "pinyin": "kànzhe",
+                "hskLevel": 2,
+                "meaningPt": "olhando para",
+                "partOfSpeech": "verbo + partícula",
+                "compoundLogicPt": "看 + 着 (zhe).",
+                characters: chars("看着", [
+                    "kàn",
+                    "zhe"
+                  ], [
+                    1,
+                    2
+                  ], [
+                    "olhar",
+                    "contínuo"
+                  ])
+              },
+              {
+                "id": "s431-t3",
+                "hanzi": "雪里",
+                "pinyin": "xuě lǐ",
+                "hskLevel": 2,
+                "meaningPt": "na neve",
+                "partOfSpeech": "locução espacial",
+                "compoundLogicPt": "雪 + 里.",
+                characters: chars("雪里", [
+                    "xuě",
+                    "lǐ"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "neve",
+                    "dentro"
+                  ])
+              },
+              {
+                "id": "s431-t4",
+                "hanzi": "的",
+                "pinyin": "de",
+                "hskLevel": 1,
+                "meaningPt": "de",
+                "partOfSpeech": "partícula",
+                "compoundLogicPt": "Conecta 雪里 a 石头.",
+                characters: chars("的", [
+                    "de"
+                  ], [
+                    1
+                  ], [
+                    "de"
+                  ])
+              },
+              {
+                "id": "s431-t5",
+                "hanzi": "一块",
+                "pinyin": "yí kuài",
+                "hskLevel": 1,
+                "meaningPt": "uma (pedra)",
+                "partOfSpeech": "numeral + classificador",
+                "compoundLogicPt": "一 + 块.",
+                characters: chars("一块", [
+                    "yī",
+                    "kuài"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "um",
+                    "pedaço/bloco"
+                  ])
+              },
+              {
+                "id": "s431-t6",
+                "hanzi": "石头",
+                "pinyin": "shítou",
+                "hskLevel": 2,
+                "meaningPt": "pedra",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "石 (rocha) + 头.",
+                characters: chars("石头", [
+                    "shí",
+                    "tou"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "pedra",
+                    "sufixo"
+                  ])
+              },
+              {
+                "id": "s431-t7",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s431-t8",
+                "hanzi": "问",
+                "pinyin": "wèn",
+                "hskLevel": 1,
+                "meaningPt": "perguntou",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Perguntar.",
+                characters: chars("问", [
+                    "wèn"
+                  ], [
+                    1
+                  ], [
+                    "perguntar"
+                  ])
+              },
+              {
+                "id": "s431-t9",
+                "hanzi": "：",
+                "isPunctuation": true
+              },
+              {
+                "id": "s431-t10",
+                "hanzi": "“",
+                "isPunctuation": true
+              },
+              {
+                "id": "s431-t11",
+                "hanzi": "那块",
+                "pinyin": "nà kuài",
+                "hskLevel": 1,
+                "meaningPt": "aquela",
+                "partOfSpeech": "demonstrativo + classificador",
+                "compoundLogicPt": "那 + 块.",
+                characters: chars("那块", [
+                    "nà",
+                    "kuài"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "aquela",
+                    "pedra"
+                  ])
+              },
+              {
+                "id": "s431-t12",
+                "hanzi": "石头",
+                "pinyin": "shítou",
+                "hskLevel": 2,
+                "meaningPt": "pedra",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Pedra.",
+                characters: chars("石头", [
+                    "shí",
+                    "tou"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "pedra",
+                    "sufixo"
+                  ])
+              },
+              {
+                "id": "s431-t13",
+                "hanzi": "怕",
+                "pinyin": "pà",
+                "hskLevel": 2,
+                "meaningPt": "teme",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Temer.",
+                characters: chars("怕", [
+                    "pà"
+                  ], [
+                    2
+                  ], [
+                    "temer"
+                  ])
+              },
+              {
+                "id": "s431-t14",
+                "hanzi": "冷",
+                "pinyin": "lěng",
+                "hskLevel": 1,
+                "meaningPt": "o frio",
+                "partOfSpeech": "substantivo/adjetivo",
+                "compoundLogicPt": "Frio.",
+                characters: chars("冷", [
+                    "lěng"
+                  ], [
+                    1
+                  ], [
+                    "frio"
+                  ])
+              },
+              {
+                "id": "s431-t15",
+                "hanzi": "吗",
+                "pinyin": "ma",
+                "hskLevel": 1,
+                "meaningPt": "?",
+                "partOfSpeech": "partícula interrogativa",
+                "compoundLogicPt": "Pergunta sim/não.",
+                characters: chars("吗", [
+                    "ma"
+                  ], [
+                    1
+                  ], [
+                    "pergunta"
+                  ])
+              },
+              {
+                "id": "s431-t16",
+                "hanzi": "？",
+                "isPunctuation": true
+              },
+              {
+                "id": "s431-t17",
+                "hanzi": "”",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s432",
+            "zhText": "李云说：“石头没有心，它不怕冷，但它也不是真有勇气。”",
+            "pinyinText": "Lǐ Yún shuō: “Shítou méiyǒu xīn, tā bú pà lěng, dàn tā yě bú shì zhēn yǒu yǒngqì.”",
+            "translationPt": "Li Yun respondeu: “A pedra não tem coração; ela não tem medo do frio, mas ela também não tem coragem de verdade.”",
+            "literalPt": "Li Yun disse: “Pedra não-tem coração, ela não teme frio, mas ela também não é realmente ter coragem.”",
+            "grammarNotes": [
+              {
+                "pattern": "Tone Sandhi de 不 (bù → bú antes de 4º tom)",
+                "explanationPt": "Em 不怕 (bú pà) e 不是 (bú shì), o 不 sobe para o 2º tom antes de sílabas de 4º tom.",
+                "hskLevel": 1
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s432-t1",
+                "hanzi": "李云",
+                "pinyin": "Lǐ Yún",
+                "hskLevel": 1,
+                "meaningPt": "Li Yun",
+                "partOfSpeech": "nome próprio",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("李云", [
+                    "Lǐ",
+                    "Yún"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "Li",
+                    "nuvem"
+                  ])
+              },
+              {
+                "id": "s432-t2",
+                "hanzi": "说",
+                "pinyin": "shuō",
+                "hskLevel": 1,
+                "meaningPt": "disse",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Dizer.",
+                characters: chars("说", [
+                    "shuō"
+                  ], [
+                    1
+                  ], [
+                    "dizer"
+                  ])
+              },
+              {
+                "id": "s432-t3",
+                "hanzi": "：",
+                "isPunctuation": true
+              },
+              {
+                "id": "s432-t4",
+                "hanzi": "“",
+                "isPunctuation": true
+              },
+              {
+                "id": "s432-t5",
+                "hanzi": "石头",
+                "pinyin": "shítou",
+                "hskLevel": 2,
+                "meaningPt": "a pedra",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "石 + 头.",
+                characters: chars("石头", [
+                    "shí",
+                    "tou"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "pedra",
+                    "sufixo"
+                  ])
+              },
+              {
+                "id": "s432-t6",
+                "hanzi": "没有",
+                "pinyin": "méiyǒu",
+                "hskLevel": 1,
+                "meaningPt": "não tem",
+                "partOfSpeech": "negação + verbo",
+                "compoundLogicPt": "Não possui.",
+                characters: chars("没有", [
+                    "méi",
+                    "yǒu"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "não",
+                    "ter"
+                  ])
+              },
+              {
+                "id": "s432-t7",
+                "hanzi": "心",
+                "pinyin": "xīn",
+                "hskLevel": 1,
+                "meaningPt": "coração",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Coração / alma.",
+                characters: chars("心", [
+                    "xīn"
+                  ], [
+                    1
+                  ], [
+                    "coração"
+                  ])
+              },
+              {
+                "id": "s432-t8",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s432-t9",
+                "hanzi": "它",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ela (a pedra)",
+                "partOfSpeech": "pronome neutro",
+                "compoundLogicPt": "Pronome para objetos.",
+                characters: chars("它", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ela"
+                  ])
+              },
+              {
+                "id": "s432-t10",
+                "hanzi": "不怕",
+                "pinyin": "bú pà",
+                "hskLevel": 2,
+                "meaningPt": "não teme",
+                "partOfSpeech": "negação + verbo",
+                "compoundLogicPt": "不 (bú) + 怕.",
+                characters: chars("不怕", [
+                    "bù",
+                    "pà"
+                  ], [
+                    1,
+                    2
+                  ], [
+                    "não",
+                    "temer"
+                  ])
+              },
+              {
+                "id": "s432-t11",
+                "hanzi": "冷",
+                "pinyin": "lěng",
+                "hskLevel": 1,
+                "meaningPt": "o frio",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Frio.",
+                characters: chars("冷", [
+                    "lěng"
+                  ], [
+                    1
+                  ], [
+                    "frio"
+                  ])
+              },
+              {
+                "id": "s432-t12",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s432-t13",
+                "hanzi": "但",
+                "pinyin": "dàn",
+                "hskLevel": 1,
+                "meaningPt": "mas",
+                "partOfSpeech": "conjunção",
+                "compoundLogicPt": "Mas.",
+                characters: chars("但", [
+                    "dàn"
+                  ], [
+                    1
+                  ], [
+                    "mas"
+                  ])
+              },
+              {
+                "id": "s432-t14",
+                "hanzi": "它",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ela",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "A pedra.",
+                characters: chars("它", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ela"
+                  ])
+              },
+              {
+                "id": "s432-t15",
+                "hanzi": "也",
+                "pinyin": "yě",
+                "hskLevel": 1,
+                "meaningPt": "também",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Também.",
+                characters: chars("也", [
+                    "yě"
+                  ], [
+                    1
+                  ], [
+                    "também"
+                  ])
+              },
+              {
+                "id": "s432-t16",
+                "hanzi": "不是",
+                "pinyin": "bú shì",
+                "hskLevel": 1,
+                "meaningPt": "não é",
+                "partOfSpeech": "negação + verbo",
+                "compoundLogicPt": "不 (bú) + 是.",
+                characters: chars("不是", [
+                    "bù",
+                    "shì"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "não",
+                    "ser"
+                  ])
+              },
+              {
+                "id": "s432-t17",
+                "hanzi": "真",
+                "pinyin": "zhēn",
+                "hskLevel": 1,
+                "meaningPt": "de verdade",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Realmente.",
+                characters: chars("真", [
+                    "zhēn"
+                  ], [
+                    1
+                  ], [
+                    "realmente"
+                  ])
+              },
+              {
+                "id": "s432-t18",
+                "hanzi": "有",
+                "pinyin": "yǒu",
+                "hskLevel": 1,
+                "meaningPt": "ter",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Ter.",
+                characters: chars("有", [
+                    "yǒu"
+                  ], [
+                    1
+                  ], [
+                    "ter"
+                  ])
+              },
+              {
+                "id": "s432-t19",
+                "hanzi": "勇气",
+                "pinyin": "yǒngqì",
+                "hskLevel": 3,
+                "meaningPt": "coragem",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "勇 + 气.",
+                characters: chars("勇气", [
+                    "yǒng",
+                    "qì"
+                  ], [
+                    3,
+                    1
+                  ], [
+                    "bravura",
+                    "espírito"
+                  ])
+              },
+              {
+                "id": "s432-t20",
+                "hanzi": "。",
+                "isPunctuation": true
+              },
+              {
+                "id": "s432-t21",
+                "hanzi": "”",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s433",
+            "zhText": "老师笑着对他说：“对，不怕不是勇气；你心里怕，还往前走，这才是它。”",
+            "pinyinText": "Lǎoshī xiàozhe duì tā shuō: “Duì, bú pà bú shì yǒngqì; nǐ xīnlǐ pà, hái wǎng qián zǒu, zhè cái shì tā.”",
+            "translationPt": "O mestre disse a ele sorrindo: “Exato! Não sentir medo não é coragem; você sentir medo no coração e, ainda assim, caminhar para a frente — isso, sim, é que é ela.”",
+            "literalPt": "Mestre sorrindo para ele disse: “Certo, não temer não é coragem; você coração-dentro temer, ainda rumo frente caminhar, isto apenas-então é ela.”",
+            "grammarNotes": [
+              {
+                "pattern": "这才是... (zhè cái shì...) = 'Isso, sim, é que é...'",
+                "explanationPt": "O advérbio 才 (cái) antes de 是 destaca a condição essencial para que a virtude exista.",
+                "hskLevel": 2
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s433-t1",
+                "hanzi": "老师",
+                "pinyin": "lǎoshī",
+                "hskLevel": 1,
+                "meaningPt": "o mestre",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Mestre.",
+                characters: chars("老师", [
+                    "lǎo",
+                    "shī"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "velho",
+                    "mestre"
+                  ])
+              },
+              {
+                "id": "s433-t2",
+                "hanzi": "笑着",
+                "pinyin": "xiàozhe",
+                "hskLevel": 2,
+                "meaningPt": "sorrindo",
+                "partOfSpeech": "verbo + partícula",
+                "compoundLogicPt": "笑 + 着.",
+                characters: chars("笑着", [
+                    "xiào",
+                    "zhe"
+                  ], [
+                    2,
+                    2
+                  ], [
+                    "sorrir",
+                    "contínuo"
+                  ])
+              },
+              {
+                "id": "s433-t3",
+                "hanzi": "对",
+                "pinyin": "duì",
+                "hskLevel": 1,
+                "meaningPt": "para",
+                "partOfSpeech": "preposição",
+                "compoundLogicPt": "Para.",
+                characters: chars("对", [
+                    "duì"
+                  ], [
+                    1
+                  ], [
+                    "para"
+                  ])
+              },
+              {
+                "id": "s433-t4",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ele",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s433-t5",
+                "hanzi": "说",
+                "pinyin": "shuō",
+                "hskLevel": 1,
+                "meaningPt": "disse",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Dizer.",
+                characters: chars("说", [
+                    "shuō"
+                  ], [
+                    1
+                  ], [
+                    "dizer"
+                  ])
+              },
+              {
+                "id": "s433-t6",
+                "hanzi": "：",
+                "isPunctuation": true
+              },
+              {
+                "id": "s433-t7",
+                "hanzi": "“",
+                "isPunctuation": true
+              },
+              {
+                "id": "s433-t8",
+                "hanzi": "对",
+                "pinyin": "duì",
+                "hskLevel": 1,
+                "meaningPt": "exato / correto",
+                "partOfSpeech": "adjetivo",
+                "compoundLogicPt": "Certo.",
+                characters: chars("对", [
+                    "duì"
+                  ], [
+                    1
+                  ], [
+                    "certo"
+                  ])
+              },
+              {
+                "id": "s433-t9",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s433-t10",
+                "hanzi": "不怕",
+                "pinyin": "bú pà",
+                "hskLevel": 2,
+                "meaningPt": "não ter medo",
+                "partOfSpeech": "locução verbal",
+                "compoundLogicPt": "不 + 怕.",
+                characters: chars("不怕", [
+                    "bù",
+                    "pà"
+                  ], [
+                    1,
+                    2
+                  ], [
+                    "não",
+                    "temer"
+                  ])
+              },
+              {
+                "id": "s433-t11",
+                "hanzi": "不是",
+                "pinyin": "bú shì",
+                "hskLevel": 1,
+                "meaningPt": "não é",
+                "partOfSpeech": "negação + verbo",
+                "compoundLogicPt": "不 + 是.",
+                characters: chars("不是", [
+                    "bù",
+                    "shì"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "não",
+                    "ser"
+                  ])
+              },
+              {
+                "id": "s433-t12",
+                "hanzi": "勇气",
+                "pinyin": "yǒngqì",
+                "hskLevel": 3,
+                "meaningPt": "coragem",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "勇 + 气.",
+                characters: chars("勇气", [
+                    "yǒng",
+                    "qì"
+                  ], [
+                    3,
+                    1
+                  ], [
+                    "bravura",
+                    "energia"
+                  ])
+              },
+              {
+                "id": "s433-t13",
+                "hanzi": "；",
+                "isPunctuation": true
+              },
+              {
+                "id": "s433-t14",
+                "hanzi": "你",
+                "pinyin": "nǐ",
+                "hskLevel": 1,
+                "meaningPt": "você",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Você.",
+                characters: chars("你", [
+                    "nǐ"
+                  ], [
+                    1
+                  ], [
+                    "você"
+                  ])
+              },
+              {
+                "id": "s433-t15",
+                "hanzi": "心里",
+                "pinyin": "xīnlǐ",
+                "hskLevel": 1,
+                "meaningPt": "no coração",
+                "partOfSpeech": "locução espacial",
+                "compoundLogicPt": "心 + 里.",
+                characters: chars("心里", [
+                    "xīn",
+                    "lǐ"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "coração",
+                    "dentro"
+                  ])
+              },
+              {
+                "id": "s433-t16",
+                "hanzi": "怕",
+                "pinyin": "pà",
+                "hskLevel": 2,
+                "meaningPt": "sentir medo",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Temer.",
+                characters: chars("怕", [
+                    "pà"
+                  ], [
+                    2
+                  ], [
+                    "temer"
+                  ])
+              },
+              {
+                "id": "s433-t17",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s433-t18",
+                "hanzi": "还",
+                "pinyin": "hái",
+                "hskLevel": 1,
+                "meaningPt": "e ainda assim",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Ainda assim.",
+                characters: chars("还", [
+                    "hái"
+                  ], [
+                    1
+                  ], [
+                    "ainda"
+                  ])
+              },
+              {
+                "id": "s433-t19",
+                "hanzi": "往前",
+                "pinyin": "wǎng qián",
+                "hskLevel": 2,
+                "meaningPt": "para a frente",
+                "partOfSpeech": "preposição + direção",
+                "compoundLogicPt": "往 + 前.",
+                characters: chars("往前", [
+                    "wǎng",
+                    "qián"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "rumo a",
+                    "frente"
+                  ])
+              },
+              {
+                "id": "s433-t20",
+                "hanzi": "走",
+                "pinyin": "zǒu",
+                "hskLevel": 1,
+                "meaningPt": "caminhar / avançar",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Dar o passo.",
+                characters: chars("走", [
+                    "zǒu"
+                  ], [
+                    1
+                  ], [
+                    "caminhar"
+                  ])
+              },
+              {
+                "id": "s433-t21",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s433-t22",
+                "hanzi": "这",
+                "pinyin": "zhè",
+                "hskLevel": 1,
+                "meaningPt": "isso",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Isto.",
+                characters: chars("这", [
+                    "zhè"
+                  ], [
+                    1
+                  ], [
+                    "isto"
+                  ])
+              },
+              {
+                "id": "s433-t23",
+                "hanzi": "才是",
+                "pinyin": "cái shì",
+                "hskLevel": 2,
+                "meaningPt": "é que é de verdade",
+                "partOfSpeech": "advérbio + verbo",
+                "compoundLogicPt": "才 + 是.",
+                characters: chars("才是", [
+                    "cái",
+                    "shì"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "apenas então",
+                    "ser"
+                  ])
+              },
+              {
+                "id": "s433-t24",
+                "hanzi": "它",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ela (a coragem)",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Retoma 勇气.",
+                characters: chars("它", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ela"
+                  ])
+              },
+              {
+                "id": "s433-t25",
+                "hanzi": "。",
+                "isPunctuation": true
+              },
+              {
+                "id": "s433-t26",
+                "hanzi": "”",
+                "isPunctuation": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ch-10",
+        "chapterNumber": 10,
+        "titleZh": "第十章：下山的路",
+        "titlePinyin": "Dì shí zhāng: Xiàshān de lù",
+        "titlePt": "Capítulo 10: O Caminho de Volta da Montanha",
+        "summaryPt": "Li Yun finalmente compreende que a coragem nunca esteve fora dele: foi ela quem o guiou na ponte, na noite escura e no resgate na neve. Com o coração em paz, o guerreiro desce a montanha.",
+        "estimatedMinutes": 2,
+        "audioUrl": "/audio/stories/a-montanha-vazia-e-a-coragem/ch-10.mp3",
+        "audioDurationMs": 0,
+        "voiceName": "zh-CN-YunxiNeural",
+        "hskDistribution": [],
+        "keyVocabulary": [
+          {
+            "hanzi": "明白",
+            "pinyin": "míngbai",
+            "meaningPt": "compreender claramente",
+            "hskLevel": 2
+          },
+          {
+            "hanzi": "一直",
+            "pinyin": "yìzhí",
+            "meaningPt": "sempre / desde o início",
+            "hskLevel": 2
+          },
+          {
+            "hanzi": "下山",
+            "pinyin": "xiàshān",
+            "meaningPt": "descer a montanha",
+            "hskLevel": 1
+          },
+          {
+            "hanzi": "高兴",
+            "pinyin": "gāoxìng",
+            "meaningPt": "feliz / sereno",
+            "hskLevel": 1
+          },
+          {
+            "hanzi": "老朋友",
+            "pinyin": "lǎo péngyou",
+            "meaningPt": "velho amigo",
+            "hskLevel": 1
+          }
+        ],
+        "sentences": [
+          {
+            "id": "s434",
+            "zhText": "李云明白了：走上雪山、救那个人，勇气一直都在他心里。",
+            "pinyinText": "Lǐ Yún míngbai le: zǒushàng xuěshān, jiù nà gè rén, yǒngqì yìzhí dōu zài tā xīnlǐ.",
+            "translationPt": "Li Yun compreendeu tudo: ao subir a montanha de neve e ao salvar aquela pessoa, a coragem sempre esteve dentro do seu próprio coração.",
+            "literalPt": "Li Yun compreendeu [mudança]: caminhar-subindo neve-montanha, salvar aquela pessoa, coragem sempre toda estava ele coração-dentro.",
+            "grammarNotes": [
+              {
+                "pattern": "一直都在 (yìzhí dōu zài) + Local = 'sempre esteve em...'",
+                "explanationPt": "Expressa que aquilo que o herói buscava no mundo exterior já habitava nele desde o primeiro passo.",
+                "hskLevel": 2
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s434-t1",
+                "hanzi": "李云",
+                "pinyin": "Lǐ Yún",
+                "hskLevel": 1,
+                "meaningPt": "Li Yun",
+                "partOfSpeech": "nome próprio",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("李云", [
+                    "Lǐ",
+                    "Yún"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "Li",
+                    "nuvem"
+                  ])
+              },
+              {
+                "id": "s434-t2",
+                "hanzi": "明白",
+                "pinyin": "míngbai",
+                "hskLevel": 2,
+                "meaningPt": "compreendeu",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "明 (claro) + 白 (nítido).",
+                characters: chars("明白", [
+                    "míng",
+                    "bai"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "claro",
+                    "branco"
+                  ])
+              },
+              {
+                "id": "s434-t3",
+                "hanzi": "了",
+                "pinyin": "le",
+                "hskLevel": 1,
+                "meaningPt": "despertar de consciência",
+                "partOfSpeech": "partícula",
+                "compoundLogicPt": "Mudança interior.",
+                characters: chars("了", [
+                    "le"
+                  ], [
+                    1
+                  ], [
+                    "concluído"
+                  ])
+              },
+              {
+                "id": "s434-t4",
+                "hanzi": "：",
+                "isPunctuation": true
+              },
+              {
+                "id": "s434-t5",
+                "hanzi": "走上",
+                "pinyin": "zǒushàng",
+                "hskLevel": 1,
+                "meaningPt": "subir caminhando",
+                "partOfSpeech": "verbo + direção",
+                "compoundLogicPt": "走 + 上.",
+                characters: chars("走上", [
+                    "zǒu",
+                    "shàng"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "caminhar",
+                    "subir"
+                  ])
+              },
+              {
+                "id": "s434-t6",
+                "hanzi": "雪山",
+                "pinyin": "xuěshān",
+                "hskLevel": 2,
+                "meaningPt": "a montanha de neve",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "雪 + 山.",
+                characters: chars("雪山", [
+                    "xuě",
+                    "shān"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "neve",
+                    "montanha"
+                  ])
+              },
+              {
+                "id": "s434-t7",
+                "hanzi": "、",
+                "isPunctuation": true
+              },
+              {
+                "id": "s434-t8",
+                "hanzi": "救",
+                "pinyin": "jiù",
+                "hskLevel": 2,
+                "meaningPt": "salvar",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Socorrer.",
+                characters: chars("救", [
+                    "jiù"
+                  ], [
+                    2
+                  ], [
+                    "salvar"
+                  ])
+              },
+              {
+                "id": "s434-t9",
+                "hanzi": "那个",
+                "pinyin": "nà gè",
+                "hskLevel": 1,
+                "meaningPt": "aquela",
+                "partOfSpeech": "demonstrativo + classificador",
+                "compoundLogicPt": "那 + 个.",
+                characters: chars("那个", [
+                    "nà",
+                    "gè"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "aquela",
+                    "classificador"
+                  ])
+              },
+              {
+                "id": "s434-t10",
+                "hanzi": "人",
+                "pinyin": "rén",
+                "hskLevel": 1,
+                "meaningPt": "pessoa",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Viajante.",
+                characters: chars("人", [
+                    "rén"
+                  ], [
+                    1
+                  ], [
+                    "pessoa"
+                  ])
+              },
+              {
+                "id": "s434-t11",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s434-t12",
+                "hanzi": "勇气",
+                "pinyin": "yǒngqì",
+                "hskLevel": 3,
+                "meaningPt": "a coragem",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "勇 + 气.",
+                characters: chars("勇气", [
+                    "yǒng",
+                    "qì"
+                  ], [
+                    3,
+                    1
+                  ], [
+                    "bravura",
+                    "espírito"
+                  ])
+              },
+              {
+                "id": "s434-t13",
+                "hanzi": "一直",
+                "pinyin": "yìzhí",
+                "hskLevel": 2,
+                "meaningPt": "sempre / o tempo todo",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "一 + 直.",
+                characters: chars("一直", [
+                    "yī",
+                    "zhí"
+                  ], [
+                    1,
+                    2
+                  ], [
+                    "um",
+                    "direto"
+                  ])
+              },
+              {
+                "id": "s434-t14",
+                "hanzi": "都",
+                "pinyin": "dōu",
+                "hskLevel": 1,
+                "meaningPt": "sempre",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Ênfase.",
+                characters: chars("都", [
+                    "dōu"
+                  ], [
+                    1
+                  ], [
+                    "sempre"
+                  ])
+              },
+              {
+                "id": "s434-t15",
+                "hanzi": "在",
+                "pinyin": "zài",
+                "hskLevel": 1,
+                "meaningPt": "esteve em",
+                "partOfSpeech": "verbo locativo",
+                "compoundLogicPt": "Estar em.",
+                characters: chars("在", [
+                    "zài"
+                  ], [
+                    1
+                  ], [
+                    "estar em"
+                  ])
+              },
+              {
+                "id": "s434-t16",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "seu",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Dele.",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s434-t17",
+                "hanzi": "心里",
+                "pinyin": "xīnlǐ",
+                "hskLevel": 1,
+                "meaningPt": "no coração",
+                "partOfSpeech": "locução espacial",
+                "compoundLogicPt": "心 + 里.",
+                characters: chars("心里", [
+                    "xīn",
+                    "lǐ"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "coração",
+                    "dentro"
+                  ])
+              },
+              {
+                "id": "s434-t18",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s435",
+            "zhText": "他喝完那杯热茶，高兴地对老师说：“谢谢您，老师！”",
+            "pinyinText": "Tā hēwán nà bēi rè chá, gāoxìng de duì lǎoshī shuō: “Xièxie nín, lǎoshī!”",
+            "translationPt": "Ele terminou de beber aquela xícara de chá quente e disse alegremente ao mestre: “Muito obrigado ao senhor, mestre!”",
+            "literalPt": "Ele bebeu-terminando aquela xícara quente chá, feliz-mente para mestre disse: “Obrigado senhor, mestre!”",
+            "grammarNotes": [
+              {
+                "pattern": "Pronome de respeito 您 (nín) = 'o senhor / a senhora'",
+                "explanationPt": "Graficamente formado por 你 ('você') sobre 心 ('coração'): tratar o mestre com reverência de coração.",
+                "hskLevel": 1
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s435-t1",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ele",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s435-t2",
+                "hanzi": "喝完",
+                "pinyin": "hēwán",
+                "hskLevel": 1,
+                "meaningPt": "terminou de beber",
+                "partOfSpeech": "verbo + resultado",
+                "compoundLogicPt": "喝 (beber) + 完 (terminar).",
+                characters: chars("喝完", [
+                    "hē",
+                    "wán"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "beber",
+                    "terminar"
+                  ])
+              },
+              {
+                "id": "s435-t3",
+                "hanzi": "那杯",
+                "pinyin": "nà bēi",
+                "hskLevel": 1,
+                "meaningPt": "aquela xícara de",
+                "partOfSpeech": "demonstrativo + classificador",
+                "compoundLogicPt": "那 + 杯.",
+                characters: chars("那杯", [
+                    "nà",
+                    "bēi"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "aquela",
+                    "xícara"
+                  ])
+              },
+              {
+                "id": "s435-t4",
+                "hanzi": "热茶",
+                "pinyin": "rè chá",
+                "hskLevel": 1,
+                "meaningPt": "chá quente",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "热 + 茶.",
+                characters: chars("热茶", [
+                    "rè",
+                    "chá"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "quente",
+                    "chá"
+                  ])
+              },
+              {
+                "id": "s435-t5",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s435-t6",
+                "hanzi": "高兴",
+                "pinyin": "gāoxìng",
+                "hskLevel": 1,
+                "meaningPt": "alegre / sereno",
+                "partOfSpeech": "adjetivo",
+                "compoundLogicPt": "高 (elevado) + 兴 (ânimo).",
+                characters: chars("高兴", [
+                    "gāo",
+                    "xìng"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "alto",
+                    "ânimo"
+                  ])
+              },
+              {
+                "id": "s435-t7",
+                "hanzi": "地",
+                "pinyin": "de",
+                "hskLevel": 2,
+                "meaningPt": "partícula adverbial (-mente)",
+                "partOfSpeech": "partícula",
+                "compoundLogicPt": "Conecta 高兴 ao verbo 说.",
+                characters: chars("地", [
+                    "de"
+                  ], [
+                    2
+                  ], [
+                    "partícula adverbial"
+                  ])
+              },
+              {
+                "id": "s435-t8",
+                "hanzi": "对",
+                "pinyin": "duì",
+                "hskLevel": 1,
+                "meaningPt": "para",
+                "partOfSpeech": "preposição",
+                "compoundLogicPt": "Para.",
+                characters: chars("对", [
+                    "duì"
+                  ], [
+                    1
+                  ], [
+                    "para"
+                  ])
+              },
+              {
+                "id": "s435-t9",
+                "hanzi": "老师",
+                "pinyin": "lǎoshī",
+                "hskLevel": 1,
+                "meaningPt": "o mestre",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Mestre.",
+                characters: chars("老师", [
+                    "lǎo",
+                    "shī"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "sábio",
+                    "mestre"
+                  ])
+              },
+              {
+                "id": "s435-t10",
+                "hanzi": "说",
+                "pinyin": "shuō",
+                "hskLevel": 1,
+                "meaningPt": "disse",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Dizer.",
+                characters: chars("说", [
+                    "shuō"
+                  ], [
+                    1
+                  ], [
+                    "dizer"
+                  ])
+              },
+              {
+                "id": "s435-t11",
+                "hanzi": "：",
+                "isPunctuation": true
+              },
+              {
+                "id": "s435-t12",
+                "hanzi": "“",
+                "isPunctuation": true
+              },
+              {
+                "id": "s435-t13",
+                "hanzi": "谢谢",
+                "pinyin": "xièxie",
+                "hskLevel": 1,
+                "meaningPt": "muito obrigado",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Agradecer.",
+                characters: chars("谢谢", [
+                    "xiè",
+                    "xie"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "agradecer",
+                    "agradecer"
+                  ])
+              },
+              {
+                "id": "s435-t14",
+                "hanzi": "您",
+                "pinyin": "nín",
+                "hskLevel": 1,
+                "meaningPt": "ao senhor (você respeitoso)",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "你 (você) + 心 (coração).",
+                characters: chars("您", [
+                    "nín"
+                  ], [
+                    1
+                  ], [
+                    "senhor(a)"
+                  ])
+              },
+              {
+                "id": "s435-t15",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s435-t16",
+                "hanzi": "老师",
+                "pinyin": "lǎoshī",
+                "hskLevel": 1,
+                "meaningPt": "mestre",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Mestre.",
+                characters: chars("老师", [
+                    "lǎo",
+                    "shī"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "sábio",
+                    "mestre"
+                  ])
+              },
+              {
+                "id": "s435-t17",
+                "hanzi": "！",
+                "isPunctuation": true
+              },
+              {
+                "id": "s435-t18",
+                "hanzi": "”",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s436",
+            "zhText": "下山的时候，山路还是很难走，风还是很大。",
+            "pinyinText": "Xiàshān de shíhou, shānlù háishì hěn nán zǒu, fēng háishì hěn dà.",
+            "translationPt": "Quando desceu a montanha, o caminho ainda era muito difícil de andar e o vento ainda estava muito forte.",
+            "literalPt": "Descer-montanha de momento, montanha-caminho ainda-era muito difícil andar, vento ainda-era muito grande.",
+            "grammarNotes": [
+              {
+                "pattern": "还是 (háishì) = 'continuava sendo / ainda era'",
+                "explanationPt": "Mostra o princípio filosófico central: o mundo externo não mudou (o caminho e o vento continuam difíceis), mas quem mudou foi o olhar do guerreiro.",
+                "hskLevel": 2
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s436-t1",
+                "hanzi": "下山",
+                "pinyin": "xiàshān",
+                "hskLevel": 1,
+                "meaningPt": "descer a montanha",
+                "partOfSpeech": "verbo + objeto",
+                "compoundLogicPt": "下 (descer) + 山 (montanha).",
+                characters: chars("下山", [
+                    "xià",
+                    "shān"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "descer",
+                    "montanha"
+                  ])
+              },
+              {
+                "id": "s436-t2",
+                "hanzi": "的时候",
+                "pinyin": "de shíhou",
+                "hskLevel": 1,
+                "meaningPt": "quando",
+                "partOfSpeech": "locução temporal",
+                "compoundLogicPt": "No momento de.",
+                characters: chars("的时候", [
+                    "de",
+                    "shí",
+                    "hou"
+                  ], [
+                    1,
+                    1,
+                    1
+                  ], [
+                    "de",
+                    "tempo",
+                    "momento"
+                  ])
+              },
+              {
+                "id": "s436-t3",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s436-t4",
+                "hanzi": "山路",
+                "pinyin": "shānlù",
+                "hskLevel": 1,
+                "meaningPt": "o caminho da montanha",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "山 + 路.",
+                characters: chars("山路", [
+                    "shān",
+                    "lù"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "montanha",
+                    "caminho"
+                  ])
+              },
+              {
+                "id": "s436-t5",
+                "hanzi": "还是",
+                "pinyin": "háishì",
+                "hskLevel": 2,
+                "meaningPt": "ainda era / continuava",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "还 + 是.",
+                characters: chars("还是", [
+                    "hái",
+                    "shì"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "ainda",
+                    "ser"
+                  ])
+              },
+              {
+                "id": "s436-t6",
+                "hanzi": "很",
+                "pinyin": "hěn",
+                "hskLevel": 1,
+                "meaningPt": "muito",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Muito.",
+                characters: chars("很", [
+                    "hěn"
+                  ], [
+                    1
+                  ], [
+                    "muito"
+                  ])
+              },
+              {
+                "id": "s436-t7",
+                "hanzi": "难",
+                "pinyin": "nán",
+                "hskLevel": 2,
+                "meaningPt": "difícil",
+                "partOfSpeech": "adjetivo",
+                "compoundLogicPt": "Difícil / árduo.",
+                characters: chars("难", [
+                    "nán"
+                  ], [
+                    2
+                  ], [
+                    "difícil"
+                  ])
+              },
+              {
+                "id": "s436-t8",
+                "hanzi": "走",
+                "pinyin": "zǒu",
+                "hskLevel": 1,
+                "meaningPt": "de andar",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Caminhar.",
+                characters: chars("走", [
+                    "zǒu"
+                  ], [
+                    1
+                  ], [
+                    "andar"
+                  ])
+              },
+              {
+                "id": "s436-t9",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s436-t10",
+                "hanzi": "风",
+                "pinyin": "fēng",
+                "hskLevel": 1,
+                "meaningPt": "o vento",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "Vento.",
+                characters: chars("风", [
+                    "fēng"
+                  ], [
+                    1
+                  ], [
+                    "vento"
+                  ])
+              },
+              {
+                "id": "s436-t11",
+                "hanzi": "还是",
+                "pinyin": "háishì",
+                "hskLevel": 2,
+                "meaningPt": "continuava / ainda estava",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "还 + 是.",
+                characters: chars("还是", [
+                    "hái",
+                    "shì"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "ainda",
+                    "ser"
+                  ])
+              },
+              {
+                "id": "s436-t12",
+                "hanzi": "很",
+                "pinyin": "hěn",
+                "hskLevel": 1,
+                "meaningPt": "muito",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "Muito.",
+                characters: chars("很", [
+                    "hěn"
+                  ], [
+                    1
+                  ], [
+                    "muito"
+                  ])
+              },
+              {
+                "id": "s436-t13",
+                "hanzi": "大",
+                "pinyin": "dà",
+                "hskLevel": 1,
+                "meaningPt": "forte",
+                "partOfSpeech": "adjetivo",
+                "compoundLogicPt": "Forte.",
+                characters: chars("大", [
+                    "dà"
+                  ], [
+                    1
+                  ], [
+                    "forte"
+                  ])
+              },
+              {
+                "id": "s436-t14",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          },
+          {
+            "id": "s437",
+            "zhText": "但是这一次，李云笑着往前走，因为勇气一直和他在一起。",
+            "pinyinText": "Dànshì zhè yí cì, Lǐ Yún xiàozhe wǎng qián zǒu, yīnwèi yǒngqì yìzhí hé tā zài yìqǐ.",
+            "translationPt": "Mas, desta vez, Li Yun caminhou para a frente sorrindo, porque a coragem sempre esteve junto com ele.",
+            "literalPt": "Mas esta uma vez, Li Yun sorrindo rumo frente caminhou, porque coragem sempre com ele estava junto.",
+            "grammarNotes": [
+              {
+                "pattern": "和 (hé) + Pessoa + 在一起 (zài yìqǐ) = 'estar junto com...'",
+                "explanationPt": "Fechamento poético da jornada: 勇气一直和他在一起 ('a coragem sempre esteve junto com ele').",
+                "hskLevel": 1
+              }
+            ],
+            "startMs": 0,
+            "endMs": 0,
+            "tokens": [
+              {
+                "id": "s437-t1",
+                "hanzi": "但是",
+                "pinyin": "dànshì",
+                "hskLevel": 2,
+                "meaningPt": "mas",
+                "partOfSpeech": "conjunção",
+                "compoundLogicPt": "Mas.",
+                characters: chars("但是", [
+                    "dàn",
+                    "shì"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "mas",
+                    "ser"
+                  ])
+              },
+              {
+                "id": "s437-t2",
+                "hanzi": "这一次",
+                "pinyin": "zhè yí cì",
+                "hskLevel": 1,
+                "meaningPt": "desta vez",
+                "partOfSpeech": "demonstrativo + numeral + classificador",
+                "compoundLogicPt": "这 (esta) + 一 (uma) + 次 (vez).",
+                characters: chars("这一次", [
+                    "zhè",
+                    "yī",
+                    "cì"
+                  ], [
+                    1,
+                    1,
+                    1
+                  ], [
+                    "esta",
+                    "uma",
+                    "vez"
+                  ])
+              },
+              {
+                "id": "s437-t3",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s437-t4",
+                "hanzi": "李云",
+                "pinyin": "Lǐ Yún",
+                "hskLevel": 1,
+                "meaningPt": "Li Yun",
+                "partOfSpeech": "nome próprio",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("李云", [
+                    "Lǐ",
+                    "Yún"
+                  ], [
+                    1,
+                    1
+                  ], [
+                    "Li",
+                    "nuvem"
+                  ])
+              },
+              {
+                "id": "s437-t5",
+                "hanzi": "笑着",
+                "pinyin": "xiàozhe",
+                "hskLevel": 2,
+                "meaningPt": "sorrindo",
+                "partOfSpeech": "verbo + partícula",
+                "compoundLogicPt": "笑 + 着.",
+                characters: chars("笑着", [
+                    "xiào",
+                    "zhe"
+                  ], [
+                    2,
+                    2
+                  ], [
+                    "sorrir",
+                    "contínuo"
+                  ])
+              },
+              {
+                "id": "s437-t6",
+                "hanzi": "往前",
+                "pinyin": "wǎng qián",
+                "hskLevel": 2,
+                "meaningPt": "para a frente",
+                "partOfSpeech": "preposição + direção",
+                "compoundLogicPt": "往 + 前.",
+                characters: chars("往前", [
+                    "wǎng",
+                    "qián"
+                  ], [
+                    2,
+                    1
+                  ], [
+                    "rumo a",
+                    "frente"
+                  ])
+              },
+              {
+                "id": "s437-t7",
+                "hanzi": "走",
+                "pinyin": "zǒu",
+                "hskLevel": 1,
+                "meaningPt": "caminhou / avançou",
+                "partOfSpeech": "verbo",
+                "compoundLogicPt": "Andar.",
+                characters: chars("走", [
+                    "zǒu"
+                  ], [
+                    1
+                  ], [
+                    "andar"
+                  ])
+              },
+              {
+                "id": "s437-t8",
+                "hanzi": "，",
+                "isPunctuation": true
+              },
+              {
+                "id": "s437-t9",
+                "hanzi": "因为",
+                "pinyin": "yīnwèi",
+                "hskLevel": 2,
+                "meaningPt": "porque",
+                "partOfSpeech": "conjunção",
+                "compoundLogicPt": "因 (causa) + 为 (por).",
+                characters: chars("因为", [
+                    "yīn",
+                    "wèi"
+                  ], [
+                    2,
+                    2
+                  ], [
+                    "causa",
+                    "por"
+                  ])
+              },
+              {
+                "id": "s437-t10",
+                "hanzi": "勇气",
+                "pinyin": "yǒngqì",
+                "hskLevel": 3,
+                "meaningPt": "a coragem",
+                "partOfSpeech": "substantivo",
+                "compoundLogicPt": "勇 + 气.",
+                characters: chars("勇气", [
+                    "yǒng",
+                    "qì"
+                  ], [
+                    3,
+                    1
+                  ], [
+                    "bravura",
+                    "espírito"
+                  ])
+              },
+              {
+                "id": "s437-t11",
+                "hanzi": "一直",
+                "pinyin": "yìzhí",
+                "hskLevel": 2,
+                "meaningPt": "sempre / o tempo todo",
+                "partOfSpeech": "advérbio",
+                "compoundLogicPt": "一 + 直.",
+                characters: chars("一直", [
+                    "yī",
+                    "zhí"
+                  ], [
+                    1,
+                    2
+                  ], [
+                    "um",
+                    "direto"
+                  ])
+              },
+              {
+                "id": "s437-t12",
+                "hanzi": "和",
+                "pinyin": "hé",
+                "hskLevel": 1,
+                "meaningPt": "com",
+                "partOfSpeech": "preposição",
+                "compoundLogicPt": "Com.",
+                characters: chars("和", [
+                    "hé"
+                  ], [
+                    1
+                  ], [
+                    "com"
+                  ])
+              },
+              {
+                "id": "s437-t13",
+                "hanzi": "他",
+                "pinyin": "tā",
+                "hskLevel": 1,
+                "meaningPt": "ele",
+                "partOfSpeech": "pronome",
+                "compoundLogicPt": "Li Yun.",
+                characters: chars("他", [
+                    "tā"
+                  ], [
+                    1
+                  ], [
+                    "ele"
+                  ])
+              },
+              {
+                "id": "s437-t14",
+                "hanzi": "在一起",
+                "pinyin": "zài yìqǐ",
+                "hskLevel": 1,
+                "meaningPt": "esteve junto",
+                "partOfSpeech": "locução verbal",
+                "compoundLogicPt": "在 (estar) + 一起 (juntos).",
+                characters: chars("在一起", [
+                    "zài",
+                    "yī",
+                    "qǐ"
+                  ], [
+                    1,
+                    1,
+                    1
+                  ], [
+                    "estar",
+                    "um",
+                    "junto"
+                  ])
+              },
+              {
+                "id": "s437-t15",
+                "hanzi": "。",
+                "isPunctuation": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
 ];
-
