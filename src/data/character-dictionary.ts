@@ -2300,6 +2300,372 @@ export const CHARACTER_DICTIONARY: Record<string, CharacterEtymology> = {
     components: [
       { symbol: "再", pinyin: "zài", meaningPt: "repetição futura", role: "estrutural" }
     ]
+  },
+  "岚": {
+    char: "岚", pinyin: "lán", hskLevel: 1,
+    isolatedMeaningPt: "névoa da montanha / bruma",
+    formationExplanationPt: "Ideograma composto: montanha (山) no topo + vento (风) embaixo → a névoa que sopra entre os picos das montanhas.",
+    components: [
+      { symbol: "山", pinyin: "shān", meaningPt: "montanha", role: "semântico" },
+      { symbol: "风", pinyin: "fēng", meaningPt: "vento", role: "semântico" }
+    ]
+  },
+  "陈": {
+    char: "陈", pinyin: "chén", hskLevel: 1,
+    isolatedMeaningPt: "sobrenome Chen / antigo / expor",
+    formationExplanationPt: "Radical de colina/muro (阝) à esquerda + leste (东) à direita → sobrenome tradicional chinês.",
+    components: [
+      { symbol: "阝", pinyin: "fù", meaningPt: "colina / muralha", role: "semântico" },
+      { symbol: "东", pinyin: "dōng", meaningPt: "leste (fonético)", role: "fonético" }
+    ]
+  },
+  "飞": {
+    char: "飞", pinyin: "fēi", hskLevel: 2,
+    isolatedMeaningPt: "voar",
+    formationExplanationPt: "Pictograma estilizado de um pássaro abrindo as asas e subindo aos céus em pleno voo.",
+    components: [
+      { symbol: "飞", pinyin: "fēi", meaningPt: "asas em voo", role: "pictográfico" }
+    ]
+  },
+  "苏": {
+    char: "苏", pinyin: "sū", hskLevel: 1,
+    isolatedMeaningPt: "sobrenome Su / reviver / despertar",
+    formationExplanationPt: "Radical de planta/erva (艹) no topo + 办 → originalmente uma planta aromática; hoje sobrenome comum.",
+    components: [
+      { symbol: "艹", pinyin: "cǎo", meaningPt: "planta / erva", role: "semântico" },
+      { symbol: "办", pinyin: "bàn", meaningPt: "componente estrutural", role: "estrutural" }
+    ]
+  },
+  "周": {
+    char: "周", pinyin: "zhōu", hskLevel: 1,
+    isolatedMeaningPt: "sobrenome Zhou / ao redor / semana",
+    formationExplanationPt: "Pictograma de um campo cercado e bem cultivado em toda a sua volta.",
+    components: [
+      { symbol: "周", pinyin: "zhōu", meaningPt: "contorno completo", role: "pictográfico" }
+    ]
+  },
+  "哥": {
+    char: "哥", pinyin: "gē", hskLevel: 1,
+    isolatedMeaningPt: "irmão mais velho / rapaz mais velho",
+    formationExplanationPt: "Dois caracteres 可 (poder/cantar) empilhados → originalmente 'cantar em coro', depois passou a designar o irmão mais velho.",
+    components: [
+      { symbol: "可", pinyin: "kě", meaningPt: "voz / poder (duplicado)", role: "fonético" }
+    ]
+  },
+  "墙": {
+    char: "墙", pinyin: "qiáng", hskLevel: 2,
+    isolatedMeaningPt: "muralha / parede / muro",
+    formationExplanationPt: "Radical de terra/barro (土) à esquerda indicando construção sólida + fonético 啬 à direita.",
+    components: [
+      { symbol: "土", pinyin: "tǔ", meaningPt: "terra / alvenaria", role: "semântico" },
+      { symbol: "啬", pinyin: "sè", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "巨": {
+    char: "巨", pinyin: "jù", hskLevel: 3,
+    isolatedMeaningPt: "gigantesco / enorme / colossal",
+    formationExplanationPt: "Pictograma antigo de um grande esquadro de carpinteiro usado para medir obras enormes → 'imenso, colossal'.",
+    components: [
+      { symbol: "巨", pinyin: "jù", meaningPt: "esquadro gigante", role: "pictográfico" }
+    ]
+  },
+  "鸟": {
+    char: "鸟", pinyin: "niǎo", hskLevel: 2,
+    isolatedMeaningPt: "pássaro / ave",
+    formationExplanationPt: "Pictograma de um pássaro de perfil, com cabeça, olho (ponto interno), asa e cauda.",
+    components: [
+      { symbol: "鸟", pinyin: "niǎo", meaningPt: "ave de perfil", role: "pictográfico" }
+    ]
+  },
+  "南": {
+    char: "南", pinyin: "nán", hskLevel: 1,
+    isolatedMeaningPt: "sul",
+    formationExplanationPt: "Representava originalmente um instrumento musical de bronze usado nos ritos do sul.",
+    components: [
+      { symbol: "南", pinyin: "nán", meaningPt: "direção sul", role: "pictográfico" }
+    ]
+  },
+  "跑": {
+    char: "跑", pinyin: "pǎo", hskLevel: 2,
+    isolatedMeaningPt: "correr / fugir",
+    formationExplanationPt: "Radical de pé (⻊, 足) à esquerda indicando movimento das pernas + fonético 包 (bāo).",
+    components: [
+      { symbol: "⻊", pinyin: "zú", meaningPt: "pé / perna", role: "semântico" },
+      { symbol: "包", pinyin: "bāo", meaningPt: "embrulhar (fonético)", role: "fonético" }
+    ]
+  },
+  "倒": {
+    char: "倒", pinyin: "dǎo", hskLevel: 2,
+    isolatedMeaningPt: "cair / desabar / tombar",
+    formationExplanationPt: "Radical de pessoa (亻) à esquerda + 到 (chegar ao chão) à direita → cair ao chão, desmoronar.",
+    components: [
+      { symbol: "亻", pinyin: "rén", meaningPt: "pessoa", role: "semântico" },
+      { symbol: "到", pinyin: "dào", meaningPt: "chegar (fonético)", role: "fonético" }
+    ]
+  },
+  "拉": {
+    char: "拉", pinyin: "lā", hskLevel: 2,
+    isolatedMeaningPt: "puxar / segurar pela mão",
+    formationExplanationPt: "Radical de mão (扌) à esquerda + 立 (ficar de pé) à direita → puxar alguém com a mão para levantá-lo ou levá-lo.",
+    components: [
+      { symbol: "扌", pinyin: "shǒu", meaningPt: "mão", role: "semântico" },
+      { symbol: "立", pinyin: "lì", meaningPt: "ficar de pé (fonético)", role: "fonético" }
+    ]
+  },
+  "活": {
+    char: "活", pinyin: "huó", hskLevel: 2,
+    isolatedMeaningPt: "viver / vivo / sobreviver",
+    formationExplanationPt: "Radical de água (氵) à esquerda + 舌 (língua/fala) à direita → água corrente simbolizando a vida que flui.",
+    components: [
+      { symbol: "氵", pinyin: "shuǐ", meaningPt: "água corrente", role: "semântico" },
+      { symbol: "舌", pinyin: "shé", meaningPt: "língua (fonético)", role: "fonético" }
+    ]
+  },
+  "刀": {
+    char: "刀", pinyin: "dāo", hskLevel: 2,
+    isolatedMeaningPt: "lâmina / faca / espada de um fio",
+    formationExplanationPt: "Pictograma direto da lâmina curva com cabo usada em combate ou trabalho.",
+    components: [
+      { symbol: "刀", pinyin: "dāo", meaningPt: "lâmina", role: "pictográfico" }
+    ]
+  },
+  "双": {
+    char: "双", pinyin: "shuāng", hskLevel: 2,
+    isolatedMeaningPt: "par / duplo / dois",
+    formationExplanationPt: "Duas mãos direitas (又 + 又) lado a lado → um par de coisas juntas.",
+    components: [
+      { symbol: "又", pinyin: "yòu", meaningPt: "mão direita (duplicada)", role: "semântico" }
+    ]
+  },
+  "练": {
+    char: "练", pinyin: "liàn", hskLevel: 2,
+    isolatedMeaningPt: "praticar / treinar",
+    formationExplanationPt: "Radical de seda/fio (纟) + 东 → originalmente ferver e amaciar a seda repetidas vezes; hoje 'treinar/praticar'.",
+    components: [
+      { symbol: "纟", pinyin: "sī", meaningPt: "fio de seda", role: "semântico" },
+      { symbol: "东", pinyin: "dōng", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "习": {
+    char: "习", pinyin: "xí", hskLevel: 1,
+    isolatedMeaningPt: "praticar / estudar / hábito",
+    formationExplanationPt: "Representa a asa de um pássaro jovem batendo repetidas vezes para aprender a voar.",
+    components: [
+      { symbol: "习", pinyin: "xí", meaningPt: "bater de asas", role: "pictográfico" }
+    ]
+  },
+  "草": {
+    char: "草", pinyin: "cǎo", hskLevel: 2,
+    isolatedMeaningPt: "grama / capim / erva",
+    formationExplanationPt: "Radical de planta (艹) no topo + 早 (cedo/manhã) → a vegetação verde que brota cedo na terra.",
+    components: [
+      { symbol: "艹", pinyin: "cǎo", meaningPt: "planta", role: "semântico" },
+      { symbol: "早", pinyin: "zǎo", meaningPt: "cedo (fonético)", role: "fonético" }
+    ]
+  },
+  "树": {
+    char: "树", pinyin: "shù", hskLevel: 2,
+    isolatedMeaningPt: "árvore",
+    formationExplanationPt: "Radical de madeira/árvore (木) à esquerda + 对 (duì) à direita → árvore plantada firme no solo.",
+    components: [
+      { symbol: "木", pinyin: "mù", meaningPt: "madeira / árvore", role: "semântico" },
+      { symbol: "对", pinyin: "duì", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "秘": {
+    char: "秘", pinyin: "mì", hskLevel: 3,
+    isolatedMeaningPt: "secreto / mistério",
+    formationExplanationPt: "Radical de grão/colheita (禾) + 必 (bì) → algo guardado em segredo, oculto aos olhos.",
+    components: [
+      { symbol: "禾", pinyin: "hé", meaningPt: "grão", role: "semântico" },
+      { symbol: "必", pinyin: "bì", meaningPt: "certo (fonético)", role: "fonético" }
+    ]
+  },
+  "密": {
+    char: "密", pinyin: "mì", hskLevel: 3,
+    isolatedMeaningPt: "denso / íntimo / secreto",
+    formationExplanationPt: "Teto (宀) + 必 + montanha (山) → algo escondido bem fundo nas montanhas.",
+    components: [
+      { symbol: "宀", pinyin: "mián", meaningPt: "teto / abrigo", role: "semântico" },
+      { symbol: "山", pinyin: "shān", meaningPt: "montanha", role: "semântico" }
+    ]
+  },
+  "屋": {
+    char: "屋", pinyin: "wū", hskLevel: 2,
+    isolatedMeaningPt: "casa / cômodo / telhado",
+    formationExplanationPt: "Radical de abrigo/corpo (尸) + 至 (chegar) → o lugar onde se chega para abrigar-se.",
+    components: [
+      { symbol: "尸", pinyin: "shī", meaningPt: "abrigo / teto", role: "semântico" },
+      { symbol: "至", pinyin: "zhì", meaningPt: "chegar", role: "semântico" }
+    ]
+  },
+  "顶": {
+    char: "顶", pinyin: "dǐng", hskLevel: 2,
+    isolatedMeaningPt: "topo / cume / telhado",
+    formationExplanationPt: "丁 (prego/topo) à esquerda + 页 (cabeça) à direita → o ponto mais alto acima da cabeça.",
+    components: [
+      { symbol: "丁", pinyin: "dīng", meaningPt: "componente fonético", role: "fonético" },
+      { symbol: "页", pinyin: "yè", meaningPt: "cabeça", role: "semântico" }
+    ]
+  },
+  "追": {
+    char: "追", pinyin: "zhuī", hskLevel: 2,
+    isolatedMeaningPt: "perseguir / correr atrás",
+    formationExplanationPt: "Radical de caminhar rápido (辶) envolvendo 𠂤 → correr atrás de alguém ou de um objetivo.",
+    components: [
+      { symbol: "辶", pinyin: "chuò", meaningPt: "caminhar / movimento", role: "semântico" },
+      { symbol: "𠂤", pinyin: "duī", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "保": {
+    char: "保", pinyin: "bǎo", hskLevel: 3,
+    isolatedMeaningPt: "proteger / guardar",
+    formationExplanationPt: "Radical de pessoa (亻) à esquerda + 呆 (criança) à direita → um adulto segurando e protegendo uma criança.",
+    components: [
+      { symbol: "亻", pinyin: "rén", meaningPt: "pessoa", role: "semântico" },
+      { symbol: "呆", pinyin: "dāi", meaningPt: "criança protegida", role: "semântico" }
+    ]
+  },
+  "护": {
+    char: "护", pinyin: "hù", hskLevel: 3,
+    isolatedMeaningPt: "proteger / defender",
+    formationExplanationPt: "Radical de mão (扌) à esquerda + 户 (porta/lar) à direita → usar as mãos para defender a porta de casa.",
+    components: [
+      { symbol: "扌", pinyin: "shǒu", meaningPt: "mão", role: "semântico" },
+      { symbol: "户", pinyin: "hù", meaningPt: "porta / lar (fonético)", role: "fonético" }
+    ]
+  },
+  "同": {
+    char: "同", pinyin: "tóng", hskLevel: 1,
+    isolatedMeaningPt: "mesmo / junto / igual",
+    formationExplanationPt: "Cobertura comum (冂) + 一 + boca (口) → falar juntos sob o mesmo teto.",
+    components: [
+      { symbol: "冂", pinyin: "jiōng", meaningPt: "espaço comum", role: "estrutural" },
+      { symbol: "口", pinyin: "kǒu", meaningPt: "boca", role: "semântico" }
+    ]
+  },
+  "伴": {
+    char: "伴", pinyin: "bàn", hskLevel: 2,
+    isolatedMeaningPt: "companheiro / acompanhar",
+    formationExplanationPt: "Radical de pessoa (亻) à esquerda + 半 (metade) à direita → a pessoa que caminha ao seu lado.",
+    components: [
+      { symbol: "亻", pinyin: "rén", meaningPt: "pessoa", role: "semântico" },
+      { symbol: "半", pinyin: "bàn", meaningPt: "metade (fonético)", role: "fonético" }
+    ]
+  },
+  "受": {
+    char: "受", pinyin: "shòu", hskLevel: 2,
+    isolatedMeaningPt: "receber / sofrer",
+    formationExplanationPt: "Duas mãos (爫 e 又) passando um objeto entre si → receber algo (bom ou ruim, como um ferimento).",
+    components: [
+      { symbol: "爫", pinyin: "zhǎo", meaningPt: "mão superior", role: "semântico" },
+      { symbol: "又", pinyin: "yòu", meaningPt: "mão inferior", role: "semântico" }
+    ]
+  },
+  "伤": {
+    char: "伤", pinyin: "shāng", hskLevel: 2,
+    isolatedMeaningPt: "ferir / ferimento / machucar",
+    formationExplanationPt: "Radical de pessoa (亻) à esquerda + 𠂊+力 → pessoa atingida e ferida.",
+    components: [
+      { symbol: "亻", pinyin: "rén", meaningPt: "pessoa", role: "semântico" },
+      { symbol: "力", pinyin: "lì", meaningPt: "força / golpe", role: "semântico" }
+    ]
+  },
+  "希": {
+    char: "希", pinyin: "xī", hskLevel: 2,
+    isolatedMeaningPt: "esperança / desejar / raro",
+    formationExplanationPt: "Fios cruzados (乂) sobre tecido (巾) → algo fino, precioso e desejado com esperança.",
+    components: [
+      { symbol: "乂", pinyin: "yì", meaningPt: "fios cruzados", role: "semântico" },
+      { symbol: "巾", pinyin: "jīn", meaningPt: "tecido", role: "semântico" }
+    ]
+  },
+  "望": {
+    char: "望", pinyin: "wàng", hskLevel: 2,
+    isolatedMeaningPt: "olhar ao longe / esperar",
+    formationExplanationPt: "Pessoa olhando para a lua (月) cheia ao longe → fitar o horizonte com esperança.",
+    components: [
+      { symbol: "月", pinyin: "yuè", meaningPt: "lua", role: "semântico" },
+      { symbol: "王", pinyin: "wáng", meaningPt: "pessoa em pé", role: "estrutural" }
+    ]
+  },
+  "海": {
+    char: "海", pinyin: "hǎi", hskLevel: 2,
+    isolatedMeaningPt: "mar / oceano",
+    formationExplanationPt: "Radical de água (氵) à esquerda + 每 (cada/todo) à direita → todas as águas do mundo reunidas no grande mar.",
+    components: [
+      { symbol: "氵", pinyin: "shuǐ", meaningPt: "água", role: "semântico" },
+      { symbol: "每", pinyin: "měi", meaningPt: "cada / imenso (fonético)", role: "fonético" }
+    ]
+  },
+  "自": {
+    char: "自", pinyin: "zì", hskLevel: 2,
+    isolatedMeaningPt: "próprio / si mesmo / desde",
+    formationExplanationPt: "Pictograma antigo de um nariz — na cultura chinesa, aponta-se para o próprio nariz ao dizer 'eu mesmo'.",
+    components: [
+      { symbol: "自", pinyin: "zì", meaningPt: "nariz / si mesmo", role: "pictográfico" }
+    ]
+  },
+  "由": {
+    char: "由", pinyin: "yóu", hskLevel: 3,
+    isolatedMeaningPt: "origem / razão / por",
+    formationExplanationPt: "Broto emergindo de um recipiente/semente → origem, causa; junto com 自 forma 自由 (liberdade).",
+    components: [
+      { symbol: "由", pinyin: "yóu", meaningPt: "broto surgindo", role: "pictográfico" }
+    ]
+  },
+  "蓝": {
+    char: "蓝", pinyin: "lán", hskLevel: 2,
+    isolatedMeaningPt: "azul",
+    formationExplanationPt: "Radical de planta (艹) no topo + 监 (jiān) → originalmente a planta índigo usada para tingir tecidos de azul.",
+    components: [
+      { symbol: "艹", pinyin: "cǎo", meaningPt: "planta tintureira", role: "semântico" },
+      { symbol: "监", pinyin: "jiān", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "世": {
+    char: "世", pinyin: "shì", hskLevel: 2,
+    isolatedMeaningPt: "geração / mundo / era",
+    formationExplanationPt: "Três dezenas (三十) unidas → trinta anos, ou seja, uma geração humana e o mundo em que vive.",
+    components: [
+      { symbol: "世", pinyin: "shì", meaningPt: "geração / era", role: "semântico" }
+    ]
+  },
+  "界": {
+    char: "界", pinyin: "jiè", hskLevel: 2,
+    isolatedMeaningPt: "fronteira / limite / mundo",
+    formationExplanationPt: "Campo de arroz (田) no topo + 介 (divisão) embaixo → os limites que dividem as terras e formam o 'mundo' (世界).",
+    components: [
+      { symbol: "田", pinyin: "tián", meaningPt: "campo / terra", role: "semântico" },
+      { symbol: "介", pinyin: "jiè", meaningPt: "fronteira (fonético)", role: "fonético" }
+    ]
+  },
+  "血": {
+    char: "血", pinyin: "xuè", hskLevel: 3,
+    isolatedMeaningPt: "sangue",
+    formationExplanationPt: "Pictograma de um vaso ritual (皿) com uma gota (丶) de sangue dentro.",
+    components: [
+      { symbol: "丶", pinyin: "diǎn", meaningPt: "gota", role: "pictográfico" },
+      { symbol: "皿", pinyin: "mǐn", meaningPt: "vaso / tigela", role: "pictográfico" }
+    ]
+  },
+  "烟": {
+    char: "烟", pinyin: "yān", hskLevel: 2,
+    isolatedMeaningPt: "fumaça",
+    formationExplanationPt: "Radical de fogo (火) à esquerda + 因 (yīn) à direita → a fumaça que sobe do fogo.",
+    components: [
+      { symbol: "火", pinyin: "huǒ", meaningPt: "fogo", role: "semântico" },
+      { symbol: "因", pinyin: "yīn", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "泪": {
+    char: "泪", pinyin: "lèi", hskLevel: 2,
+    isolatedMeaningPt: "lágrima",
+    formationExplanationPt: "Ideograma expressivo: água (氵) à esquerda + olho (目) à direita → a água que sai dos olhos.",
+    components: [
+      { symbol: "氵", pinyin: "shuǐ", meaningPt: "água", role: "semântico" },
+      { symbol: "目", pinyin: "mù", meaningPt: "olho", role: "semântico" }
+    ]
   }
 };
 
