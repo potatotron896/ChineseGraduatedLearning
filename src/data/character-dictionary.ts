@@ -2666,6 +2666,709 @@ export const CHARACTER_DICTIONARY: Record<string, CharacterEtymology> = {
       { symbol: "氵", pinyin: "shuǐ", meaningPt: "água", role: "semântico" },
       { symbol: "目", pinyin: "mù", meaningPt: "olho", role: "semântico" }
     ]
+  },
+  "白": {
+    char: "白", pinyin: "bái", hskLevel: 1,
+    isolatedMeaningPt: "branco / claro / em vão",
+    formationExplanationPt: "Pictograma antigo de um grão de arroz descascado ou da luz do sol nascendo, simbolizando a cor branca.",
+    components: [
+      { symbol: "白", pinyin: "bái", meaningPt: "branco / puro", role: "pictográfico" }
+    ]
+  },
+  "阿": {
+    char: "阿", pinyin: "ā", hskLevel: 1,
+    isolatedMeaningPt: "prefixo carinhoso em nomes e parentescos",
+    formationExplanationPt: "Composto por radical de colina (阝) + 可 (kě) → usado como prefixo afetuoso antes de nomes (ex.: 阿南).",
+    components: [
+      { symbol: "阝", pinyin: "fù", meaningPt: "colina / encosta", role: "semântico" },
+      { symbol: "可", pinyin: "kě", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "表": {
+    char: "表", pinyin: "biǎo", hskLevel: 2,
+    isolatedMeaningPt: "relógio / superfície / expressar",
+    formationExplanationPt: "Mostra pelo (毛) sobre roupa (衣) → a parte externa visível, passando a significar mostrador e relógio (手表).",
+    components: [
+      { symbol: "衣", pinyin: "yī", meaningPt: "vestimenta (dividido)", role: "semântico" },
+      { symbol: "毛", pinyin: "máo", meaningPt: "pelo / superfície externa", role: "semântico" }
+    ]
+  },
+  "瓶": {
+    char: "瓶", pinyin: "píng", hskLevel: 2,
+    isolatedMeaningPt: "garrafa / frasco / vaso",
+    formationExplanationPt: "Composto fono-semântico: 并 (bìng, fonético) à esquerda + 瓦 (cerâmica/barro) à direita → recipiente de vidro ou cerâmica.",
+    components: [
+      { symbol: "并", pinyin: "bìng", meaningPt: "junto (fonético)", role: "fonético" },
+      { symbol: "瓦", pinyin: "wǎ", meaningPt: "cerâmica / telha / recipiente", role: "semântico" }
+    ]
+  },
+  "钱": {
+    char: "钱", pinyin: "qián", hskLevel: 1,
+    isolatedMeaningPt: "dinheiro / moeda",
+    formationExplanationPt: "Radical de metal/ouro (钅) à esquerda + 戋 (jiān, pequeno/fino) à direita → moedas de metal cunhadas.",
+    components: [
+      { symbol: "钅", pinyin: "jīn", meaningPt: "metal / ouro", role: "semântico" },
+      { symbol: "戋", pinyin: "jiān", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "交": {
+    char: "交", pinyin: "jiāo", hskLevel: 2,
+    isolatedMeaningPt: "entregar / cruzar / trocar",
+    formationExplanationPt: "Pictograma de uma pessoa com as pernas cruzadas → ideia de cruzamento, encontro e troca.",
+    components: [
+      { symbol: "交", pinyin: "jiāo", meaningPt: "cruzar / entregar", role: "pictográfico" }
+    ]
+  },
+  "换": {
+    char: "换", pinyin: "huàn", hskLevel: 2,
+    isolatedMeaningPt: "trocar / mudar / substituir",
+    formationExplanationPt: "Radical de mão (扌) à esquerda + 奂 (huàn) à direita → usar a mão para trocar uma coisa por outra.",
+    components: [
+      { symbol: "扌", pinyin: "shǒu", meaningPt: "mão", role: "semântico" },
+      { symbol: "奂", pinyin: "huàn", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "颜": {
+    char: "颜", pinyin: "yán", hskLevel: 2,
+    isolatedMeaningPt: "cor / semblante / rosto",
+    formationExplanationPt: "彦 (yàn, refinado) à esquerda + 页 (cabeça/face) à direita → expressão do rosto e suas tonalidades (颜色 = cor).",
+    components: [
+      { symbol: "彦", pinyin: "yàn", meaningPt: "elegante (fonético)", role: "fonético" },
+      { symbol: "页", pinyin: "yè", meaningPt: "cabeça / rosto", role: "semântico" }
+    ]
+  },
+  "花": {
+    char: "花", pinyin: "huā", hskLevel: 1,
+    isolatedMeaningPt: "flor / gastar (tempo/dinheiro)",
+    formationExplanationPt: "Radical de planta (艹) no topo + 化 (huà, transformar) embaixo → a parte da planta que se transforma e desabrocha.",
+    components: [
+      { symbol: "艹", pinyin: "cǎo", meaningPt: "planta / erva", role: "semântico" },
+      { symbol: "化", pinyin: "huà", meaningPt: "transformar (fonético)", role: "fonético" }
+    ]
+  },
+  "镜": {
+    char: "镜", pinyin: "jìng", hskLevel: 3,
+    isolatedMeaningPt: "espelho / lente",
+    formationExplanationPt: "Radical de metal (钅) à esquerda + 竟 (jìng) à direita → antigos espelhos chineses eram discos de bronze polido.",
+    components: [
+      { symbol: "钅", pinyin: "jīn", meaningPt: "metal / bronze", role: "semântico" },
+      { symbol: "竟", pinyin: "jìng", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "记": {
+    char: "记", pinyin: "jì", hskLevel: 2,
+    isolatedMeaningPt: "lembrar / anotar / registrar",
+    formationExplanationPt: "Radical de fala/palavra (讠) à esquerda + 己 (jǐ, si mesmo) à direita → anotar palavras para lembrar depois.",
+    components: [
+      { symbol: "讠", pinyin: "yán", meaningPt: "fala / palavra", role: "semântico" },
+      { symbol: "己", pinyin: "jǐ", meaningPt: "próprio / si mesmo", role: "fonético" }
+    ]
+  },
+  "忆": {
+    char: "忆", pinyin: "yì", hskLevel: 3,
+    isolatedMeaningPt: "recordar / memória",
+    formationExplanationPt: "Radical de coração/mente (忄) à esquerda + 乙 (yǐ) à direita → trazer lembranças de volta ao coração.",
+    components: [
+      { symbol: "忄", pinyin: "xīn", meaningPt: "coração / mente", role: "semântico" },
+      { symbol: "乙", pinyin: "yǐ", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "左": {
+    char: "左", pinyin: "zuǒ", hskLevel: 1,
+    isolatedMeaningPt: "esquerda",
+    formationExplanationPt: "Mão (𠂇) segurando uma ferramenta de trabalho (工) → originalmente a mão auxiliar esquerda.",
+    components: [
+      { symbol: "𠂇", pinyin: "shǒu", meaningPt: "mão", role: "pictográfico" },
+      { symbol: "工", pinyin: "gōng", meaningPt: "trabalho / instrumento", role: "semântico" }
+    ]
+  },
+  "八": {
+    char: "八", pinyin: "bā", hskLevel: 1,
+    isolatedMeaningPt: "oito",
+    formationExplanationPt: "Dois traços se abrindo para lados opostos → originalmente indicava dividir ao meio, adotado para o número 8.",
+    components: [
+      { symbol: "八", pinyin: "bā", meaningPt: "divisão simétrica (oito)", role: "pictográfico" }
+    ]
+  },
+  "清": {
+    char: "清", pinyin: "qīng", hskLevel: 2,
+    isolatedMeaningPt: "limpo / límpido / claro",
+    formationExplanationPt: "Radical de água (氵) à esquerda + 青 (qīng, azul-esverdeado/puro) à direita → água cristalina e límpida.",
+    components: [
+      { symbol: "氵", pinyin: "shuǐ", meaningPt: "água", role: "semântico" },
+      { symbol: "青", pinyin: "qīng", meaningPt: "puro / verde-azulado (fonético)", role: "fonético" }
+    ]
+  },
+  "楚": {
+    char: "楚", pinyin: "chǔ", hskLevel: 3,
+    isolatedMeaningPt: "nítido / claro / organizado",
+    formationExplanationPt: "Bosque (林) no topo + 疋 (pé/base) embaixo → originalmente um arbusto de espinhos; com 清 forma 清楚 ('nítido').",
+    components: [
+      { symbol: "林", pinyin: "lín", meaningPt: "bosque / árvores", role: "semântico" },
+      { symbol: "疋", pinyin: "shū", meaningPt: "base / movimento", role: "estrutural" }
+    ]
+  },
+  "选": {
+    char: "选", pinyin: "xuǎn", hskLevel: 2,
+    isolatedMeaningPt: "escolher / selecionar",
+    formationExplanationPt: "Radical de caminhar/caminho (辶) + 先 (xiān, antes/à frente) → escolher o caminho a seguir.",
+    components: [
+      { symbol: "辶", pinyin: "chuò", meaningPt: "caminhar / caminho", role: "semântico" },
+      { symbol: "先", pinyin: "xiān", meaningPt: "adiante (fonético)", role: "fonético" }
+    ]
+  },
+  "择": {
+    char: "择", pinyin: "zé", hskLevel: 3,
+    isolatedMeaningPt: "escolher / selecionar com cuidado",
+    formationExplanationPt: "Radical de mão (扌) à esquerda + 泽 simplificado (睪) à direita → separar e escolher com as mãos.",
+    components: [
+      { symbol: "扌", pinyin: "shǒu", meaningPt: "mão", role: "semântico" },
+      { symbol: "泽", pinyin: "zé", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "悔": {
+    char: "悔", pinyin: "huǐ", hskLevel: 3,
+    isolatedMeaningPt: "arrepender-se / remorso",
+    formationExplanationPt: "Radical de coração (忄) à esquerda + 每 (měi, cada/sempre) à direita → sentimento que volta sempre ao coração: arrependimento.",
+    components: [
+      { symbol: "忄", pinyin: "xīn", meaningPt: "coração / emoção", role: "semântico" },
+      { symbol: "每", pinyin: "měi", meaningPt: "cada / sempre (fonético)", role: "fonético" }
+    ]
+  },
+  "改": {
+    char: "改", pinyin: "gǎi", hskLevel: 2,
+    isolatedMeaningPt: "corrigir / alterar / mudar",
+    formationExplanationPt: "己 (si mesmo) à esquerda + 攵 (ação com haste/toque) à direita → corrigir e aprimorar a si próprio.",
+    components: [
+      { symbol: "己", pinyin: "jǐ", meaningPt: "si mesmo", role: "semântico" },
+      { symbol: "攵", pinyin: "pū", meaningPt: "ação / correção", role: "semântico" }
+    ]
+  },
+  "变": {
+    char: "变", pinyin: "biàn", hskLevel: 2,
+    isolatedMeaningPt: "mudar / transformar-se",
+    formationExplanationPt: "Parte superior fonética (亦 simplificado) + 又 (mão/ação) embaixo → transformar o estado de algo.",
+    components: [
+      { symbol: "亦", pinyin: "yì", meaningPt: "parte superior", role: "estrutural" },
+      { symbol: "又", pinyin: "yòu", meaningPt: "mão / ação", role: "semântico" }
+    ]
+  },
+  "乐": {
+    char: "乐", pinyin: "lè", hskLevel: 1,
+    isolatedMeaningPt: "alegria / feliz (também yuè, 'música')",
+    formationExplanationPt: "Pictograma de antigos instrumentos de corda sobre madeira → a música que traz alegria ao coração.",
+    components: [
+      { symbol: "乐", pinyin: "lè", meaningPt: "instrumento / alegria", role: "pictográfico" }
+    ]
+  },
+  "忙": {
+    char: "忙", pinyin: "máng", hskLevel: 1,
+    isolatedMeaningPt: "ocupado / com pressa",
+    formationExplanationPt: "Radical de coração (忄) à esquerda + 亡 (wáng, perder/fugir) à direita → quando o coração está atarefado demais.",
+    components: [
+      { symbol: "忄", pinyin: "xīn", meaningPt: "coração / mente", role: "semântico" },
+      { symbol: "亡", pinyin: "wáng", meaningPt: "perder (fonético)", role: "fonético" }
+    ]
+  },
+  "苹": {
+    char: "苹", pinyin: "píng", hskLevel: 1,
+    isolatedMeaningPt: "maçã (em 苹果)",
+    formationExplanationPt: "Radical de planta (艹) no topo + 平 (píng, plano/calmo) embaixo → planta e fruta da maçã.",
+    components: [
+      { symbol: "艹", pinyin: "cǎo", meaningPt: "planta", role: "semântico" },
+      { symbol: "平", pinyin: "píng", meaningPt: "calmo (fonético)", role: "fonético" }
+    ]
+  },
+  "果": {
+    char: "果", pinyin: "guǒ", hskLevel: 1,
+    isolatedMeaningPt: "fruta / fruto / resultado",
+    formationExplanationPt: "Pictograma de uma árvore (木) com um fruto redondo (田) no topo dos galhos.",
+    components: [
+      { symbol: "田", pinyin: "tián", meaningPt: "fruto redondo nos galhos", role: "pictográfico" },
+      { symbol: "木", pinyin: "mù", meaningPt: "árvore", role: "pictográfico" }
+    ]
+  },
+  "亮": {
+    char: "亮", pinyin: "liàng", hskLevel: 1,
+    isolatedMeaningPt: "luminoso / claro / aceso",
+    formationExplanationPt: "Baseado em 高 (alto) sobre 儿 (pessoa/suporte) → luz elevada que ilumina e torna visível.",
+    components: [
+      { symbol: "亠", pinyin: "tóu", meaningPt: "topo elevado", role: "estrutural" },
+      { symbol: "几", pinyin: "jǐ", meaningPt: "suporte inferior", role: "estrutural" }
+    ]
+  },
+  "认": {
+    char: "认", pinyin: "rèn", hskLevel: 1,
+    isolatedMeaningPt: "reconhecer / admitir",
+    formationExplanationPt: "Radical de fala (讠) à esquerda + 人 (rén, pessoa) à direita → reconhecer uma pessoa ou palavra.",
+    components: [
+      { symbol: "讠", pinyin: "yán", meaningPt: "fala / palavra", role: "semântico" },
+      { symbol: "人", pinyin: "rén", meaningPt: "pessoa (fonético)", role: "fonético" }
+    ]
+  },
+  "识": {
+    char: "识", pinyin: "shí", hskLevel: 1,
+    isolatedMeaningPt: "conhecer / saber / conhecimento",
+    formationExplanationPt: "Radical de fala (讠) à esquerda + 只 (zhī) à direita → conhecer pela palavra e pelo estudo.",
+    components: [
+      { symbol: "讠", pinyin: "yán", meaningPt: "fala / palavra", role: "semântico" },
+      { symbol: "只", pinyin: "zhī", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "爱": {
+    char: "爱", pinyin: "ài", hskLevel: 1,
+    isolatedMeaningPt: "amar / gostar muito",
+    formationExplanationPt: "Mão protetora no topo (爫) + amigo (友) embaixo → acolher e cuidar com afeto profundo.",
+    components: [
+      { symbol: "爫", pinyin: "zhǎo", meaningPt: "mão que acolhe", role: "semântico" },
+      { symbol: "友", pinyin: "yǒu", meaningPt: "amigo / afeto", role: "semântico" }
+    ]
+  },
+  "读": {
+    char: "读", pinyin: "dú", hskLevel: 1,
+    isolatedMeaningPt: "ler / estudar",
+    formationExplanationPt: "Radical de fala (讠) à esquerda + 卖 (mài) à direita → pronunciar e ler um texto em voz alta ou mentalmente.",
+    components: [
+      { symbol: "讠", pinyin: "yán", meaningPt: "fala / palavra", role: "semântico" },
+      { symbol: "卖", pinyin: "mài", meaningPt: "componente estrutural", role: "estrutural" }
+    ]
+  },
+  "为": {
+    char: "为", pinyin: "wèi", hskLevel: 1,
+    isolatedMeaningPt: "por / para / fazer",
+    formationExplanationPt: "Originalmente o pictograma de uma mão guiando um elefante → fazer algo por um propósito.",
+    components: [
+      { symbol: "为", pinyin: "wèi", meaningPt: "agir / por causa de", role: "pictográfico" }
+    ]
+  },
+  "年": {
+    char: "年", pinyin: "nián", hskLevel: 1,
+    isolatedMeaningPt: "ano / colheita anual",
+    formationExplanationPt: "Originalmente mostrava uma pessoa carregando espigas de trigo (禾) → cada colheita marcava a passagem de um ano.",
+    components: [
+      { symbol: "年", pinyin: "nián", meaningPt: "colheita / ciclo de um ano", role: "pictográfico" }
+    ]
+  },
+  "四": {
+    char: "四", pinyin: "sì", hskLevel: 1,
+    isolatedMeaningPt: "quatro",
+    formationExplanationPt: "Empresto antigo representando o sopro dividido pela boca, consolidado como o numeral 4.",
+    components: [
+      { symbol: "囗", pinyin: "wéi", meaningPt: "contorno fechado", role: "estrutural" },
+      { symbol: "儿", pinyin: "ér", meaningPt: "divisão interna", role: "estrutural" }
+    ]
+  },
+  "十": {
+    char: "十", pinyin: "shí", hskLevel: 1,
+    isolatedMeaningPt: "dez",
+    formationExplanationPt: "Um traço vertical e um horizontal cruzados, simbolizando a contagem completa nos dez dedos.",
+    components: [
+      { symbol: "十", pinyin: "shí", meaningPt: "dez / totalidade", role: "pictográfico" }
+    ]
+  },
+  "少": {
+    char: "少", pinyin: "shǎo", hskLevel: 1,
+    isolatedMeaningPt: "pouco / faltar",
+    formationExplanationPt: "Baseado em 小 (pequeno) com um traço diagonal cortando → reduzir ainda mais, restar pouco.",
+    components: [
+      { symbol: "小", pinyin: "xiǎo", meaningPt: "pequeno", role: "semântico" },
+      { symbol: "丿", pinyin: "piě", meaningPt: "traço de corte/redução", role: "estrutural" }
+    ]
+  },
+  "第": {
+    char: "第", pinyin: "dì", hskLevel: 1,
+    isolatedMeaningPt: "prefixo de número ordinal (1º, 2º...)",
+    formationExplanationPt: "Radical de bambu (⺮) no topo + 弟 embaixo → originalmente tiras de bambu numeradas em sequência.",
+    components: [
+      { symbol: "⺮", pinyin: "zhú", meaningPt: "bambu (tiras de registro)", role: "semântico" },
+      { symbol: "弟", pinyin: "dì", meaningPt: "sequência (fonético)", role: "fonético" }
+    ]
+  },
+  "二": {
+    char: "二", pinyin: "èr", hskLevel: 1,
+    isolatedMeaningPt: "dois",
+    formationExplanationPt: "Dois traços horizontais paralelos indicando diretamente o número 2.",
+    components: [
+      { symbol: "二", pinyin: "èr", meaningPt: "dois traços", role: "pictográfico" }
+    ]
+  },
+  "三": {
+    char: "三", pinyin: "sān", hskLevel: 1,
+    isolatedMeaningPt: "três",
+    formationExplanationPt: "Três traços horizontais paralelos indicando o número 3.",
+    components: [
+      { symbol: "三", pinyin: "sān", meaningPt: "três traços", role: "pictográfico" }
+    ]
+  },
+  "句": {
+    char: "句", pinyin: "jù", hskLevel: 2,
+    isolatedMeaningPt: "frase / sentença (classificador de falas)",
+    formationExplanationPt: "Envoltório curvo (勹) envolvendo 口 (boca) → um conjunto fechado de palavras ditas pela boca: uma frase.",
+    components: [
+      { symbol: "勹", pinyin: "bāo", meaningPt: "envolver / agrupar", role: "estrutural" },
+      { symbol: "口", pinyin: "kǒu", meaningPt: "boca / fala", role: "semântico" }
+    ]
+  },
+  "丝": {
+    char: "丝", pinyin: "sī", hskLevel: 2,
+    isolatedMeaningPt: "fio de seda / fiozinho / vestígio mínimo",
+    formationExplanationPt: "Dois fios retorcidos lado a lado (幺 + 幺) → um fio finíssimo de seda (ex.: 一丝 = um fio/vestígio).",
+    components: [
+      { symbol: "幺", pinyin: "yāo", meaningPt: "fio fino (duplicado)", role: "pictográfico" }
+    ]
+  },
+  "留": {
+    char: "留", pinyin: "liú", hskLevel: 2,
+    isolatedMeaningPt: "ficar / deixar / guardar",
+    formationExplanationPt: "Campo (田) embaixo + parte superior fonética → permanecer no lugar ou guardar algo sem ir embora.",
+    components: [
+      { symbol: "卯", pinyin: "mǎo", meaningPt: "abertura (fonético)", role: "fonético" },
+      { symbol: "田", pinyin: "tián", meaningPt: "campo / lugar de permanência", role: "semântico" }
+    ]
+  },
+  "大": {
+    char: "大", pinyin: "dà", hskLevel: 1,
+    isolatedMeaningPt: "grande / alto / intenso",
+    formationExplanationPt: "Pictograma de uma pessoa em pé com os dois braços abertos para mostrar grandeza.",
+    components: [
+      { symbol: "大", pinyin: "dà", meaningPt: "pessoa de braços abertos", role: "pictográfico" }
+    ]
+  },
+  "朵": {
+    char: "朵", pinyin: "duǒ", hskLevel: 2,
+    isolatedMeaningPt: "classificador de flores e nuvens",
+    formationExplanationPt: "Parte superior curva (乃/几) representando pétalas sobre 木 (árvore/ramo) → flor presa ao galho.",
+    components: [
+      { symbol: "几", pinyin: "jǐ", meaningPt: "copa / pétalas", role: "pictográfico" },
+      { symbol: "木", pinyin: "mù", meaningPt: "árvore / ramo", role: "semântico" }
+    ]
+  },
+  "七": {
+    char: "七", pinyin: "qī", hskLevel: 1,
+    isolatedMeaningPt: "sete",
+    formationExplanationPt: "Traço horizontal cortado por uma curva → originalmente indicava cortar, adotado para o número 7.",
+    components: [{ symbol: "七", pinyin: "qī", meaningPt: "numeral sete", role: "pictográfico" }]
+  },
+  "饭": {
+    char: "饭", pinyin: "fàn", hskLevel: 1,
+    isolatedMeaningPt: "arroz cozido / refeição / comida",
+    formationExplanationPt: "Radical de alimento (饣) à esquerda + 反 (fǎn) à direita → refeição básica.",
+    components: [
+      { symbol: "饣", pinyin: "shí", meaningPt: "alimento", role: "semântico" },
+      { symbol: "反", pinyin: "fǎn", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "更": {
+    char: "更", pinyin: "gèng", hskLevel: 2,
+    isolatedMeaningPt: "ainda mais",
+    formationExplanationPt: "Originalmente ligado a mudar ou intensificar algo; usado antes de adjetivos para indicar grau maior.",
+    components: [{ symbol: "更", pinyin: "gèng", meaningPt: "intensificação", role: "estrutural" }]
+  },
+  "贴": {
+    char: "贴", pinyin: "tiē", hskLevel: 2,
+    isolatedMeaningPt: "colar / grudar / afixar",
+    formationExplanationPt: "Radical de concha/valor (贝) à esquerda + 占 (zhān) à direita → fixar um papel ou selo.",
+    components: [
+      { symbol: "贝", pinyin: "bèi", meaningPt: "valor / selo", role: "semântico" },
+      { symbol: "占", pinyin: "zhān", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "抬": {
+    char: "抬", pinyin: "tái", hskLevel: 2,
+    isolatedMeaningPt: "erguer / levantar",
+    formationExplanationPt: "Radical de mão (扌) à esquerda + 台 (tái) à direita → levantar com as mãos ou erguer a cabeça.",
+    components: [
+      { symbol: "扌", pinyin: "shǒu", meaningPt: "mão", role: "semântico" },
+      { symbol: "台", pinyin: "tái", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "相": {
+    char: "相", pinyin: "xiāng", hskLevel: 2,
+    isolatedMeaningPt: "mútuo / observar / aparência",
+    formationExplanationPt: "Árvore (木) à esquerda + olho (目) à direita → observar atentamente.",
+    components: [
+      { symbol: "木", pinyin: "mù", meaningPt: "árvore", role: "semântico" },
+      { symbol: "目", pinyin: "mù", meaningPt: "olho", role: "semântico" }
+    ]
+  },
+  "信": {
+    char: "信", pinyin: "xìn", hskLevel: 2,
+    isolatedMeaningPt: "acreditar / confiança / carta",
+    formationExplanationPt: "Ideograma: pessoa (亻) ao lado da palavra (言) → alguém que cumpre a própria palavra inspira confiança.",
+    components: [
+      { symbol: "亻", pinyin: "rén", meaningPt: "pessoa", role: "semântico" },
+      { symbol: "言", pinyin: "yán", meaningPt: "palavra / fala", role: "semântico" }
+    ]
+  },
+  "笔": {
+    char: "笔", pinyin: "bǐ", hskLevel: 1,
+    isolatedMeaningPt: "caneta / pincel de escrita",
+    formationExplanationPt: "Bambu (⺮) no topo + pelo (毛) embaixo → pincel chinês feito com cabo de bambu e ponta de pelo.",
+    components: [
+      { symbol: "⺮", pinyin: "zhú", meaningPt: "bambu", role: "semântico" },
+      { symbol: "毛", pinyin: "máo", meaningPt: "pelo", role: "semântico" }
+    ]
+  },
+  "完": {
+    char: "完", pinyin: "wán", hskLevel: 1,
+    isolatedMeaningPt: "terminar / completo",
+    formationExplanationPt: "Teto (宀) sobre 元 (yuán) → estar inteiro sob o mesmo teto, concluído.",
+    components: [
+      { symbol: "宀", pinyin: "mián", meaningPt: "teto / casa", role: "semântico" },
+      { symbol: "元", pinyin: "yuán", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "灰": {
+    char: "灰", pinyin: "huī", hskLevel: 2,
+    isolatedMeaningPt: "cinza / poeira",
+    formationExplanationPt: "Mão/penhasco (厂/𠂇) sobre fogo (火) → o pó cinza que resta depois que o fogo apaga.",
+    components: [
+      { symbol: "𠂇", pinyin: "shǒu", meaningPt: "mão", role: "estrutural" },
+      { symbol: "火", pinyin: "huǒ", meaningPt: "fogo", role: "semântico" }
+    ]
+  },
+  "常": {
+    char: "常", pinyin: "cháng", hskLevel: 1,
+    isolatedMeaningPt: "sempre / frequente / comum",
+    formationExplanationPt: "Parte superior fonética (尚) + pano (巾) embaixo → originalmente estandarte comum, passou a significar habitual.",
+    components: [
+      { symbol: "尚", pinyin: "shàng", meaningPt: "componente fonético", role: "fonético" },
+      { symbol: "巾", pinyin: "jīn", meaningPt: "tecido", role: "semântico" }
+    ]
+  },
+  "样": {
+    char: "样", pinyin: "yàng", hskLevel: 2,
+    isolatedMeaningPt: "jeito / aparência / modelo",
+    formationExplanationPt: "Madeira (木) à esquerda + 羊 (yáng) à direita → molde ou forma.",
+    components: [
+      { symbol: "木", pinyin: "mù", meaningPt: "madeira / molde", role: "semântico" },
+      { symbol: "羊", pinyin: "yáng", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "情": {
+    char: "情", pinyin: "qíng", hskLevel: 1,
+    isolatedMeaningPt: "sentimento / situação",
+    formationExplanationPt: "Coração (忄) à esquerda + 青 (qīng) à direita → os sentimentos que nascem no coração.",
+    components: [
+      { symbol: "忄", pinyin: "xīn", meaningPt: "coração", role: "semântico" },
+      { symbol: "青", pinyin: "qīng", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "薄": {
+    char: "薄", pinyin: "báo", hskLevel: 2,
+    isolatedMeaningPt: "fino / tênue",
+    formationExplanationPt: "Planta (艹) no topo + 溥 (pǔ) embaixo → folha fina e delicada.",
+    components: [
+      { symbol: "艹", pinyin: "cǎo", meaningPt: "planta", role: "semântico" },
+      { symbol: "溥", pinyin: "pǔ", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "极": {
+    char: "极", pinyin: "jí", hskLevel: 2,
+    isolatedMeaningPt: "extremo / máximo",
+    formationExplanationPt: "Madeira (木) à esquerda + 及 (jí) à direita → originalmente a viga mais alta da casa, daí 'extremo'.",
+    components: [
+      { symbol: "木", pinyin: "mù", meaningPt: "madeira / viga", role: "semântico" },
+      { symbol: "及", pinyin: "jí", meaningPt: "alcançar (fonético)", role: "fonético" }
+    ]
+  },
+  "乱": {
+    char: "乱", pinyin: "luàn", hskLevel: 2,
+    isolatedMeaningPt: "confuso / bagunçado",
+    formationExplanationPt: "Fios emaranhados sendo desenrolados → confusão ou agitação.",
+    components: [
+      { symbol: "舌", pinyin: "shé", meaningPt: "língua / parte esquerda", role: "estrutural" },
+      { symbol: "乚", pinyin: "yǐ", meaningPt: "traço curvo", role: "estrutural" }
+    ]
+  },
+  "扇": {
+    char: "扇", pinyin: "shàn", hskLevel: 2,
+    isolatedMeaningPt: "folha de porta / leque (classificador)",
+    formationExplanationPt: "Porta (户) envolvendo asas/penas (羽) → folha articulada de porta ou leque de penas.",
+    components: [
+      { symbol: "户", pinyin: "hù", meaningPt: "porta", role: "semântico" },
+      { symbol: "羽", pinyin: "yǔ", meaningPt: "penas / asas", role: "semântico" }
+    ]
+  },
+  "针": {
+    char: "针", pinyin: "zhēn", hskLevel: 2,
+    isolatedMeaningPt: "ponteiro / agulha",
+    formationExplanationPt: "Metal (钅) à esquerda + 十 (shí) à direita → instrumento fino de metal, como agulha ou ponteiro de relógio.",
+    components: [
+      { symbol: "钅", pinyin: "jīn", meaningPt: "metal", role: "semântico" },
+      { symbol: "十", pinyin: "shí", meaningPt: "haste fina", role: "estrutural" }
+    ]
+  },
+  "惊": {
+    char: "惊", pinyin: "jīng", hskLevel: 2,
+    isolatedMeaningPt: "assustar-se / surpreender-se",
+    formationExplanationPt: "Coração (忄) à esquerda + 京 (jīng) à direita → sobressalto no coração.",
+    components: [
+      { symbol: "忄", pinyin: "xīn", meaningPt: "coração", role: "semântico" },
+      { symbol: "京", pinyin: "jīng", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "己": {
+    char: "己", pinyin: "jǐ", hskLevel: 2,
+    isolatedMeaningPt: "próprio / si mesmo",
+    formationExplanationPt: "Fio enrolado que identifica o próprio dono → 'si mesmo' (em 自己).",
+    components: [{ symbol: "己", pinyin: "jǐ", meaningPt: "si mesmo", role: "pictográfico" }]
+  },
+  "接": {
+    char: "接", pinyin: "jiē", hskLevel: 2,
+    isolatedMeaningPt: "receber / conectar",
+    formationExplanationPt: "Mão (扌) à esquerda + 妾 (qiè) à direita → estender a mão para receber ou ligar.",
+    components: [
+      { symbol: "扌", pinyin: "shǒu", meaningPt: "mão", role: "semântico" },
+      { symbol: "妾", pinyin: "qiè", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "数": {
+    char: "数", pinyin: "shǔ", hskLevel: 2,
+    isolatedMeaningPt: "contar (shǔ) / número (shù)",
+    formationExplanationPt: "Parte esquerda (娄) + ação com haste (攵) à direita → contar e calcular números.",
+    components: [
+      { symbol: "娄", pinyin: "lóu", meaningPt: "componente estrutural", role: "estrutural" },
+      { symbol: "攵", pinyin: "pū", meaningPt: "ação / cálculo", role: "semântico" }
+    ]
+  },
+  "千": {
+    char: "千", pinyin: "qiān", hskLevel: 1,
+    isolatedMeaningPt: "mil",
+    formationExplanationPt: "Baseado em 人 (pessoa) com um traço horizontal contando mil.",
+    components: [{ symbol: "千", pinyin: "qiān", meaningPt: "milhar", role: "pictográfico" }]
+  },
+  "甜": {
+    char: "甜", pinyin: "tián", hskLevel: 2,
+    isolatedMeaningPt: "doce",
+    formationExplanationPt: "Língua (舌) à esquerda + 甘 (gān, doce) à direita → sentir o sabor doce na língua.",
+    components: [
+      { symbol: "舌", pinyin: "shé", meaningPt: "língua", role: "semântico" },
+      { symbol: "甘", pinyin: "gān", meaningPt: "doce", role: "semântico" }
+    ]
+  },
+  "闻": {
+    char: "闻", pinyin: "wén", hskLevel: 2,
+    isolatedMeaningPt: "cheirar / sentir aroma / ouvir",
+    formationExplanationPt: "Orelha (耳) dentro da porta (门) → originalmente escutar notícias; no mandarim moderno significa sentir o cheiro.",
+    components: [
+      { symbol: "门", pinyin: "mén", meaningPt: "porta", role: "estrutural" },
+      { symbol: "耳", pinyin: "ěr", meaningPt: "orelha / sentido", role: "semântico" }
+    ]
+  },
+  "页": {
+    char: "页", pinyin: "yè", hskLevel: 2,
+    isolatedMeaningPt: "página / folha",
+    formationExplanationPt: "Originalmente cabeça humana; hoje usado também como classificador de páginas de livros.",
+    components: [{ symbol: "页", pinyin: "yè", meaningPt: "página", role: "pictográfico" }]
+  },
+  "错": {
+    char: "错", pinyin: "cuò", hskLevel: 1,
+    isolatedMeaningPt: "errado / erro",
+    formationExplanationPt: "Metal (钅) à esquerda + 昔 (xī) à direita → erro ou desencontro.",
+    components: [
+      { symbol: "钅", pinyin: "jīn", meaningPt: "metal", role: "semântico" },
+      { symbol: "昔", pinyin: "xī", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "误": {
+    char: "误", pinyin: "wù", hskLevel: 2,
+    isolatedMeaningPt: "equívoco / erro",
+    formationExplanationPt: "Fala (讠) à esquerda + 吴 (wú) à direita → enganar-se ou cometer equívoco.",
+    components: [
+      { symbol: "讠", pinyin: "yán", meaningPt: "fala", role: "semântico" },
+      { symbol: "吴", pinyin: "wú", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "轻": {
+    char: "轻", pinyin: "qīng", hskLevel: 2,
+    isolatedMeaningPt: "leve / jovem / suave",
+    formationExplanationPt: "Veículo (车) à esquerda + 圣 à direita → carro leve e rápido.",
+    components: [
+      { symbol: "车", pinyin: "chē", meaningPt: "carro", role: "semântico" },
+      { symbol: "圣", pinyin: "shèng", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "照": {
+    char: "照", pinyin: "zhào", hskLevel: 2,
+    isolatedMeaningPt: "iluminar / refletir",
+    formationExplanationPt: "Brilho (昭) em cima + fogo (灬) embaixo → luz que ilumina ou reflete no espelho.",
+    components: [
+      { symbol: "昭", pinyin: "zhāo", meaningPt: "brilhante (fonético)", role: "fonético" },
+      { symbol: "灬", pinyin: "huǒ", meaningPt: "fogo / luz", role: "semântico" }
+    ]
+  },
+  "鼻": {
+    char: "鼻", pinyin: "bí", hskLevel: 2,
+    isolatedMeaningPt: "nariz",
+    formationExplanationPt: "自 (antigo pictograma de nariz) no topo + 畀 embaixo → o nariz no centro do rosto.",
+    components: [
+      { symbol: "自", pinyin: "zì", meaningPt: "nariz (pictograma)", role: "pictográfico" },
+      { symbol: "畀", pinyin: "bì", meaningPt: "componente fonético", role: "fonético" }
+    ]
+  },
+  "全": {
+    char: "全", pinyin: "quán", hskLevel: 2,
+    isolatedMeaningPt: "inteiro / todo / completo",
+    formationExplanationPt: "Cobertura (人) sobre jade (王) → peça inteira e sem falhas.",
+    components: [
+      { symbol: "人", pinyin: "rén", meaningPt: "cobertura", role: "estrutural" },
+      { symbol: "王", pinyin: "wáng", meaningPt: "jade puro", role: "semântico" }
+    ]
+  },
+  "部": {
+    char: "部", pinyin: "bù", hskLevel: 2,
+    isolatedMeaningPt: "parte / seção",
+    formationExplanationPt: "咅 à esquerda + 阝 (cidade/região) à direita → divisão ou parte de um todo.",
+    components: [
+      { symbol: "咅", pinyin: "pǒu", meaningPt: "componente fonético", role: "fonético" },
+      { symbol: "阝", pinyin: "yì", meaningPt: "região", role: "semântico" }
+    ]
+  },
+  "条": {
+    char: "条", pinyin: "tiáo", hskLevel: 2,
+    isolatedMeaningPt: "classificador de coisas longas / princípios",
+    formationExplanationPt: "Ramo fino (攵) sobre árvore (木) → galho comprido, usado para contar objetos longos e princípios (道理).",
+    components: [
+      { symbol: "攵", pinyin: "pū", meaningPt: "ramo", role: "pictográfico" },
+      { symbol: "木", pinyin: "mù", meaningPt: "árvore", role: "semântico" }
+    ]
+  },
+  "捧": {
+    char: "捧", pinyin: "pěng", hskLevel: 2,
+    isolatedMeaningPt: "segurar com ambas as mãos",
+    formationExplanationPt: "Mão (扌) à esquerda + 奉 (fèng, oferecer) à direita → sustentar algo com cuidado nas duas mãos.",
+    components: [
+      { symbol: "扌", pinyin: "shǒu", meaningPt: "mão", role: "semântico" },
+      { symbol: "奉", pinyin: "fèng", meaningPt: "oferecer (fonético)", role: "fonético" }
+    ]
+  },
+  "支": {
+    char: "支", pinyin: "zhī", hskLevel: 2,
+    isolatedMeaningPt: "ramo / classificador de canetas",
+    formationExplanationPt: "Mão (又) segurando um ramo de bambu (十) → usado como classificador para objetos finos e longos como canetas.",
+    components: [
+      { symbol: "十", pinyin: "shí", meaningPt: "ramo de bambu", role: "pictográfico" },
+      { symbol: "又", pinyin: "yòu", meaningPt: "mão", role: "semântico" }
+    ]
+  },
+  "棵": {
+    char: "棵", pinyin: "kē", hskLevel: 2,
+    isolatedMeaningPt: "classificador de árvores e plantas",
+    formationExplanationPt: "Árvore (木) à esquerda + 果 (fruto) à direita → classificador específico para árvores e plantas inteiras.",
+    components: [
+      { symbol: "木", pinyin: "mù", meaningPt: "árvore", role: "semântico" },
+      { symbol: "果", pinyin: "guǒ", meaningPt: "fruto (fonético)", role: "fonético" }
+    ]
+  },
+  "右": {
+    char: "右", pinyin: "yòu", hskLevel: 1,
+    isolatedMeaningPt: "direita",
+    formationExplanationPt: "Mão (𠂇) junto à boca (口) → a mão direita, tradicionalmente usada para comer.",
+    components: [
+      { symbol: "𠂇", pinyin: "shǒu", meaningPt: "mão", role: "pictográfico" },
+      { symbol: "口", pinyin: "kǒu", meaningPt: "boca", role: "semântico" }
+    ]
   }
 };
 

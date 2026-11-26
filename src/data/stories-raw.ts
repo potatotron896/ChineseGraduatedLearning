@@ -4,6 +4,7 @@ import { STORY_CHA_DA_MANHA } from "./stories/cha-da-manha-em-pequim";
 import { STORY_GATO_LIVRARIA } from "./stories/o-gato-da-livraria-antiga";
 import { STORY_MONTANHA_VAZIA } from "./stories/a-montanha-vazia-e-a-coragem";
 import { STORY_LIBERDADE_MURALHAS } from "./stories/a-liberdade-alem-das-muralhas";
+import { STORY_LOJA_TEMPO } from "./stories/a-loja-que-comprava-tempo";
 
 function chars(word: string, pinyins: string[], hsks: (1|2|3|4)[], meanings: string[]) {
   return Array.from(word).map((ch, idx) =>
@@ -379,4 +380,5 @@ export const RAW_STORIES: Omit<Story, "hskDistribution" | "totalWords" | "totalU
   },
   STORY_MONTANHA_VAZIA,
   STORY_LIBERDADE_MURALHAS,
+  STORY_LOJA_TEMPO,
 ];
