@@ -31,7 +31,7 @@ export const STORY_GATO_LIVRARIA: Omit<Story, "hskDistribution" | "totalWords" |
       estimatedMinutes: 4,
       audioUrl: "/audio/stories/o-gato-da-livraria-antiga/ch-1.mp3",
       audioDurationMs: 0,
-      voiceName: "zh-CN-YunxiNeural",
+      voiceName: "zh-CN-XiaoxiaoNeural",
       hskDistribution: [],
       targetWords: ["下雨", "书店", "小猫", "椅子", "睡觉"],
       keyVocabulary: [
