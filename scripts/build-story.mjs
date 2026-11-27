@@ -106,10 +106,15 @@ SILENT_FRAME[2] = 0x64;
 SILENT_FRAME[3] = 0xc4;
 
 const HSK_AUDIO_PROFILES = {
-  1: { rate: "-20%", pauseFrames: 32 }, // 768 ms entre frases
-  2: { rate: "-15%", pauseFrames: 28 }, // 672 ms entre frases
-  3: { rate: "-10%", pauseFrames: 25 }, // 600 ms entre frases
+  1: { rate: "-35%", pauseFrames: 40, clausePauseFrames: 4 }, // ~960 ms entre frases, pausa extra nas vírgulas
+  2: { rate: "-25%", pauseFrames: 34, clausePauseFrames: 3 }, // ~816 ms entre frases
+  3: { rate: "-18%", pauseFrames: 28, clausePauseFrames: 2 }, // ~672 ms entre frases
 };
+
+function splitClauses(text) {
+  const parts = text.split(/(?<=[，；：——])(?=[\u4e00-\u9fff“])/g).filter(Boolean);
+  return parts.length > 0 ? parts : [text];
+}
 
 function createSilenceBuffer(frames) {
   return Buffer.concat(Array.from({ length: frames }, () => SILENT_FRAME));
@@ -127,7 +132,7 @@ async function createTtsClient(voiceName) {
   return tts;
 }
 
-async function synthesizeSentence(tts, text, rate) {
+async function synthesizeChunk(tts, text, rate) {
   const { audioStream, metadataStream } = tts.toStream(text, { rate });
   const chunks = [];
   const wordBoundaries = [];
@@ -160,6 +165,45 @@ async function synthesizeSentence(tts, text, rate) {
     buffer,
     durationMs: bufferDurationMs(buffer),
     wordBoundaries,
+  };
+}
+
+async function synthesizeSentence(tts, text, rate, clausePauseFrames = 0) {
+  const clauses = splitClauses(text);
+  if (clauses.length <= 1) {
+    return synthesizeChunk(tts, text, rate);
+  }
+
+  const clausePauseBuf = clausePauseFrames > 0 ? createSilenceBuffer(clausePauseFrames) : null;
+  const clausePauseMs = clausePauseBuf ? bufferDurationMs(clausePauseBuf) : 0;
+
+  const parts = [];
+  const allBoundaries = [];
+  let offsetMs = 0;
+
+  for (let c = 0; c < clauses.length; c++) {
+    const res = await synthesizeChunk(tts, clauses[c], rate);
+    parts.push(res.buffer);
+    for (const wb of res.wordBoundaries) {
+      allBoundaries.push({
+        text: wb.text,
+        startMs: offsetMs + wb.startMs,
+        endMs: offsetMs + wb.endMs,
+      });
+    }
+    offsetMs += res.durationMs;
+
+    if (c < clauses.length - 1 && clausePauseBuf) {
+      parts.push(clausePauseBuf);
+      offsetMs += clausePauseMs;
+    }
+  }
+
+  const finalBuf = Buffer.concat(parts);
+  return {
+    buffer: finalBuf,
+    durationMs: bufferDurationMs(finalBuf),
+    wordBoundaries: allBoundaries,
   };
 }
 
@@ -208,7 +252,7 @@ async function generateChapterAudio(
       for (let attempt = 1; attempt <= 3; attempt++) {
         try {
           if (!tts) tts = await createTtsClient(voiceName);
-          res = await synthesizeSentence(tts, sentenceText, profile.rate);
+          res = await synthesizeSentence(tts, sentenceText, profile.rate, profile.clausePauseFrames || 0);
           if (res.buffer.length >= MP3_FRAME_BYTES) break;
         } catch (err) {
           try {
