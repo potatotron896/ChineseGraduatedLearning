@@ -74,7 +74,7 @@ export function BackgroundMusicPlayer() {
           ) : (
             <Music className="w-3.5 h-3.5 shrink-0" />
           )}
-          <span className="hidden lg:inline">
+          <span className="hidden xl:inline">
             {isPlaying ? currentTrack.titlePt : "Trilha"}
           </span>
         </button>
@@ -100,7 +100,7 @@ export function BackgroundMusicPlayer() {
         <div
           role="dialog"
           aria-label="Controles da trilha sonora"
-          className="absolute right-0 top-full mt-2 w-72 rounded-lg border border-border bg-canvas shadow-lg p-3.5 z-50"
+          className="absolute right-0 top-full mt-2 w-72 max-w-[calc(100vw-1.5rem)] rounded-lg border border-border bg-canvas shadow-lg p-3.5 z-50"
         >
           <div className="flex items-start justify-between gap-2 pb-3 border-b border-border">
             <div className="min-w-0">
