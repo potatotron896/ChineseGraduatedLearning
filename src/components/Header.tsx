@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -8,7 +8,9 @@ import {
   BarChart2,
   BookMarked,
   BookOpen,
+  Check,
   CheckCircle2,
+  ChevronDown,
   ChevronRight,
   Cloud,
   Flame,
@@ -51,6 +53,8 @@ export function Header() {
     logout,
   } = useUser();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [fontMenuOpen, setFontMenuOpen] = useState(false);
+  const fontMenuRef = useRef<HTMLDivElement | null>(null);
   const [authOpen, setAuthOpen] = useState(false);
   const [authMode, setAuthMode] = useState<"login" | "register">("login");
   const [username, setUsername] = useState("");
@@ -114,9 +118,31 @@ export function Header() {
     return pathname === href || pathname.startsWith(href + "/");
   }
 
+  // Close font dropdown on outside click or Escape
+  useEffect(() => {
+    if (!fontMenuOpen) return;
+
+    const handleClickOutside = (e: MouseEvent) => {
+      if (fontMenuRef.current && !fontMenuRef.current.contains(e.target as Node)) {
+        setFontMenuOpen(false);
+      }
+    };
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setFontMenuOpen(false);
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [fontMenuOpen]);
+
   // Close mobile drawer on route change
   useEffect(() => {
     setMobileMenuOpen(false);
+    setFontMenuOpen(false);
   }, [pathname]);
 
   // Lock body scroll & close on Escape when mobile drawer is open
@@ -156,7 +182,7 @@ export function Header() {
       <header className="sticky top-0 z-30 border-b border-border bg-canvas/95 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-2 sm:gap-4">
           {/* Left: Mobile Drawer Trigger + Brand Logo + Desktop Nav */}
-          <div className="flex items-center gap-2 sm:gap-3 lg:gap-6 min-w-0">
+          <div className="flex items-center gap-2 sm:gap-3 lg:gap-4 shrink-0">
             {/* Hamburger Button (Mobile & Tablet < lg) */}
             <button
               type="button"
@@ -195,7 +221,7 @@ export function Header() {
             {/* Desktop Navigation (lg+) */}
             <nav
               aria-label="Navegação principal"
-              className="hidden lg:flex items-center gap-1"
+              className="hidden lg:flex items-center gap-0.5 xl:gap-1"
             >
               {navItems.map((item) => {
                 const active = isNavActive(item.href);
@@ -204,7 +230,7 @@ export function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`px-2.5 xl:px-3 py-1.5 rounded-md text-sm font-medium transition-colors flex items-center gap-1.5 whitespace-nowrap shrink-0 ${
+                    className={`px-2.5 py-1.5 rounded-md text-[13px] xl:text-sm font-medium transition-colors flex items-center gap-1.5 whitespace-nowrap shrink-0 ${
                       active
                         ? "bg-jade-soft text-jade font-semibold"
                         : "text-muted hover:text-ink hover:bg-surface"
@@ -228,16 +254,16 @@ export function Header() {
           </div>
 
           {/* Right: Global Controls */}
-          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-            {/* Daily Goal Progress Ring & Streak (Desktop lg+) */}
+          <div className="flex items-center gap-1.5 shrink-0">
+            {/* Daily Goal Progress Ring & Streak (Desktop xl+) */}
             <Link
               href="/progresso"
               title={`Meta diária: ${todayMinutes}/${dailyGoalMinutes} min (${goalPct}%)${
                 currentStreak > 0 ? ` · Sequência: ${currentStreak} dia(s)` : ""
               }`}
-              className="hidden lg:flex items-center gap-1.5 px-2 py-1 rounded-md border border-border bg-surface hover:border-jade transition-colors"
+              className="hidden xl:flex items-center gap-1.5 px-2 py-1 rounded-md border border-border bg-surface hover:border-jade transition-colors"
             >
-              <svg width="26" height="26" viewBox="0 0 28 28" className="-rotate-90 shrink-0">
+              <svg width="24" height="24" viewBox="0 0 28 28" className="-rotate-90 shrink-0">
                 <circle
                   cx="14"
                   cy="14"
@@ -273,43 +299,94 @@ export function Header() {
               </div>
             </Link>
 
-            {/* Global 3-Font Quick Switcher (Desktop lg+, labels on xl+) */}
-            <div
-              className="hidden lg:flex items-center bg-surface border border-border rounded-md p-0.5"
-              role="group"
-              aria-label="Selecionar tipografia chinesa"
-            >
-              {FONT_OPTIONS.map((opt) => {
-                const active = profile.preferences.zhFont === opt.id;
+            {/* Compact 3-Font Dropdown Switcher (Desktop lg+) */}
+            <div ref={fontMenuRef} className="relative hidden lg:block">
+              {(() => {
+                const currentFont =
+                  FONT_OPTIONS.find((f) => f.id === profile.preferences.zhFont) ||
+                  FONT_OPTIONS[0];
                 return (
                   <button
-                    key={opt.id}
                     type="button"
-                    onClick={() => updatePreferences({ zhFont: opt.id })}
-                    title={`${opt.labelPt}: ${opt.descPt}`}
-                    className={`px-2 xl:px-2.5 py-1 rounded-[5px] text-xs font-medium transition-colors flex items-center gap-1.5 ${
-                      active
-                        ? "bg-jade text-canvas shadow-sm"
-                        : "text-muted hover:text-ink"
-                    }`}
+                    onClick={() => setFontMenuOpen((prev) => !prev)}
+                    aria-expanded={fontMenuOpen}
+                    aria-haspopup="menu"
+                    title={`Tipografia chinesa: ${currentFont.labelPt} (${currentFont.descPt})`}
+                    className="h-8 px-2.5 rounded-md border border-border bg-surface hover:border-jade text-xs font-medium text-ink transition-colors flex items-center gap-1.5 whitespace-nowrap"
                   >
                     <span
                       className={
-                        opt.id === "app"
-                          ? "font-zh-app text-sm"
-                          : opt.id === "school"
-                          ? "font-zh-school text-sm"
-                          : "font-zh-book text-sm"
+                        currentFont.id === "app"
+                          ? "font-zh-app text-sm text-jade"
+                          : currentFont.id === "school"
+                          ? "font-zh-school text-sm text-jade"
+                          : "font-zh-book text-sm text-jade"
                       }
                     >
-                      {opt.sampleZh}
+                      {currentFont.sampleZh}
                     </span>
                     <span className="hidden xl:inline">
-                      {opt.labelPt.replace("Fonte ", "")}
+                      {currentFont.labelPt.replace("Fonte ", "")}
                     </span>
+                    <ChevronDown className="w-3.5 h-3.5 text-muted" />
                   </button>
                 );
-              })}
+              })()}
+
+              {fontMenuOpen && (
+                <div
+                  role="menu"
+                  aria-label="Selecionar tipografia chinesa"
+                  className="absolute right-0 top-full mt-2 w-56 rounded-lg border border-border bg-canvas shadow-lg p-1.5 z-50"
+                >
+                  <p className="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-subtle">
+                    Tipografia Chinesa
+                  </p>
+                  {FONT_OPTIONS.map((opt) => {
+                    const active = profile.preferences.zhFont === opt.id;
+                    return (
+                      <button
+                        key={opt.id}
+                        type="button"
+                        role="menuitemradio"
+                        aria-checked={active}
+                        onClick={() => {
+                          updatePreferences({ zhFont: opt.id });
+                          setFontMenuOpen(false);
+                        }}
+                        className={`w-full px-2.5 py-2 rounded-md text-left transition-colors flex items-center justify-between gap-2 ${
+                          active
+                            ? "bg-jade-soft text-jade"
+                            : "text-ink hover:bg-surface"
+                        }`}
+                      >
+                        <div className="flex items-center gap-2.5">
+                          <span
+                            className={`text-base w-6 text-center ${
+                              opt.id === "app"
+                                ? "font-zh-app"
+                                : opt.id === "school"
+                                ? "font-zh-school"
+                                : "font-zh-book"
+                            }`}
+                          >
+                            {opt.sampleZh}
+                          </span>
+                          <div>
+                            <div className="text-xs font-semibold leading-tight">
+                              {opt.labelPt}
+                            </div>
+                            <div className="text-[11px] text-muted leading-tight mt-0.5">
+                              {opt.descPt}
+                            </div>
+                          </div>
+                        </div>
+                        {active && <Check className="w-3.5 h-3.5 shrink-0" />}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
             </div>
 
             {/* Background Music Player */}
@@ -349,11 +426,8 @@ export function Header() {
                 className="flex items-center gap-1 sm:gap-1.5 pl-2 pr-1 h-9 sm:h-8 rounded-md border border-jade-border bg-jade-soft text-jade text-xs font-medium"
               >
                 <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
-                <span className="max-w-[68px] sm:max-w-[100px] truncate font-semibold">
+                <span className="max-w-[72px] sm:max-w-[96px] truncate font-semibold">
                   @{profile.username}
-                </span>
-                <span className="text-[10px] text-muted hidden 2xl:inline">
-                  {syncStatus === "syncing" ? "Sincronizando..." : "Sincronizado"}
                 </span>
                 <button
                   type="button"
@@ -375,8 +449,7 @@ export function Header() {
                 className="px-2.5 sm:px-3 h-9 sm:h-8 rounded-md bg-jade text-canvas hover:bg-jade-deep text-xs font-semibold transition-colors flex items-center gap-1.5 whitespace-nowrap"
               >
                 <Cloud className="w-3.5 h-3.5 shrink-0" />
-                <span className="hidden xl:inline">Entrar / Sincronizar</span>
-                <span className="xl:hidden">Entrar</span>
+                <span>Entrar</span>
               </button>
             )}
           </div>
