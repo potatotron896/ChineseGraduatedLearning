@@ -51,7 +51,12 @@ export function verifyPassword(
 }
 
 function getDatabaseUrl(): string | undefined {
-  return process.env.DATABASE_URL || process.env.POSTGRES_URL;
+  return (
+    process.env.DATABASE_URL ||
+    process.env.POSTGRES_URL ||
+    process.env.STORAGE_DATABASE_URL ||
+    process.env.STORAGE_POSTGRES_URL
+  );
 }
 
 export function getStorageMode(): "neon-postgres" | "local-json" {

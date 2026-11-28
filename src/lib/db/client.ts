@@ -14,7 +14,12 @@ export class DatabaseNotConfiguredError extends Error {
 let cachedSql: NeonQueryFunction<false, false> | null = null;
 
 export function getDatabaseUrl(): string | undefined {
-  return process.env.DATABASE_URL || process.env.POSTGRES_URL;
+  return (
+    process.env.DATABASE_URL ||
+    process.env.POSTGRES_URL ||
+    process.env.STORAGE_DATABASE_URL ||
+    process.env.STORAGE_POSTGRES_URL
+  );
 }
 
 export function getDb(): NeonQueryFunction<false, false> {
