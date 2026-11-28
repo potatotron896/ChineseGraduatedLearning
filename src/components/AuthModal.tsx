@@ -569,3 +569,4 @@ export function ChangePasswordModal({ open, onClose }: ChangePasswordModalProps)
     </div>
   );
 }
+

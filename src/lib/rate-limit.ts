@@ -119,3 +119,4 @@ export function formatRetryAfterPt(seconds: number): string {
   }
   return `${seconds} ${seconds === 1 ? "segundo" : "segundos"}`;
 }
+

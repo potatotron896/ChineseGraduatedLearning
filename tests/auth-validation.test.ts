@@ -87,3 +87,4 @@ test("rate-limit bloqueia após 5 falhas e reseta após sucesso", () => {
   resetRateLimit(key);
   assert.equal(checkRateLimit(key, now + 6000).allowed, true);
 });
+
