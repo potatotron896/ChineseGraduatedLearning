@@ -555,13 +555,13 @@ export default function ReviewPage() {
                 <div className="text-xs font-semibold uppercase tracking-wider text-muted">
                   Como se escreve em Mandarim?
                 </div>
-                <p className="text-2xl sm:text-3xl font-bold text-ink">
+                <p className="text-2xl sm:text-3xl font-semibold text-ink">
                   {cardContent.meaningPt}
                 </p>
               </div>
             ) : (
               <div className="space-y-3">
-                <div className="text-5xl sm:text-6xl font-zh font-bold text-ink tracking-wide">
+                <div className="text-5xl sm:text-6xl font-zh font-normal text-ink tracking-wide">
                   {cardContent.hanzi}
                 </div>
                 <button
@@ -579,10 +579,10 @@ export default function ReviewPage() {
             {revealed && (
               <div className="w-full max-w-xl pt-5 border-t border-border space-y-3 text-left sm:text-center">
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
-                  <span className="text-3xl font-zh font-bold text-jade">
+                  <span className="text-3xl font-zh font-normal text-jade">
                     {cardContent.hanzi}
                   </span>
-                  <span className="text-lg font-bold">
+                  <span className="text-lg font-semibold">
                     <ColoredPinyin pinyin={cardContent.pinyin} />
                   </span>
                   <button
@@ -595,7 +595,7 @@ export default function ReviewPage() {
                   </button>
                 </div>
 
-                <p className="text-base font-bold text-ink">{cardContent.meaningPt}</p>
+                <p className="text-base font-medium text-ink">{cardContent.meaningPt}</p>
 
                 {cardContent.compoundLogicPt && (
                   <p className="text-xs text-muted bg-canvas border border-border rounded-md p-2.5 leading-relaxed">
