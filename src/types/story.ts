@@ -139,6 +139,8 @@ export interface SavedVocabularyItem {
   storyTitlePt: string;
   addedAt: string;
   characters?: CharacterEtymology[];
+  exampleSentenceZh?: string;
+  exampleSentencePt?: string;
 }
 
 export interface ChapterProgress {
@@ -160,6 +162,10 @@ export interface ReaderPreferences {
   darkMode: boolean;
   bgmVolume?: number;               // 0.0 - 1.0 (default 0.22)
   bgmAutoDuck?: boolean;            // Abaixar trilha automaticamente durante a narração
+  dailyGoalMinutes?: number;        // Meta diária de leitura em minutos (padrão 10)
+  srsNewPerDay?: number;            // Limite de cards novos por dia (padrão 10)
+  srsReviewsPerDay?: number;        // Limite de revisões por dia (padrão 100)
+  srsEnableMeaningToHanzi?: boolean; // Modo produção: Significado -> Hanzi (padrão false)
 }
 
 export interface UserProfileData {

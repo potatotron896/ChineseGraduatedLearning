@@ -4,6 +4,7 @@ import "./globals.css";
 import { UserProvider } from "@/context/UserContext";
 import { BackgroundMusicProvider } from "@/context/BackgroundMusicContext";
 import { Header } from "@/components/Header";
+import { BadgeToastContainer } from "@/components/BadgeToast";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -66,6 +67,7 @@ export default function RootLayout({
           <BackgroundMusicProvider>
             <Header />
             <main className="flex-1">{children}</main>
+            <BadgeToastContainer />
           </BackgroundMusicProvider>
         </UserProvider>
       </body>

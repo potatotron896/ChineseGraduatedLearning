@@ -1,5 +1,12 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import {
+  createSessionToken,
+  getSessionCookieOptions,
+  SESSION_COOKIE_NAME,
+  verifySessionToken,
+} from "@/lib/auth-session";
+import {
+  getStorageMode,
   hashPassword,
   loadUserAccount,
   normalizeUsername,
@@ -8,15 +15,49 @@ import {
 } from "@/lib/user-storage";
 import type { UserProfileData } from "@/types/story";
 
-export async function POST(request: Request) {
+export async function GET(request: NextRequest) {
+  try {
+    const token = request.cookies.get(SESSION_COOKIE_NAME)?.value;
+    const sessionUser = verifySessionToken(token);
+    if (!sessionUser) {
+      return NextResponse.json({ ok: false, storageMode: getStorageMode() });
+    }
+
+    const existing = await loadUserAccount(sessionUser);
+    if (!existing) {
+      return NextResponse.json({ ok: false, storageMode: getStorageMode() });
+    }
+
+    return NextResponse.json({
+      ok: true,
+      username: existing.username,
+      profile: existing.profile,
+      storageMode: getStorageMode(),
+    });
+  } catch (err) {
+    console.error("Auth GET Error:", err);
+    return NextResponse.json(
+      { ok: false, error: "Erro ao verificar sessão." },
+      { status: 500 }
+    );
+  }
+}
+
+export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const { action, username, password, profile } = body as {
-      action: "login" | "register" | "sync";
-      username: string;
+      action: "login" | "register" | "sync" | "logout";
+      username?: string;
       password?: string;
       profile?: UserProfileData;
     };
+
+    if (action === "logout") {
+      const response = NextResponse.json({ ok: true });
+      response.cookies.set(SESSION_COOKIE_NAME, "", getSessionCookieOptions(0));
+      return response;
+    }
 
     const cleanUser = normalizeUsername(username || "");
     if (!cleanUser || cleanUser.length < 2) {
@@ -70,12 +111,18 @@ export async function POST(request: Request) {
         updatedAt: now,
       });
 
-      return NextResponse.json({
+      const response = NextResponse.json({
         ok: true,
         username: cleanUser,
         profile: initialProfile,
-        storageMode: process.env.BLOB_READ_WRITE_TOKEN ? "vercel-blob" : "local-json",
+        storageMode: getStorageMode(),
       });
+      response.cookies.set(
+        SESSION_COOKIE_NAME,
+        createSessionToken(cleanUser),
+        getSessionCookieOptions()
+      );
+      return response;
     }
 
     if (action === "login") {
@@ -93,7 +140,7 @@ export async function POST(request: Request) {
         return NextResponse.json({ error: "Senha incorreta." }, { status: 401 });
       }
 
-      // Merge any local guest progress into the cloud account on login
+      // Mescla progresso local de visitante com a conta na nuvem ao fazer login
       const mergedProfile: UserProfileData = {
         ...existing.profile,
         username: cleanUser,
@@ -114,21 +161,41 @@ export async function POST(request: Request) {
         updatedAt: mergedProfile.updatedAt,
       });
 
-      return NextResponse.json({
+      const response = NextResponse.json({
         ok: true,
         username: cleanUser,
         profile: mergedProfile,
-        storageMode: process.env.BLOB_READ_WRITE_TOKEN ? "vercel-blob" : "local-json",
+        storageMode: getStorageMode(),
       });
+      response.cookies.set(
+        SESSION_COOKIE_NAME,
+        createSessionToken(cleanUser),
+        getSessionCookieOptions()
+      );
+      return response;
     }
 
     if (action === "sync") {
       const existing = await loadUserAccount(cleanUser);
       if (!existing) {
-        return NextResponse.json({ error: "Conta não encontrada para sincronização." }, { status: 404 });
+        return NextResponse.json(
+          { error: "Conta não encontrada para sincronização." },
+          { status: 404 }
+        );
       }
-      if (password && !verifyPassword(password, existing.passwordSalt, existing.passwordHash)) {
-        return NextResponse.json({ error: "Sessão inválida." }, { status: 401 });
+
+      const token = request.cookies.get(SESSION_COOKIE_NAME)?.value;
+      const sessionUser = verifySessionToken(token);
+      const hasValidCookie = sessionUser === cleanUser;
+      const hasValidPassword =
+        Boolean(password) &&
+        verifyPassword(password!, existing.passwordSalt, existing.passwordHash);
+
+      if (!hasValidCookie && !hasValidPassword) {
+        return NextResponse.json(
+          { error: "Sessão inválida ou expirada. Faça login novamente." },
+          { status: 401 }
+        );
       }
 
       if (profile) {
@@ -143,18 +210,27 @@ export async function POST(request: Request) {
           profile: updatedProfile,
           updatedAt: now,
         });
-        return NextResponse.json({
+        const response = NextResponse.json({
           ok: true,
           username: cleanUser,
           profile: updatedProfile,
-          storageMode: process.env.BLOB_READ_WRITE_TOKEN ? "vercel-blob" : "local-json",
+          storageMode: getStorageMode(),
         });
+        if (!hasValidCookie && hasValidPassword) {
+          response.cookies.set(
+            SESSION_COOKIE_NAME,
+            createSessionToken(cleanUser),
+            getSessionCookieOptions()
+          );
+        }
+        return response;
       }
 
       return NextResponse.json({
         ok: true,
         username: cleanUser,
         profile: existing.profile,
+        storageMode: getStorageMode(),
       });
     }
 
@@ -167,4 +243,3 @@ export async function POST(request: Request) {
     );
   }
 }
-

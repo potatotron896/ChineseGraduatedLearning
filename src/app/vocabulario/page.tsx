@@ -64,15 +64,23 @@ export default function SavedVocabularyPage() {
         </div>
 
         {items.length > 0 && (
-          <div className="relative w-full sm:w-72">
-            <Search className="w-4 h-4 text-muted absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
-            <input
-              type="search"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Filtrar vocabulário salvo..."
-              className="w-full pl-9 pr-3 py-2.5 sm:py-2 rounded-md border border-border bg-surface text-base sm:text-xs text-ink placeholder:text-muted focus:outline-none focus:border-jade"
-            />
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+            <Link
+              href="/revisar"
+              className="px-3.5 py-2 rounded-md bg-jade text-canvas hover:bg-jade-deep text-xs font-semibold text-center whitespace-nowrap transition-colors"
+            >
+              Revisar Flashcards
+            </Link>
+            <div className="relative w-full sm:w-72">
+              <Search className="w-4 h-4 text-muted absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+              <input
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Filtrar vocabulário salvo..."
+                className="w-full pl-9 pr-3 py-2.5 sm:py-2 rounded-md border border-border bg-surface text-base sm:text-xs text-ink placeholder:text-muted focus:outline-none focus:border-jade"
+              />
+            </div>
           </div>
         )}
       </div>

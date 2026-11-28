@@ -4,10 +4,14 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
+  Award,
+  BarChart2,
   BookMarked,
   BookOpen,
   CheckCircle2,
   Cloud,
+  Flame,
+  Layers,
   LogOut,
   Moon,
   Sun,
@@ -26,7 +30,15 @@ const FONT_OPTIONS: { id: ChineseFontMode; labelPt: string; sampleZh: string; de
 
 export function Header() {
   const pathname = usePathname();
-  const { profile, syncStatus, updatePreferences, loginOrRegister, logout } = useUser();
+  const {
+    profile,
+    syncStatus,
+    telemetrySummary,
+    srsDueCount,
+    updatePreferences,
+    loginOrRegister,
+    logout,
+  } = useUser();
   const [authOpen, setAuthOpen] = useState(false);
   const [authMode, setAuthMode] = useState<"login" | "register">("login");
   const [username, setUsername] = useState("");
@@ -35,6 +47,13 @@ export function Header() {
   const [submitting, setSubmitting] = useState(false);
 
   const vocabCount = Object.keys(profile.savedVocabulary).length;
+  const dailyGoalMinutes = profile.preferences.dailyGoalMinutes ?? 10;
+  const todayMinutes = Math.floor((telemetrySummary?.todaySeconds || 0) / 60);
+  const goalPct = Math.min(100, Math.round(((telemetrySummary?.todaySeconds || 0) / (dailyGoalMinutes * 60)) * 100));
+  const currentStreak = telemetrySummary?.streak.currentStreak || 0;
+  const ringRadius = 11;
+  const ringCirc = 2 * Math.PI * ringRadius;
+  const ringOffset = ringCirc - (goalPct / 100) * ringCirc;
 
   async function handleAuthSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -78,40 +97,119 @@ export function Header() {
               </div>
             </Link>
 
-            <nav className="flex items-center gap-1">
+            <nav className="flex items-center gap-0.5 sm:gap-1 overflow-x-auto no-scrollbar">
               <Link
                 href="/"
-                className={`px-2.5 sm:px-3 py-1.5 min-h-[36px] sm:min-h-0 rounded-md text-xs sm:text-sm font-medium transition-colors flex items-center gap-1.5 ${
+                className={`px-2 sm:px-3 py-1.5 min-h-[36px] sm:min-h-0 rounded-md text-xs sm:text-sm font-medium transition-colors flex items-center gap-1.5 shrink-0 ${
                   pathname === "/"
                     ? "bg-jade-soft text-jade font-semibold"
                     : "text-muted hover:text-ink hover:bg-surface"
                 }`}
               >
                 <BookOpen className="w-4 h-4 shrink-0" />
-                <span>Histórias</span>
+                <span className="hidden sm:inline">Histórias</span>
               </Link>
               <Link
                 href="/vocabulario"
-                className={`px-2.5 sm:px-3 py-1.5 min-h-[36px] sm:min-h-0 rounded-md text-xs sm:text-sm font-medium transition-colors flex items-center gap-1.5 ${
+                className={`px-2 sm:px-3 py-1.5 min-h-[36px] sm:min-h-0 rounded-md text-xs sm:text-sm font-medium transition-colors flex items-center gap-1.5 shrink-0 ${
                   pathname === "/vocabulario"
                     ? "bg-jade-soft text-jade font-semibold"
                     : "text-muted hover:text-ink hover:bg-surface"
                 }`}
               >
                 <BookMarked className="w-4 h-4 shrink-0" />
-                <span className="hidden sm:inline">Meu Vocabulário</span>
-                <span className="sm:hidden">Vocab.</span>
+                <span className="hidden lg:inline">Vocabulário</span>
+                <span className="hidden sm:inline lg:hidden">Vocab.</span>
                 {vocabCount > 0 && (
-                  <span className="ml-0.5 px-1.5 py-0.5 text-[10px] sm:text-[11px] font-mono rounded-full bg-jade text-canvas leading-none">
+                  <span className="ml-0.5 px-1.5 py-0.5 text-[10px] font-mono rounded-full bg-jade text-canvas leading-none">
                     {vocabCount}
                   </span>
                 )}
               </Link>
+              <Link
+                href="/revisar"
+                className={`px-2 sm:px-3 py-1.5 min-h-[36px] sm:min-h-0 rounded-md text-xs sm:text-sm font-medium transition-colors flex items-center gap-1.5 shrink-0 ${
+                  pathname === "/revisar"
+                    ? "bg-jade-soft text-jade font-semibold"
+                    : "text-muted hover:text-ink hover:bg-surface"
+                }`}
+              >
+                <Layers className="w-4 h-4 shrink-0" />
+                <span className="hidden sm:inline">Revisar</span>
+                {srsDueCount > 0 && (
+                  <span className="ml-0.5 px-1.5 py-0.5 text-[10px] font-mono rounded-full bg-cinnabar text-canvas leading-none">
+                    {srsDueCount}
+                  </span>
+                )}
+              </Link>
+              <Link
+                href="/progresso"
+                className={`px-2 sm:px-3 py-1.5 min-h-[36px] sm:min-h-0 rounded-md text-xs sm:text-sm font-medium transition-colors flex items-center gap-1.5 shrink-0 ${
+                  pathname === "/progresso"
+                    ? "bg-jade-soft text-jade font-semibold"
+                    : "text-muted hover:text-ink hover:bg-surface"
+                }`}
+              >
+                <BarChart2 className="w-4 h-4 shrink-0" />
+                <span className="hidden md:inline">Progresso</span>
+              </Link>
+              <Link
+                href="/conquistas"
+                className={`px-2 sm:px-3 py-1.5 min-h-[36px] sm:min-h-0 rounded-md text-xs sm:text-sm font-medium transition-colors flex items-center gap-1.5 shrink-0 ${
+                  pathname === "/conquistas"
+                    ? "bg-jade-soft text-jade font-semibold"
+                    : "text-muted hover:text-ink hover:bg-surface"
+                }`}
+              >
+                <Award className="w-4 h-4 shrink-0" />
+                <span className="hidden lg:inline">Conquistas</span>
+              </Link>
             </nav>
           </div>
 
-          {/* Global Controls: 3-Font Switcher, Dark Mode, Cloud Account */}
+          {/* Global Controls: Daily Goal Ring, 3-Font Switcher, Dark Mode, Cloud Account */}
           <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+            {/* Daily Goal Progress Ring & Streak */}
+            <Link
+              href="/progresso"
+              title={`Meta diária: ${todayMinutes}/${dailyGoalMinutes} min (${goalPct}%)${currentStreak > 0 ? ` · Sequência: ${currentStreak} dia(s)` : ""}`}
+              className="hidden sm:flex items-center gap-1.5 px-2 py-1 rounded-md border border-border bg-surface hover:border-jade transition-colors"
+            >
+              <svg width="26" height="26" viewBox="0 0 28 28" className="-rotate-90 shrink-0">
+                <circle
+                  cx="14"
+                  cy="14"
+                  r={ringRadius}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  className="text-border"
+                />
+                <circle
+                  cx="14"
+                  cy="14"
+                  r={ringRadius}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeDasharray={ringCirc}
+                  strokeDashoffset={ringOffset}
+                  strokeLinecap="round"
+                  className={goalPct >= 100 ? "text-jade" : "text-cinnabar"}
+                />
+              </svg>
+              <div className="text-[11px] leading-tight pr-0.5">
+                <div className="font-mono font-semibold text-ink">
+                  {todayMinutes}/{dailyGoalMinutes}m
+                </div>
+                {currentStreak > 0 && (
+                  <div className="flex items-center gap-0.5 text-[10px] font-semibold text-cinnabar">
+                    <Flame className="w-2.5 h-2.5" />
+                    <span>{currentStreak}d</span>
+                  </div>
+                )}
+              </div>
+            </Link>
             {/* Global 3-Font Quick Switcher */}
             <div
               className="hidden md:flex items-center bg-surface border border-border rounded-md p-0.5"

@@ -31,6 +31,7 @@ import { useBackgroundMusic } from "@/context/BackgroundMusicContext";
 import { HskDistributionBar, getHskStyle } from "@/components/HskDistributionBar";
 import { EtymologyInspector } from "@/components/EtymologyInspector";
 import { ColoredPinyin } from "@/components/ColoredPinyin";
+import { getLocalDayString } from "@/lib/client-day";
 import type { ChineseFontMode, PinyinDisplayMode, StorySentence, StoryToken } from "@/types/story";
 
 const FONT_MODES: { id: ChineseFontMode; label: string; desc: string }[] = [
@@ -62,7 +63,15 @@ export default function StoryReaderPage() {
   const story = getStoryBySlug(params.slug);
   const chapter = story?.chapters.find((c) => c.id === params.chapterId) || story?.chapters[0];
 
-  const { profile, updatePreferences, updateChapterProgress } = useUser();
+  const {
+    profile,
+    updatePreferences,
+    updateChapterProgress,
+    toggleVocabularyItem,
+    isWordSaved,
+    recordEvent,
+    recordReadingSession,
+  } = useUser();
   const { setNarrationPlaying } = useBackgroundMusic();
   const { zhFont, fontSizeStep, fontSizePx, pinyinMode, highlightAboveLevel, audioSpeed } =
     profile.preferences;
@@ -78,6 +87,80 @@ export default function StoryReaderPage() {
   const [openTranslations, setOpenTranslations] = useState<Record<string, boolean>>({});
   const [showAllTranslations, setShowAllTranslations] = useState(false);
   const [showHskModal, setShowHskModal] = useState(false);
+  const [sessionActiveSeconds, setSessionActiveSeconds] = useState(0);
+
+  // Telemetry refs (15s heartbeat, 60s idle pause, sendBeacon on leave)
+  const sessionIdRef = useRef<string>("");
+  const sessionStartRef = useRef<string>("");
+  const activeSecondsRef = useRef<number>(0);
+  const lastActivityAtRef = useRef<number>(Date.now());
+  const audioMsPlayedRef = useRef<number>(0);
+  const isPlayingRef = useRef<boolean>(false);
+  isPlayingRef.current = isPlaying;
+
+  useEffect(() => {
+    if (!story || !chapter) return;
+    sessionIdRef.current = crypto.randomUUID();
+    sessionStartRef.current = new Date().toISOString();
+    activeSecondsRef.current = 0;
+    audioMsPlayedRef.current = 0;
+    lastActivityAtRef.current = Date.now();
+    setSessionActiveSeconds(0);
+
+    const markActive = () => {
+      lastActivityAtRef.current = Date.now();
+    };
+    window.addEventListener("scroll", markActive, { passive: true });
+    window.addEventListener("click", markActive, { passive: true });
+    window.addEventListener("keydown", markActive, { passive: true });
+
+    const flushSession = (useBeacon: boolean) => {
+      if (activeSecondsRef.current <= 0) return;
+      recordReadingSession(
+        {
+          id: sessionIdRef.current,
+          storySlug: story.slug,
+          chapterId: chapter.id,
+          startedAt: sessionStartRef.current,
+          endedAt: new Date().toISOString(),
+          activeSeconds: activeSecondsRef.current,
+          sentencesRead: chapter.sentences.length,
+          audioMsPlayed: audioMsPlayedRef.current,
+          clientDay: getLocalDayString(),
+        },
+        useBeacon
+      );
+    };
+
+    const tickInterval = setInterval(() => {
+      if (document.visibilityState !== "visible") return;
+      const idleMs = Date.now() - lastActivityAtRef.current;
+      if (isPlayingRef.current || idleMs < 60000) {
+        activeSecondsRef.current += 1;
+        if (isPlayingRef.current) {
+          audioMsPlayedRef.current += 1000;
+        }
+        setSessionActiveSeconds(activeSecondsRef.current);
+        if (activeSecondsRef.current % 15 === 0) {
+          flushSession(false);
+        }
+      }
+    }, 1000);
+
+    const handlePageHide = () => flushSession(true);
+    window.addEventListener("pagehide", handlePageHide);
+    window.addEventListener("beforeunload", handlePageHide);
+
+    return () => {
+      clearInterval(tickInterval);
+      window.removeEventListener("scroll", markActive);
+      window.removeEventListener("click", markActive);
+      window.removeEventListener("keydown", markActive);
+      window.removeEventListener("pagehide", handlePageHide);
+      window.removeEventListener("beforeunload", handlePageHide);
+      flushSession(true);
+    };
+  }, [chapter, recordReadingSession, story]);
 
   // Reset reader state when switching chapters
   useEffect(() => {
@@ -606,6 +689,17 @@ export default function StoryReaderPage() {
                             setSelectedToken(token);
                             setSelectedSentence(sentence);
                             setIsInspectorModalOpen(true);
+                            recordEvent("etymology_inspected", {
+                              hanzi: token.hanzi,
+                              storySlug: story.slug,
+                            });
+                            updateChapterProgress({
+                              storySlug: story.slug,
+                              chapterId: chapter.id,
+                              completed: isChapterCompleted,
+                              lastSentenceId: sentence.id,
+                              lastAudioMs: sentence.startMs,
+                            });
                           }}
                           className="zh-token cursor-pointer hover:bg-surface-elevated active:scale-95 transition-transform"
                           title={`${token.pinyin} — ${token.meaningPt} (HSK ${token.hskLevel})`}
@@ -663,6 +757,77 @@ export default function StoryReaderPage() {
               );
             })}
           </div>
+
+          {/* Post-Chapter Summary (when completed) */}
+          {isChapterCompleted && (
+            <section className="mt-8 rounded-lg border border-jade-border bg-jade-soft/40 p-5 space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                  <div className="text-[11px] font-bold uppercase tracking-wider text-jade">
+                    Resumo Pós-Capítulo
+                  </div>
+                  <h2 className="text-base font-bold text-ink mt-0.5">
+                    Você concluiu {chapter.titlePt}!
+                  </h2>
+                </div>
+                <Link
+                  href="/revisar"
+                  className="px-3.5 py-2 rounded-md bg-cinnabar text-canvas text-xs font-semibold inline-flex items-center gap-1.5 self-start sm:self-auto"
+                >
+                  <span>Revisar Flashcards</span>
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3 text-center">
+                <div className="rounded-md border border-border bg-canvas p-3">
+                  <div className="text-lg font-bold font-mono text-ink">
+                    {Math.max(1, Math.round(sessionActiveSeconds / 60))} min
+                  </div>
+                  <div className="text-[11px] text-muted">Nesta sessão</div>
+                </div>
+                <div className="rounded-md border border-border bg-canvas p-3">
+                  <div className="text-lg font-bold font-mono text-ink">
+                    {chapter.keyVocabulary.length}
+                  </div>
+                  <div className="text-[11px] text-muted">Palavras-chave</div>
+                </div>
+                <div className="rounded-md border border-border bg-canvas p-3">
+                  <div className="text-lg font-bold font-mono text-jade">
+                    {chapter.keyVocabulary.filter((kv) => isWordSaved(kv.hanzi)).length}
+                  </div>
+                  <div className="text-[11px] text-muted">Já no baralho</div>
+                </div>
+              </div>
+
+              {chapter.keyVocabulary.some((kv) => !isWordSaved(kv.hanzi)) && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    for (const kv of chapter.keyVocabulary) {
+                      if (!isWordSaved(kv.hanzi)) {
+                        const matchSentence = chapter.sentences.find((s) =>
+                          s.zhText.includes(kv.hanzi)
+                        );
+                        toggleVocabularyItem({
+                          hanzi: kv.hanzi,
+                          pinyin: kv.pinyin,
+                          meaningPt: kv.meaningPt,
+                          hskLevel: kv.hskLevel,
+                          storySlug: story.slug,
+                          storyTitlePt: story.titlePt,
+                          exampleSentenceZh: matchSentence?.zhText,
+                          exampleSentencePt: matchSentence?.translationPt,
+                        });
+                      }
+                    }
+                  }}
+                  className="w-full sm:w-auto px-4 py-2 rounded-md bg-jade text-canvas hover:bg-jade-deep text-xs font-semibold transition-colors"
+                >
+                  Adicionar todas as palavras-chave ao baralho SRS
+                </button>
+              )}
+            </section>
+          )}
 
           {/* Chapter Completion & Chapter Navigation Footer */}
           <footer className="mt-8 sm:mt-10 p-4 sm:p-6 rounded-lg border border-border bg-surface flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4">

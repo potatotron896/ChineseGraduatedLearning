@@ -31,12 +31,37 @@ const CATEGORIES: ("Todas" | StoryCategory)[] = [
 const HSK_FILTERS: ("Todos" | HskLevel)[] = ["Todos", 1, 2, 3];
 
 export default function CatalogPage() {
-  const { profile } = useUser();
+  const { profile, srsDueCount } = useUser();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<"Todas" | StoryCategory>("Todas");
   const [selectedHsk, setSelectedHsk] = useState<"Todos" | HskLevel>("Todos");
   const [selectedStatus, setSelectedStatus] = useState<"todos" | "em_andamento" | "concluidos">("todos");
   const [activeStoryModal, setActiveStoryModal] = useState<Story | null>(null);
+
+  const continueReading = useMemo(() => {
+    const entries = Object.values(profile.chapterProgress);
+    if (entries.length === 0) return null;
+    const sorted = [...entries].sort(
+      (a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
+    );
+    for (const entry of sorted) {
+      const story = STORIES.find((s) => s.slug === entry.storySlug);
+      if (!story) continue;
+      const chIndex = story.chapters.findIndex((c) => c.id === entry.chapterId);
+      if (chIndex === -1) continue;
+      if (!entry.completed) {
+        return { story, chapter: story.chapters[chIndex], progress: entry };
+      }
+      const nextCh = story.chapters[chIndex + 1];
+      if (nextCh) {
+        return { story, chapter: nextCh, progress: null };
+      }
+    }
+    const latest = sorted[0];
+    const story = STORIES.find((s) => s.slug === latest.storySlug);
+    const chapter = story?.chapters.find((c) => c.id === latest.chapterId);
+    return story && chapter ? { story, chapter, progress: latest } : null;
+  }, [profile.chapterProgress]);
 
   const getStoryProgressStats = (story: Story) => {
     let completedChapters = 0;
@@ -126,6 +151,58 @@ export default function CatalogPage() {
             e toque em qualquer caractere para explorar seus radicais e formação.
           </p>
         </div>
+
+        {/* Continuar de onde parou + Flashcards pendentes */}
+        {(continueReading || srsDueCount > 0) && (
+          <div className="mt-5 grid grid-cols-1 md:grid-cols-2 gap-3">
+            {continueReading && (
+              <Link
+                href={`/stories/${continueReading.story.slug}/chapter/${continueReading.chapter.id}`}
+                className="group rounded-lg border border-jade-border bg-jade-soft/50 hover:bg-jade-soft p-3.5 sm:p-4 flex items-center justify-between gap-3 transition-colors"
+              >
+                <div className="min-w-0">
+                  <div className="text-[11px] font-bold uppercase tracking-wider text-jade flex items-center gap-1.5">
+                    <Play className="w-3 h-3 fill-current" />
+                    <span>Continuar de onde parou</span>
+                  </div>
+                  <div className="text-sm font-semibold text-ink truncate mt-0.5">
+                    <span className="font-zh mr-1.5">{continueReading.story.titleZh}</span>
+                    {continueReading.story.titlePt}
+                  </div>
+                  <div className="text-xs text-muted truncate">
+                    Cap. {continueReading.chapter.chapterNumber}: {continueReading.chapter.titlePt}
+                  </div>
+                </div>
+                <span className="px-3 py-1.5 rounded-md bg-jade text-canvas text-xs font-semibold shrink-0 group-hover:bg-jade-deep transition-colors">
+                  Continuar
+                </span>
+              </Link>
+            )}
+
+            {srsDueCount > 0 && (
+              <Link
+                href="/revisar"
+                className="group rounded-lg border border-cinnabar-border bg-cinnabar-soft/50 hover:bg-cinnabar-soft p-3.5 sm:p-4 flex items-center justify-between gap-3 transition-colors"
+              >
+                <div className="min-w-0">
+                  <div className="text-[11px] font-bold uppercase tracking-wider text-cinnabar flex items-center gap-1.5">
+                    <Layers className="w-3 h-3" />
+                    <span>Flashcards Pendentes</span>
+                  </div>
+                  <div className="text-sm font-semibold text-ink mt-0.5">
+                    {srsDueCount} {srsDueCount === 1 ? "card pronto" : "cards prontos"} para revisão hoje
+                  </div>
+                  <div className="text-xs text-muted">
+                    Repetição espaçada FSRS com áudio e frases das histórias
+                  </div>
+                </div>
+                <span className="px-3 py-1.5 rounded-md bg-cinnabar text-canvas text-xs font-semibold shrink-0">
+                  Revisar
+                </span>
+              </Link>
+            )}
+          </div>
+        )}
 
         {/* Search & Filter Controls */}
         <div className="mt-5 sm:mt-6 flex flex-col lg:flex-row gap-3 items-stretch lg:items-center justify-between">

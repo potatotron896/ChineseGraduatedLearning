@@ -155,6 +155,8 @@ export function EtymologyInspector({
                     storySlug,
                     storyTitlePt,
                     characters: token.characters,
+                    exampleSentenceZh: sentence?.zhText,
+                    exampleSentencePt: sentence?.translationPt,
                   })
                 }
                 className={`px-3.5 py-2 min-h-[38px] rounded-lg text-xs font-bold border transition-colors inline-flex items-center justify-center gap-1.5 active:scale-95 ${
