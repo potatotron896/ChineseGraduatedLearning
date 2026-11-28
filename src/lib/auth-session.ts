@@ -4,12 +4,14 @@ export const SESSION_COOKIE_NAME = "wendu_session";
 const SESSION_TTL_MS = 1000 * 60 * 60 * 24 * 30; // 30 dias
 
 function getSessionSecret(): string {
-  return (
-    process.env.AUTH_SECRET ||
-    process.env.DATABASE_URL ||
-    process.env.POSTGRES_URL ||
-    "wendu-local-dev-secret-change-me"
-  );
+  const secret = process.env.AUTH_SECRET;
+  if (process.env.NODE_ENV === "production") {
+    if (!secret) {
+      throw new Error("AUTH_SECRET deve ser configurado em ambiente de produção.");
+    }
+    return secret;
+  }
+  return secret || "wendu-local-dev-secret-change-me";
 }
 
 function signPayload(payloadB64: string): string {

@@ -6,6 +6,18 @@ import {
   verifySessionToken,
 } from "@/lib/auth-session";
 import {
+  PASSWORD_MIN_LENGTH,
+  validatePassword,
+  validatePasswordMatch,
+  validateUsername,
+} from "@/lib/auth-validation";
+import {
+  checkRateLimit,
+  formatRetryAfterPt,
+  recordFailedAttempt,
+  resetRateLimit,
+} from "@/lib/rate-limit";
+import {
   getStorageMode,
   hashPassword,
   loadUserAccount,
@@ -14,6 +26,30 @@ import {
   verifyPassword,
 } from "@/lib/user-storage";
 import type { UserProfileData } from "@/types/story";
+
+function getClientIp(request: NextRequest): string {
+  const forwarded = request.headers.get("x-forwarded-for");
+  if (forwarded) {
+    const first = forwarded.split(",")[0]?.trim();
+    if (first) return first;
+  }
+  const realIp = request.headers.get("x-real-ip")?.trim();
+  return realIp || "unknown";
+}
+
+function getRateLimitKeys(ip: string, username: string): string[] {
+  const keys = [`ip:${ip}`];
+  if (username) {
+    keys.push(`user:${username}`);
+    keys.push(`ip-user:${ip}:${username}`);
+  }
+  return keys;
+}
+
+// Hash dummy usado quando o usuário não existe, para evitar enumeração por tempo de resposta
+const DUMMY_SALT = "00112233445566778899aabbccddeeff";
+const DUMMY_HASH =
+  "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
 
 export async function GET(request: NextRequest) {
   try {
@@ -46,10 +82,23 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { action, username, password, profile } = body as {
-      action: "login" | "register" | "sync" | "logout";
+    const {
+      action,
+      username,
+      password,
+      passwordConfirm,
+      currentPassword,
+      newPassword,
+      newPasswordConfirm,
+      profile,
+    } = body as {
+      action: "login" | "register" | "sync" | "logout" | "change-password";
       username?: string;
       password?: string;
+      passwordConfirm?: string;
+      currentPassword?: string;
+      newPassword?: string;
+      newPasswordConfirm?: string;
       profile?: UserProfileData;
     };
 
@@ -59,31 +108,138 @@ export async function POST(request: NextRequest) {
       return response;
     }
 
-    const cleanUser = normalizeUsername(username || "");
-    if (!cleanUser || cleanUser.length < 2) {
-      return NextResponse.json(
-        { error: "O nome de usuário deve ter pelo menos 2 caracteres (letras ou números)." },
-        { status: 400 }
+    if (action === "change-password") {
+      const token = request.cookies.get(SESSION_COOKIE_NAME)?.value;
+      const sessionUser = verifySessionToken(token);
+      if (!sessionUser) {
+        return NextResponse.json(
+          { error: "Sessão inválida ou expirada. Faça login novamente." },
+          { status: 401 }
+        );
+      }
+
+      const ip = getClientIp(request);
+      const rateKeys = getRateLimitKeys(ip, `cpw:${sessionUser}`);
+      for (const key of rateKeys) {
+        const status = checkRateLimit(key);
+        if (!status.allowed) {
+          return NextResponse.json(
+            {
+              error: `Muitas tentativas inválidas. Aguarde ${formatRetryAfterPt(
+                status.retryAfterSeconds
+              )} para tentar novamente.`,
+              retryAfterSeconds: status.retryAfterSeconds,
+            },
+            { status: 429 }
+          );
+        }
+      }
+
+      if (!currentPassword) {
+        return NextResponse.json(
+          { error: "Informe sua senha atual.", errors: ["Informe sua senha atual."] },
+          { status: 400 }
+        );
+      }
+
+      const existing = await loadUserAccount(sessionUser);
+      if (!existing) {
+        return NextResponse.json(
+          { error: "Conta não encontrada." },
+          { status: 404 }
+        );
+      }
+
+      if (!verifyPassword(currentPassword, existing.passwordSalt, existing.passwordHash)) {
+        let maxRetry = 0;
+        for (const key of rateKeys) {
+          const res = recordFailedAttempt(key);
+          if (!res.allowed) maxRetry = Math.max(maxRetry, res.retryAfterSeconds);
+        }
+        if (maxRetry > 0) {
+          return NextResponse.json(
+            {
+              error: `Muitas tentativas inválidas. Aguarde ${formatRetryAfterPt(
+                maxRetry
+              )} para tentar novamente.`,
+              retryAfterSeconds: maxRetry,
+            },
+            { status: 429 }
+          );
+        }
+        return NextResponse.json(
+          { error: "Senha atual incorreta.", errors: ["Senha atual incorreta."] },
+          { status: 401 }
+        );
+      }
+
+      const pwValidation = validatePassword(newPassword || "", sessionUser);
+      const matchValidation = validatePasswordMatch(
+        newPassword || "",
+        newPasswordConfirm || ""
       );
+      const errors = [...pwValidation.errors];
+      if (!matchValidation.ok && matchValidation.error) {
+        errors.push(matchValidation.error);
+      }
+      if (newPassword && newPassword === currentPassword) {
+        errors.push("A nova senha deve ser diferente da senha atual.");
+      }
+
+      if (errors.length > 0) {
+        return NextResponse.json(
+          { error: errors[0], errors },
+          { status: 400 }
+        );
+      }
+
+      for (const key of rateKeys) {
+        resetRateLimit(key);
+      }
+
+      const { salt, hash } = hashPassword(newPassword!);
+      const now = new Date().toISOString();
+      await saveUserAccount({
+        ...existing,
+        passwordSalt: salt,
+        passwordHash: hash,
+        updatedAt: now,
+      });
+
+      return NextResponse.json({ ok: true });
     }
 
     if (action === "register") {
-      if (!password || password.length < 4) {
+      const userValidation = validateUsername(username || "");
+      const cleanUser = userValidation.normalized;
+      const pwValidation = validatePassword(password || "", cleanUser);
+      const matchValidation = validatePasswordMatch(
+        password || "",
+        passwordConfirm || ""
+      );
+
+      const errors = [...userValidation.errors, ...pwValidation.errors];
+      if (!matchValidation.ok && matchValidation.error) {
+        errors.push(matchValidation.error);
+      }
+
+      if (errors.length > 0) {
         return NextResponse.json(
-          { error: "A senha deve ter pelo menos 4 caracteres." },
+          { error: errors[0], errors },
           { status: 400 }
         );
       }
 
       const existing = await loadUserAccount(cleanUser);
       if (existing) {
+        const msg = "Este nome de usuário já existe. Escolha outro ou faça login.";
         return NextResponse.json(
-          { error: "Este nome de usuário já existe. Escolha outro ou faça login." },
+          { error: msg, errors: [msg] },
           { status: 409 }
         );
       }
 
-      const { salt, hash } = hashPassword(password);
+      const { salt, hash } = hashPassword(password!);
       const now = new Date().toISOString();
       const initialProfile: UserProfileData = profile
         ? { ...profile, username: cleanUser, updatedAt: now }
@@ -115,6 +271,7 @@ export async function POST(request: NextRequest) {
         ok: true,
         username: cleanUser,
         profile: initialProfile,
+        needsPasswordUpgrade: false,
         storageMode: getStorageMode(),
       });
       response.cookies.set(
@@ -125,19 +282,63 @@ export async function POST(request: NextRequest) {
       return response;
     }
 
+    const cleanUser = normalizeUsername(username || "");
+
     if (action === "login") {
-      if (!password) {
-        return NextResponse.json({ error: "Informe sua senha." }, { status: 400 });
-      }
-      const existing = await loadUserAccount(cleanUser);
-      if (!existing) {
+      if (!cleanUser || !password) {
         return NextResponse.json(
-          { error: "Usuário não encontrado. Verifique o nome ou crie uma conta." },
-          { status: 404 }
+          { error: "Informe usuário e senha." },
+          { status: 400 }
         );
       }
-      if (!verifyPassword(password, existing.passwordSalt, existing.passwordHash)) {
-        return NextResponse.json({ error: "Senha incorreta." }, { status: 401 });
+
+      const ip = getClientIp(request);
+      const rateKeys = getRateLimitKeys(ip, cleanUser);
+      for (const key of rateKeys) {
+        const status = checkRateLimit(key);
+        if (!status.allowed) {
+          return NextResponse.json(
+            {
+              error: `Muitas tentativas de login. Aguarde ${formatRetryAfterPt(
+                status.retryAfterSeconds
+              )} para tentar novamente.`,
+              retryAfterSeconds: status.retryAfterSeconds,
+            },
+            { status: 429 }
+          );
+        }
+      }
+
+      const existing = await loadUserAccount(cleanUser);
+      const passwordValid = existing
+        ? verifyPassword(password, existing.passwordSalt, existing.passwordHash)
+        : (verifyPassword(password, DUMMY_SALT, DUMMY_HASH), false);
+
+      if (!existing || !passwordValid) {
+        let maxRetry = 0;
+        for (const key of rateKeys) {
+          const res = recordFailedAttempt(key);
+          if (!res.allowed) maxRetry = Math.max(maxRetry, res.retryAfterSeconds);
+        }
+        if (maxRetry > 0) {
+          return NextResponse.json(
+            {
+              error: `Muitas tentativas inválidas. Aguarde ${formatRetryAfterPt(
+                maxRetry
+              )} para tentar novamente.`,
+              retryAfterSeconds: maxRetry,
+            },
+            { status: 429 }
+          );
+        }
+        return NextResponse.json(
+          { error: "Usuário ou senha inválidos." },
+          { status: 401 }
+        );
+      }
+
+      for (const key of rateKeys) {
+        resetRateLimit(key);
       }
 
       // Mescla progresso local de visitante com a conta na nuvem ao fazer login
@@ -165,6 +366,7 @@ export async function POST(request: NextRequest) {
         ok: true,
         username: cleanUser,
         profile: mergedProfile,
+        needsPasswordUpgrade: password.length < PASSWORD_MIN_LENGTH,
         storageMode: getStorageMode(),
       });
       response.cookies.set(
@@ -176,6 +378,13 @@ export async function POST(request: NextRequest) {
     }
 
     if (action === "sync") {
+      if (!cleanUser) {
+        return NextResponse.json(
+          { error: "Nome de usuário inválido." },
+          { status: 400 }
+        );
+      }
+
       const existing = await loadUserAccount(cleanUser);
       if (!existing) {
         return NextResponse.json(

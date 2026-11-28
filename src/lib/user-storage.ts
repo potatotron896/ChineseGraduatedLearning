@@ -25,7 +25,11 @@ let cachedSql: NeonQueryFunction<false, false> | null = null;
 let schemaReadyPromise: Promise<void> | null = null;
 
 export function normalizeUsername(raw: string): string {
-  return raw.trim().toLowerCase().replace(/[^a-z0-9_-]/g, "");
+  return raw
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9_.-]/g, "")
+    .replace(/\.{2,}/g, ".");
 }
 
 export function hashPassword(password: string, salt?: string) {

@@ -14,15 +14,17 @@ import {
   ChevronRight,
   Cloud,
   Flame,
+  KeyRound,
   Layers,
   LogOut,
   Menu,
   Moon,
+  ShieldAlert,
   Sun,
-  User,
   X,
 } from "lucide-react";
 import { useUser } from "@/context/UserContext";
+import { AuthModal, ChangePasswordModal } from "@/components/AuthModal";
 import { BackgroundMusicPlayer } from "@/components/BackgroundMusicPlayer";
 import type { ChineseFontMode } from "@/types/story";
 
@@ -46,21 +48,17 @@ export function Header() {
   const {
     profile,
     syncStatus,
+    needsPasswordUpgrade,
     telemetrySummary,
     srsDueCount,
     updatePreferences,
-    loginOrRegister,
     logout,
   } = useUser();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [fontMenuOpen, setFontMenuOpen] = useState(false);
   const fontMenuRef = useRef<HTMLDivElement | null>(null);
   const [authOpen, setAuthOpen] = useState(false);
-  const [authMode, setAuthMode] = useState<"login" | "register">("login");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [authError, setAuthError] = useState<string | null>(null);
-  const [submitting, setSubmitting] = useState(false);
+  const [changePasswordOpen, setChangePasswordOpen] = useState(false);
 
   const vocabCount = Object.keys(profile.savedVocabulary).length;
   const dailyGoalMinutes = profile.preferences.dailyGoalMinutes ?? 10;
@@ -162,20 +160,6 @@ export function Header() {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [mobileMenuOpen]);
-
-  async function handleAuthSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setAuthError(null);
-    setSubmitting(true);
-    const res = await loginOrRegister(authMode, username, password);
-    setSubmitting(false);
-    if (!res.ok) {
-      setAuthError(res.error || "Erro ao autenticar.");
-      return;
-    }
-    setAuthOpen(false);
-    setPassword("");
-  }
 
   return (
     <>
@@ -431,6 +415,15 @@ export function Header() {
                 </span>
                 <button
                   type="button"
+                  onClick={() => setChangePasswordOpen(true)}
+                  title="Alterar senha"
+                  aria-label="Alterar senha"
+                  className="p-1 rounded hover:bg-canvas/60 text-muted hover:text-ink transition-colors"
+                >
+                  <KeyRound className="w-3.5 h-3.5" />
+                </button>
+                <button
+                  type="button"
                   onClick={logout}
                   title="Sair da conta"
                   aria-label="Sair da conta"
@@ -442,10 +435,7 @@ export function Header() {
             ) : (
               <button
                 type="button"
-                onClick={() => {
-                  setAuthError(null);
-                  setAuthOpen(true);
-                }}
+                onClick={() => setAuthOpen(true)}
                 className="px-2.5 sm:px-3 h-9 sm:h-8 rounded-md bg-jade text-canvas hover:bg-jade-deep text-xs font-semibold transition-colors flex items-center gap-1.5 whitespace-nowrap"
               >
                 <Cloud className="w-3.5 h-3.5 shrink-0" />
@@ -454,6 +444,25 @@ export function Header() {
             )}
           </div>
         </div>
+        {profile.username && needsPasswordUpgrade && (
+          <div className="border-t border-amber-300/60 dark:border-amber-700/50 bg-amber-50/90 dark:bg-amber-950/40 px-3 sm:px-6 py-2">
+            <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2 text-xs">
+              <div className="flex items-center gap-2 text-amber-900 dark:text-amber-200">
+                <ShieldAlert className="w-4 h-4 shrink-0 text-amber-600 dark:text-amber-400" />
+                <span>
+                  Sua conta usa uma senha antiga. Atualize sua senha para atender aos novos requisitos de segurança.
+                </span>
+              </div>
+              <button
+                type="button"
+                onClick={() => setChangePasswordOpen(true)}
+                className="px-2.5 py-1 rounded bg-amber-600 hover:bg-amber-700 text-white font-semibold transition-colors shrink-0"
+              >
+                Atualizar senha
+              </button>
+            </div>
+          </div>
+        )}
       </header>
 
       {/* Mobile & Tablet Side Drawer (< lg) */}
@@ -659,30 +668,43 @@ export function Header() {
             {/* Drawer Footer: Cloud Account */}
             <div className="p-3 border-t border-border bg-surface/50 pb-safe shrink-0">
               {profile.username ? (
-                <div className="flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-jade-border bg-jade-soft">
-                  <div className="flex items-center gap-2 min-w-0">
-                    <CheckCircle2 className="w-4 h-4 text-jade shrink-0" />
-                    <div className="min-w-0">
-                      <div className="text-xs font-semibold text-jade truncate">
-                        @{profile.username}
-                      </div>
-                      <div className="text-[10px] text-muted">
-                        {syncStatus === "syncing"
-                          ? "Sincronizando..."
-                          : "Sincronizado na nuvem"}
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-jade-border bg-jade-soft">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <CheckCircle2 className="w-4 h-4 text-jade shrink-0" />
+                      <div className="min-w-0">
+                        <div className="text-xs font-semibold text-jade truncate">
+                          @{profile.username}
+                        </div>
+                        <div className="text-[10px] text-muted">
+                          {syncStatus === "syncing"
+                            ? "Sincronizando..."
+                            : "Sincronizado na nuvem"}
+                        </div>
                       </div>
                     </div>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        logout();
+                        setMobileMenuOpen(false);
+                      }}
+                      className="px-2.5 py-1.5 rounded-md border border-jade-border/60 bg-canvas text-xs font-medium text-muted hover:text-ink flex items-center gap-1 shrink-0"
+                    >
+                      <LogOut className="w-3.5 h-3.5" />
+                      <span>Sair</span>
+                    </button>
                   </div>
                   <button
                     type="button"
                     onClick={() => {
-                      logout();
                       setMobileMenuOpen(false);
+                      setChangePasswordOpen(true);
                     }}
-                    className="px-2.5 py-1.5 rounded-md border border-jade-border/60 bg-canvas text-xs font-medium text-muted hover:text-ink flex items-center gap-1 shrink-0"
+                    className="w-full py-2 px-3 rounded-lg border border-border bg-canvas text-xs font-medium text-ink hover:bg-surface transition-colors flex items-center justify-center gap-1.5"
                   >
-                    <LogOut className="w-3.5 h-3.5" />
-                    <span>Sair</span>
+                    <KeyRound className="w-3.5 h-3.5 text-jade" />
+                    <span>Alterar senha</span>
                   </button>
                 </div>
               ) : (
@@ -690,7 +712,6 @@ export function Header() {
                   type="button"
                   onClick={() => {
                     setMobileMenuOpen(false);
-                    setAuthError(null);
                     setAuthOpen(true);
                   }}
                   className="w-full py-2.5 px-4 rounded-lg bg-jade text-canvas hover:bg-jade-deep text-xs font-semibold transition-colors flex items-center justify-center gap-2"
@@ -704,137 +725,11 @@ export function Header() {
         </div>
       )}
 
-      {/* Simple Login / Register Modal (Vercel Blob + LocalStorage) */}
-      {authOpen && (
-        <div
-          className="fixed inset-0 z-50 bg-ink/40 backdrop-blur-[2px] flex items-end sm:items-center justify-center p-0 sm:p-4"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="auth-modal-title"
-        >
-          <div className="w-full sm:max-w-md rounded-t-2xl sm:rounded-lg bg-canvas border-t sm:border border-border p-5 sm:p-6 shadow-lg pb-safe modal-sheet-anim">
-            <div className="flex items-start justify-between gap-4 mb-4">
-              <div>
-                <h2
-                  id="auth-modal-title"
-                  className="text-base sm:text-lg font-semibold text-ink flex items-center gap-2"
-                >
-                  <User className="w-5 h-5 text-jade shrink-0" />
-                  <span>Sincronizar Progresso na Nuvem</span>
-                </h2>
-                <p className="text-xs text-muted mt-1 leading-relaxed">
-                  Acesse seu histórico de capítulos, preferências de fonte e
-                  vocabulário salvo em qualquer computador ou celular.
-                </p>
-              </div>
-              <button
-                type="button"
-                onClick={() => setAuthOpen(false)}
-                className="w-9 h-9 rounded-md text-muted hover:text-ink hover:bg-surface flex items-center justify-center shrink-0"
-                aria-label="Fechar janela de login"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
-
-            <div className="grid grid-cols-2 gap-1 p-1 rounded-md bg-surface border border-border mb-4">
-              <button
-                type="button"
-                onClick={() => {
-                  setAuthMode("login");
-                  setAuthError(null);
-                }}
-                className={`py-2 text-xs font-semibold rounded-[5px] transition-colors ${
-                  authMode === "login"
-                    ? "bg-jade text-canvas"
-                    : "text-muted hover:text-ink"
-                }`}
-              >
-                Já tenho conta
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setAuthMode("register");
-                  setAuthError(null);
-                }}
-                className={`py-2 text-xs font-semibold rounded-[5px] transition-colors ${
-                  authMode === "register"
-                    ? "bg-jade text-canvas"
-                    : "text-muted hover:text-ink"
-                }`}
-              >
-                Criar nova conta
-              </button>
-            </div>
-
-            <form onSubmit={handleAuthSubmit} className="space-y-3.5">
-              <div>
-                <label
-                  htmlFor="auth-username"
-                  className="block text-xs font-semibold text-ink mb-1"
-                >
-                  Nome de usuário
-                </label>
-                <input
-                  id="auth-username"
-                  type="text"
-                  required
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  placeholder="ex: marlo"
-                  className="w-full px-3 py-2.5 rounded-md border border-border bg-surface text-base sm:text-sm text-ink placeholder:text-muted focus:outline-none focus:border-jade"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="auth-password"
-                  className="block text-xs font-semibold text-ink mb-1"
-                >
-                  Senha
-                </label>
-                <input
-                  id="auth-password"
-                  type="password"
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Mínimo de 4 caracteres"
-                  className="w-full px-3 py-2.5 rounded-md border border-border bg-surface text-base sm:text-sm text-ink placeholder:text-muted focus:outline-none focus:border-jade"
-                />
-              </div>
-
-              {authError && (
-                <div className="p-2.5 rounded-md bg-cinnabar-soft border border-cinnabar-border text-xs text-cinnabar font-medium">
-                  {authError}
-                </div>
-              )}
-
-              <div className="pt-2 flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-end gap-2">
-                <button
-                  type="button"
-                  onClick={() => setAuthOpen(false)}
-                  className="px-3.5 py-2.5 sm:py-2 rounded-md border border-border text-xs font-medium text-muted hover:text-ink"
-                >
-                  Cancelar
-                </button>
-                <button
-                  type="submit"
-                  disabled={submitting}
-                  className="px-4 py-2.5 sm:py-2 rounded-md bg-jade text-canvas hover:bg-jade-deep text-xs font-semibold transition-colors disabled:opacity-50"
-                >
-                  {submitting
-                    ? "Sincronizando..."
-                    : authMode === "login"
-                    ? "Entrar e Sincronizar"
-                    : "Criar Conta e Salvar"}
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
+      <AuthModal open={authOpen} onClose={() => setAuthOpen(false)} />
+      <ChangePasswordModal
+        open={changePasswordOpen}
+        onClose={() => setChangePasswordOpen(false)}
+      />
     </>
   );
 }

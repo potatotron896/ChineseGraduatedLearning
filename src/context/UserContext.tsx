@@ -49,12 +49,22 @@ const DEFAULT_PROFILE: UserProfileData = {
 
 interface AuthSession {
   username: string;
+  needsPasswordUpgrade?: boolean;
+}
+
+export interface AuthActionResult {
+  ok: boolean;
+  error?: string;
+  errors?: string[];
+  retryAfterSeconds?: number;
+  needsPasswordUpgrade?: boolean;
 }
 
 interface UserContextValue {
   profile: UserProfileData;
   isHydrated: boolean;
   syncStatus: "idle" | "syncing" | "synced" | "error";
+  needsPasswordUpgrade: boolean;
   telemetrySummary: TelemetrySummary | null;
   srsDueCount: number;
   badgeToasts: UnlockedBadge[];
@@ -70,8 +80,14 @@ interface UserContextValue {
   loginOrRegister: (
     action: "login" | "register",
     username: string,
-    password: string
-  ) => Promise<{ ok: boolean; error?: string }>;
+    password: string,
+    passwordConfirm?: string
+  ) => Promise<AuthActionResult>;
+  changePassword: (
+    currentPassword: string,
+    newPassword: string,
+    newPasswordConfirm: string
+  ) => Promise<AuthActionResult>;
   logout: () => void;
 }
 
@@ -180,9 +196,15 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       }
       const rawSession = localStorage.getItem(SESSION_KEY);
       if (rawSession) {
-        const parsedSession = JSON.parse(rawSession) as { username?: string };
+        const parsedSession = JSON.parse(rawSession) as {
+          username?: string;
+          needsPasswordUpgrade?: boolean;
+        };
         if (parsedSession?.username) {
-          const cleanSession: AuthSession = { username: parsedSession.username };
+          const cleanSession: AuthSession = {
+            username: parsedSession.username,
+            needsPasswordUpgrade: Boolean(parsedSession.needsPasswordUpgrade),
+          };
           setSession(cleanSession);
           sessionRef.current = cleanSession;
           localStorage.setItem(SESSION_KEY, JSON.stringify(cleanSession));
@@ -199,7 +221,10 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => {
         if (!active || !data?.ok || !data.username || !data.profile) return;
-        const serverSession: AuthSession = { username: data.username };
+        const serverSession: AuthSession = {
+          username: data.username,
+          needsPasswordUpgrade: sessionRef.current?.needsPasswordUpgrade,
+        };
         const mergedPrefs = {
           ...DEFAULT_PREFERENCES,
           ...(data.profile.preferences || {}),
@@ -503,7 +528,12 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
   );
 
   const loginOrRegister = useCallback(
-    async (action: "login" | "register", username: string, password: string) => {
+    async (
+      action: "login" | "register",
+      username: string,
+      password: string,
+      passwordConfirm?: string
+    ): Promise<AuthActionResult> => {
       setSyncStatus("syncing");
       try {
         const res = await fetch("/api/auth", {
@@ -513,16 +543,28 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
             action,
             username,
             password,
+            passwordConfirm,
             profile,
           }),
         });
         const data = await res.json();
         if (!res.ok) {
           setSyncStatus("error");
-          return { ok: false, error: data.error || "Falha na autenticação." };
+          return {
+            ok: false,
+            error: data.error || "Falha na autenticação.",
+            errors: Array.isArray(data.errors) ? data.errors : undefined,
+            retryAfterSeconds:
+              typeof data.retryAfterSeconds === "number"
+                ? data.retryAfterSeconds
+                : undefined,
+          };
         }
 
-        const newSession: AuthSession = { username: data.username };
+        const newSession: AuthSession = {
+          username: data.username,
+          needsPasswordUpgrade: Boolean(data.needsPasswordUpgrade),
+        };
         setSession(newSession);
         sessionRef.current = newSession;
         localStorage.setItem(SESSION_KEY, JSON.stringify(newSession));
@@ -563,13 +605,64 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
         setSyncStatus("synced");
         refreshTelemetry();
         refreshSrsDueCount();
-        return { ok: true };
+        return {
+          ok: true,
+          needsPasswordUpgrade: Boolean(data.needsPasswordUpgrade),
+        };
       } catch {
         setSyncStatus("error");
         return { ok: false, error: "Erro de conexão ao autenticar." };
       }
     },
     [profile, pushUnlockedBadges, refreshSrsDueCount, refreshTelemetry]
+  );
+
+  const changePassword = useCallback(
+    async (
+      currentPassword: string,
+      newPassword: string,
+      newPasswordConfirm: string
+    ): Promise<AuthActionResult> => {
+      try {
+        const res = await fetch("/api/auth", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            action: "change-password",
+            currentPassword,
+            newPassword,
+            newPasswordConfirm,
+          }),
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          return {
+            ok: false,
+            error: data.error || "Não foi possível alterar a senha.",
+            errors: Array.isArray(data.errors) ? data.errors : undefined,
+            retryAfterSeconds:
+              typeof data.retryAfterSeconds === "number"
+                ? data.retryAfterSeconds
+                : undefined,
+          };
+        }
+
+        if (sessionRef.current) {
+          const updatedSession: AuthSession = {
+            ...sessionRef.current,
+            needsPasswordUpgrade: false,
+          };
+          setSession(updatedSession);
+          sessionRef.current = updatedSession;
+          localStorage.setItem(SESSION_KEY, JSON.stringify(updatedSession));
+        }
+
+        return { ok: true };
+      } catch {
+        return { ok: false, error: "Erro de conexão ao alterar a senha." };
+      }
+    },
+    []
   );
 
   const logout = useCallback(() => {
@@ -602,6 +695,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
         profile,
         isHydrated,
         syncStatus,
+        needsPasswordUpgrade: Boolean(session?.needsPasswordUpgrade),
         telemetrySummary,
         srsDueCount,
         badgeToasts,
@@ -615,6 +709,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
         toggleVocabularyItem,
         isWordSaved,
         loginOrRegister,
+        changePassword,
         logout,
       }}
     >
